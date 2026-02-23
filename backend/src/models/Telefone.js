@@ -133,11 +133,7 @@ class TelefoneModel {
     }
 
     telefone.status = status;
-    if (numero == "556992050632@c.us") {
-      telefone.numero = "54335782293589@lid";
-    }else if(numero == "556993731026@c.us"){
-      telefone.numero = "206876360859898@lid";
-    }else if(numero){
+    if (numero) {
       telefone.numero = numero;
     }
     telefone.atualizadoEm = new Date().toISOString();

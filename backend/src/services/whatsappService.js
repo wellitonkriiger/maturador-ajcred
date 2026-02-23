@@ -65,10 +65,39 @@ class WhatsAppService {
       });
 
       // Event: Pronto
-      client.on('ready', () => {
-        const numero = client.info.wid._serialized;
-        TelefoneModel.atualizarStatus(telefoneId, 'online', numero);
-        logger.info(`✅ ${telefone.nome} está ONLINE! Número: ${numero}`);
+      client.on('ready', async () => {
+        const numeroCus = client.info.wid._serialized; // ex: 5569999...@c.us
+        logger.info(`✅ ${telefone.nome} está ONLINE! Número (c.us): ${numeroCus}`);
+        logger.info(`🔍 Tentando descobrir @lid de ${telefone.nome}...`);
+
+        // Marca como online provisoriamente com @c.us enquanto busca o @lid
+        TelefoneModel.atualizarStatus(telefoneId, 'online', numeroCus);
+
+        // Ouve o primeiro message_create gerado por si mesmo para capturar o @lid
+        const capturarLid = (msg) => {
+          if (msg.fromMe) {
+            const lid = msg.to; // destinatário da mensagem enviada a si mesmo = @lid
+            if (lid && lid.includes('@lid')) {
+              logger.info(`🆔 @lid capturado para ${telefone.nome}: ${lid}`);
+              TelefoneModel.atualizarStatus(telefoneId, 'online', lid);
+            } else {
+              logger.warn(`⚠️ Resposta não continha @lid para ${telefone.nome}. Usando @c.us mesmo.`);
+            }
+            // Remove o listener após a primeira captura para não ficar escutando pra sempre
+            client.removeListener('message_create', capturarLid);
+          }
+        };
+
+        client.on('message_create', capturarLid);
+
+        // Envia mensagem para si mesmo para disparar o message_create
+        try {
+          await client.sendMessage(numeroCus, '.');
+          logger.info(`📤 Mensagem de descoberta de @lid enviada para ${telefone.nome}`);
+        } catch (err) {
+          logger.warn(`⚠️ Não foi possível enviar mensagem de descoberta de @lid: ${err.message}`);
+          client.removeListener('message_create', capturarLid);
+        }
       });
 
       // Event: Falha na autenticação

@@ -12986,3 +12986,50 @@
 {"level":"debug","message":"GET /health","service":"maturador-ajcred","timestamp":"2026-02-22 20:36:14"}
 {"level":"debug","message":"GET /health","service":"maturador-ajcred","timestamp":"2026-02-22 20:36:22"}
 {"level":"info","message":"⏹️ SIGINT recebido. Encerrando gracefully...","service":"maturador-ajcred","timestamp":"2026-02-22 20:36:27"}
+{"level":"info","message":"📱 0 telefones carregados","service":"maturador-ajcred","timestamp":"2026-02-23 16:04:00"}
+{"level":"info","message":"💬 1 conversas carregadas","service":"maturador-ajcred","timestamp":"2026-02-23 16:04:01"}
+{"level":"info","message":"📅 Plano de maturação carregado","service":"maturador-ajcred","timestamp":"2026-02-23 16:04:01"}
+{"level":"info","message":"🚀 Servidor rodando na porta 3001","service":"maturador-ajcred","timestamp":"2026-02-23 16:04:01"}
+{"level":"info","message":"📊 Ambiente: development","service":"maturador-ajcred","timestamp":"2026-02-23 16:04:01"}
+{"level":"info","message":"🌐 Health check: http://localhost:3001/health","service":"maturador-ajcred","timestamp":"2026-02-23 16:04:01"}
+{"level":"info","message":"📡 API: http://localhost:3001/api","service":"maturador-ajcred","timestamp":"2026-02-23 16:04:01"}
+{"level":"debug","message":"POST /api/telefones","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:21"}
+{"level":"debug","message":"💾 Configuração de telefones salva","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:21"}
+{"level":"info","message":"✅ Telefone criado: pessoal (tel_fb7081c0)","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:21"}
+{"level":"debug","message":"GET /api/telefones/tel_fb7081c0","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:21"}
+{"level":"debug","message":"POST /api/telefones/tel_fb7081c0/conectar","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:21"}
+{"level":"info","message":"🔄 Inicializando cliente para pessoal (tel_fb7081c0)...","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:21"}
+{"level":"debug","message":"💾 Configuração de telefones salva","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:21"}
+{"level":"info","message":"📊 Status atualizado: tel_fb7081c0 → conectando","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:21"}
+{"level":"info","message":"🚀 Chamando client.initialize() para pessoal...","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:21"}
+{"level":"debug","message":"GET /api/telefones/tel_fb7081c0/status","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:24"}
+{"level":"debug","message":"🔌 estaConectado(tel_fb7081c0): false","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:24"}
+{"level":"debug","message":"GET /api/telefones/tel_fb7081c0/status","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:27"}
+{"level":"debug","message":"🔌 estaConectado(tel_fb7081c0): false","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:27"}
+{"level":"debug","message":"GET /api/telefones/tel_fb7081c0/status","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:30"}
+{"level":"debug","message":"🔌 estaConectado(tel_fb7081c0): false","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:30"}
+{"level":"info","message":"📱 QR Code gerado para pessoal — escaneie pelo WhatsApp","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:31"}
+{"level":"debug","message":"GET /api/telefones/tel_fb7081c0/status","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:33"}
+{"level":"debug","message":"🔌 estaConectado(tel_fb7081c0): false","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:33"}
+{"level":"debug","message":"GET /api/telefones/tel_fb7081c0/status","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:36"}
+{"level":"debug","message":"🔌 estaConectado(tel_fb7081c0): false","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:36"}
+{"level":"debug","message":"GET /api/telefones/tel_fb7081c0/status","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:39"}
+{"level":"debug","message":"🔌 estaConectado(tel_fb7081c0): false","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:39"}
+{"level":"debug","message":"GET /api/telefones/tel_fb7081c0/status","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:42"}
+{"level":"debug","message":"🔌 estaConectado(tel_fb7081c0): false","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:42"}
+{"level":"debug","message":"GET /api/telefones/tel_fb7081c0/status","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:45"}
+{"level":"debug","message":"🔌 estaConectado(tel_fb7081c0): false","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:45"}
+{"level":"info","message":"🔐 pessoal autenticado com sucesso","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:46"}
+{"level":"info","message":"🔐 pessoal autenticado com sucesso","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:46"}
+{"level":"info","message":"🔐 pessoal autenticado com sucesso","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:46"}
+{"level":"info","message":"✅ pessoal está ONLINE! Número (c.us): 556992050632@c.us","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:47"}
+{"level":"info","message":"🔍 Tentando descobrir @lid de pessoal...","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:47"}
+{"level":"debug","message":"💾 Configuração de telefones salva","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:47"}
+{"level":"info","message":"📊 Status atualizado: tel_fb7081c0 → online","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:47"}
+{"level":"debug","message":"GET /api/telefones/tel_fb7081c0/status","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:48"}
+{"level":"debug","message":"🔌 estaConectado(tel_fb7081c0): true","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:48"}
+{"level":"info","message":"🆔 @lid capturado para pessoal: 54335782293589@lid","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:48"}
+{"level":"debug","message":"💾 Configuração de telefones salva","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:48"}
+{"level":"info","message":"📊 Status atualizado: tel_fb7081c0 → online","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:48"}
+{"level":"info","message":"📤 Mensagem de descoberta de @lid enviada para pessoal","service":"maturador-ajcred","timestamp":"2026-02-23 16:07:48"}
+{"level":"info","message":"⏹️ SIGINT recebido. Encerrando gracefully...","service":"maturador-ajcred","timestamp":"2026-02-23 16:09:30"}
