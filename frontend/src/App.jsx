@@ -99,7 +99,7 @@ const CSS = `
   .sidebar-logo {
     padding: 20px 22px 18px;
     border-bottom: 1px solid #f0f0f3;
-    background: #1c1c1c;
+    background: #ffffff;
     border-radius: 0;
   }
 
@@ -687,9 +687,15 @@ function Dashboard({ toast }) {
     return () => clearInterval(t);
   }, [load]);
 
+  const [toggling, setToggling] = useState(false);
+
   const toggleMaturacao = async () => {
+    if (toggling) return;
+    setToggling(true);
+    const eraAtivo = status?.ativo;
+    setStatus(prev => prev ? { ...prev, ativo: !prev.ativo } : prev);
     try {
-      if (status?.ativo) {
+      if (eraAtivo) {
         await api("/maturacao/parar", { method: "POST" });
         toast("Maturação pausada", "success");
       } else {
@@ -698,7 +704,10 @@ function Dashboard({ toast }) {
       }
       await load();
     } catch (e) {
+      setStatus(prev => prev ? { ...prev, ativo: eraAtivo } : prev);
       toast("Erro ao alterar estado: " + e.message, "error");
+    } finally {
+      setToggling(false);
     }
   };
 
@@ -723,8 +732,9 @@ function Dashboard({ toast }) {
         <button
           className={`btn btn-sm ${status?.ativo ? "btn-danger" : "btn-success"}`}
           onClick={toggleMaturacao}
+          disabled={toggling}
         >
-          {status?.ativo ? "⏸ Pausar" : "▶ Iniciar"}
+          {toggling ? "⏳ Aguardando..." : status?.ativo ? "⏸ Pausar" : "▶ Iniciar"}
         </button>
       </div>
 
@@ -833,6 +843,7 @@ function Telefones({ toast }) {
   const [showModal, setShowModal] = useState(false);
   const [showQR, setShowQR] = useState(null);          // { id, qrCode, nome }
   const [aguardandoQR, setAguardandoQR] = useState(null); // id aguardando
+  const [editando, setEditando] = useState(null); // telefone sendo editado
   const pollRef = useRef(null);
   const [form, setForm] = useState({
     nome: "",
@@ -841,6 +852,7 @@ function Telefones({ toast }) {
     podeIniciarConversa: true,
     podeReceberMensagens: true,
   });
+  const [formEdit, setFormEdit] = useState({});
 
   const load = useCallback(async () => {
     try {
@@ -962,6 +974,38 @@ function Telefones({ toast }) {
     } catch (e) { toast("Erro: " + e.message, "error"); }
   };
 
+  const abrirEdicao = (tel) => {
+    setFormEdit({
+      nome: tel.nome,
+      sensibilidade: tel.sensibilidade,
+      quantidadeConversasDia: tel.configuracao?.quantidadeConversasDia ?? 5,
+      podeIniciarConversa: tel.configuracao?.podeIniciarConversa ?? true,
+      podeReceberMensagens: tel.configuracao?.podeReceberMensagens ?? true,
+    });
+    setEditando(tel);
+  };
+
+  const salvarEdicao = async () => {
+    try {
+      await api(`/telefones/${editando.id}`, {
+        method: "PUT",
+        body: JSON.stringify({
+          nome: formEdit.nome,
+          sensibilidade: formEdit.sensibilidade,
+          configuracao: {
+            ...editando.configuracao,
+            quantidadeConversasDia: Number(formEdit.quantidadeConversasDia),
+            podeIniciarConversa: formEdit.podeIniciarConversa,
+            podeReceberMensagens: formEdit.podeReceberMensagens,
+          },
+        }),
+      });
+      toast("Telefone atualizado!", "success");
+      setEditando(null);
+      await load();
+    } catch (e) { toast("Erro: " + e.message, "error"); }
+  };
+
   const sb = sensibilidadeBadge;
 
   return (
@@ -1070,6 +1114,7 @@ function Telefones({ toast }) {
                       {esteAguardando ? "⏳ Aguardando..." : "📷 Ver QR Code"}
                     </button>
                   )}
+                  <button className="btn btn-ghost btn-sm" onClick={() => abrirEdicao(tel)}>✏️ Editar</button>
                   <button className="btn btn-danger btn-sm" onClick={() => deletar(tel.id)}>Deletar</button>
                 </div>
               </div>
@@ -1143,6 +1188,61 @@ function Telefones({ toast }) {
                 <strong>Dispositivos vinculados → Vincular dispositivo</strong><br />
                 <span style={{ color: "#f59e0b", fontSize: 11, marginTop: 4, display: "block" }}>⚠️ O QR expira em ~20 segundos</span>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* MODAL EDITAR */}
+      {editando && (
+        <div className="modal-overlay" onClick={e => e.target === e.currentTarget && setEditando(null)}>
+          <div className="modal">
+            <div className="modal-title">✏️ Editar — {editando.nome}</div>
+            <button className="modal-close" onClick={() => setEditando(null)}>✕</button>
+
+            <div className="form-group">
+              <label className="form-label">Nome / Identificador *</label>
+              <input className="form-input" value={formEdit.nome} onChange={e => setFormEdit(f => ({ ...f, nome: e.target.value }))} />
+            </div>
+
+            <div className="form-row">
+              <div className="form-group">
+                <label className="form-label">Sensibilidade</label>
+                <select className="form-select" value={formEdit.sensibilidade} onChange={e => setFormEdit(f => ({ ...f, sensibilidade: e.target.value }))}>
+                  <option value="baixa">Baixa</option>
+                  <option value="media">Média</option>
+                  <option value="alta">Alta</option>
+                </select>
+              </div>
+              <div className="form-group">
+                <label className="form-label">Conversas / dia</label>
+                <input className="form-input" type="number" min={1} max={50} value={formEdit.quantidadeConversasDia} onChange={e => setFormEdit(f => ({ ...f, quantidadeConversasDia: e.target.value }))} />
+              </div>
+            </div>
+
+            <div className="toggle-row">
+              <div><div className="toggle-label">Pode iniciar conversa</div></div>
+              <label className="toggle">
+                <input type="checkbox" checked={formEdit.podeIniciarConversa} onChange={e => setFormEdit(f => ({ ...f, podeIniciarConversa: e.target.checked }))} />
+                <span className="toggle-slider" />
+              </label>
+            </div>
+            <div className="toggle-row">
+              <div><div className="toggle-label">Pode receber mensagens</div></div>
+              <label className="toggle">
+                <input type="checkbox" checked={formEdit.podeReceberMensagens} onChange={e => setFormEdit(f => ({ ...f, podeReceberMensagens: e.target.checked }))} />
+                <span className="toggle-slider" />
+              </label>
+            </div>
+
+            <div style={{ padding: "14px 0 4px", borderTop: "1px solid #f0f0f4", marginTop: 8 }}>
+              <div style={{ fontSize: 11, color: "#b0b0be" }}>ID: <span style={{ fontFamily: "Space Mono", fontSize: 10 }}>{editando.id}</span></div>
+              {editando.numero && <div style={{ fontSize: 11, color: "#b0b0be", marginTop: 4 }}>Número: <span style={{ fontFamily: "Space Mono", fontSize: 10 }}>{editando.numero}</span></div>}
+            </div>
+
+            <div className="modal-actions">
+              <button className="btn btn-ghost" onClick={() => setEditando(null)}>Cancelar</button>
+              <button className="btn btn-primary" onClick={salvarEdicao} disabled={!formEdit.nome?.trim()}>Salvar Alterações</button>
             </div>
           </div>
         </div>
@@ -1315,6 +1415,8 @@ function PlanoMaturacao({ toast }) {
     setSaving(true);
     try {
       await api("/maturacao/plano", { method: "PUT", body: JSON.stringify(plano) });
+      // Recarrega do backend para confirmar que foi persistido corretamente
+      await load();
       toast("Plano salvo!", "success");
     } catch (e) { toast("Erro: " + e.message, "error"); }
     finally { setSaving(false); }
@@ -1618,7 +1720,7 @@ export default function App() {
       <div className="app">
         <aside className="sidebar">
           <div className="sidebar-logo">
-            <img src="/Logo_AJcred.png" alt="AJcred" />
+            <img src="/logo.png" alt="AJcred" />
             <div className="sub">Maturador de Números</div>
           </div>
 

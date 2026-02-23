@@ -245,7 +245,7 @@ class MaturacaoService {
               const tempoDigitacao = DelayUtils.getRandomDelay(
                 msg.comportamento.tempoDigitacao.min,
                 msg.comportamento.tempoDigitacao.max
-              ) * 10;
+              );
               logger.debug(`✍️ ${remetente.nome} digitando (${DelayUtils.formatDuration(tempoDigitacao)})...`);
               await WhatsAppService.simularDigitacao(remetente.id, destinatario.numero, tempoDigitacao);
             }
