@@ -1,3 +1,0 @@
-2026/02/22-21:39:58.768 da62a Creating DB /Users/kriiger/Documents/maturador-ajcred/backend/.wwebjs_auth/session-tel_3f1bc39d/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb since it was missing.
-2026/02/22-21:39:58.803 da62a Reusing MANIFEST /Users/kriiger/Documents/maturador-ajcred/backend/.wwebjs_auth/session-tel_3f1bc39d/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2026/02/22-21:39:59.333 da636 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
