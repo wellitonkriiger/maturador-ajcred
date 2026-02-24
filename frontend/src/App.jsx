@@ -671,7 +671,8 @@ function Dashboard({ toast }) {
         api("/maturacao/conversas-ativas"),
         api("/telefones"),
       ]);
-      setStatus(s);
+      // Backend retorna "emExecucao", normaliza para "ativo" usado pelo frontend
+      setStatus({ ...s, ativo: s.emExecucao });
       setAtivas(Array.isArray(a) ? a : []);
       setTelefones(Array.isArray(t) ? t : []);
     } catch {
@@ -692,21 +693,19 @@ function Dashboard({ toast }) {
   const toggleMaturacao = async () => {
     if (toggling) return;
     setToggling(true);
-    const eraAtivo = status?.ativo;
-    setStatus(prev => prev ? { ...prev, ativo: !prev.ativo } : prev);
     try {
-      if (eraAtivo) {
+      if (status?.ativo) {
         await api("/maturacao/parar", { method: "POST" });
         toast("Maturação pausada", "success");
       } else {
         await api("/maturacao/iniciar", { method: "POST" });
         toast("Maturação iniciada", "success");
       }
-      await load();
     } catch (e) {
-      setStatus(prev => prev ? { ...prev, ativo: eraAtivo } : prev);
-      toast("Erro ao alterar estado: " + e.message, "error");
+      toast("Erro: " + e.message, "error");
     } finally {
+      // Sempre busca o estado real do backend, independente de erro ou sucesso
+      await load();
       setToggling(false);
     }
   };

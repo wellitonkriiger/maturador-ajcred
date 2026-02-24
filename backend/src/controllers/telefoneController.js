@@ -92,9 +92,9 @@ class TelefoneController {
     try {
       const { id } = req.params;
 
-      if (WhatsAppService.estaConectado(id)) {
-        await WhatsAppService.desconectarCliente(id);
-      }
+      // Destroi o cliente em qualquer estado (conectando, QR pendente, online)
+      // estaConectado() retorna false durante QR — forçamos destroy direto
+      await WhatsAppService.desconectarCliente(id);
 
       const sucesso = TelefoneModel.deletar(id);
 

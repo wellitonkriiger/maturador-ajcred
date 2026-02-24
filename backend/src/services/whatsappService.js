@@ -64,39 +64,56 @@ class WhatsAppService {
         this.qrCodes.delete(telefoneId);
       });
 
+      // Flag para garantir que a captura de @lid só ocorra uma única vez por cliente
+      let lidCapturado = false;
+
       // Event: Pronto
       client.on('ready', async () => {
-        const numeroCus = client.info.wid._serialized; // ex: 5569999...@c.us
+        const numeroCus = client.info.wid._serialized;
         logger.info(`✅ ${telefone.nome} está ONLINE! Número (c.us): ${numeroCus}`);
-        logger.info(`🔍 Tentando descobrir @lid de ${telefone.nome}...`);
 
-        // Marca como online provisoriamente com @c.us enquanto busca o @lid
+        // Se o @lid já foi capturado em uma reconexão anterior, não repete o processo
+        const telAtual = TelefoneModel.buscarPorId(telefoneId);
+        if (lidCapturado || (telAtual?.numero && telAtual.numero.includes('@lid'))) {
+          logger.info(`ℹ️ @lid já conhecido para ${telefone.nome} — pulando captura`);
+          TelefoneModel.atualizarStatus(telefoneId, 'online', telAtual.numero);
+          return;
+        }
+
+        logger.info(`🔍 Tentando descobrir @lid de ${telefone.nome}...`);
         TelefoneModel.atualizarStatus(telefoneId, 'online', numeroCus);
 
         // Ouve o primeiro message_create gerado por si mesmo para capturar o @lid
         const capturarLid = (msg) => {
-          if (msg.fromMe) {
-            const lid = msg.to; // destinatário da mensagem enviada a si mesmo = @lid
-            if (lid && lid.includes('@lid')) {
-              logger.info(`🆔 @lid capturado para ${telefone.nome}: ${lid}`);
-              TelefoneModel.atualizarStatus(telefoneId, 'online', lid);
-            } else {
-              logger.warn(`⚠️ Resposta não continha @lid para ${telefone.nome}. Usando @c.us mesmo.`);
-            }
-            // Remove o listener após a primeira captura para não ficar escutando pra sempre
-            client.removeListener('message_create', capturarLid);
+          if (!msg.fromMe) return;
+          client.removeListener('message_create', capturarLid);
+
+          const lid = msg.to;
+          if (lid && lid.includes('@lid')) {
+            lidCapturado = true;
+            logger.info(`🆔 @lid capturado para ${telefone.nome}: ${lid}`);
+            TelefoneModel.atualizarStatus(telefoneId, 'online', lid);
+          } else {
+            logger.warn(`⚠️ Resposta não continha @lid para ${telefone.nome}. Usando @c.us mesmo.`);
           }
         };
 
         client.on('message_create', capturarLid);
 
-        // Envia mensagem para si mesmo para disparar o message_create
+        // Aguarda 2s para garantir que o cliente está completamente pronto antes de enviar
+        await new Promise(r => setTimeout(r, 2000));
+
         try {
           await client.sendMessage(numeroCus, '.');
           logger.info(`📤 Mensagem de descoberta de @lid enviada para ${telefone.nome}`);
         } catch (err) {
-          logger.warn(`⚠️ Não foi possível enviar mensagem de descoberta de @lid: ${err.message}`);
+          // ProtocolError = contexto do Puppeteer destruído (página recarregou), ignora silenciosamente
           client.removeListener('message_create', capturarLid);
+          if (err.message && err.message.includes('Execution context was destroyed')) {
+            logger.warn(`⚠️ Contexto Puppeteer destruído durante captura de @lid para ${telefone.nome} — será tentado na próxima reconexão`);
+          } else {
+            logger.warn(`⚠️ Não foi possível enviar mensagem de descoberta de @lid para ${telefone.nome}: ${err.message}`);
+          }
         }
       });
 
