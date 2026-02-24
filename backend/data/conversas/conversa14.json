@@ -1,0 +1,785 @@
+{
+  "id": "conversa14",
+  "nome": "Conversa Variada 14",
+  "categoria": "casual",
+  "tags": [
+    "tema14",
+    "chat",
+    "variado"
+  ],
+  "participantesMinimos": 2,
+  "participantesMaximos": 2,
+  "duracaoEstimada": "10-60 minutos",
+  "mensagens": [
+    {
+      "ordem": 1,
+      "remetente": 0,
+      "texto": "Mensagem 1 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 2,
+      "remetente": 1,
+      "texto": "Mensagem 2 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 3,
+      "remetente": 0,
+      "texto": "Mensagem 3 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 4,
+      "remetente": 1,
+      "texto": "Mensagem 4 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 5,
+      "remetente": 0,
+      "texto": "Mensagem 5 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 6,
+      "remetente": 1,
+      "texto": "Mensagem 6 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 7,
+      "remetente": 0,
+      "texto": "Mensagem 7 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 8,
+      "remetente": 1,
+      "texto": "Mensagem 8 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 9,
+      "remetente": 0,
+      "texto": "Mensagem 9 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 10,
+      "remetente": 1,
+      "texto": "Mensagem 10 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 11,
+      "remetente": 0,
+      "texto": "Mensagem 11 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 12,
+      "remetente": 1,
+      "texto": "Mensagem 12 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 13,
+      "remetente": 0,
+      "texto": "Mensagem 13 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 14,
+      "remetente": 1,
+      "texto": "Mensagem 14 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 15,
+      "remetente": 0,
+      "texto": "Mensagem 15 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 16,
+      "remetente": 1,
+      "texto": "Mensagem 16 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 17,
+      "remetente": 0,
+      "texto": "Mensagem 17 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 18,
+      "remetente": 1,
+      "texto": "Mensagem 18 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 19,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 120,
+        "max": 240
+      }
+    },
+    {
+      "ordem": 20,
+      "remetente": 0,
+      "texto": "Mensagem 20 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 21,
+      "remetente": 1,
+      "texto": "Mensagem 21 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 22,
+      "remetente": 0,
+      "texto": "Mensagem 22 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 23,
+      "remetente": 1,
+      "texto": "Mensagem 23 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 24,
+      "remetente": 0,
+      "texto": "Mensagem 24 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 25,
+      "remetente": 1,
+      "texto": "Mensagem 25 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 26,
+      "remetente": 0,
+      "texto": "Mensagem 26 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 27,
+      "remetente": 1,
+      "texto": "Mensagem 27 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 28,
+      "remetente": 0,
+      "texto": "Mensagem 28 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 29,
+      "remetente": 1,
+      "texto": "Mensagem 29 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 30,
+      "remetente": 0,
+      "texto": "Mensagem 30 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 31,
+      "remetente": 1,
+      "texto": "Mensagem 31 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 32,
+      "remetente": 0,
+      "texto": "Mensagem 32 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 33,
+      "remetente": 1,
+      "texto": "Mensagem 33 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 34,
+      "remetente": 0,
+      "texto": "Mensagem 34 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 35,
+      "remetente": 1,
+      "texto": "Mensagem 35 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 36,
+      "remetente": 0,
+      "texto": "Mensagem 36 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 37,
+      "remetente": 1,
+      "texto": "Mensagem 37 da conversa 14 sobre assunto diverso.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 15
+        }
+      }
+    }
+  ],
+  "metadados": {
+    "criadaPor": "sistema",
+    "vezesUsada": 0,
+    "ultimoUso": null,
+    "efetividade": null
+  }
+}
