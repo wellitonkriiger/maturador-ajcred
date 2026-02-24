@@ -1,44 +1,44 @@
 {
   "id": "conversa12",
-  "nome": "Conversa Variada 12",
-  "categoria": "casual",
+  "nome": "Conversa Familia 12",
+  "categoria": "familia",
   "tags": [
-    "tema12",
-    "chat",
-    "variado"
+    "família",
+    "almoço",
+    "domingo"
   ],
   "participantesMinimos": 2,
   "participantesMaximos": 2,
-  "duracaoEstimada": "10-60 minutos",
+  "duracaoEstimada": "10-120 minutos",
   "mensagens": [
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "Mensagem 1 da conversa 12 sobre assunto diverso.",
+      "texto": "Vai ser bom reunir todo mundo.",
       "delay": {
-        "min": 2,
+        "min": 4,
         "max": 6
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 6,
+          "max": 6
         }
       }
     },
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "Mensagem 2 da conversa 12 sobre assunto diverso.",
+      "texto": "Que horas começa?",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -49,56 +49,56 @@
         "simularDigitacao": true,
         "tempoDigitacao": {
           "min": 5,
-          "max": 15
+          "max": 5
         }
       }
     },
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "Mensagem 3 da conversa 12 sobre assunto diverso.",
+      "texto": "A vó pediu para você ligar.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 14,
+          "max": 14
         }
       }
     },
     {
       "ordem": 4,
       "remetente": 1,
-      "texto": "Mensagem 4 da conversa 12 sobre assunto diverso.",
+      "texto": "Lá pelas 12h.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
+          "min": 2,
           "max": 3
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 11,
+          "max": 11
         }
       }
     },
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "Mensagem 5 da conversa 12 sobre assunto diverso.",
+      "texto": "Vai ser bom reunir todo mundo.",
       "delay": {
         "min": 2,
         "max": 6
@@ -106,20 +106,20 @@
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 6,
+          "max": 6
         }
       }
     },
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "Mensagem 6 da conversa 12 sobre assunto diverso.",
+      "texto": "Vai ser bom reunir todo mundo.",
       "delay": {
         "min": 2,
         "max": 6
@@ -133,38 +133,38 @@
         "simularDigitacao": true,
         "tempoDigitacao": {
           "min": 5,
-          "max": 15
+          "max": 5
         }
       }
     },
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "Mensagem 7 da conversa 12 sobre assunto diverso.",
+      "texto": "Lá pelas 12h.",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 14,
+          "max": 14
         }
       }
     },
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "Mensagem 8 da conversa 12 sobre assunto diverso.",
+      "texto": "Vou levar a sobremesa.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -174,70 +174,70 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 6,
+          "max": 6
         }
       }
     },
     {
       "ordem": 9,
       "remetente": 0,
-      "texto": "Mensagem 9 da conversa 12 sobre assunto diverso.",
+      "texto": "Vou levar a sobremesa.",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 13,
+          "max": 13
         }
       }
     },
     {
       "ordem": 10,
       "remetente": 1,
-      "texto": "Mensagem 10 da conversa 12 sobre assunto diverso.",
+      "texto": "A vó pediu para você ligar.",
       "delay": {
-        "min": 2,
+        "min": 4,
         "max": 6
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 14,
+          "max": 14
         }
       }
     },
     {
       "ordem": 11,
       "remetente": 0,
-      "texto": "Mensagem 11 da conversa 12 sobre assunto diverso.",
+      "texto": "Que horas começa?",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
+          "min": 2,
           "max": 3
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
+          "min": 15,
           "max": 15
         }
       }
@@ -245,10 +245,10 @@
     {
       "ordem": 12,
       "remetente": 1,
-      "texto": "Mensagem 12 da conversa 12 sobre assunto diverso.",
+      "texto": "Vou levar a sobremesa.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -258,15 +258,15 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 9,
+          "max": 9
         }
       }
     },
     {
       "ordem": 13,
       "remetente": 0,
-      "texto": "Mensagem 13 da conversa 12 sobre assunto diverso.",
+      "texto": "Perfeito, todo mundo vai estar lá.",
       "delay": {
         "min": 2,
         "max": 6
@@ -274,23 +274,23 @@
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
+          "min": 2,
           "max": 3
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 11,
+          "max": 11
         }
       }
     },
     {
       "ordem": 14,
       "remetente": 1,
-      "texto": "Mensagem 14 da conversa 12 sobre assunto diverso.",
+      "texto": "Vou levar a sobremesa.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -300,18 +300,18 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 6,
+          "max": 6
         }
       }
     },
     {
       "ordem": 15,
       "remetente": 0,
-      "texto": "Mensagem 15 da conversa 12 sobre assunto diverso.",
+      "texto": "Vai ser bom reunir todo mundo.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -321,7 +321,7 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
+          "min": 15,
           "max": 15
         }
       }
@@ -329,9 +329,9 @@
     {
       "ordem": 16,
       "remetente": 1,
-      "texto": "Mensagem 16 da conversa 12 sobre assunto diverso.",
+      "texto": "Perfeito, todo mundo vai estar lá.",
       "delay": {
-        "min": 2,
+        "min": 3,
         "max": 6
       },
       "comportamento": {
@@ -342,25 +342,38 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 6,
+          "max": 6
         }
       }
     },
     {
       "ordem": 17,
-      "tipo": "pausa_longa",
-      "duracao": {
-        "min": 120,
-        "max": 240
+      "remetente": 0,
+      "texto": "Vai ser bom reunir todo mundo.",
+      "delay": {
+        "min": 3,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
       }
     },
     {
       "ordem": 18,
-      "remetente": 0,
-      "texto": "Mensagem 18 da conversa 12 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "O tio confirmou presença?",
       "delay": {
-        "min": 2,
+        "min": 3,
         "max": 6
       },
       "comportamento": {
@@ -371,99 +384,99 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 13,
+          "max": 13
         }
       }
     },
     {
       "ordem": 19,
-      "remetente": 1,
-      "texto": "Mensagem 19 da conversa 12 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Vai ser bom reunir todo mundo.",
       "delay": {
-        "min": 2,
+        "min": 4,
         "max": 6
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
           "min": 5,
-          "max": 15
+          "max": 5
         }
       }
     },
     {
       "ordem": 20,
-      "remetente": 0,
-      "texto": "Mensagem 20 da conversa 12 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Vai ter almoço domingo na casa da mãe.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
+          "min": 2,
           "max": 3
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 6,
+          "max": 6
         }
       }
     },
     {
       "ordem": 21,
-      "remetente": 1,
-      "texto": "Mensagem 21 da conversa 12 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Vou levar a sobremesa.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 6,
+          "max": 6
         }
       }
     },
     {
       "ordem": 22,
-      "remetente": 0,
-      "texto": "Mensagem 22 da conversa 12 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Vai ser bom reunir todo mundo.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 7,
+          "max": 7
         }
       }
     },
     {
       "ordem": 23,
-      "remetente": 1,
-      "texto": "Mensagem 23 da conversa 12 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Lá pelas 12h.",
       "delay": {
         "min": 2,
         "max": 6
@@ -471,104 +484,104 @@
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 13,
+          "max": 13
         }
       }
     },
     {
       "ordem": 24,
-      "remetente": 0,
-      "texto": "Mensagem 24 da conversa 12 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Vai ser bom reunir todo mundo.",
       "delay": {
-        "min": 2,
+        "min": 3,
         "max": 6
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 11,
+          "max": 11
         }
       }
     },
     {
       "ordem": 25,
-      "remetente": 1,
-      "texto": "Mensagem 25 da conversa 12 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Lá pelas 12h.",
       "delay": {
-        "min": 2,
+        "min": 4,
         "max": 6
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
           "min": 5,
-          "max": 15
+          "max": 5
         }
       }
     },
     {
       "ordem": 26,
-      "remetente": 0,
-      "texto": "Mensagem 26 da conversa 12 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Vai ter almoço domingo na casa da mãe.",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
+          "min": 15,
           "max": 15
         }
       }
     },
     {
       "ordem": 27,
-      "remetente": 1,
-      "texto": "Mensagem 27 da conversa 12 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Vou levar a sobremesa.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 8,
+          "max": 8
         }
       }
     },
     {
       "ordem": 28,
-      "remetente": 0,
-      "texto": "Mensagem 28 da conversa 12 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Lá pelas 12h.",
       "delay": {
         "min": 2,
         "max": 6
@@ -582,35 +595,35 @@
         "simularDigitacao": true,
         "tempoDigitacao": {
           "min": 5,
-          "max": 15
+          "max": 5
         }
       }
     },
     {
       "ordem": 29,
-      "remetente": 1,
-      "texto": "Mensagem 29 da conversa 12 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Perfeito, todo mundo vai estar lá.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
+          "min": 2,
           "max": 3
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 13,
+          "max": 13
         }
       }
     },
     {
       "ordem": 30,
-      "remetente": 0,
-      "texto": "Mensagem 30 da conversa 12 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Perfeito, todo mundo vai estar lá.",
       "delay": {
         "min": 2,
         "max": 6
@@ -623,18 +636,18 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
+          "min": 15,
           "max": 15
         }
       }
     },
     {
       "ordem": 31,
-      "remetente": 1,
-      "texto": "Mensagem 31 da conversa 12 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Que horas começa?",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -644,18 +657,18 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 10,
+          "max": 10
         }
       }
     },
     {
       "ordem": 32,
-      "remetente": 0,
-      "texto": "Mensagem 32 da conversa 12 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "O tio confirmou presença?",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -665,15 +678,792 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
+          "min": 15,
           "max": 15
         }
       }
     },
     {
       "ordem": 33,
+      "remetente": 0,
+      "texto": "Que horas começa?",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 34,
       "remetente": 1,
-      "texto": "Mensagem 33 da conversa 12 sobre assunto diverso.",
+      "texto": "Vai ter almoço domingo na casa da mãe.",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 35,
+      "remetente": 0,
+      "texto": "Vou levar a sobremesa.",
+      "delay": {
+        "min": 2,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 36,
+      "remetente": 1,
+      "texto": "Vai ter almoço domingo na casa da mãe.",
+      "delay": {
+        "min": 3,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 37,
+      "remetente": 0,
+      "texto": "Perfeito, todo mundo vai estar lá.",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 38,
+      "remetente": 1,
+      "texto": "O tio confirmou presença?",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 39,
+      "remetente": 0,
+      "texto": "Vai ter almoço domingo na casa da mãe.",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "ordem": 40,
+      "remetente": 1,
+      "texto": "Perfeito, todo mundo vai estar lá.",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 41,
+      "remetente": 0,
+      "texto": "Que horas começa?",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 42,
+      "remetente": 1,
+      "texto": "Lá pelas 12h.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 43,
+      "remetente": 0,
+      "texto": "Perfeito, todo mundo vai estar lá.",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 44,
+      "remetente": 1,
+      "texto": "Que horas começa?",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 45,
+      "remetente": 0,
+      "texto": "Lá pelas 12h.",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 46,
+      "remetente": 1,
+      "texto": "Vai ser bom reunir todo mundo.",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 47,
+      "remetente": 0,
+      "texto": "O tio confirmou presença?",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 48,
+      "remetente": 1,
+      "texto": "Vai ser bom reunir todo mundo.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 49,
+      "remetente": 0,
+      "texto": "Vai ter almoço domingo na casa da mãe.",
+      "delay": {
+        "min": 2,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "ordem": 50,
+      "remetente": 1,
+      "texto": "Que horas começa?",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 51,
+      "remetente": 0,
+      "texto": "Vai ter almoço domingo na casa da mãe.",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 52,
+      "remetente": 1,
+      "texto": "A vó pediu para você ligar.",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 53,
+      "remetente": 0,
+      "texto": "Vai ser bom reunir todo mundo.",
+      "delay": {
+        "min": 3,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 54,
+      "remetente": 1,
+      "texto": "Vai ter almoço domingo na casa da mãe.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 55,
+      "remetente": 0,
+      "texto": "Vai ser bom reunir todo mundo.",
+      "delay": {
+        "min": 3,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 56,
+      "remetente": 1,
+      "texto": "Vai ser bom reunir todo mundo.",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 57,
+      "remetente": 0,
+      "texto": "O tio confirmou presença?",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 58,
+      "remetente": 1,
+      "texto": "O tio confirmou presença?",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "ordem": 59,
+      "remetente": 0,
+      "texto": "Vou levar a sobremesa.",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "ordem": 60,
+      "remetente": 1,
+      "texto": "A vó pediu para você ligar.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 61,
+      "remetente": 0,
+      "texto": "Lá pelas 12h.",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "ordem": 62,
+      "remetente": 1,
+      "texto": "Vai ser bom reunir todo mundo.",
+      "delay": {
+        "min": 3,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 63,
+      "remetente": 0,
+      "texto": "A vó pediu para você ligar.",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 64,
+      "remetente": 1,
+      "texto": "Perfeito, todo mundo vai estar lá.",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 65,
+      "remetente": 0,
+      "texto": "Que horas começa?",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 66,
+      "remetente": 1,
+      "texto": "A vó pediu para você ligar.",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "ordem": 67,
+      "remetente": 0,
+      "texto": "A vó pediu para você ligar.",
+      "delay": {
+        "min": 3,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 68,
+      "remetente": 1,
+      "texto": "Vou levar a sobremesa.",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 69,
+      "remetente": 0,
+      "texto": "A vó pediu para você ligar.",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 13,
+          "max": 13
+        }
+      }
+    },
+    {
+      "ordem": 70,
+      "remetente": 1,
+      "texto": "Lá pelas 12h.",
       "delay": {
         "min": 2,
         "max": 6
@@ -686,8 +1476,1578 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 71,
+      "remetente": 0,
+      "texto": "Perfeito, todo mundo vai estar lá.",
+      "delay": {
+        "min": 3,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "ordem": 72,
+      "remetente": 1,
+      "texto": "Vai ser bom reunir todo mundo.",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 73,
+      "remetente": 0,
+      "texto": "Vou levar a sobremesa.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "ordem": 74,
+      "remetente": 1,
+      "texto": "Que horas começa?",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 75,
+      "remetente": 0,
+      "texto": "A vó pediu para você ligar.",
+      "delay": {
+        "min": 3,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
           "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 76,
+      "remetente": 1,
+      "texto": "Perfeito, todo mundo vai estar lá.",
+      "delay": {
+        "min": 2,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "ordem": 77,
+      "remetente": 0,
+      "texto": "Vou levar a sobremesa.",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 78,
+      "remetente": 1,
+      "texto": "Perfeito, todo mundo vai estar lá.",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 79,
+      "remetente": 0,
+      "texto": "Vou levar a sobremesa.",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 80,
+      "remetente": 1,
+      "texto": "Que horas começa?",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 81,
+      "remetente": 0,
+      "texto": "Perfeito, todo mundo vai estar lá.",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 82,
+      "remetente": 1,
+      "texto": "Vai ser bom reunir todo mundo.",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
           "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 83,
+      "remetente": 0,
+      "texto": "Vai ter almoço domingo na casa da mãe.",
+      "delay": {
+        "min": 3,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 84,
+      "remetente": 1,
+      "texto": "Vai ter almoço domingo na casa da mãe.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 85,
+      "remetente": 0,
+      "texto": "A vó pediu para você ligar.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 86,
+      "remetente": 1,
+      "texto": "A vó pediu para você ligar.",
+      "delay": {
+        "min": 2,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 87,
+      "remetente": 0,
+      "texto": "Vou levar a sobremesa.",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 88,
+      "remetente": 1,
+      "texto": "Que horas começa?",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 89,
+      "remetente": 0,
+      "texto": "Lá pelas 12h.",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 90,
+      "remetente": 1,
+      "texto": "O tio confirmou presença?",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 91,
+      "remetente": 0,
+      "texto": "A vó pediu para você ligar.",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 92,
+      "remetente": 1,
+      "texto": "Lá pelas 12h.",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "ordem": 93,
+      "remetente": 0,
+      "texto": "Que horas começa?",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 13,
+          "max": 13
+        }
+      }
+    },
+    {
+      "ordem": 94,
+      "remetente": 1,
+      "texto": "Vou levar a sobremesa.",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "ordem": 95,
+      "remetente": 0,
+      "texto": "Lá pelas 12h.",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 96,
+      "remetente": 1,
+      "texto": "Lá pelas 12h.",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 97,
+      "remetente": 0,
+      "texto": "Que horas começa?",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 98,
+      "remetente": 1,
+      "texto": "Perfeito, todo mundo vai estar lá.",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "ordem": 99,
+      "remetente": 0,
+      "texto": "Vou levar a sobremesa.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "ordem": 100,
+      "remetente": 1,
+      "texto": "Perfeito, todo mundo vai estar lá.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 101,
+      "remetente": 0,
+      "texto": "Vai ter almoço domingo na casa da mãe.",
+      "delay": {
+        "min": 3,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 102,
+      "remetente": 1,
+      "texto": "Que horas começa?",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 103,
+      "remetente": 0,
+      "texto": "A vó pediu para você ligar.",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 104,
+      "remetente": 1,
+      "texto": "Vou levar a sobremesa.",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 105,
+      "remetente": 0,
+      "texto": "Vai ter almoço domingo na casa da mãe.",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 106,
+      "remetente": 1,
+      "texto": "A vó pediu para você ligar.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 107,
+      "remetente": 0,
+      "texto": "A vó pediu para você ligar.",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 108,
+      "remetente": 1,
+      "texto": "Perfeito, todo mundo vai estar lá.",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 109,
+      "remetente": 0,
+      "texto": "Vou levar a sobremesa.",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 110,
+      "remetente": 1,
+      "texto": "Perfeito, todo mundo vai estar lá.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 111,
+      "remetente": 0,
+      "texto": "O tio confirmou presença?",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 112,
+      "remetente": 1,
+      "texto": "A vó pediu para você ligar.",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 13,
+          "max": 13
+        }
+      }
+    },
+    {
+      "ordem": 113,
+      "remetente": 0,
+      "texto": "Vou levar a sobremesa.",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 114,
+      "remetente": 1,
+      "texto": "Que horas começa?",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "ordem": 115,
+      "remetente": 0,
+      "texto": "Vai ser bom reunir todo mundo.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 116,
+      "remetente": 1,
+      "texto": "Perfeito, todo mundo vai estar lá.",
+      "delay": {
+        "min": 2,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 13,
+          "max": 13
+        }
+      }
+    },
+    {
+      "ordem": 117,
+      "remetente": 0,
+      "texto": "Que horas começa?",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 118,
+      "remetente": 1,
+      "texto": "Perfeito, todo mundo vai estar lá.",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 119,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 166,
+        "max": 196
+      }
+    },
+    {
+      "ordem": 120,
+      "remetente": 0,
+      "texto": "Vai ter almoço domingo na casa da mãe.",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "ordem": 121,
+      "remetente": 1,
+      "texto": "A vó pediu para você ligar.",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 122,
+      "remetente": 0,
+      "texto": "Vai ter almoço domingo na casa da mãe.",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 123,
+      "remetente": 1,
+      "texto": "Perfeito, todo mundo vai estar lá.",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 124,
+      "remetente": 0,
+      "texto": "Lá pelas 12h.",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 125,
+      "remetente": 1,
+      "texto": "Perfeito, todo mundo vai estar lá.",
+      "delay": {
+        "min": 3,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "ordem": 126,
+      "remetente": 0,
+      "texto": "A vó pediu para você ligar.",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 127,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 74,
+        "max": 197
+      }
+    },
+    {
+      "ordem": 128,
+      "remetente": 1,
+      "texto": "Vai ser bom reunir todo mundo.",
+      "delay": {
+        "min": 2,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 129,
+      "remetente": 0,
+      "texto": "O tio confirmou presença?",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 130,
+      "remetente": 1,
+      "texto": "Vai ter almoço domingo na casa da mãe.",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 131,
+      "remetente": 0,
+      "texto": "Vai ser bom reunir todo mundo.",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 132,
+      "remetente": 1,
+      "texto": "Que horas começa?",
+      "delay": {
+        "min": 3,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 13,
+          "max": 13
+        }
+      }
+    },
+    {
+      "ordem": 133,
+      "remetente": 0,
+      "texto": "Vai ser bom reunir todo mundo.",
+      "delay": {
+        "min": 3,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 134,
+      "remetente": 1,
+      "texto": "Lá pelas 12h.",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 135,
+      "remetente": 0,
+      "texto": "Vai ser bom reunir todo mundo.",
+      "delay": {
+        "min": 3,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 136,
+      "remetente": 1,
+      "texto": "Vou levar a sobremesa.",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 137,
+      "remetente": 0,
+      "texto": "Vou levar a sobremesa.",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 138,
+      "remetente": 1,
+      "texto": "Vai ser bom reunir todo mundo.",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "ordem": 139,
+      "remetente": 0,
+      "texto": "Vou levar a sobremesa.",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 140,
+      "remetente": 1,
+      "texto": "Vai ter almoço domingo na casa da mãe.",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "ordem": 141,
+      "remetente": 0,
+      "texto": "A vó pediu para você ligar.",
+      "delay": {
+        "min": 3,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 142,
+      "remetente": 1,
+      "texto": "O tio confirmou presença?",
+      "delay": {
+        "min": 3,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 143,
+      "remetente": 0,
+      "texto": "A vó pediu para você ligar.",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 13,
+          "max": 13
+        }
+      }
+    },
+    {
+      "ordem": 144,
+      "remetente": 1,
+      "texto": "Que horas começa?",
+      "delay": {
+        "min": 3,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "ordem": 145,
+      "remetente": 0,
+      "texto": "O tio confirmou presença?",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 146,
+      "remetente": 1,
+      "texto": "Vai ter almoço domingo na casa da mãe.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
         }
       }
     }

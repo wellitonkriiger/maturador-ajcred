@@ -1,0 +1,260 @@
+{
+  "id": "conversa85",
+  "nome": "Conversa Namoro 85",
+  "categoria": "namoro",
+  "tags": [
+    "relacionamento",
+    "encontro",
+    "carinho"
+  ],
+  "participantesMinimos": 2,
+  "participantesMaximos": 2,
+  "duracaoEstimada": "10-120 minutos",
+  "mensagens": [
+    {
+      "ordem": 1,
+      "remetente": 0,
+      "texto": "Que tal sábado à noite?",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 2,
+      "remetente": 1,
+      "texto": "Fiquei pensando na nossa conversa.",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "ordem": 3,
+      "remetente": 0,
+      "texto": "Combinado, já estou animado 😊",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 4,
+      "remetente": 1,
+      "texto": "Também gostei muito, precisamos repetir.",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 5,
+      "remetente": 0,
+      "texto": "Vamos planejar algo especial.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 6,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 120,
+        "max": 247
+      }
+    },
+    {
+      "ordem": 7,
+      "remetente": 1,
+      "texto": "Que tal sábado à noite?",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "ordem": 8,
+      "remetente": 0,
+      "texto": "Você chegou bem em casa?",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 9,
+      "remetente": 1,
+      "texto": "Também gostei muito, precisamos repetir.",
+      "delay": {
+        "min": 3,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 10,
+      "remetente": 0,
+      "texto": "Também gostei muito, precisamos repetir.",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "ordem": 11,
+      "remetente": 1,
+      "texto": "Também gostei muito, precisamos repetir.",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "ordem": 12,
+      "remetente": 0,
+      "texto": "Fiquei pensando na nossa conversa.",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    }
+  ],
+  "metadados": {
+    "criadaPor": "sistema",
+    "vezesUsada": 0,
+    "ultimoUso": null,
+    "efetividade": null
+  }
+}

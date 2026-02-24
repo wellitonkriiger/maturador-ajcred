@@ -1,20 +1,20 @@
 {
   "id": "conversa15",
-  "nome": "Conversa Variada 15",
-  "categoria": "casual",
+  "nome": "Conversa Vendas 15",
+  "categoria": "vendas",
   "tags": [
-    "tema15",
-    "chat",
-    "variado"
+    "cliente",
+    "proposta",
+    "negociação"
   ],
   "participantesMinimos": 2,
   "participantesMaximos": 2,
-  "duracaoEstimada": "10-60 minutos",
+  "duracaoEstimada": "10-120 minutos",
   "mensagens": [
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "Mensagem 1 da conversa 15 sobre assunto diverso.",
+      "texto": "Se fecharmos hoje, garantimos o prazo.",
       "delay": {
         "min": 2,
         "max": 6
@@ -22,23 +22,23 @@
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 9,
+          "max": 9
         }
       }
     },
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "Mensagem 2 da conversa 15 sobre assunto diverso.",
+      "texto": "Se incluir suporte, consigo aprovar hoje.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -48,15 +48,15 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 13,
+          "max": 13
         }
       }
     },
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "Mensagem 3 da conversa 15 sobre assunto diverso.",
+      "texto": "Podemos fechar com um pequeno desconto.",
       "delay": {
         "min": 2,
         "max": 6
@@ -69,57 +69,57 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 13,
+          "max": 13
         }
       }
     },
     {
       "ordem": 4,
       "remetente": 1,
-      "texto": "Mensagem 4 da conversa 15 sobre assunto diverso.",
+      "texto": "Consegue revisar essa cláusula?",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 7,
+          "max": 7
         }
       }
     },
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "Mensagem 5 da conversa 15 sobre assunto diverso.",
+      "texto": "Podemos fechar com um pequeno desconto.",
       "delay": {
-        "min": 2,
+        "min": 4,
         "max": 6
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 7,
+          "max": 7
         }
       }
     },
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "Mensagem 6 da conversa 15 sobre assunto diverso.",
+      "texto": "Consegue revisar essa cláusula?",
       "delay": {
         "min": 2,
         "max": 6
@@ -132,38 +132,38 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 10,
+          "max": 10
         }
       }
     },
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "Mensagem 7 da conversa 15 sobre assunto diverso.",
+      "texto": "Fechado então, envio o contrato agora.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
           "min": 5,
-          "max": 15
+          "max": 5
         }
       }
     },
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "Mensagem 8 da conversa 15 sobre assunto diverso.",
+      "texto": "Fechado então, envio o contrato agora.",
       "delay": {
-        "min": 2,
+        "min": 4,
         "max": 6
       },
       "comportamento": {
@@ -174,175 +174,149 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 8,
+          "max": 8
         }
       }
     },
     {
       "ordem": 9,
       "remetente": 0,
-      "texto": "Mensagem 9 da conversa 15 sobre assunto diverso.",
+      "texto": "Fechado então, envio o contrato agora.",
       "delay": {
-        "min": 2,
+        "min": 4,
         "max": 6
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 8,
+          "max": 8
         }
       }
     },
     {
       "ordem": 10,
       "remetente": 1,
-      "texto": "Mensagem 10 da conversa 15 sobre assunto diverso.",
+      "texto": "Você conseguiu analisar a proposta?",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 11,
+          "max": 11
         }
       }
     },
     {
       "ordem": 11,
       "remetente": 0,
-      "texto": "Mensagem 11 da conversa 15 sobre assunto diverso.",
+      "texto": "Podemos fechar com um pequeno desconto.",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 11,
+          "max": 11
         }
       }
     },
     {
       "ordem": 12,
-      "remetente": 1,
-      "texto": "Mensagem 12 da conversa 15 sobre assunto diverso.",
-      "delay": {
-        "min": 2,
-        "max": 6
-      },
-      "comportamento": {
-        "marcarComoLida": true,
-        "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
-        },
-        "simularDigitacao": true,
-        "tempoDigitacao": {
-          "min": 5,
-          "max": 15
-        }
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 91,
+        "max": 264
       }
     },
     {
       "ordem": 13,
-      "remetente": 0,
-      "texto": "Mensagem 13 da conversa 15 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Sim, mas queria ajustar o valor final.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 6,
+          "max": 6
         }
       }
     },
     {
       "ordem": 14,
-      "remetente": 1,
-      "texto": "Mensagem 14 da conversa 15 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Fechado então, envio o contrato agora.",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 10,
+          "max": 10
         }
       }
     },
     {
       "ordem": 15,
-      "remetente": 0,
-      "texto": "Mensagem 15 da conversa 15 sobre assunto diverso.",
-      "delay": {
-        "min": 2,
-        "max": 6
-      },
-      "comportamento": {
-        "marcarComoLida": true,
-        "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
-        },
-        "simularDigitacao": true,
-        "tempoDigitacao": {
-          "min": 5,
-          "max": 15
-        }
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 180,
+        "max": 239
       }
     },
     {
       "ordem": 16,
       "remetente": 1,
-      "texto": "Mensagem 16 da conversa 15 sobre assunto diverso.",
+      "texto": "Podemos fechar com um pequeno desconto.",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
+          "min": 15,
           "max": 15
         }
       }
@@ -350,52 +324,52 @@
     {
       "ordem": 17,
       "remetente": 0,
-      "texto": "Mensagem 17 da conversa 15 sobre assunto diverso.",
+      "texto": "Consegue revisar essa cláusula?",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 6,
+          "max": 6
         }
       }
     },
     {
       "ordem": 18,
       "remetente": 1,
-      "texto": "Mensagem 18 da conversa 15 sobre assunto diverso.",
+      "texto": "Você conseguiu analisar a proposta?",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 11,
+          "max": 11
         }
       }
     },
     {
       "ordem": 19,
       "remetente": 0,
-      "texto": "Mensagem 19 da conversa 15 sobre assunto diverso.",
+      "texto": "Vou validar com o financeiro.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -405,110 +379,123 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 13,
+          "max": 13
         }
       }
     },
     {
       "ordem": 20,
-      "tipo": "pausa_longa",
-      "duracao": {
-        "min": 120,
-        "max": 240
-      }
-    },
-    {
-      "ordem": 21,
       "remetente": 1,
-      "texto": "Mensagem 21 da conversa 15 sobre assunto diverso.",
+      "texto": "Você conseguiu analisar a proposta?",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
+          "min": 2,
           "max": 3
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 21,
+      "remetente": 0,
+      "texto": "Você conseguiu analisar a proposta?",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
         }
       }
     },
     {
       "ordem": 22,
-      "remetente": 0,
-      "texto": "Mensagem 22 da conversa 15 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Se fecharmos hoje, garantimos o prazo.",
       "delay": {
-        "min": 2,
+        "min": 3,
         "max": 6
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 6,
+          "max": 6
         }
       }
     },
     {
       "ordem": 23,
-      "remetente": 1,
-      "texto": "Mensagem 23 da conversa 15 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Vou validar com o financeiro.",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 13,
+          "max": 13
         }
       }
     },
     {
       "ordem": 24,
-      "remetente": 0,
-      "texto": "Mensagem 24 da conversa 15 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Se incluir suporte, consigo aprovar hoje.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 10,
+          "max": 10
         }
       }
     },
     {
       "ordem": 25,
-      "remetente": 1,
-      "texto": "Mensagem 25 da conversa 15 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Consegue revisar essa cláusula?",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -519,59 +506,59 @@
         "simularDigitacao": true,
         "tempoDigitacao": {
           "min": 5,
-          "max": 15
+          "max": 5
         }
       }
     },
     {
       "ordem": 26,
-      "remetente": 0,
-      "texto": "Mensagem 26 da conversa 15 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Sim, mas queria ajustar o valor final.",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
+          "min": 2,
           "max": 3
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 11,
+          "max": 11
         }
       }
     },
     {
       "ordem": 27,
-      "remetente": 1,
-      "texto": "Mensagem 27 da conversa 15 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Você conseguiu analisar a proposta?",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 8,
+          "max": 8
         }
       }
     },
     {
       "ordem": 28,
-      "remetente": 0,
-      "texto": "Mensagem 28 da conversa 15 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Se fecharmos hoje, garantimos o prazo.",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -581,18 +568,18 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 7,
+          "max": 7
         }
       }
     },
     {
       "ordem": 29,
-      "remetente": 1,
-      "texto": "Mensagem 29 da conversa 15 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Se incluir suporte, consigo aprovar hoje.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -602,60 +589,60 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
+          "min": 15,
           "max": 15
         }
       }
     },
     {
       "ordem": 30,
-      "remetente": 0,
-      "texto": "Mensagem 30 da conversa 15 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Vou validar com o financeiro.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
+          "min": 15,
           "max": 15
         }
       }
     },
     {
       "ordem": 31,
-      "remetente": 1,
-      "texto": "Mensagem 31 da conversa 15 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Vou validar com o financeiro.",
       "delay": {
-        "min": 2,
+        "min": 3,
         "max": 6
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 11,
+          "max": 11
         }
       }
     },
     {
       "ordem": 32,
-      "remetente": 0,
-      "texto": "Mensagem 32 da conversa 15 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Você conseguiu analisar a proposta?",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -665,36 +652,36 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
+          "min": 15,
           "max": 15
         }
       }
     },
     {
       "ordem": 33,
-      "remetente": 1,
-      "texto": "Mensagem 33 da conversa 15 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Se incluir suporte, consigo aprovar hoje.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 8,
+          "max": 8
         }
       }
     },
     {
       "ordem": 34,
-      "remetente": 0,
-      "texto": "Mensagem 34 da conversa 15 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Podemos fechar com um pequeno desconto.",
       "delay": {
         "min": 2,
         "max": 6
@@ -703,43 +690,43 @@
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 7,
+          "max": 7
         }
       }
     },
     {
       "ordem": 35,
-      "remetente": 1,
-      "texto": "Mensagem 35 da conversa 15 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Podemos fechar com um pequeno desconto.",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 13,
+          "max": 13
         }
       }
     },
     {
       "ordem": 36,
-      "remetente": 0,
-      "texto": "Mensagem 36 da conversa 15 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Se fecharmos hoje, garantimos o prazo.",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -749,18 +736,18 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 8,
+          "max": 8
         }
       }
     },
     {
       "ordem": 37,
-      "remetente": 1,
-      "texto": "Mensagem 37 da conversa 15 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Consegue revisar essa cláusula?",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -770,36 +757,435 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 7,
+          "max": 7
         }
       }
     },
     {
       "ordem": 38,
-      "remetente": 0,
-      "texto": "Mensagem 38 da conversa 15 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Se fecharmos hoje, garantimos o prazo.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 8,
+          "max": 8
         }
       }
     },
     {
       "ordem": 39,
+      "remetente": 0,
+      "texto": "Consegue revisar essa cláusula?",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "ordem": 40,
       "remetente": 1,
-      "texto": "Mensagem 39 da conversa 15 sobre assunto diverso.",
+      "texto": "Sim, mas queria ajustar o valor final.",
+      "delay": {
+        "min": 2,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 41,
+      "remetente": 0,
+      "texto": "Fechado então, envio o contrato agora.",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 42,
+      "remetente": 1,
+      "texto": "Consegue revisar essa cláusula?",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 43,
+      "remetente": 0,
+      "texto": "Se incluir suporte, consigo aprovar hoje.",
+      "delay": {
+        "min": 3,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 44,
+      "remetente": 1,
+      "texto": "Podemos fechar com um pequeno desconto.",
+      "delay": {
+        "min": 3,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 45,
+      "remetente": 0,
+      "texto": "Sim, mas queria ajustar o valor final.",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 46,
+      "remetente": 1,
+      "texto": "Vou validar com o financeiro.",
+      "delay": {
+        "min": 3,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 47,
+      "remetente": 0,
+      "texto": "Você conseguiu analisar a proposta?",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 48,
+      "remetente": 1,
+      "texto": "Vou validar com o financeiro.",
+      "delay": {
+        "min": 3,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "ordem": 49,
+      "remetente": 0,
+      "texto": "Se incluir suporte, consigo aprovar hoje.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "ordem": 50,
+      "remetente": 1,
+      "texto": "Você conseguiu analisar a proposta?",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 51,
+      "remetente": 0,
+      "texto": "Podemos fechar com um pequeno desconto.",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 52,
+      "remetente": 1,
+      "texto": "Vou validar com o financeiro.",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 53,
+      "remetente": 0,
+      "texto": "Fechado então, envio o contrato agora.",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 13,
+          "max": 13
+        }
+      }
+    },
+    {
+      "ordem": 54,
+      "remetente": 1,
+      "texto": "Podemos fechar com um pequeno desconto.",
+      "delay": {
+        "min": 2,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 13,
+          "max": 13
+        }
+      }
+    },
+    {
+      "ordem": 55,
+      "remetente": 0,
+      "texto": "Podemos fechar com um pequeno desconto.",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 56,
+      "remetente": 1,
+      "texto": "Podemos fechar com um pequeno desconto.",
+      "delay": {
+        "min": 2,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 57,
+      "remetente": 0,
+      "texto": "Você conseguiu analisar a proposta?",
+      "delay": {
+        "min": 3,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 58,
+      "remetente": 1,
+      "texto": "Podemos fechar com um pequeno desconto.",
       "delay": {
         "min": 2,
         "max": 6
@@ -812,8 +1198,617 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
+          "min": 15,
           "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 59,
+      "remetente": 0,
+      "texto": "Podemos fechar com um pequeno desconto.",
+      "delay": {
+        "min": 3,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "ordem": 60,
+      "remetente": 1,
+      "texto": "Vou validar com o financeiro.",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "ordem": 61,
+      "remetente": 0,
+      "texto": "Consegue revisar essa cláusula?",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "ordem": 62,
+      "remetente": 1,
+      "texto": "Se incluir suporte, consigo aprovar hoje.",
+      "delay": {
+        "min": 3,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 63,
+      "remetente": 0,
+      "texto": "Consegue revisar essa cláusula?",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 64,
+      "remetente": 1,
+      "texto": "Se incluir suporte, consigo aprovar hoje.",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 65,
+      "remetente": 0,
+      "texto": "Sim, mas queria ajustar o valor final.",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 66,
+      "remetente": 1,
+      "texto": "Sim, mas queria ajustar o valor final.",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 67,
+      "remetente": 0,
+      "texto": "Fechado então, envio o contrato agora.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 13,
+          "max": 13
+        }
+      }
+    },
+    {
+      "ordem": 68,
+      "remetente": 1,
+      "texto": "Vou validar com o financeiro.",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "ordem": 69,
+      "remetente": 0,
+      "texto": "Se incluir suporte, consigo aprovar hoje.",
+      "delay": {
+        "min": 2,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 13,
+          "max": 13
+        }
+      }
+    },
+    {
+      "ordem": 70,
+      "remetente": 1,
+      "texto": "Se fecharmos hoje, garantimos o prazo.",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 71,
+      "remetente": 0,
+      "texto": "Consegue revisar essa cláusula?",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 72,
+      "remetente": 1,
+      "texto": "Consegue revisar essa cláusula?",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 73,
+      "remetente": 0,
+      "texto": "Se incluir suporte, consigo aprovar hoje.",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 74,
+      "remetente": 1,
+      "texto": "Sim, mas queria ajustar o valor final.",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 13,
+          "max": 13
+        }
+      }
+    },
+    {
+      "ordem": 75,
+      "remetente": 0,
+      "texto": "Podemos fechar com um pequeno desconto.",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 76,
+      "remetente": 1,
+      "texto": "Fechado então, envio o contrato agora.",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 77,
+      "remetente": 0,
+      "texto": "Você conseguiu analisar a proposta?",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 78,
+      "remetente": 1,
+      "texto": "Sim, mas queria ajustar o valor final.",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 79,
+      "remetente": 0,
+      "texto": "Sim, mas queria ajustar o valor final.",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 13,
+          "max": 13
+        }
+      }
+    },
+    {
+      "ordem": 80,
+      "remetente": 1,
+      "texto": "Podemos fechar com um pequeno desconto.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 81,
+      "remetente": 0,
+      "texto": "Se fecharmos hoje, garantimos o prazo.",
+      "delay": {
+        "min": 3,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 82,
+      "remetente": 1,
+      "texto": "Se incluir suporte, consigo aprovar hoje.",
+      "delay": {
+        "min": 3,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 83,
+      "remetente": 0,
+      "texto": "Consegue revisar essa cláusula?",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 84,
+      "remetente": 1,
+      "texto": "Consegue revisar essa cláusula?",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 85,
+      "remetente": 0,
+      "texto": "Fechado então, envio o contrato agora.",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 86,
+      "remetente": 1,
+      "texto": "Se incluir suporte, consigo aprovar hoje.",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 87,
+      "remetente": 0,
+      "texto": "Se fecharmos hoje, garantimos o prazo.",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
         }
       }
     }

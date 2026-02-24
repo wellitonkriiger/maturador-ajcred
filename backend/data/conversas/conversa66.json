@@ -1,0 +1,2074 @@
+{
+  "id": "conversa66",
+  "nome": "Conversa Amizade 66",
+  "categoria": "amizade",
+  "tags": [
+    "amigos",
+    "viagem",
+    "risadas"
+  ],
+  "participantesMinimos": 2,
+  "participantesMaximos": 2,
+  "duracaoEstimada": "10-120 minutos",
+  "mensagens": [
+    {
+      "ordem": 1,
+      "remetente": 0,
+      "texto": "Essa vai ser histórica 😂",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 2,
+      "remetente": 1,
+      "texto": "Fechado, só preciso organizar as datas.",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 3,
+      "remetente": 0,
+      "texto": "Essa vai ser histórica 😂",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 4,
+      "remetente": 1,
+      "texto": "Saudade das nossas aventuras.",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 13,
+          "max": 13
+        }
+      }
+    },
+    {
+      "ordem": 5,
+      "remetente": 0,
+      "texto": "Essa vai ser histórica 😂",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 6,
+      "remetente": 1,
+      "texto": "Sim! Estava esperando você falar.",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 7,
+      "remetente": 0,
+      "texto": "Então já vou ver os preços hoje.",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 8,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 104,
+        "max": 182
+      }
+    },
+    {
+      "ordem": 9,
+      "remetente": 1,
+      "texto": "Vamos chamar o resto do pessoal?",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 10,
+      "remetente": 0,
+      "texto": "Bora marcar aquela viagem?",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "ordem": 11,
+      "remetente": 1,
+      "texto": "Pensei em algo mais tranquilo dessa vez.",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 12,
+      "remetente": 0,
+      "texto": "Vamos chamar o resto do pessoal?",
+      "delay": {
+        "min": 3,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 13,
+      "remetente": 1,
+      "texto": "Essa vai ser histórica 😂",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "ordem": 14,
+      "remetente": 0,
+      "texto": "Bora marcar aquela viagem?",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 15,
+      "remetente": 1,
+      "texto": "Fechado, só preciso organizar as datas.",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 16,
+      "remetente": 0,
+      "texto": "Sim! Estava esperando você falar.",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 17,
+      "remetente": 1,
+      "texto": "Bora marcar aquela viagem?",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 18,
+      "remetente": 0,
+      "texto": "Saudade das nossas aventuras.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 19,
+      "remetente": 1,
+      "texto": "Fechado, só preciso organizar as datas.",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 20,
+      "remetente": 0,
+      "texto": "Vamos chamar o resto do pessoal?",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 21,
+      "remetente": 1,
+      "texto": "Essa vai ser histórica 😂",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 22,
+      "remetente": 0,
+      "texto": "Essa vai ser histórica 😂",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 23,
+      "remetente": 1,
+      "texto": "Fechado, só preciso organizar as datas.",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 24,
+      "remetente": 0,
+      "texto": "Saudade das nossas aventuras.",
+      "delay": {
+        "min": 3,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 25,
+      "remetente": 1,
+      "texto": "Então já vou ver os preços hoje.",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 26,
+      "remetente": 0,
+      "texto": "Saudade das nossas aventuras.",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 27,
+      "remetente": 1,
+      "texto": "Fechado, só preciso organizar as datas.",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 28,
+      "remetente": 0,
+      "texto": "Fechado, só preciso organizar as datas.",
+      "delay": {
+        "min": 3,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 29,
+      "remetente": 1,
+      "texto": "Essa vai ser histórica 😂",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 30,
+      "remetente": 0,
+      "texto": "Essa vai ser histórica 😂",
+      "delay": {
+        "min": 2,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 31,
+      "remetente": 1,
+      "texto": "Bora marcar aquela viagem?",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 13,
+          "max": 13
+        }
+      }
+    },
+    {
+      "ordem": 32,
+      "remetente": 0,
+      "texto": "Sim! Estava esperando você falar.",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 33,
+      "remetente": 1,
+      "texto": "Saudade das nossas aventuras.",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "ordem": 34,
+      "remetente": 0,
+      "texto": "Saudade das nossas aventuras.",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 13,
+          "max": 13
+        }
+      }
+    },
+    {
+      "ordem": 35,
+      "remetente": 1,
+      "texto": "Então já vou ver os preços hoje.",
+      "delay": {
+        "min": 2,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 36,
+      "remetente": 0,
+      "texto": "Vamos chamar o resto do pessoal?",
+      "delay": {
+        "min": 3,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 37,
+      "remetente": 1,
+      "texto": "Fechado, só preciso organizar as datas.",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 38,
+      "remetente": 0,
+      "texto": "Fechado, só preciso organizar as datas.",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 39,
+      "remetente": 1,
+      "texto": "Saudade das nossas aventuras.",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 40,
+      "remetente": 0,
+      "texto": "Bora marcar aquela viagem?",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 41,
+      "remetente": 1,
+      "texto": "Bora marcar aquela viagem?",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 42,
+      "remetente": 0,
+      "texto": "Bora marcar aquela viagem?",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 43,
+      "remetente": 1,
+      "texto": "Vamos chamar o resto do pessoal?",
+      "delay": {
+        "min": 2,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 44,
+      "remetente": 0,
+      "texto": "Sim! Estava esperando você falar.",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 45,
+      "remetente": 1,
+      "texto": "Saudade das nossas aventuras.",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 46,
+      "remetente": 0,
+      "texto": "Então já vou ver os preços hoje.",
+      "delay": {
+        "min": 2,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 47,
+      "remetente": 1,
+      "texto": "Saudade das nossas aventuras.",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 48,
+      "remetente": 0,
+      "texto": "Vamos chamar o resto do pessoal?",
+      "delay": {
+        "min": 3,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 49,
+      "remetente": 1,
+      "texto": "Vamos chamar o resto do pessoal?",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 50,
+      "remetente": 0,
+      "texto": "Bora marcar aquela viagem?",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 51,
+      "remetente": 1,
+      "texto": "Vamos chamar o resto do pessoal?",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 13,
+          "max": 13
+        }
+      }
+    },
+    {
+      "ordem": 52,
+      "remetente": 0,
+      "texto": "Então já vou ver os preços hoje.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 53,
+      "remetente": 1,
+      "texto": "Saudade das nossas aventuras.",
+      "delay": {
+        "min": 2,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "ordem": 54,
+      "remetente": 0,
+      "texto": "Vamos chamar o resto do pessoal?",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 55,
+      "remetente": 1,
+      "texto": "Pensei em algo mais tranquilo dessa vez.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 56,
+      "remetente": 0,
+      "texto": "Vamos chamar o resto do pessoal?",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 13,
+          "max": 13
+        }
+      }
+    },
+    {
+      "ordem": 57,
+      "remetente": 1,
+      "texto": "Saudade das nossas aventuras.",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 58,
+      "remetente": 0,
+      "texto": "Então já vou ver os preços hoje.",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 59,
+      "remetente": 1,
+      "texto": "Essa vai ser histórica 😂",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 60,
+      "remetente": 0,
+      "texto": "Essa vai ser histórica 😂",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 61,
+      "remetente": 1,
+      "texto": "Essa vai ser histórica 😂",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 62,
+      "remetente": 0,
+      "texto": "Fechado, só preciso organizar as datas.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 63,
+      "remetente": 1,
+      "texto": "Então já vou ver os preços hoje.",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 64,
+      "remetente": 0,
+      "texto": "Saudade das nossas aventuras.",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "ordem": 65,
+      "remetente": 1,
+      "texto": "Bora marcar aquela viagem?",
+      "delay": {
+        "min": 2,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 66,
+      "remetente": 0,
+      "texto": "Fechado, só preciso organizar as datas.",
+      "delay": {
+        "min": 3,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "ordem": 67,
+      "remetente": 1,
+      "texto": "Essa vai ser histórica 😂",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 68,
+      "remetente": 0,
+      "texto": "Bora marcar aquela viagem?",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 69,
+      "remetente": 1,
+      "texto": "Saudade das nossas aventuras.",
+      "delay": {
+        "min": 3,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 13,
+          "max": 13
+        }
+      }
+    },
+    {
+      "ordem": 70,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 169,
+        "max": 276
+      }
+    },
+    {
+      "ordem": 71,
+      "remetente": 0,
+      "texto": "Então já vou ver os preços hoje.",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 72,
+      "remetente": 1,
+      "texto": "Fechado, só preciso organizar as datas.",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 73,
+      "remetente": 0,
+      "texto": "Pensei em algo mais tranquilo dessa vez.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "ordem": 74,
+      "remetente": 1,
+      "texto": "Essa vai ser histórica 😂",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 13,
+          "max": 13
+        }
+      }
+    },
+    {
+      "ordem": 75,
+      "remetente": 0,
+      "texto": "Sim! Estava esperando você falar.",
+      "delay": {
+        "min": 2,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 76,
+      "remetente": 1,
+      "texto": "Vamos chamar o resto do pessoal?",
+      "delay": {
+        "min": 3,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 77,
+      "remetente": 0,
+      "texto": "Vamos chamar o resto do pessoal?",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 78,
+      "remetente": 1,
+      "texto": "Essa vai ser histórica 😂",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 79,
+      "remetente": 0,
+      "texto": "Fechado, só preciso organizar as datas.",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 80,
+      "remetente": 1,
+      "texto": "Essa vai ser histórica 😂",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 81,
+      "remetente": 0,
+      "texto": "Vamos chamar o resto do pessoal?",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 82,
+      "remetente": 1,
+      "texto": "Vamos chamar o resto do pessoal?",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "ordem": 83,
+      "remetente": 0,
+      "texto": "Bora marcar aquela viagem?",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 84,
+      "remetente": 1,
+      "texto": "Então já vou ver os preços hoje.",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 85,
+      "remetente": 0,
+      "texto": "Essa vai ser histórica 😂",
+      "delay": {
+        "min": 3,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 5,
+          "max": 5
+        }
+      }
+    },
+    {
+      "ordem": 86,
+      "remetente": 1,
+      "texto": "Pensei em algo mais tranquilo dessa vez.",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 87,
+      "remetente": 0,
+      "texto": "Saudade das nossas aventuras.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 13,
+          "max": 13
+        }
+      }
+    },
+    {
+      "ordem": 88,
+      "remetente": 1,
+      "texto": "Vamos chamar o resto do pessoal?",
+      "delay": {
+        "min": 3,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 89,
+      "remetente": 0,
+      "texto": "Sim! Estava esperando você falar.",
+      "delay": {
+        "min": 2,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 90,
+      "remetente": 1,
+      "texto": "Então já vou ver os preços hoje.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 91,
+      "remetente": 0,
+      "texto": "Pensei em algo mais tranquilo dessa vez.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "ordem": 92,
+      "remetente": 1,
+      "texto": "Sim! Estava esperando você falar.",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 93,
+      "remetente": 0,
+      "texto": "Bora marcar aquela viagem?",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 94,
+      "remetente": 1,
+      "texto": "Sim! Estava esperando você falar.",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 95,
+      "remetente": 0,
+      "texto": "Sim! Estava esperando você falar.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 96,
+      "remetente": 1,
+      "texto": "Então já vou ver os preços hoje.",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 97,
+      "remetente": 0,
+      "texto": "Essa vai ser histórica 😂",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 98,
+      "remetente": 1,
+      "texto": "Pensei em algo mais tranquilo dessa vez.",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 99,
+      "remetente": 0,
+      "texto": "Fechado, só preciso organizar as datas.",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    }
+  ],
+  "metadados": {
+    "criadaPor": "sistema",
+    "vezesUsada": 0,
+    "ultimoUso": null,
+    "efetividade": null
+  }
+}

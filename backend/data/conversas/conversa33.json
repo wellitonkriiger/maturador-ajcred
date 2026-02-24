@@ -1,44 +1,44 @@
 {
   "id": "conversa33",
-  "nome": "Conversa Variada 33",
-  "categoria": "casual",
+  "nome": "Conversa Namoro 33",
+  "categoria": "namoro",
   "tags": [
-    "tema33",
-    "chat",
-    "variado"
+    "relacionamento",
+    "encontro",
+    "carinho"
   ],
   "participantesMinimos": 2,
   "participantesMaximos": 2,
-  "duracaoEstimada": "10-60 minutos",
+  "duracaoEstimada": "10-120 minutos",
   "mensagens": [
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "Mensagem 1 da conversa 33 sobre assunto diverso.",
+      "texto": "Cheguei sim, adorei hoje ❤️",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 7,
+          "max": 7
         }
       }
     },
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "Mensagem 2 da conversa 33 sobre assunto diverso.",
+      "texto": "Cheguei sim, adorei hoje ❤️",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -48,18 +48,18 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 14,
+          "max": 14
         }
       }
     },
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "Mensagem 3 da conversa 33 sobre assunto diverso.",
+      "texto": "Também gostei muito, precisamos repetir.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -69,28 +69,28 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 11,
+          "max": 11
         }
       }
     },
     {
       "ordem": 4,
       "remetente": 1,
-      "texto": "Mensagem 4 da conversa 33 sobre assunto diverso.",
+      "texto": "Você chegou bem em casa?",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
+          "min": 15,
           "max": 15
         }
       }
@@ -98,49 +98,49 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "Mensagem 5 da conversa 33 sobre assunto diverso.",
+      "texto": "Combinado, já estou animado 😊",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 7,
+          "max": 7
         }
       }
     },
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "Mensagem 6 da conversa 33 sobre assunto diverso.",
+      "texto": "Vamos planejar algo especial.",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 10,
+          "max": 10
         }
       }
     },
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "Mensagem 7 da conversa 33 sobre assunto diverso.",
+      "texto": "Combinado, já estou animado 😊",
       "delay": {
         "min": 2,
         "max": 6
@@ -148,86 +148,73 @@
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 8,
+          "max": 8
         }
       }
     },
     {
       "ordem": 8,
-      "remetente": 1,
-      "texto": "Mensagem 8 da conversa 33 sobre assunto diverso.",
-      "delay": {
-        "min": 2,
-        "max": 6
-      },
-      "comportamento": {
-        "marcarComoLida": true,
-        "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
-        },
-        "simularDigitacao": true,
-        "tempoDigitacao": {
-          "min": 5,
-          "max": 15
-        }
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 159,
+        "max": 265
       }
     },
     {
       "ordem": 9,
-      "remetente": 0,
-      "texto": "Mensagem 9 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Cheguei sim, adorei hoje ❤️",
       "delay": {
-        "min": 2,
+        "min": 4,
         "max": 6
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 6,
+          "max": 6
         }
       }
     },
     {
       "ordem": 10,
-      "remetente": 1,
-      "texto": "Mensagem 10 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Que tal sábado à noite?",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 11,
+          "max": 11
         }
       }
     },
     {
       "ordem": 11,
-      "remetente": 0,
-      "texto": "Mensagem 11 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Que tal sábado à noite?",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -237,81 +224,81 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 12,
+          "max": 12
         }
       }
     },
     {
       "ordem": 12,
-      "remetente": 1,
-      "texto": "Mensagem 12 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Você me faz muito bem.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 8,
+          "max": 8
         }
       }
     },
     {
       "ordem": 13,
-      "remetente": 0,
-      "texto": "Mensagem 13 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Fiquei pensando na nossa conversa.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 9,
+          "max": 9
         }
       }
     },
     {
       "ordem": 14,
-      "remetente": 1,
-      "texto": "Mensagem 14 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Também gostei muito, precisamos repetir.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 9,
+          "max": 9
         }
       }
     },
     {
       "ordem": 15,
-      "remetente": 0,
-      "texto": "Mensagem 15 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Cheguei sim, adorei hoje ❤️",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -321,36 +308,36 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 9,
+          "max": 9
         }
       }
     },
     {
       "ordem": 16,
-      "remetente": 1,
-      "texto": "Mensagem 16 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Você chegou bem em casa?",
       "delay": {
-        "min": 2,
+        "min": 3,
         "max": 6
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 12,
+          "max": 12
         }
       }
     },
     {
       "ordem": 17,
-      "remetente": 0,
-      "texto": "Mensagem 17 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Fiquei pensando na nossa conversa.",
       "delay": {
         "min": 2,
         "max": 6
@@ -359,148 +346,148 @@
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 11,
+          "max": 11
         }
       }
     },
     {
       "ordem": 18,
-      "remetente": 1,
-      "texto": "Mensagem 18 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Vamos planejar algo especial.",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
+          "min": 15,
           "max": 15
         }
       }
     },
     {
       "ordem": 19,
-      "remetente": 0,
-      "texto": "Mensagem 19 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Que tal sábado à noite?",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
+          "min": 2,
           "max": 3
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 6,
+          "max": 6
         }
       }
     },
     {
       "ordem": 20,
-      "remetente": 1,
-      "texto": "Mensagem 20 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Você chegou bem em casa?",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 9,
+          "max": 9
         }
       }
     },
     {
       "ordem": 21,
-      "remetente": 0,
-      "texto": "Mensagem 21 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Vamos planejar algo especial.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
           "min": 5,
-          "max": 15
+          "max": 5
         }
       }
     },
     {
       "ordem": 22,
-      "remetente": 1,
-      "texto": "Mensagem 22 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Combinado, já estou animado 😊",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 7,
+          "max": 7
         }
       }
     },
     {
       "ordem": 23,
-      "remetente": 0,
-      "texto": "Mensagem 23 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Combinado, já estou animado 😊",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 13,
+          "max": 13
         }
       }
     },
     {
       "ordem": 24,
-      "remetente": 1,
-      "texto": "Mensagem 24 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Cheguei sim, adorei hoje ❤️",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -510,123 +497,123 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 12,
+          "max": 12
         }
       }
     },
     {
       "ordem": 25,
-      "remetente": 0,
-      "texto": "Mensagem 25 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Combinado, já estou animado 😊",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 10,
+          "max": 10
         }
       }
     },
     {
       "ordem": 26,
-      "remetente": 1,
-      "texto": "Mensagem 26 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Fiquei pensando na nossa conversa.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 12,
+          "max": 12
         }
       }
     },
     {
       "ordem": 27,
-      "remetente": 0,
-      "texto": "Mensagem 27 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Cheguei sim, adorei hoje ❤️",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
           "min": 5,
-          "max": 15
+          "max": 5
         }
       }
     },
     {
       "ordem": 28,
-      "remetente": 1,
-      "texto": "Mensagem 28 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Cheguei sim, adorei hoje ❤️",
       "delay": {
-        "min": 2,
+        "min": 3,
         "max": 6
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 6,
+          "max": 6
         }
       }
     },
     {
       "ordem": 29,
-      "remetente": 0,
-      "texto": "Mensagem 29 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Você me faz muito bem.",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 8,
+          "max": 8
         }
       }
     },
     {
       "ordem": 30,
-      "remetente": 1,
-      "texto": "Mensagem 30 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Vamos planejar algo especial.",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -636,15 +623,15 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 13,
+          "max": 13
         }
       }
     },
     {
       "ordem": 31,
-      "remetente": 0,
-      "texto": "Mensagem 31 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Que tal sábado à noite?",
       "delay": {
         "min": 2,
         "max": 6
@@ -657,173 +644,152 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 8,
+          "max": 8
         }
       }
     },
     {
       "ordem": 32,
-      "remetente": 1,
-      "texto": "Mensagem 32 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Também gostei muito, precisamos repetir.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
           "min": 5,
-          "max": 15
+          "max": 5
         }
       }
     },
     {
       "ordem": 33,
-      "remetente": 0,
-      "texto": "Mensagem 33 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Vamos planejar algo especial.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 12,
+          "max": 12
         }
       }
     },
     {
       "ordem": 34,
-      "remetente": 1,
-      "texto": "Mensagem 34 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Fiquei pensando na nossa conversa.",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
+          "min": 2,
           "max": 3
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
+          "min": 15,
           "max": 15
         }
       }
     },
     {
       "ordem": 35,
-      "remetente": 0,
-      "texto": "Mensagem 35 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Vamos planejar algo especial.",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 7,
+          "max": 7
         }
       }
     },
     {
       "ordem": 36,
-      "remetente": 1,
-      "texto": "Mensagem 36 da conversa 33 sobre assunto diverso.",
-      "delay": {
-        "min": 2,
-        "max": 6
-      },
-      "comportamento": {
-        "marcarComoLida": true,
-        "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
-        },
-        "simularDigitacao": true,
-        "tempoDigitacao": {
-          "min": 5,
-          "max": 15
-        }
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 82,
+        "max": 265
       }
     },
     {
       "ordem": 37,
       "remetente": 0,
-      "texto": "Mensagem 37 da conversa 33 sobre assunto diverso.",
+      "texto": "Também gostei muito, precisamos repetir.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
           "min": 5,
-          "max": 15
+          "max": 5
         }
       }
     },
     {
       "ordem": 38,
-      "tipo": "pausa_longa",
-      "duracao": {
-        "min": 120,
-        "max": 240
-      }
-    },
-    {
-      "ordem": 39,
       "remetente": 1,
-      "texto": "Mensagem 39 da conversa 33 sobre assunto diverso.",
+      "texto": "Você chegou bem em casa?",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
+          "min": 15,
           "max": 15
         }
       }
     },
     {
-      "ordem": 40,
+      "ordem": 39,
       "remetente": 0,
-      "texto": "Mensagem 40 da conversa 33 sobre assunto diverso.",
+      "texto": "Também gostei muito, precisamos repetir.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -833,162 +799,183 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 40,
+      "remetente": 1,
+      "texto": "Vamos planejar algo especial.",
+      "delay": {
+        "min": 3,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
           "max": 15
         }
       }
     },
     {
       "ordem": 41,
-      "remetente": 1,
-      "texto": "Mensagem 41 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Cheguei sim, adorei hoje ❤️",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 13,
+          "max": 13
         }
       }
     },
     {
       "ordem": 42,
-      "remetente": 0,
-      "texto": "Mensagem 42 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Fiquei pensando na nossa conversa.",
       "delay": {
-        "min": 2,
+        "min": 4,
         "max": 6
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 10,
+          "max": 10
         }
       }
     },
     {
       "ordem": 43,
-      "remetente": 1,
-      "texto": "Mensagem 43 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Também gostei muito, precisamos repetir.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 9,
+          "max": 9
         }
       }
     },
     {
       "ordem": 44,
-      "remetente": 0,
-      "texto": "Mensagem 44 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Vamos planejar algo especial.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 13,
+          "max": 13
         }
       }
     },
     {
       "ordem": 45,
-      "remetente": 1,
-      "texto": "Mensagem 45 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Vamos planejar algo especial.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 13,
+          "max": 13
         }
       }
     },
     {
       "ordem": 46,
-      "remetente": 0,
-      "texto": "Mensagem 46 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Combinado, já estou animado 😊",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
+          "min": 2,
           "max": 3
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 6,
+          "max": 6
         }
       }
     },
     {
       "ordem": 47,
-      "remetente": 1,
-      "texto": "Mensagem 47 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Vamos planejar algo especial.",
       "delay": {
-        "min": 2,
+        "min": 4,
         "max": 6
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 13,
+          "max": 13
         }
       }
     },
     {
       "ordem": 48,
-      "remetente": 0,
-      "texto": "Mensagem 48 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Fiquei pensando na nossa conversa.",
       "delay": {
         "min": 2,
         "max": 6
@@ -996,23 +983,23 @@
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 14,
+          "max": 14
         }
       }
     },
     {
       "ordem": 49,
-      "remetente": 1,
-      "texto": "Mensagem 49 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Cheguei sim, adorei hoje ❤️",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -1023,35 +1010,35 @@
         "simularDigitacao": true,
         "tempoDigitacao": {
           "min": 5,
-          "max": 15
+          "max": 5
         }
       }
     },
     {
       "ordem": 50,
-      "remetente": 0,
-      "texto": "Mensagem 50 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Que tal sábado à noite?",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
+          "min": 2,
           "max": 3
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 12,
+          "max": 12
         }
       }
     },
     {
       "ordem": 51,
-      "remetente": 1,
-      "texto": "Mensagem 51 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Você me faz muito bem.",
       "delay": {
         "min": 2,
         "max": 6
@@ -1060,82 +1047,82 @@
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 8,
+          "max": 8
         }
       }
     },
     {
       "ordem": 52,
-      "remetente": 0,
-      "texto": "Mensagem 52 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Vamos planejar algo especial.",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 7,
+          "max": 7
         }
       }
     },
     {
       "ordem": 53,
-      "remetente": 1,
-      "texto": "Mensagem 53 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Vamos planejar algo especial.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 13,
+          "max": 13
         }
       }
     },
     {
       "ordem": 54,
-      "remetente": 0,
-      "texto": "Mensagem 54 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Também gostei muito, precisamos repetir.",
       "delay": {
-        "min": 2,
+        "min": 4,
         "max": 6
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 10,
+          "max": 10
         }
       }
     },
     {
       "ordem": 55,
-      "remetente": 1,
-      "texto": "Mensagem 55 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Cheguei sim, adorei hoje ❤️",
       "delay": {
         "min": 2,
         "max": 6
@@ -1144,40 +1131,40 @@
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 10,
+          "max": 10
         }
       }
     },
     {
       "ordem": 56,
-      "remetente": 0,
-      "texto": "Mensagem 56 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Que tal sábado à noite?",
       "delay": {
-        "min": 2,
+        "min": 4,
         "max": 6
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
           "min": 5,
-          "max": 15
+          "max": 5
         }
       }
     },
     {
       "ordem": 57,
-      "remetente": 1,
-      "texto": "Mensagem 57 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Também gostei muito, precisamos repetir.",
       "delay": {
         "min": 2,
         "max": 6
@@ -1185,44 +1172,44 @@
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
+          "min": 2,
           "max": 3
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 6,
+          "max": 6
         }
       }
     },
     {
       "ordem": 58,
-      "remetente": 0,
-      "texto": "Mensagem 58 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Cheguei sim, adorei hoje ❤️",
       "delay": {
-        "min": 2,
+        "min": 3,
         "max": 6
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
+          "min": 2,
           "max": 3
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
           "min": 5,
-          "max": 15
+          "max": 5
         }
       }
     },
     {
       "ordem": 59,
-      "remetente": 1,
-      "texto": "Mensagem 59 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Fiquei pensando na nossa conversa.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -1232,38 +1219,38 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 13,
+          "max": 13
         }
       }
     },
     {
       "ordem": 60,
-      "remetente": 0,
-      "texto": "Mensagem 60 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Cheguei sim, adorei hoje ❤️",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 8,
+          "max": 8
         }
       }
     },
     {
       "ordem": 61,
-      "remetente": 1,
-      "texto": "Mensagem 61 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Vamos planejar algo especial.",
       "delay": {
-        "min": 2,
+        "min": 3,
         "max": 6
       },
       "comportamento": {
@@ -1275,164 +1262,164 @@
         "simularDigitacao": true,
         "tempoDigitacao": {
           "min": 5,
-          "max": 15
+          "max": 5
         }
       }
     },
     {
       "ordem": 62,
-      "remetente": 0,
-      "texto": "Mensagem 62 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Fiquei pensando na nossa conversa.",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 10,
+          "max": 10
         }
       }
     },
     {
       "ordem": 63,
-      "remetente": 1,
-      "texto": "Mensagem 63 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Vamos planejar algo especial.",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 12,
+          "max": 12
         }
       }
     },
     {
       "ordem": 64,
-      "remetente": 0,
-      "texto": "Mensagem 64 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Vamos planejar algo especial.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 10,
+          "max": 10
         }
       }
     },
     {
       "ordem": 65,
-      "remetente": 1,
-      "texto": "Mensagem 65 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Você me faz muito bem.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
+          "min": 2,
           "max": 3
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 14,
+          "max": 14
         }
       }
     },
     {
       "ordem": 66,
-      "remetente": 0,
-      "texto": "Mensagem 66 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Fiquei pensando na nossa conversa.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 13,
+          "max": 13
         }
       }
     },
     {
       "ordem": 67,
-      "remetente": 1,
-      "texto": "Mensagem 67 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Combinado, já estou animado 😊",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 7
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
           "min": 5,
-          "max": 15
+          "max": 5
         }
       }
     },
     {
       "ordem": 68,
-      "remetente": 0,
-      "texto": "Mensagem 68 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Vamos planejar algo especial.",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
+          "min": 2,
           "max": 3
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 14,
+          "max": 14
         }
       }
     },
     {
       "ordem": 69,
-      "remetente": 1,
-      "texto": "Mensagem 69 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Você me faz muito bem.",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
@@ -1442,122 +1429,542 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 14,
+          "max": 14
         }
       }
     },
     {
       "ordem": 70,
-      "remetente": 0,
-      "texto": "Mensagem 70 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Que tal sábado à noite?",
       "delay": {
         "min": 2,
-        "max": 6
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 13,
+          "max": 13
         }
       }
     },
     {
       "ordem": 71,
-      "remetente": 1,
-      "texto": "Mensagem 71 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Vamos planejar algo especial.",
       "delay": {
-        "min": 2,
+        "min": 3,
         "max": 6
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 7,
+          "max": 7
         }
       }
     },
     {
       "ordem": 72,
-      "remetente": 0,
-      "texto": "Mensagem 72 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Cheguei sim, adorei hoje ❤️",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 4
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
+          "min": 15,
           "max": 15
         }
       }
     },
     {
       "ordem": 73,
-      "remetente": 1,
-      "texto": "Mensagem 73 da conversa 33 sobre assunto diverso.",
+      "remetente": 0,
+      "texto": "Que tal sábado à noite?",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 3,
+        "max": 5
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
           "min": 1,
-          "max": 3
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 11,
+          "max": 11
         }
       }
     },
     {
       "ordem": 74,
-      "remetente": 0,
-      "texto": "Mensagem 74 da conversa 33 sobre assunto diverso.",
+      "remetente": 1,
+      "texto": "Você chegou bem em casa?",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 4,
+        "max": 8
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 2,
+          "max": 2
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 15
+          "min": 12,
+          "max": 12
         }
       }
     },
     {
       "ordem": 75,
+      "remetente": 0,
+      "texto": "Cheguei sim, adorei hoje ❤️",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 76,
       "remetente": 1,
-      "texto": "Mensagem 75 da conversa 33 sobre assunto diverso.",
+      "texto": "Você me faz muito bem.",
+      "delay": {
+        "min": 3,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 10,
+          "max": 10
+        }
+      }
+    },
+    {
+      "ordem": 77,
+      "remetente": 0,
+      "texto": "Fiquei pensando na nossa conversa.",
+      "delay": {
+        "min": 3,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 12,
+          "max": 12
+        }
+      }
+    },
+    {
+      "ordem": 78,
+      "remetente": 1,
+      "texto": "Também gostei muito, precisamos repetir.",
       "delay": {
         "min": 2,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 79,
+      "remetente": 0,
+      "texto": "Também gostei muito, precisamos repetir.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 80,
+      "remetente": 1,
+      "texto": "Cheguei sim, adorei hoje ❤️",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 81,
+      "remetente": 0,
+      "texto": "Você me faz muito bem.",
+      "delay": {
+        "min": 3,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 82,
+      "remetente": 1,
+      "texto": "Você chegou bem em casa?",
+      "delay": {
+        "min": 4,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 13,
+          "max": 13
+        }
+      }
+    },
+    {
+      "ordem": 83,
+      "remetente": 0,
+      "texto": "Também gostei muito, precisamos repetir.",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 84,
+      "remetente": 1,
+      "texto": "Que tal sábado à noite?",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 85,
+      "remetente": 0,
+      "texto": "Você me faz muito bem.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 86,
+      "remetente": 1,
+      "texto": "Vamos planejar algo especial.",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 87,
+      "remetente": 0,
+      "texto": "Vamos planejar algo especial.",
+      "delay": {
+        "min": 4,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 7,
+          "max": 7
+        }
+      }
+    },
+    {
+      "ordem": 88,
+      "remetente": 1,
+      "texto": "Combinado, já estou animado 😊",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 89,
+      "remetente": 0,
+      "texto": "Você chegou bem em casa?",
+      "delay": {
+        "min": 3,
+        "max": 5
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 6,
+          "max": 6
+        }
+      }
+    },
+    {
+      "ordem": 90,
+      "remetente": 1,
+      "texto": "Você me faz muito bem.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 13,
+          "max": 13
+        }
+      }
+    },
+    {
+      "ordem": 91,
+      "remetente": 0,
+      "texto": "Também gostei muito, precisamos repetir.",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 11,
+          "max": 11
+        }
+      }
+    },
+    {
+      "ordem": 92,
+      "remetente": 1,
+      "texto": "Você me faz muito bem.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 93,
+      "remetente": 0,
+      "texto": "Você me faz muito bem.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
+        }
+      }
+    },
+    {
+      "ordem": 94,
+      "remetente": 1,
+      "texto": "Também gostei muito, precisamos repetir.",
+      "delay": {
+        "min": 2,
+        "max": 7
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 3
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
+          "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 95,
+      "remetente": 0,
+      "texto": "Combinado, já estou animado 😊",
+      "delay": {
+        "min": 4,
         "max": 6
       },
       "comportamento": {
@@ -1568,8 +1975,113 @@
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 96,
+      "remetente": 1,
+      "texto": "Fiquei pensando na nossa conversa.",
+      "delay": {
+        "min": 2,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 1,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 8,
+          "max": 8
+        }
+      }
+    },
+    {
+      "ordem": 97,
+      "remetente": 0,
+      "texto": "Também gostei muito, precisamos repetir.",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 98,
+      "remetente": 1,
+      "texto": "Você chegou bem em casa?",
+      "delay": {
+        "min": 3,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 9,
+          "max": 9
+        }
+      }
+    },
+    {
+      "ordem": 99,
+      "remetente": 0,
+      "texto": "Cheguei sim, adorei hoje ❤️",
+      "delay": {
+        "min": 4,
+        "max": 6
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 2
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 15,
           "max": 15
+        }
+      }
+    },
+    {
+      "ordem": 100,
+      "remetente": 1,
+      "texto": "Também gostei muito, precisamos repetir.",
+      "delay": {
+        "min": 4,
+        "max": 8
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 2,
+          "max": 4
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 14,
+          "max": 14
         }
       }
     }
