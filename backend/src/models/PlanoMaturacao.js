@@ -1,165 +1,128 @@
 // src/models/PlanoMaturacao.js
+// Persiste o plano de maturacao em data/plano.json (arquivo proprio, separado de config.json).
+// Nao depende de variaveis de ambiente para valores de negocio.
 
-const fs = require('fs');
-const path = require('path');
+const fs     = require('fs');
+const path   = require('path');
 const logger = require('../utils/logger');
+
+const PLANO_FILE = path.join(__dirname, '../../data/plano.json');
+
+// Valores padrao razoaveis -- podem ser alterados pelo usuario pela interface
+const PLANO_DEFAULT = {
+  ativo: false,
+  horarioFuncionamento: {
+    inicio:     '08:00',
+    fim:        '22:00',
+    diasSemana: [0, 1, 2, 3, 4, 5, 6]
+  },
+  intervalosGlobais: {
+    entreConversas: { min: 1800, max: 3600 },
+    pausaLonga:     { min: 180,  max: 600  },
+    leituraMinima:  { min: 1,    max: 3    },
+    leituraMaxima:  { min: 5,    max: 10   }
+  },
+  metas: {
+    conversasPorTelefoneDia: 5,
+    totalConversasDia:       null,
+    duracaoPlano:            '30 dias'
+  },
+  estrategia: {
+    prioridadeTelefonesAltaSensibilidade: true,
+    evitarRepeticaoConversas:             true,
+    distribuirUniformemente:              true,
+    randomizarParticipantes:              true
+  }
+};
 
 class PlanoMaturacaoModel {
   constructor() {
-    this.configFile = path.join(__dirname, '../../data/config.json');
     this.plano = null;
-    this.carregar();
+    this._carregar();
   }
 
-  /**
-   * Carrega plano de maturação
-   */
-  carregar() {
+  _carregar() {
     try {
-      if (fs.existsSync(this.configFile)) {
-        const data = fs.readFileSync(this.configFile, 'utf8');
-        const config = JSON.parse(data);
-        this.plano = config.planoMaturacao || this.getPlanoDefault();
+      if (fs.existsSync(PLANO_FILE)) {
+        const raw = fs.readFileSync(PLANO_FILE, 'utf8');
+        this.plano = this._merge(PLANO_DEFAULT, JSON.parse(raw));
+        logger.info('Plano de maturacao carregado de plano.json');
       } else {
-        this.plano = this.getPlanoDefault();
+        this.plano = JSON.parse(JSON.stringify(PLANO_DEFAULT));
+        this._salvar();
+        logger.info('plano.json criado com valores padrao');
       }
-      logger.info('📅 Plano de maturação carregado');
-    } catch (error) {
-      logger.error('❌ Erro ao carregar plano:', error);
-      this.plano = this.getPlanoDefault();
+    } catch (err) {
+      logger.error(`Erro ao carregar plano.json: ${err.message} -- usando padrao`);
+      this.plano = JSON.parse(JSON.stringify(PLANO_DEFAULT));
     }
   }
 
-  /**
-   * Retorna plano padrão
-   */
-  getPlanoDefault() {
-    return {
-      ativo: false,
-      horarioFuncionamento: {
-        inicio: process.env.HORARIO_INICIO || '08:00',
-        fim: process.env.HORARIO_FIM || '22:00',
-        diasSemana: [1, 2, 3, 4, 5, 6, 0] // Todos os dias
-      },
-      intervalosGlobais: {
-        entreConversas: { 
-          min: parseInt(process.env.INTERVALO_ENTRE_CONVERSAS_MIN) || 1800,
-          max: parseInt(process.env.INTERVALO_ENTRE_CONVERSAS_MAX) || 3600
-        },
-        pausaLonga: { 
-          min: parseInt(process.env.PAUSA_LONGA_MIN) || 180,
-          max: parseInt(process.env.PAUSA_LONGA_MAX) || 600
-        },
-        leituraMinima: { min: 1, max: 3 },
-        leituraMaxima: { min: 5, max: 10 }
-      },
-      metas: {
-        conversasPorTelefoneDia: parseInt(process.env.CONVERSAS_POR_TELEFONE_DIA) || 5,
-        totalConversasDia: null,
-        duracaoPlano: '30 dias'
-      },
-      estrategia: {
-        prioridadeTelefonesAltaSensibilidade: true,
-        evitarRepeticaoConversas: true,
-        distribuirUniformemente: true,
-        randomizarParticipantes: true
-      }
-    };
-  }
-
-  /**
-   * Salva plano
-   */
-  salvar() {
+  _salvar() {
     try {
-      // Ler config atual
-      let config = { telefones: [] };
-      if (fs.existsSync(this.configFile)) {
-        const data = fs.readFileSync(this.configFile, 'utf8');
-        config = JSON.parse(data);
-      }
-
-      // Atualizar plano
-      config.planoMaturacao = this.plano;
-
-      // Salvar
-      fs.writeFileSync(
-        this.configFile,
-        JSON.stringify(config, null, 2),
-        'utf8'
-      );
-      
-      logger.debug('💾 Plano de maturação salvo');
-    } catch (error) {
-      logger.error('❌ Erro ao salvar plano:', error);
+      const dir = path.dirname(PLANO_FILE);
+      if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+      fs.writeFileSync(PLANO_FILE, JSON.stringify(this.plano, null, 2), 'utf8');
+      logger.debug('Plano de maturacao salvo em plano.json');
+    } catch (err) {
+      logger.error(`Erro ao salvar plano.json: ${err.message}`);
     }
   }
 
-  /**
-   * Obtém plano atual
-   */
+  // Deep merge: campos presentes no base e ausentes no override sao mantidos
+  _merge(base, override) {
+    const result = JSON.parse(JSON.stringify(base));
+    for (const key of Object.keys(override)) {
+      if (
+        override[key] !== null &&
+        typeof override[key] === 'object' &&
+        !Array.isArray(override[key]) &&
+        typeof result[key] === 'object' &&
+        result[key] !== null
+      ) {
+        result[key] = this._merge(result[key], override[key]);
+      } else {
+        result[key] = override[key];
+      }
+    }
+    return result;
+  }
+
   obter() {
     return this.plano;
   }
 
-  /**
-   * Atualiza plano
-   */
   atualizar(dados) {
-    this.plano = {
-      ...this.plano,
-      ...dados
-    };
-    this.salvar();
-    logger.info('♻️ Plano de maturação atualizado');
+    this.plano = this._merge(this.plano, dados);
+    this._salvar();
+    logger.info('Plano de maturacao atualizado');
     return this.plano;
   }
 
-  /**
-   * Ativa/desativa plano
-   */
   setAtivo(ativo) {
     this.plano.ativo = ativo;
-    this.salvar();
-    logger.info(`📅 Plano ${ativo ? 'ativado' : 'desativado'}`);
+    this._salvar();
+    logger.info(`Plano ${ativo ? 'ativado' : 'desativado'}`);
     return this.plano;
   }
 
-  /**
-   * Verifica se está dentro do horário de funcionamento
-   */
   estaDentroHorario() {
-    const agora = new Date();
-    const diaAtual = agora.getDay();
+    const agora     = new Date();
+    const diaAtual  = agora.getDay();
     const horaAtual = `${String(agora.getHours()).padStart(2, '0')}:${String(agora.getMinutes()).padStart(2, '0')}`;
 
-    // Verificar dia da semana
-    if (!this.plano.horarioFuncionamento.diasSemana.includes(diaAtual)) {
-      return false;
-    }
+    if (!this.plano.horarioFuncionamento.diasSemana.includes(diaAtual)) return false;
 
-    // Verificar horário
-    const inicio = this.plano.horarioFuncionamento.inicio;
-    const fim = this.plano.horarioFuncionamento.fim;
-
+    const { inicio, fim } = this.plano.horarioFuncionamento;
     return horaAtual >= inicio && horaAtual <= fim;
   }
 
-  /**
-   * Calcula próximo horário de funcionamento
-   */
   proximoHorarioFuncionamento() {
-    const agora = new Date();
-    const inicio = this.plano.horarioFuncionamento.inicio.split(':');
-    
-    let proxima = new Date();
-    proxima.setHours(parseInt(inicio[0]), parseInt(inicio[1]), 0, 0);
-
-    // Se já passou do horário de hoje, pega amanhã
-    if (proxima <= agora) {
-      proxima.setDate(proxima.getDate() + 1);
-    }
-
+    const agora    = new Date();
+    const [h, m]   = this.plano.horarioFuncionamento.inicio.split(':').map(Number);
+    const proxima  = new Date();
+    proxima.setHours(h, m, 0, 0);
+    if (proxima <= agora) proxima.setDate(proxima.getDate() + 1);
     return proxima;
   }
 }

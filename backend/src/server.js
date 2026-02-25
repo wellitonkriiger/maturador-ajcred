@@ -12,6 +12,7 @@ const logger = require('./utils/logger');
 const routes = require('./routes');
 const TelefoneModel = require('./models/Telefone');
 const WhatsAppService = require('./services/whatsappService');
+const HealthMonitor = require('./services/healthMonitor');
 
 // Criar app Express
 const app = express();
@@ -72,7 +73,7 @@ app.use((err, req, res, next) => {
 // Graceful shutdown
 process.on('SIGTERM', async () => {
   logger.info('⏹️ SIGTERM recebido. Encerrando gracefully...');
-  
+  HealthMonitor.stop();
   await WhatsAppService.desconectarTodos();
   
   server.close(() => {
@@ -83,7 +84,7 @@ process.on('SIGTERM', async () => {
 
 process.on('SIGINT', async () => {
   logger.info('⏹️ SIGINT recebido. Encerrando gracefully...');
-  
+  HealthMonitor.stop();
   await WhatsAppService.desconectarTodos();
   
   server.close(() => {
@@ -96,6 +97,7 @@ process.on('SIGINT', async () => {
 const PORT = process.env.PORT || 3001;
 
 server.listen(PORT, () => {
+  HealthMonitor.start(WhatsAppService);
   logger.info(`🚀 Servidor rodando na porta ${PORT}`);
   logger.info(`📊 Ambiente: ${process.env.NODE_ENV || 'development'}`);
   logger.info(`🌐 Health check: http://localhost:${PORT}/health`);

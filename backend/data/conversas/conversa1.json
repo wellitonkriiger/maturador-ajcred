@@ -1,139 +1,139 @@
 {
-  "id": "conversa1",
-  "nome": "Conversa Amizade 1",
-  "categoria": "amizade",
+  "id": "conv_futebol_001",
+  "nome": "Futebol e Sofrimento",
+  "categoria": "esporte",
   "tags": [
-    "amigos",
-    "viagem",
-    "risadas"
+    "futebol",
+    "time",
+    "jogo"
   ],
   "participantesMinimos": 2,
   "participantesMaximos": 2,
-  "duracaoEstimada": "10-120 minutos",
+  "duracaoEstimada": "15-40 minutos",
   "mensagens": [
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "Pensei em algo mais tranquilo dessa vez.",
+      "texto": "Cara, que jogo ontem hein",
       "delay": {
-        "min": 2,
-        "max": 5
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 2,
-          "max": 2
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 7,
-          "max": 7
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "Bora marcar aquela viagem?",
+      "texto": "Horrível. Não sei o que o técnico tava pensando",
       "delay": {
-        "min": 3,
-        "max": 7
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 5
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "Então já vou ver os preços hoje.",
+      "texto": "Tirar o atacante no segundo tempo foi um erro absurdo",
       "delay": {
-        "min": 2,
-        "max": 8
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 2
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 15,
-          "max": 15
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 4,
       "remetente": 1,
-      "texto": "Vamos chamar o resto do pessoal?",
+      "texto": "E ainda ficou sem goleiro reserva no banco",
       "delay": {
-        "min": 2,
-        "max": 6
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 2
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 12,
-          "max": 12
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "Então já vou ver os preços hoje.",
+      "texto": "A torcida tava furiosa, deu pra ver nas câmeras",
       "delay": {
-        "min": 3,
-        "max": 7
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 8,
-          "max": 8
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "Fechado, só preciso organizar as datas.",
+      "texto": "Imagina estar lá ao vivo nessa situação",
       "delay": {
-        "min": 3,
-        "max": 6
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 2,
-          "max": 2
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 5
+          "min": 30,
+          "max": 40
         }
       }
     },
@@ -141,141 +141,156 @@
       "ordem": 7,
       "tipo": "pausa_longa",
       "duracao": {
-        "min": 62,
-        "max": 243
+        "min": 90,
+        "max": 180
       }
     },
     {
       "ordem": 8,
       "remetente": 0,
-      "texto": "Pensei em algo mais tranquilo dessa vez.",
+      "texto": "Acho que a temporada tá comprometida já",
       "delay": {
-        "min": 3,
-        "max": 8
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 2,
-          "max": 3
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 6,
-          "max": 6
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 9,
       "remetente": 1,
-      "texto": "Então já vou ver os preços hoje.",
+      "texto": "Ainda tem 10 rodadas, dá pra recuperar",
       "delay": {
-        "min": 4,
-        "max": 8
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 4
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 11,
-          "max": 11
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 10,
       "remetente": 0,
-      "texto": "Bora marcar aquela viagem?",
+      "texto": "Com esse elenco? Duvido muito",
       "delay": {
-        "min": 4,
-        "max": 6
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 2,
-          "max": 3
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 7,
-          "max": 7
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 11,
       "remetente": 1,
-      "texto": "Saudade das nossas aventuras.",
+      "texto": "O meia novo que chegou é bom, pode mudar o jogo",
       "delay": {
-        "min": 4,
-        "max": 8
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 2,
-          "max": 3
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 8,
-          "max": 8
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 12,
       "remetente": 0,
-      "texto": "Fechado, só preciso organizar as datas.",
+      "texto": "Precisa de mais do que um jogador pra salvar esse time",
       "delay": {
-        "min": 2,
-        "max": 7
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 4
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 8,
-          "max": 8
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 13,
       "remetente": 1,
-      "texto": "Vamos chamar o resto do pessoal?",
+      "texto": "Torcer é o que nos resta então",
       "delay": {
-        "min": 3,
-        "max": 6
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 5
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 14,
+      "remetente": 0,
+      "texto": "Sempre foi assim, a gente apanha e volta na próxima semana",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
         }
       }
     }
-  ],
-  "metadados": {
-    "criadaPor": "sistema",
-    "vezesUsada": 1,
-    "ultimoUso": "2026-02-24T19:31:10.569Z",
-    "efetividade": null
-  }
+  ]
 }

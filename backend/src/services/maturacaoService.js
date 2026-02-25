@@ -1,332 +1,380 @@
 // src/services/maturacaoService.js
+// Orquestrador inteligente de maturacao.
+//
+// Filosofia:
+//  - Nao ha "loop unico bloqueante". Ha um pool de telefones livres.
+//  - Quando um telefone fica online  -> tenta emparelha-lo imediatamente.
+//  - Quando um telefone fica offline -> remove do pool, encerra conversa ativa.
+//  - Quando uma conversa falha      -> telefone entra em cooldown (5 min) e volta automaticamente.
+//  - Um ciclo de agendamento roda a cada 60s verificando se sobrou alguem sem par.
 
-const TelefoneModel = require('../models/Telefone');
-const ConversaModel = require('../models/Conversa');
-const PlanoMaturacaoModel = require('../models/PlanoMaturacao');
+const TelefoneModel   = require('../models/Telefone');
+const ConversaModel   = require('../models/Conversa');
+const PlanoMaturacao  = require('../models/PlanoMaturacao');
 const WhatsAppService = require('./whatsappService');
-const DelayUtils = require('../utils/delay');
-const logger = require('../utils/logger');
+const DelayUtils      = require('../utils/delay');
+const logger          = require('../utils/logger');
+
+const COOLDOWN_MS          = 5 * 60 * 1000;  // 5 minutos apos falha
+const CICLO_AGENDAMENTO_MS = 60 * 1000;       // verificacao periodica
+
+// Erros de Puppeteer que indicam desconexao fisica do WhatsApp
+const ERROS_CONEXAO = [
+  'detached Frame',
+  'Execution context was destroyed',
+  'Target closed',
+  'Session closed',
+  'Protocol error',
+  'Frame detachado'
+];
+
+function isErroConexao(msg) {
+  return ERROS_CONEXAO.some(e => msg && msg.includes(e));
+}
 
 class MaturacaoService {
   constructor() {
-    this.emExecucao = false;
-    this.conversasAtivas = new Map(); // telefoneId -> { conversaId, progresso }
+    this.emExecucao   = false;
+
+    // telefoneId -> { conversaId, conversaNome, participantes, mensagemAtual, totalMensagens, progresso, iniciouEm }
+    this.conversasAtivas = new Map();
+
+    // telefoneId -> timestamp do fim do cooldown
+    this.cooldowns = new Map();
+
+    this._cicloTimer = null;
+    this._eventsBound = false;
   }
+
+  // ─── CICLO DE VIDA ────────────────────────────────────────────────────────
 
   async iniciar() {
     if (this.emExecucao) {
-      logger.warn('⚠️ Maturação já está em execução');
+      logger.warn('Maturacao ja esta em execucao');
       return false;
     }
 
-    const plano = PlanoMaturacaoModel.obter();
+    const plano = PlanoMaturacao.obter();
     if (!plano.ativo) {
-      PlanoMaturacaoModel.setAtivo(true);
-      logger.info('📅 Plano ativado automaticamente ao iniciar maturação');
+      PlanoMaturacao.setAtivo(true);
+      logger.info('Plano ativado automaticamente ao iniciar maturacao');
     }
 
     this.emExecucao = true;
-    logger.info('🚀 Processo de maturação iniciado');
-    this.executarLoop();
+    logger.info('Processo de maturacao iniciado');
+
+    // Escuta eventos do WhatsAppService
+    this._bindEventos();
+
+    // Ciclo periodico para emparelhar quem ficou sozinho
+    this._cicloTimer = setInterval(() => this._tentarEmparelharTodos(), CICLO_AGENDAMENTO_MS);
+
+    // Emparelha imediatamente quem ja esta online
+    this._tentarEmparelharTodos();
+
     return true;
   }
 
   parar() {
     if (!this.emExecucao) {
-      logger.warn('⚠️ Maturação não está em execução');
+      logger.warn('Maturacao nao esta em execucao');
       return false;
     }
     this.emExecucao = false;
-    logger.info('⏸️ Processo de maturação pausado');
+
+    if (this._cicloTimer) {
+      clearInterval(this._cicloTimer);
+      this._cicloTimer = null;
+    }
+
+    this._unbindEventos();
+    logger.info('Processo de maturacao pausado');
     return true;
   }
 
-  async executarLoop() {
-    logger.info('🔁 Loop de maturação iniciado');
+  // ─── EVENTOS DO WHATSAPP ──────────────────────────────────────────────────
 
-    while (this.emExecucao) {
-      try {
-        // Verificar horário
-        if (!PlanoMaturacaoModel.estaDentroHorario()) {
-          const proxima = PlanoMaturacaoModel.proximoHorarioFuncionamento();
-          logger.info(`⏰ Fora do horário. Próximo início: ${proxima.toLocaleString('pt-BR')}`);
-          await DelayUtils.sleep(5 * 60 * 1000);
-          continue;
-        }
+  _bindEventos() {
+    if (this._eventsBound) return;
+    this._eventsBound = true;
 
-        const plano = PlanoMaturacaoModel.obter();
+    this._onTelefoneOnline  = (id) => this._aoTelefoneOnline(id);
+    this._onTelefoneOffline = (id, motivo) => this._aoTelefoneOffline(id, motivo);
+    this._onTelefoneErro    = (id, motivo) => this._aoTelefoneOffline(id, motivo);
 
-        // Buscar telefones disponíveis que não estejam em conversa ativa
-        const disponiveis = this._buscarDisponiveisParaNovaConversa();
-        const online = TelefoneModel.buscarOnline();
-        const conversasEmAndamento = Math.floor(this.conversasAtivas.size / 2);
+    WhatsAppService.on('telefone:online',  this._onTelefoneOnline);
+    WhatsAppService.on('telefone:offline', this._onTelefoneOffline);
+    WhatsAppService.on('telefone:erro',    this._onTelefoneErro);
+  }
 
-        logger.debug(`🔍 Ciclo | Online: ${online.length} | Disponíveis p/ nova conversa: ${disponiveis.length} | Conv. ativas: ${conversasEmAndamento}`);
+  _unbindEventos() {
+    WhatsAppService.off('telefone:online',  this._onTelefoneOnline);
+    WhatsAppService.off('telefone:offline', this._onTelefoneOffline);
+    WhatsAppService.off('telefone:erro',    this._onTelefoneErro);
+    this._eventsBound = false;
+  }
 
-        if (disponiveis.length < 2) {
-          if (this.conversasAtivas.size > 0) {
-            // Há conversas em andamento — aguarda e verifica novamente
-            logger.debug('⏳ Telefones em uso. Aguardando disponibilidade...');
-            await DelayUtils.sleep(15 * 1000);
-          } else {
-            logger.info(`⏳ Sem participantes suficientes. Online: ${online.length} | Disponíveis: ${disponiveis.length}`);
-            if (online.length < 2) {
-              logger.info('   → Conecte pelo menos 2 telefones ao WhatsApp');
-            } else {
-              logger.info('   → Todos os telefones aguardando intervalo entre conversas');
-            }
-            await DelayUtils.sleep(60 * 1000);
-          }
-          continue;
-        }
+  _aoTelefoneOnline(telefoneId) {
+    if (!this.emExecucao) return;
+    const tel = TelefoneModel.buscarPorId(telefoneId);
+    logger.info(`[Maturacao] ${tel?.nome ?? telefoneId} ficou online -- tentando emparelhar`);
+    // Pequena espera para garantir que o numero foi gravado
+    setTimeout(() => this._tentarEmparelharTelefone(telefoneId), 3000);
+  }
 
-        // Montar o máximo de pares possíveis com os disponíveis
-        const pares = this._montarPares(disponiveis, plano);
+  _aoTelefoneOffline(telefoneId, motivo) {
+    const tel = TelefoneModel.buscarPorId(telefoneId);
+    logger.warn(`[Maturacao] ${tel?.nome ?? telefoneId} ficou offline (${motivo}) -- removendo de conversas ativas`);
+    // Remove da conversa ativa sem cooldown (foi desconexao externa, nao falha nossa)
+    this.conversasAtivas.delete(telefoneId);
+  }
 
-        if (pares.length === 0) {
-          logger.info('⚠️ Nenhum par válido formado (intervalo entre conversas ainda não expirou)');
-          await DelayUtils.sleep(30 * 1000);
-          continue;
-        }
+  // ─── EMPARELHAMENTO ───────────────────────────────────────────────────────
 
-        // Disparar todos os pares em paralelo
-        for (const participantes of pares) {
-          const conversa = ConversaModel.selecionarAleatoria(participantes.length);
-          if (!conversa) {
-            logger.warn(`⚠️ Nenhuma conversa compatível para ${participantes.length} participantes`);
-            continue;
-          }
+  /**
+   * Verifica todos os telefones disponiveis e forma pares para iniciar conversas.
+   * Chamado periodicamente e ao detectar novo telefone online.
+   */
+  _tentarEmparelharTodos() {
+    if (!this.emExecucao) return;
+    if (!PlanoMaturacao.estaDentroHorario()) return;
 
-          logger.info(`💬 Iniciando: "${conversa.nome}" | ${participantes.map(p => p.nome).join(' ↔ ')}`);
+    const livres = this._telefonesDivisiveis();
+    if (livres.length < 2) return;
 
-          // Marca como em uso ANTES de disparar (para o próximo ciclo não reutilizá-los)
-          const iniciouEm = new Date().toISOString();
-          const totalMsgs = conversa.mensagens.filter(m => m.texto).length;
-          participantes.forEach(p => {
-            this.conversasAtivas.set(p.id, {
-              conversaId: conversa.id,
-              conversaNome: conversa.nome,
-              participantes: participantes.map(x => x.nome),
-              mensagemAtual: 0,
-              totalMensagens: totalMsgs,
-              progresso: 0,
-              iniciouEm
-            });
-          });
+    const plano = PlanoMaturacao.obter();
+    const pares = this._formarPares(livres, plano);
 
-          // Disparo assíncrono — não bloqueia o loop principal
-          this.executarConversa(conversa, participantes).catch(err => {
-            logger.error(`❌ Erro não tratado na conversa "${conversa.nome}": ${err.message}`);
-            participantes.forEach(p => this.conversasAtivas.delete(p.id));
-          });
-        }
+    for (const par of pares) {
+      this._iniciarConversa(par);
+    }
+  }
 
-        // Intervalo entre ciclos de agendamento
-        const intervaloAgendamento = DelayUtils.getRandomDelay(
-          plano.intervalosGlobais.entreConversas.min,
-          plano.intervalosGlobais.entreConversas.max
-        );
-        logger.info(`⏰ Próximo ciclo de agendamento em ${DelayUtils.formatDuration(intervaloAgendamento)}...`);
-        await DelayUtils.sleep(intervaloAgendamento);
+  /**
+   * Tenta emparelhar um telefone especifico que acabou de ficar disponivel.
+   */
+  _tentarEmparelharTelefone(telefoneId) {
+    if (!this.emExecucao) return;
+    if (!PlanoMaturacao.estaDentroHorario()) return;
 
-      } catch (error) {
-        logger.error(`❌ Erro no loop de maturação: ${error.message}`);
-        logger.error(error.stack);
-        await DelayUtils.sleep(60 * 1000);
-      }
+    const tel = TelefoneModel.buscarPorId(telefoneId);
+    if (!tel) return;
+
+    // Ja esta em conversa?
+    if (this.conversasAtivas.has(telefoneId)) return;
+
+    // Em cooldown?
+    if (this._emCooldown(telefoneId)) return;
+
+    // Dentro do limite diario?
+    if (tel.configuracao.conversasRealizadasHoje >= tel.configuracao.quantidadeConversasDia) return;
+
+    // Nao esta operacional?
+    if (!WhatsAppService.estaOperacional(telefoneId)) return;
+
+    // Busca um parceiro disponivel
+    const livres = this._telefonesDivisiveis().filter(t => t.id !== telefoneId);
+    if (livres.length === 0) {
+      logger.debug(`[Maturacao] ${tel.nome} online mas sem parceiro disponivel no momento`);
+      return;
     }
 
-    logger.info('⏹️ Loop de maturação encerrado');
+    const plano = PlanoMaturacao.obter();
+    const parceiros = this._embaralhar(livres);
+    // Respeita intervalo entre conversas para o parceiro tambem
+    const parceiro = parceiros.find(t => this._podeParticipar(t, plano));
+    if (!parceiro) {
+      logger.debug(`[Maturacao] ${tel.nome} online mas parceiros ainda em intervalo`);
+      return;
+    }
+
+    this._iniciarConversa([tel, parceiro]);
   }
 
   /**
-   * Retorna telefones online, disponíveis (abaixo do limite diário)
-   * e que NÃO estejam em conversa ativa no momento.
+   * Lista telefones que podem entrar em nova conversa agora.
    */
-  _buscarDisponiveisParaNovaConversa() {
+  _telefonesDivisiveis() {
     const emUso = new Set(this.conversasAtivas.keys());
-    return TelefoneModel.buscarDisponiveis().filter(t => !emUso.has(t.id));
+    return TelefoneModel.buscarDisponiveis().filter(t =>
+      !emUso.has(t.id) &&
+      !this._emCooldown(t.id) &&
+      WhatsAppService.estaOperacional(t.id)
+    );
+  }
+
+  _emCooldown(telefoneId) {
+    const fim = this.cooldowns.get(telefoneId);
+    if (!fim) return false;
+    if (Date.now() >= fim) {
+      this.cooldowns.delete(telefoneId);
+      return false;
+    }
+    return true;
+  }
+
+  _podeParticipar(tel, plano) {
+    if (!tel.configuracao.ultimaConversaEm) return true;
+    const decorrido = (Date.now() - new Date(tel.configuracao.ultimaConversaEm).getTime()) / 1000;
+    return decorrido >= plano.intervalosGlobais.entreConversas.min;
   }
 
   /**
-   * Monta o máximo de pares (2 a 2) a partir dos candidatos,
-   * respeitando o intervalo mínimo entre conversas.
+   * Forma o maximo de pares validos a partir dos candidatos.
+   * Cada telefone so aparece em um par.
    */
-  _montarPares(candidatos, plano) {
-    const agora = new Date();
-
-    // Filtrar pelo intervalo mínimo entre conversas
-    const aptos = candidatos.filter(t => {
-      if (!t.configuracao.ultimaConversaEm) return true;
-      const ultima = new Date(t.configuracao.ultimaConversaEm);
-      const decorrido = (agora - ultima) / 1000;
-      const ok = decorrido >= plano.intervalosGlobais.entreConversas.min;
-      if (!ok) {
-        const restante = Math.ceil(plano.intervalosGlobais.entreConversas.min - decorrido);
-        logger.debug(`   ${t.nome}: aguardando intervalo (${restante}s restantes)`);
-      }
-      return ok;
-    });
-
+  _formarPares(candidatos, plano) {
+    const aptos = candidatos.filter(t => this._podeParticipar(t, plano));
     if (aptos.length < 2) return [];
 
-    // Embaralha para variar combinações a cada ciclo
-    const embaralhados = this.shuffleArray(aptos);
-
+    const embaralhados = this._embaralhar(aptos);
     const usados = new Set();
     const pares = [];
 
-    for (let i = 0; i < embaralhados.length; i++) {
-      const iniciador = embaralhados[i];
-      if (usados.has(iniciador.id)) continue;
-      if (!iniciador.configuracao.podeIniciarConversa) continue;
+    for (const t of embaralhados) {
+      if (usados.has(t.id)) continue;
+      if (!t.configuracao.podeIniciarConversa) continue;
 
-      // Encontra primeiro receptor disponível (diferente e não usado)
-      const receptor = embaralhados.find(t =>
-        t.id !== iniciador.id && !usados.has(t.id)
-      );
+      const parceiro = embaralhados.find(p => p.id !== t.id && !usados.has(p.id));
+      if (!parceiro) continue;
 
-      if (!receptor) break;
-
-      usados.add(iniciador.id);
-      usados.add(receptor.id);
-      pares.push([iniciador, receptor]);
-
-      logger.debug(`   Par formado: ${iniciador.nome} ↔ ${receptor.nome}`);
+      usados.add(t.id);
+      usados.add(parceiro.id);
+      pares.push([t, parceiro]);
     }
 
-    // Se nenhum "iniciador" encontrado mas há 2+ aptos, usa os dois primeiros
+    // Fallback: se nenhum tem podeIniciarConversa, usa os dois primeiros
     if (pares.length === 0 && aptos.length >= 2) {
-      logger.debug('   Nenhum com podeIniciarConversa — usando primeiros dois disponíveis');
-      pares.push([embaralhados[0], embaralhados[1]]);
+      const [a, b] = this._embaralhar(aptos);
+      pares.push([a, b]);
     }
 
     return pares;
   }
 
-  shuffleArray(array) {
-    const shuffled = [...array];
-    for (let i = shuffled.length - 1; i > 0; i--) {
+  _embaralhar(arr) {
+    const s = [...arr];
+    for (let i = s.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      [s[i], s[j]] = [s[j], s[i]];
     }
-    return shuffled;
+    return s;
   }
 
-  /**
-   * Verifica se o cliente Puppeteer ainda está com a página ativa.
-   * client.info preenchido NÃO garante que o frame ainda está vivo.
-   */
-  _estaOperacional(telefoneId) {
-    const client = WhatsAppService.getCliente(telefoneId);
-    if (!client || !client.info) return false;
-    try {
-      const page = client.pupPage;
-      if (!page || page.isClosed()) return false;
-      return true;
-    } catch {
-      return false;
+  // ─── CONVERSA ─────────────────────────────────────────────────────────────
+
+  _iniciarConversa(participantes) {
+    const idsEmUso = [...new Set([...this.conversasAtivas.values()].map(v => v.conversaId))];
+    const conversa = ConversaModel.selecionarAleatoria(participantes.length, idsEmUso);
+    if (!conversa) {
+      logger.warn(`[Maturacao] Nenhuma conversa disponivel para ${participantes.length} participantes`);
+      return;
     }
+
+    logger.info(`[Maturacao] Iniciando: "${conversa.nome}" | ${participantes.map(p => p.nome).join(' <-> ')}`);
+
+    const iniciouEm = new Date().toISOString();
+    const totalMensagens = conversa.mensagens.filter(m => m.texto).length;
+
+    participantes.forEach(p => {
+      this.conversasAtivas.set(p.id, {
+        conversaId:    conversa.id,
+        conversaNome:  conversa.nome,
+        participantes: participantes.map(x => x.nome),
+        mensagemAtual: 0,
+        totalMensagens,
+        progresso:     0,
+        iniciouEm
+      });
+    });
+
+    this._executarConversa(conversa, participantes).catch(err => {
+      logger.error(`[Maturacao] Erro nao tratado na conversa "${conversa.nome}": ${err.message}`);
+      this._finalizarConversa(participantes, false);
+    });
   }
 
-  async executarConversa(conversa, participantes) {
+  async _executarConversa(conversa, participantes) {
+    let mensagensEnviadas = 0;
+    const totalMensagens  = conversa.mensagens.filter(m => m.texto).length;
+
     try {
-      logger.info(`🎬 Conversa: "${conversa.nome}"`);
-      logger.info(`👥 ${participantes.map(p => `${p.nome}(${p.numero})`).join(' ↔ ')}`);
-      logger.info(`📨 ${conversa.mensagens.length} entradas`);
-
-      let mensagensEnviadas = 0;
-      const totalMensagens = conversa.mensagens.filter(m => m.texto).length;
-
       for (let i = 0; i < conversa.mensagens.length; i++) {
-        // Para se maturação foi pausada
         if (!this.emExecucao) {
-          logger.info(`⏹️ Maturação pausada — interrompendo conversa "${conversa.nome}"`);
+          logger.info(`[Maturacao] Maturacao pausada -- interrompendo "${conversa.nome}"`);
           break;
         }
 
         const msg = conversa.mensagens[i];
 
-        // Pausa longa
         if (msg.tipo === 'pausa_longa') {
-          const duracao = DelayUtils.getRandomDelay(msg.duracao.min, msg.duracao.max);
-          logger.info(`⏸️ Pausa longa: ${DelayUtils.formatDuration(duracao)}`);
-          await DelayUtils.sleep(duracao);
+          const dur = DelayUtils.getRandomDelay(msg.duracao.min, msg.duracao.max);
+          logger.info(`[Maturacao] Pausa longa: ${DelayUtils.formatDuration(dur)}`);
+          await DelayUtils.sleep(dur);
           continue;
         }
 
-        const remetente = participantes[msg.remetente];
+        const remetente    = participantes[msg.remetente];
         const destinatarios = participantes.filter((_, idx) => idx !== msg.remetente);
 
         if (!remetente) {
-          logger.error(`❌ Remetente inválido: índice ${msg.remetente} — mensagem #${msg.ordem}`);
+          logger.error(`[Maturacao] Remetente invalido: indice ${msg.remetente}`);
           continue;
         }
 
-        // Verifica operacionalidade antes de qualquer operação
-        if (!this._estaOperacional(remetente.id)) {
-          logger.error(`❌ ${remetente.nome} não está operacional (frame detachado). Abortando conversa.`);
+        // Verifica se remetente ainda esta operacional
+        if (!WhatsAppService.estaOperacional(remetente.id)) {
+          logger.warn(`[Maturacao] ${remetente.nome} nao operacional -- abortando conversa`);
+          this._iniciarCooldown(remetente.id, `${remetente.nome} desconectou durante conversa`);
           break;
         }
 
-        // Delay antes de enviar
         const delay = DelayUtils.getRandomDelay(msg.delay.min, msg.delay.max);
-        logger.info(`⏳ Delay: ${DelayUtils.formatDuration(delay)} | Próxima: #${msg.ordem} [${remetente.nome}]: "${msg.texto}"`);
+        logger.info(`[Maturacao] Delay: ${DelayUtils.formatDuration(delay)} | #${msg.ordem} [${remetente.nome}]: "${msg.texto}"`);
         await DelayUtils.sleep(delay);
 
-        for (const destinatario of destinatarios) {
-          const destinatarioOk = this._estaOperacional(destinatario.id);
+        for (const dest of destinatarios) {
+          const destOk = WhatsAppService.estaOperacional(dest.id);
 
           try {
             // Marcar como lida
-            if (msg.comportamento?.marcarComoLida && i > 0 && destinatarioOk) {
-              const tempoLeitura = DelayUtils.getRandomDelay(
+            if (msg.comportamento?.marcarComoLida && i > 0 && destOk) {
+              const tLeitura = DelayUtils.getRandomDelay(
                 msg.comportamento.tempoAntesLeitura.min,
                 msg.comportamento.tempoAntesLeitura.max
               );
-              logger.debug(`👁️ ${destinatario.nome} lendo (${DelayUtils.formatDuration(tempoLeitura)})...`);
-              await DelayUtils.sleep(tempoLeitura);
-              await WhatsAppService.marcarComoLida(destinatario.id, remetente.numero);
+              logger.debug(`[Maturacao] ${dest.nome} lendo (${DelayUtils.formatDuration(tLeitura)})...`);
+              await DelayUtils.sleep(tLeitura);
+              await WhatsAppService.marcarComoLida(dest.id, remetente.numero);
             }
 
-            // Simular digitação
+            // Simular digitacao
             if (msg.comportamento?.simularDigitacao) {
-              const tempoDigitacao = DelayUtils.getRandomDelay(
+              const tDigitacao = DelayUtils.getRandomDelay(
                 msg.comportamento.tempoDigitacao.min,
                 msg.comportamento.tempoDigitacao.max
               );
-              logger.debug(`✍️ ${remetente.nome} digitando (${DelayUtils.formatDuration(tempoDigitacao)})...`);
-              await WhatsAppService.simularDigitacao(remetente.id, destinatario.numero, tempoDigitacao);
+              logger.debug(`[Maturacao] ${remetente.nome} digitando (${DelayUtils.formatDuration(tDigitacao)})...`);
+              await WhatsAppService.simularDigitacao(remetente.id, dest.numero, tDigitacao);
             }
 
-            // Verifica operacionalidade novamente após os delays
-            if (!this._estaOperacional(remetente.id)) {
-              logger.error(`❌ ${remetente.nome} perdeu conexão durante delays. Abortando.`);
-              throw new Error(`Frame detachado após delay: ${remetente.nome}`);
+            // Verifica novamente apos delays (a pagina pode ter fechado durante o typing)
+            if (!WhatsAppService.estaOperacional(remetente.id)) {
+              throw new Error(`Frame detachado apos delay: ${remetente.nome}`);
             }
 
-            await WhatsAppService.enviarMensagem(remetente.id, destinatario.numero, msg.texto);
-            logger.info(`✅ Enviado! [${remetente.nome} → ${destinatario.nome}]: "${msg.texto}"`);
-            TelefoneModel.incrementarMensagensRecebidas(destinatario.id);
+            await WhatsAppService.enviarMensagem(remetente.id, dest.numero, msg.texto);
+            logger.info(`[Maturacao] Enviado! [${remetente.nome} -> ${dest.nome}]: "${msg.texto}"`);
+            TelefoneModel.incrementarMensagensRecebidas(dest.id);
 
-          } catch (error) {
-            const isFrameDetach = error.message && (
-              error.message.includes('detached Frame') ||
-              error.message.includes('Execution context was destroyed') ||
-              error.message.includes('Target closed') ||
-              error.message.includes('Frame detachado')
-            );
-
-            if (isFrameDetach) {
-              logger.warn(`⚠️ Conexão perdida (${remetente.nome}) — abortando conversa`);
-              // Não altera status aqui — o evento 'disconnected' do wwebjs fará isso
-              throw error; // encerra o executarConversa
+          } catch (err) {
+            if (isErroConexao(err.message)) {
+              logger.warn(`[Maturacao] Conexao perdida (${remetente.nome}) -- iniciando cooldown e abortando conversa`);
+              this._iniciarCooldown(remetente.id, err.message);
+              throw err; // propaga para encerrar _executarConversa
             }
-
-            // Erros não fatais — loga e continua
-            logger.error(`❌ Falha ao enviar para ${destinatario.nome}: ${error.message}`);
-            logger.error(`   remetente: ${remetente.nome} (${remetente.id}) → ${remetente.numero}`);
-            logger.error(`   destinatario: ${destinatario.nome} (${destinatario.id}) → ${destinatario.numero}`);
+            // Erro nao fatal -- loga e continua
+            logger.error(`[Maturacao] Falha ao enviar [${remetente.nome} -> ${dest.nome}]: ${err.message}`);
           }
         }
 
@@ -335,58 +383,85 @@ class MaturacaoService {
         participantes.forEach(p => {
           const ativo = this.conversasAtivas.get(p.id);
           if (ativo) {
-            ativo.progresso = progresso;
+            ativo.progresso     = progresso;
             ativo.mensagemAtual = mensagensEnviadas;
           }
         });
-        logger.debug(`📊 Progresso: ${mensagensEnviadas}/${totalMensagens} (${progresso}%)`);
+        logger.debug(`[Maturacao] Progresso: ${mensagensEnviadas}/${totalMensagens} (${progresso}%)`);
       }
 
-      logger.info(`🎉 Conversa "${conversa.nome}" finalizada! (${mensagensEnviadas}/${totalMensagens} msgs)`);
+      logger.info(`[Maturacao] Conversa "${conversa.nome}" finalizada! (${mensagensEnviadas}/${totalMensagens} msgs)`);
+      this._finalizarConversa(participantes, true);
 
-      participantes.forEach(p => {
-        TelefoneModel.incrementarConversas(p.id);
-        this.conversasAtivas.delete(p.id);
-      });
-
-      ConversaModel.incrementarUso(conversa.id);
-
-    } catch (error) {
-      logger.error(`❌ Erro ao executar conversa: ${error.message}`);
-      participantes.forEach(p => this.conversasAtivas.delete(p.id));
+    } catch (err) {
+      logger.error(`[Maturacao] Conversa abortada: ${err.message}`);
+      this._finalizarConversa(participantes, false);
     }
   }
 
+  /**
+   * Registra fim de conversa, atualiza contadores e agenda cooldown se necessario.
+   */
+  _finalizarConversa(participantes, sucesso) {
+    participantes.forEach(p => {
+      this.conversasAtivas.delete(p.id);
+      if (sucesso) {
+        TelefoneModel.incrementarConversas(p.id);
+      }
+    });
+
+  }
+
+  /**
+   * Coloca telefone em cooldown por COOLDOWN_MS.
+   * Apos o cooldown, tenta emparelhar automaticamente.
+   */
+  _iniciarCooldown(telefoneId, motivo) {
+    const fim = Date.now() + COOLDOWN_MS;
+    this.cooldowns.set(telefoneId, fim);
+    const tel = TelefoneModel.buscarPorId(telefoneId);
+    logger.info(`[Maturacao] ${tel?.nome ?? telefoneId} em cooldown por ${COOLDOWN_MS / 60000} min (${motivo})`);
+
+    setTimeout(() => {
+      if (!this.emExecucao) return;
+      this.cooldowns.delete(telefoneId);
+      logger.info(`[Maturacao] Cooldown encerrado para ${tel?.nome ?? telefoneId} -- tentando emparelhar`);
+      this._tentarEmparelharTelefone(telefoneId);
+    }, COOLDOWN_MS);
+  }
+
+  // ─── STATUS E MONITORAMENTO ───────────────────────────────────────────────
+
   getStatus() {
-    const plano = PlanoMaturacaoModel.obter();
-    const telefones = TelefoneModel.listar();
-    const telefonesOnline = TelefoneModel.buscarOnline();
-    const telefonesDisponiveis = TelefoneModel.buscarDisponiveis();
-    const conversasHoje = telefones.reduce((total, t) => total + t.configuracao.conversasRealizadasHoje, 0);
+    const plano      = PlanoMaturacao.obter();
+    const telefones  = TelefoneModel.listar();
+    const online     = TelefoneModel.buscarOnline();
+    const disponiveis = TelefoneModel.buscarDisponiveis();
+    const conversasHoje = telefones.reduce((s, t) => s + t.configuracao.conversasRealizadasHoje, 0);
 
     return {
-      emExecucao: this.emExecucao,
-      planoAtivo: plano.ativo,
-      dentroHorario: PlanoMaturacaoModel.estaDentroHorario(),
+      emExecucao:   this.emExecucao,
+      planoAtivo:   plano.ativo,
+      dentroHorario: PlanoMaturacao.estaDentroHorario(),
       telefones: {
-        total: telefones.length,
-        online: telefonesOnline.length,
-        disponiveis: telefonesDisponiveis.length
+        total:      telefones.length,
+        online:     online.length,
+        disponiveis: disponiveis.length,
+        emCooldown:  this.cooldowns.size
       },
       conversas: {
         realizadasHoje: conversasHoje,
         ativas: Math.floor(this.conversasAtivas.size / 2)
       },
-      proximoHorario: PlanoMaturacaoModel.estaDentroHorario()
+      proximoHorario: PlanoMaturacao.estaDentroHorario()
         ? null
-        : PlanoMaturacaoModel.proximoHorarioFuncionamento()
+        : PlanoMaturacao.proximoHorarioFuncionamento()
     };
   }
 
   getConversasAtivas() {
-    // Cada conversa ocupa 2 slots no Map (um por participante). Deduplica por conversaId.
-    const ativas = [];
-    const vistos = new Set();
+    const ativas  = [];
+    const vistos  = new Set();
     this.conversasAtivas.forEach((info) => {
       if (vistos.has(info.conversaId)) return;
       vistos.add(info.conversaId);

@@ -1,428 +1,338 @@
 {
-  "id": "conversa3",
-  "nome": "Conversa Namoro 3",
-  "categoria": "namoro",
+  "id": "conv_serie_001",
+  "nome": "Série Viciante",
+  "categoria": "entretenimento",
   "tags": [
-    "relacionamento",
-    "encontro",
-    "carinho"
+    "série",
+    "netflix",
+    "spoiler"
   ],
   "participantesMinimos": 2,
   "participantesMaximos": 2,
-  "duracaoEstimada": "10-120 minutos",
+  "duracaoEstimada": "15-40 minutos",
   "mensagens": [
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "Você chegou bem em casa?",
+      "texto": "Terminou a série que te falei?",
       "delay": {
-        "min": 4,
-        "max": 5
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 2,
-          "max": 2
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 6,
-          "max": 6
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "Você chegou bem em casa?",
+      "texto": "Terminei ontem de madrugada, não consegui parar",
       "delay": {
-        "min": 3,
-        "max": 7
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 2,
-          "max": 3
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 15,
-          "max": 15
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "Você chegou bem em casa?",
+      "texto": "O final te pegou de surpresa?",
       "delay": {
-        "min": 4,
-        "max": 7
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 2,
-          "max": 4
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 10,
-          "max": 10
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 4,
       "remetente": 1,
-      "texto": "Que tal sábado à noite?",
+      "texto": "Completamente. Não vi aquela reviravolta vindo",
       "delay": {
-        "min": 4,
-        "max": 5
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 2,
-          "max": 3
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 10,
-          "max": 10
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "Combinado, já estou animado 😊",
+      "texto": "Eu sabia desde o episódio 4 que ia terminar assim",
       "delay": {
-        "min": 2,
-        "max": 7
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 6,
-          "max": 6
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "Você chegou bem em casa?",
+      "texto": "Para de mentira que você não sabia não",
       "delay": {
-        "min": 2,
-        "max": 5
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 2,
-          "max": 2
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 13,
-          "max": 13
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "Você me faz muito bem.",
+      "texto": "Tô falando sério, tem uma cena que entrega tudo",
       "delay": {
-        "min": 3,
-        "max": 5
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 4
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 14,
-          "max": 14
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 8,
-      "remetente": 1,
-      "texto": "Combinado, já estou animado 😊",
-      "delay": {
-        "min": 2,
-        "max": 7
-      },
-      "comportamento": {
-        "marcarComoLida": true,
-        "tempoAntesLeitura": {
-          "min": 2,
-          "max": 4
-        },
-        "simularDigitacao": true,
-        "tempoDigitacao": {
-          "min": 7,
-          "max": 7
-        }
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 90,
+        "max": 200
       }
     },
     {
       "ordem": 9,
-      "remetente": 0,
-      "texto": "Também gostei muito, precisamos repetir.",
+      "remetente": 1,
+      "texto": "Vou rever agora prestando atenção então",
       "delay": {
-        "min": 3,
-        "max": 7
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 2,
-          "max": 4
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 6,
-          "max": 6
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 10,
-      "tipo": "pausa_longa",
-      "duracao": {
-        "min": 153,
-        "max": 284
+      "remetente": 0,
+      "texto": "Vale a pena. Segunda vez é completamente diferente",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
       }
     },
     {
       "ordem": 11,
       "remetente": 1,
-      "texto": "Você chegou bem em casa?",
+      "texto": "Já tem confirmação de segunda temporada?",
       "delay": {
-        "min": 2,
-        "max": 5
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 2,
-          "max": 3
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 5,
-          "max": 5
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 12,
       "remetente": 0,
-      "texto": "Combinado, já estou animado 😊",
+      "texto": "Ainda não oficial, mas os atores deram umas dicas nas redes",
       "delay": {
-        "min": 4,
-        "max": 6
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 2,
-          "max": 2
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 12,
-          "max": 12
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 13,
       "remetente": 1,
-      "texto": "Cheguei sim, adorei hoje ❤️",
+      "texto": "Torço que sim. Ficou muita coisa sem resposta",
       "delay": {
-        "min": 3,
-        "max": 5
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 2
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 14,
-          "max": 14
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 14,
       "remetente": 0,
-      "texto": "Vamos planejar algo especial.",
+      "texto": "Esse é o jeito deles prenderem a gente",
       "delay": {
-        "min": 2,
-        "max": 8
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 2,
-          "max": 3
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 6,
-          "max": 6
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 15,
       "remetente": 1,
-      "texto": "Vamos planejar algo especial.",
+      "texto": "Funcionou com sucesso no meu caso",
       "delay": {
-        "min": 2,
-        "max": 8
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 2,
-          "max": 2
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 7,
-          "max": 7
+          "min": 30,
+          "max": 40
         }
       }
     },
     {
       "ordem": 16,
       "remetente": 0,
-      "texto": "Que tal sábado à noite?",
+      "texto": "No meu também, infelizmente",
       "delay": {
-        "min": 4,
-        "max": 5
+        "min": 20,
+        "max": 30
       },
       "comportamento": {
         "marcarComoLida": true,
         "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
+          "min": 15,
+          "max": 20
         },
         "simularDigitacao": true,
         "tempoDigitacao": {
-          "min": 13,
-          "max": 13
-        }
-      }
-    },
-    {
-      "ordem": 17,
-      "remetente": 1,
-      "texto": "Você chegou bem em casa?",
-      "delay": {
-        "min": 4,
-        "max": 6
-      },
-      "comportamento": {
-        "marcarComoLida": true,
-        "tempoAntesLeitura": {
-          "min": 1,
-          "max": 3
-        },
-        "simularDigitacao": true,
-        "tempoDigitacao": {
-          "min": 5,
-          "max": 5
-        }
-      }
-    },
-    {
-      "ordem": 18,
-      "remetente": 0,
-      "texto": "Vamos planejar algo especial.",
-      "delay": {
-        "min": 4,
-        "max": 6
-      },
-      "comportamento": {
-        "marcarComoLida": true,
-        "tempoAntesLeitura": {
-          "min": 2,
-          "max": 4
-        },
-        "simularDigitacao": true,
-        "tempoDigitacao": {
-          "min": 10,
-          "max": 10
-        }
-      }
-    },
-    {
-      "ordem": 19,
-      "remetente": 1,
-      "texto": "Você me faz muito bem.",
-      "delay": {
-        "min": 4,
-        "max": 8
-      },
-      "comportamento": {
-        "marcarComoLida": true,
-        "tempoAntesLeitura": {
-          "min": 2,
-          "max": 2
-        },
-        "simularDigitacao": true,
-        "tempoDigitacao": {
-          "min": 10,
-          "max": 10
-        }
-      }
-    },
-    {
-      "ordem": 20,
-      "remetente": 0,
-      "texto": "Combinado, já estou animado 😊",
-      "delay": {
-        "min": 4,
-        "max": 6
-      },
-      "comportamento": {
-        "marcarComoLida": true,
-        "tempoAntesLeitura": {
-          "min": 2,
-          "max": 3
-        },
-        "simularDigitacao": true,
-        "tempoDigitacao": {
-          "min": 7,
-          "max": 7
+          "min": 30,
+          "max": 40
         }
       }
     }
-  ],
-  "metadados": {
-    "criadaPor": "sistema",
-    "vezesUsada": 0,
-    "ultimoUso": null,
-    "efetividade": null
-  }
+  ]
 }
