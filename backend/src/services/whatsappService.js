@@ -13,8 +13,9 @@ const DelayUtils = require('../utils/delay');
 class WhatsAppService extends EventEmitter {
   constructor() {
     super();
-    this.clients = new Map();  // telefoneId -> client
-    this.qrCodes = new Map();  // telefoneId -> qrRaw
+    this.clients = new Map();    // telefoneId -> client
+    this.qrCodes = new Map();    // telefoneId -> qrRaw
+    this._desconectando = new Set(); // guard contra duplo disconnect/destroy
   }
 
   // ─── INICIALIZAR ───────────────────────────────────────────────────────────
@@ -122,21 +123,48 @@ class WhatsAppService extends EventEmitter {
 
     // Desconectado
     client.on('disconnected', (reason) => {
+      // Guard: ban/LOGOUT pode disparar este evento multiplas vezes
+      if (this._desconectando.has(telefoneId)) return;
+      this._desconectando.add(telefoneId);
+
       logger.warn(`${telefone.nome} desconectado -- motivo: ${reason}`);
       TelefoneModel.atualizarStatus(telefoneId, 'offline');
       this.clients.delete(telefoneId);
       this.qrCodes.delete(telefoneId);
       this.emit('telefone:offline', telefoneId, reason);
+
+      // Tenta destruir o cliente de forma silenciosa para liberar recursos
+      // Envolto em setTimeout para dar tempo ao whatsapp-web.js terminar
+      // seu proprio cleanup antes de forcamos o destroy
+      setTimeout(() => {
+        try { client.destroy().catch(() => {}); } catch (_) {}
+        this._desconectando.delete(telefoneId);
+      }, 2000);
     });
 
     this.clients.set(telefoneId, client);
     logger.info(`Chamando initialize() para ${telefone.nome}...`);
 
     client.initialize().catch(err => {
-      logger.error(`Erro fatal ao inicializar ${telefone.nome}: ${err.message}`);
-      TelefoneModel.atualizarStatus(telefoneId, 'erro');
+      const msgErro = err?.message ?? String(err);
+      // Erros de contexto destruido sao esperados quando o telefone bane/desconecta
+      // durante o initialize -- nao sao erros fatais do nosso sistema
+      const erroEsperado = [
+        'Execution context was destroyed',
+        'Target closed',
+        'Session closed',
+        'Protocol error',
+        'detached Frame'
+      ].some(e => msgErro.includes(e));
+
+      if (erroEsperado) {
+        logger.warn(`${telefone.nome} desconectou durante inicializacao (${msgErro.split('\n')[0]}) -- ignorando`);
+      } else {
+        logger.error(`Erro fatal ao inicializar ${telefone.nome}: ${msgErro}`);
+        TelefoneModel.atualizarStatus(telefoneId, 'erro');
+        this.emit('telefone:erro', telefoneId, msgErro);
+      }
       this.clients.delete(telefoneId);
-      this.emit('telefone:erro', telefoneId, err.message);
     });
 
     return client;
@@ -235,9 +263,21 @@ class WhatsAppService extends EventEmitter {
       logger.debug(`[${telefoneId}] Simulou digitacao por ${duracao}ms`);
       return true;
     } catch (err) {
+      const erroConexao = [
+        'detached Frame', 'Execution context was destroyed',
+        'Target closed', 'Session closed', 'Protocol error'
+      ].some(e => err.message?.includes(e));
+
+      if (erroConexao) {
+        // Frame morto -- sinaliza para o chamador abortar a conversa
+        logger.warn(`[${telefoneId}] simularDigitacao: frame morto detectado -- ${err.message.split("\n")[0]}`);
+        return false; // NAO faz sleep -- o chamador vai abortar de qualquer forma
+      }
+
+      // Erro menor (chat nao encontrado, etc) -- ignora e faz o delay normalmente
       logger.debug(`simularDigitacao falhou (ignorado): ${err.message}`);
       await DelayUtils.sleep(duracao);
-      return false;
+      return true; // retorna true para nao abortar a conversa por erro menor
     }
   }
 

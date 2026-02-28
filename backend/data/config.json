@@ -22,31 +22,7 @@
       },
       "sensibilidade": "media",
       "criadoEm": "2026-02-25T15:52:55.497Z",
-      "atualizadoEm": "2026-02-25T15:53:53.279Z"
-    },
-    {
-      "id": "tel_a8c66ddd",
-      "nome": "ATL-002",
-      "numero": "128750956089430@lid",
-      "sessionName": "session-f7bca70a",
-      "status": "offline",
-      "configuracao": {
-        "podeIniciarConversa": false,
-        "podeReceberMensagens": true,
-        "quantidadeConversasDia": 5,
-        "conversasRealizadasHoje": 0,
-        "ultimaConversaEm": null
-      },
-      "estatisticas": {
-        "totalConversas": 0,
-        "totalMensagensEnviadas": 0,
-        "totalMensagensRecebidas": 0,
-        "diasAtivo": 0,
-        "ultimoBanimento": null
-      },
-      "sensibilidade": "media",
-      "criadoEm": "2026-02-25T15:53:01.926Z",
-      "atualizadoEm": "2026-02-25T15:57:56.340Z"
+      "atualizadoEm": "2026-02-25T20:25:38.817Z"
     },
     {
       "id": "tel_bd68bb07",
@@ -70,7 +46,7 @@
       },
       "sensibilidade": "media",
       "criadoEm": "2026-02-25T15:55:32.491Z",
-      "atualizadoEm": "2026-02-25T15:56:32.015Z"
+      "atualizadoEm": "2026-02-25T20:26:26.714Z"
     },
     {
       "id": "tel_dcafb94d",
@@ -94,7 +70,7 @@
       },
       "sensibilidade": "media",
       "criadoEm": "2026-02-25T15:55:37.134Z",
-      "atualizadoEm": "2026-02-25T15:57:23.551Z"
+      "atualizadoEm": "2026-02-25T20:26:49.857Z"
     }
   ]
 }

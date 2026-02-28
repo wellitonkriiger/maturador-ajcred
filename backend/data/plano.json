@@ -1,5 +1,5 @@
 {
-  "ativo": false,
+  "ativo": true,
   "horarioFuncionamento": {
     "inicio": "08:00",
     "fim": "22:00",

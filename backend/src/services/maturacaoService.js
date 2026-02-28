@@ -355,7 +355,11 @@ class MaturacaoService {
                 msg.comportamento.tempoDigitacao.max
               );
               logger.debug(`[Maturacao] ${remetente.nome} digitando (${DelayUtils.formatDuration(tDigitacao)})...`);
-              await WhatsAppService.simularDigitacao(remetente.id, dest.numero, tDigitacao);
+              const digitacaoOk = await WhatsAppService.simularDigitacao(remetente.id, dest.numero, tDigitacao);
+              // Se a digitacao falhou com frame detachado, nao adianta tentar enviar
+              if (!digitacaoOk) {
+                throw new Error(`Frame detachado durante digitacao: ${remetente.nome}`);
+              }
             }
 
             // Verifica novamente apos delays (a pagina pode ter fechado durante o typing)

@@ -93,6 +93,42 @@ process.on('SIGINT', async () => {
   });
 });
 
+// ─── GUARD GLOBAL CONTRA CRASHES ─────────────────────────────────────────────
+// Impede que erros internos do Puppeteer/whatsapp-web.js derrubem o processo.
+// Erros de contexto destruido sao esperados quando um telefone bane ou desconecta.
+const ERROS_PUPPETEER_ESPERADOS = [
+  'Execution context was destroyed',
+  'Target closed',
+  'Session closed',
+  'Protocol error',
+  'detached Frame',
+  'Navigation failed'
+];
+
+process.on('unhandledRejection', (reason) => {
+  const msg = reason?.message ?? String(reason);
+  if (ERROS_PUPPETEER_ESPERADOS.some(e => msg.includes(e))) {
+    logger.warn(`[Guard] Erro Puppeteer capturado (nao fatal): ${msg.split('\n')[0]}`);
+    return; // nao derruba o processo
+  }
+  logger.error(`[Guard] unhandledRejection nao tratada: ${msg}`);
+  // Para outros erros nao esperados, loga mas ainda nao derruba
+  // Se quiser comportamento padrao Node.js, descomente a linha abaixo:
+  // process.exit(1);
+});
+
+process.on('uncaughtException', (err) => {
+  const msg = err?.message ?? String(err);
+  if (ERROS_PUPPETEER_ESPERADOS.some(e => msg.includes(e))) {
+    logger.warn(`[Guard] Exception Puppeteer capturada (nao fatal): ${msg.split('\n')[0]}`);
+    return;
+  }
+  logger.error(`[Guard] uncaughtException: ${msg}`);
+  logger.error(err.stack);
+  // Erros verdadeiramente inesperados encerram o processo
+  process.exit(1);
+});
+
 // Iniciar servidor
 const PORT = process.env.PORT || 3001;
 
