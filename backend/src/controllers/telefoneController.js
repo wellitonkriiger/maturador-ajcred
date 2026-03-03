@@ -115,6 +115,10 @@ class TelefoneController {
   async conectar(req, res) {
     try {
       const { id } = req.params;
+      const method = req.body?.method === 'phone' ? 'phone' : 'qr';
+      const phoneNumber = String(req.body?.phoneNumber ?? '').replace(/\D/g, '');
+      const showNotification = req.body?.showNotification !== false;
+      const intervalMs = Number(req.body?.intervalMs) > 0 ? Number(req.body.intervalMs) : 180000;
 
       const telefone = TelefoneModel.buscarPorId(id);
 
@@ -122,13 +126,28 @@ class TelefoneController {
         return res.status(404).json({ erro: 'Telefone não encontrado' });
       }
 
+      if (method === 'phone' && phoneNumber.length < 10) {
+        return res.status(400).json({ erro: 'Informe um número válido para conectar por código' });
+      }
+
       // Inicializar cliente (assíncrono, não bloqueia resposta)
-      WhatsAppService.inicializarCliente(id, { allowQr: true, isReconnect: false }).catch(error => {
+      WhatsAppService.inicializarCliente(id, {
+        allowQr: true,
+        isReconnect: false,
+        pairWithPhoneNumber: method === 'phone' ? {
+          phoneNumber,
+          showNotification,
+          intervalMs
+        } : null
+      }).catch(error => {
         logger.error(`Erro ao conectar ${id}:`, error);
       });
 
       res.json({
-        mensagem: 'Conexão iniciada. Aguarde o QR Code.',
+        mensagem: method === 'phone'
+          ? 'Conexão iniciada. Aguarde o código de pareamento.'
+          : 'Conexão iniciada. Aguarde o QR Code.',
+        method,
         telefone: TelefoneModel.buscarPorId(id)
       });
     } catch (error) {
@@ -215,12 +234,14 @@ class TelefoneController {
 
       const conectado = WhatsAppService.estaConectado(id);
       const qrCode = WhatsAppService.getQRCode(id);
+      const pairingCode = WhatsAppService.getPairingCode(id);
 
       res.json({
         telefone: telefone.nome,
         status: telefone.status,
         conectado,
         temQRCode: !!qrCode,
+        temCodigoPareamento: !!pairingCode,
         numero: telefone.numero
       });
     } catch (error) {

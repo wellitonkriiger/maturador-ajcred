@@ -14,7 +14,7 @@
   },
   "intervalosGlobais": {
     "entreConversas": {
-      "min": 600,
+      "min": 1200,
       "max": 1800
     },
     "pausaLonga": {

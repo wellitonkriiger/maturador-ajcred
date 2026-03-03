@@ -29,8 +29,19 @@ class RealtimeService {
     });
   }
 
+  emitTelefonePairingCode(telefoneId, payload) {
+    this.emit('telefone:pairing_code', {
+      telefoneId,
+      ...payload
+    });
+  }
+
   clearTelefoneQRCode(telefoneId) {
     this.emit('telefone:qr_cleared', { telefoneId });
+  }
+
+  clearTelefonePairingCode(telefoneId) {
+    this.emit('telefone:pairing_code_cleared', { telefoneId });
   }
 
   emitReconnectAttempt(telefoneId, status, message = null) {

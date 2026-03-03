@@ -7,6 +7,7 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot }) {
   const [showCreate, setShowCreate] = useState(false);
   const [editing, setEditing] = useState(null);
   const [qrModal, setQrModal] = useState(null);
+  const [connectDialog, setConnectDialog] = useState(null);
   const [plano, setPlano] = useState(null);
   const [agora, setAgora] = useState(Date.now());
   const qrDismissedRef = useRef(new Set());
@@ -41,15 +42,35 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot }) {
       }
     };
     const onQRCleared = ({ telefoneId }) => {
-      setQrModal((current) => current?.id === telefoneId ? null : current);
+      setQrModal((current) => current?.id === telefoneId && current?.mode === 'qr' ? null : current);
+    };
+    const onPairingCode = ({ telefoneId, nome, code, phoneNumber }) => {
+      if (qrDismissedRef.current.has(telefoneId)) {
+        return;
+      }
+      setQrModal({
+        id: telefoneId,
+        nome,
+        mode: 'phone',
+        code,
+        phoneNumber,
+        loading: false
+      });
+    };
+    const onPairingCodeCleared = ({ telefoneId }) => {
+      setQrModal((current) => current?.id === telefoneId && current?.mode === 'phone' ? null : current);
     };
 
     socket.on('telefone:qrcode', onQRCode);
     socket.on('telefone:qr_cleared', onQRCleared);
+    socket.on('telefone:pairing_code', onPairingCode);
+    socket.on('telefone:pairing_code_cleared', onPairingCodeCleared);
 
     return () => {
       socket.off('telefone:qrcode', onQRCode);
       socket.off('telefone:qr_cleared', onQRCleared);
+      socket.off('telefone:pairing_code', onPairingCode);
+      socket.off('telefone:pairing_code_cleared', onPairingCodeCleared);
     };
   }, []);
 
@@ -97,12 +118,50 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot }) {
     }
   }
 
-  async function connectPhone(item) {
+  function openConnectDialog(item, method = 'qr') {
+    qrDismissedRef.current.delete(item.id);
+    setConnectDialog({
+      item,
+      method,
+      phoneNumber: ''
+    });
+  }
+
+  async function startConnection() {
+    if (!connectDialog) return;
+
+    const { item, method, phoneNumber } = connectDialog;
+    const sanitizedPhone = String(phoneNumber ?? '').replace(/\D/g, '');
+
+    if (method === 'phone' && sanitizedPhone.length < 10) {
+      toast('Informe um numero valido para gerar o codigo de pareamento', 'error');
+      return;
+    }
+
     try {
       qrDismissedRef.current.delete(item.id);
-      setQrModal({ id: item.id, nome: item.nome, qrCode: null, loading: true });
-      await api(`/telefones/${item.id}/conectar`, { method: 'POST' });
-      toast(`Inicializando ${item.nome}`, 'info');
+      setQrModal({
+        id: item.id,
+        nome: item.nome,
+        mode: method,
+        qrCode: null,
+        code: null,
+        loading: true
+      });
+      setConnectDialog(null);
+      await api(`/telefones/${item.id}/conectar`, {
+        method: 'POST',
+        body: JSON.stringify({
+          method,
+          phoneNumber: method === 'phone' ? sanitizedPhone : undefined
+        })
+      });
+      toast(
+        method === 'phone'
+          ? `Gerando codigo de pareamento para ${item.nome}`
+          : `Inicializando ${item.nome}`,
+        'info'
+      );
       refreshSnapshot();
     } catch (error) {
       setQrModal(null);
@@ -196,8 +255,7 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot }) {
                 <div className="progress"><span style={{ width: `${Math.min(100, ((item.configuracao?.conversasRealizadasHoje || 0) / (item.configuracao?.quantidadeConversasDia || 1)) * 100)}%` }} /></div>
               </div>
               <div className="actions">
-                {(item.status === 'offline' || item.status === 'erro') && <button className="btn primary sm" onClick={() => connectPhone(item)}><QrCode size={14} />Conectar</button>}
-                {item.status === 'requires_qr' && <button className="btn primary sm" onClick={() => connectPhone(item)}><QrCode size={14} />Gerar QR</button>}
+                {(item.status === 'offline' || item.status === 'erro' || item.status === 'requires_qr') && <button className="btn primary sm" onClick={() => openConnectDialog(item)}><QrCode size={14} />Conectar</button>}
                 {item.status === 'online' && <button className="btn danger sm" onClick={() => disconnectPhone(item)}><PhoneOff size={14} />Desconectar</button>}
                 {item.status === 'reconnecting' && <button className="btn secondary sm" disabled><LoaderCircle size={14} />Reconectando</button>}
                 {(item.status === 'offline' || item.status === 'erro' || item.status === 'requires_qr' || item.status === 'online') && (
@@ -240,6 +298,58 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot }) {
         </Modal>
       )}
 
+      {connectDialog && (
+        <Modal title={`Conectar ${connectDialog.item.nome}`} onClose={() => setConnectDialog(null)} small>
+          <div className="stack">
+            <div className="actions">
+              <button
+                className={`btn ${connectDialog.method === 'qr' ? 'primary' : 'secondary'}`}
+                onClick={() => setConnectDialog((current) => ({ ...current, method: 'qr' }))}
+              >
+                <QrCode size={16} />
+                QR Code
+              </button>
+              <button
+                className={`btn ${connectDialog.method === 'phone' ? 'primary' : 'secondary'}`}
+                onClick={() => setConnectDialog((current) => ({ ...current, method: 'phone' }))}
+              >
+                <Phone size={16} />
+                Numero
+              </button>
+            </div>
+
+            {connectDialog.method === 'phone' ? (
+              <>
+                <label className="label">
+                  Numero para vincular
+                  <input
+                    className="input"
+                    value={connectDialog.phoneNumber}
+                    onChange={(event) => setConnectDialog((current) => ({ ...current, phoneNumber: event.target.value }))}
+                    placeholder="Ex.: 5569921830958"
+                  />
+                </label>
+                <p className="muted">
+                  O WhatsApp gera um codigo de 8 letras para digitar em Dispositivos conectados no celular.
+                </p>
+              </>
+            ) : (
+              <p className="muted">
+                O sistema vai abrir o QR Code normal para leitura pelo celular.
+              </p>
+            )}
+
+            <div className="actions end">
+              <button className="btn secondary" onClick={() => setConnectDialog(null)}>Cancelar</button>
+              <button className="btn primary" onClick={startConnection}>
+                {connectDialog.method === 'phone' ? <Phone size={16} /> : <QrCode size={16} />}
+                {connectDialog.method === 'phone' ? 'Gerar codigo' : 'Gerar QR'}
+              </button>
+            </div>
+          </div>
+        </Modal>
+      )}
+
       {editing && (
         <Modal title={`Editar ${editing.nome}`} onClose={() => setEditing(null)}>
           <div className="stack">
@@ -271,11 +381,27 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot }) {
           small
         >
           {qrModal.loading ? (
-            <div className="empty"><LoaderCircle size={18} /> Aguardando QR...</div>
+            <div className="empty">
+              <LoaderCircle size={18} />
+              {qrModal.mode === 'phone' ? 'Gerando codigo...' : 'Aguardando QR...'}
+            </div>
           ) : (
             <div className="stack center">
-              <img src={qrModal.qrCode} alt="QR" style={{ width: 240, height: 240 }} />
-              <p className="muted center-text">O modal fecha automaticamente quando o telefone ficar online.</p>
+              {qrModal.mode === 'phone' ? (
+                <>
+                  <div className="code" style={{ fontSize: 28, letterSpacing: '0.18em', fontWeight: 800, textAlign: 'center', width: '100%' }}>
+                    {qrModal.code}
+                  </div>
+                  <p className="muted center-text">
+                    Digite esse codigo em Dispositivos conectados no celular.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <img src={qrModal.qrCode} alt="QR" style={{ width: 240, height: 240 }} />
+                  <p className="muted center-text">O modal fecha automaticamente quando o telefone ficar online.</p>
+                </>
+              )}
             </div>
           )}
         </Modal>

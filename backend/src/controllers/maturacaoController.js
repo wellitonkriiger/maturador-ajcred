@@ -72,6 +72,10 @@ class MaturacaoController {
    */
   async atualizarPlano(req, res) {
     try {
+      if (MaturacaoService.emExecucao) {
+        return res.status(409).json({ erro: 'Pause a maturacao antes de alterar o plano' });
+      }
+
       const dados = req.body;
       const plano = PlanoMaturacaoModel.atualizar(dados);
       
@@ -87,6 +91,10 @@ class MaturacaoController {
    */
   async togglePlano(req, res) {
     try {
+      if (MaturacaoService.emExecucao) {
+        return res.status(409).json({ erro: 'Pause a maturacao antes de alterar o plano' });
+      }
+
       const { ativo } = req.body;
       const plano = PlanoMaturacaoModel.setAtivo(ativo);
       

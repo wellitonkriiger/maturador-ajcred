@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react';
 import { Save, Settings2 } from 'lucide-react';
 import { api } from './lib';
 
-export default function PlanoPage({ toast }) {
+export default function PlanoPage({ toast, status }) {
   const [plano, setPlano] = useState(null);
   const [saving, setSaving] = useState(false);
   const dias = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'];
+  const bloqueado = !!status?.emExecucao;
 
   useEffect(() => {
     api('/maturacao/plano').then(setPlano).catch((error) => toast(error.message, 'error'));
@@ -23,6 +24,11 @@ export default function PlanoPage({ toast }) {
   }
 
   async function save() {
+    if (bloqueado) {
+      toast('Pause a maturacao antes de alterar o plano', 'info');
+      return;
+    }
+
     setSaving(true);
     try {
       await api('/maturacao/plano', { method: 'PUT', body: JSON.stringify(plano) });
@@ -41,12 +47,16 @@ export default function PlanoPage({ toast }) {
       <div className="section-head">
         <div>
           <h3>Plano de maturacao</h3>
-          <p className="muted">Persistido em arquivo local e aplicado em tempo real.</p>
+          <p className="muted">
+            {bloqueado
+              ? 'Maturacao em execucao: o plano esta bloqueado ate a pausa.'
+              : 'Persistido em arquivo local e aplicado em tempo real.'}
+          </p>
         </div>
-        <button className="btn primary" onClick={save} disabled={saving}><Save size={16} />{saving ? 'Salvando...' : 'Salvar'}</button>
+        <button className="btn primary" onClick={save} disabled={saving || bloqueado}><Save size={16} />{saving ? 'Salvando...' : 'Salvar'}</button>
       </div>
 
-      <div className="grid two">
+      <div className="grid two" style={bloqueado ? { opacity: 0.72, pointerEvents: 'none' } : undefined}>
         <div className="panel stack">
           <div className="card-title"><Settings2 size={16} />Horario</div>
           <div className="grid two">

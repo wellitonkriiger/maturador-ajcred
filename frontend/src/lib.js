@@ -115,6 +115,8 @@ export function useSocketEvents(handlers) {
     const onTelefoneStatus = (payload) => handlersRef.current.onTelefoneStatus?.(payload);
     const onQRCode = (payload) => handlersRef.current.onQRCode?.(payload);
     const onQRCleared = (payload) => handlersRef.current.onQRCleared?.(payload);
+    const onPairingCode = (payload) => handlersRef.current.onPairingCode?.(payload);
+    const onPairingCodeCleared = (payload) => handlersRef.current.onPairingCodeCleared?.(payload);
     const onReconnect = (payload) => handlersRef.current.onReconnect?.(payload);
     const onMaturacaoStatus = (payload) => handlersRef.current.onMaturacaoStatus?.(payload);
     const onConversaStarted = (payload) => handlersRef.current.onConversaStarted?.(payload);
@@ -125,6 +127,8 @@ export function useSocketEvents(handlers) {
     socket.on('telefone:status', onTelefoneStatus);
     socket.on('telefone:qrcode', onQRCode);
     socket.on('telefone:qr_cleared', onQRCleared);
+    socket.on('telefone:pairing_code', onPairingCode);
+    socket.on('telefone:pairing_code_cleared', onPairingCodeCleared);
     socket.on('telefone:reconnect_attempt', onReconnect);
     socket.on('maturacao:status', onMaturacaoStatus);
     socket.on('maturacao:conversa_started', onConversaStarted);
@@ -136,6 +140,8 @@ export function useSocketEvents(handlers) {
       socket.off('telefone:status', onTelefoneStatus);
       socket.off('telefone:qrcode', onQRCode);
       socket.off('telefone:qr_cleared', onQRCleared);
+      socket.off('telefone:pairing_code', onPairingCode);
+      socket.off('telefone:pairing_code_cleared', onPairingCodeCleared);
       socket.off('telefone:reconnect_attempt', onReconnect);
       socket.off('maturacao:status', onMaturacaoStatus);
       socket.off('maturacao:conversa_started', onConversaStarted);

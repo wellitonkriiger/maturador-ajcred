@@ -45,19 +45,25 @@ function firstErrorLine(message) {
   return text.split('\n')[0];
 }
 
+function sanitizePhoneNumber(phoneNumber) {
+  return String(phoneNumber ?? '').replace(/\D/g, '');
+}
+
 class WhatsAppService extends EventEmitter {
   constructor() {
     super();
     this.authPath = path.join(__dirname, '../../.wwebjs_auth');
     this.clients = new Map();
     this.qrCodes = new Map();
+    this.pairingCodes = new Map();
     this.clientMeta = new Map();
     this._desconectando = new Set();
     this._keepAliveTimer = setInterval(() => this._runKeepAlive(), KEEPALIVE_INTERVAL_MS);
   }
 
-  _createClient(telefoneId) {
-    return new Client({
+  _createClient(telefoneId, options = {}) {
+    const { pairWithPhoneNumber = null } = options;
+    const clientOptions = {
       authStrategy: new LocalAuth({
         clientId: telefoneId,
         dataPath: this.authPath
@@ -75,7 +81,17 @@ class WhatsAppService extends EventEmitter {
           '--headless=new'
         ]
       }
-    });
+    };
+
+    if (pairWithPhoneNumber?.phoneNumber) {
+      clientOptions.pairWithPhoneNumber = {
+        phoneNumber: sanitizePhoneNumber(pairWithPhoneNumber.phoneNumber),
+        showNotification: pairWithPhoneNumber.showNotification !== false,
+        intervalMs: Number(pairWithPhoneNumber.intervalMs) > 0 ? Number(pairWithPhoneNumber.intervalMs) : 180000
+      };
+    }
+
+    return new Client(clientOptions);
   }
 
   _meta(telefoneId) {
@@ -111,6 +127,13 @@ class WhatsAppService extends EventEmitter {
       meta.autoReconnectTimer = null;
     }
     meta.nextAutoReconnectAt = null;
+  }
+
+  _clearPendingAuthArtifacts(telefoneId) {
+    this.qrCodes.delete(telefoneId);
+    this.pairingCodes.delete(telefoneId);
+    RealtimeService.clearTelefoneQRCode(telefoneId);
+    RealtimeService.clearTelefonePairingCode(telefoneId);
   }
 
   _sessionDir(telefoneId) {
@@ -189,8 +212,7 @@ class WhatsAppService extends EventEmitter {
     const meta = this._meta(telefoneId);
     const client = this.clients.get(telefoneId);
 
-    this.qrCodes.delete(telefoneId);
-    RealtimeService.clearTelefoneQRCode(telefoneId);
+    this._clearPendingAuthArtifacts(telefoneId);
     this.clients.delete(telefoneId);
     this._updateStatus(telefoneId, 'offline');
     this.emit('telefone:offline', telefoneId, reason);
@@ -222,7 +244,7 @@ class WhatsAppService extends EventEmitter {
   }
 
   _bindClientEvents(client, telefoneId, options) {
-    const { allowQr, isReconnect, autoReconnect } = options;
+    const { allowQr, isReconnect, autoReconnect, pairWithPhoneNumber } = options;
     const telefone = TelefoneModel.buscarPorId(telefoneId);
     let lidCapturado = false;
     let qrBloqueado = false;
@@ -236,8 +258,7 @@ class WhatsAppService extends EventEmitter {
         qrBloqueado = true;
         meta.reconnectInFlight = false;
         meta.autoReconnectAttempts += 1;
-        this.qrCodes.delete(telefoneId);
-        RealtimeService.clearTelefoneQRCode(telefoneId);
+        this._clearPendingAuthArtifacts(telefoneId);
         this.clients.delete(telefoneId);
 
         const atingiuLimite = autoReconnect && meta.autoReconnectAttempts >= MAX_AUTO_RECONNECT_ATTEMPTS;
@@ -260,6 +281,8 @@ class WhatsAppService extends EventEmitter {
       }
 
       meta.autoReconnectAttempts = 0;
+      this.pairingCodes.delete(telefoneId);
+      RealtimeService.clearTelefonePairingCode(telefoneId);
       this.qrCodes.set(telefoneId, qr);
       this._updateStatus(telefoneId, 'conectando');
       logger.info(`QR Code gerado para ${telefone.nome} -- escaneie pelo WhatsApp`);
@@ -269,10 +292,26 @@ class WhatsAppService extends EventEmitter {
       RealtimeService.emitTelefoneQRCode(telefoneId, { nome: telefone.nome });
     });
 
-    client.on('authenticated', () => {
-      logger.info(`${telefone.nome} autenticado com sucesso`);
+    client.on('code', (code) => {
+      const pairingCode = String(code ?? '').trim();
+      if (!pairingCode) return;
+
       this.qrCodes.delete(telefoneId);
       RealtimeService.clearTelefoneQRCode(telefoneId);
+      this.pairingCodes.set(telefoneId, pairingCode);
+      this._updateStatus(telefoneId, 'conectando');
+
+      logger.info(`Codigo de pareamento gerado para ${telefone.nome}: ${pairingCode}`);
+      RealtimeService.emitTelefonePairingCode(telefoneId, {
+        nome: telefone.nome,
+        code: pairingCode,
+        phoneNumber: pairWithPhoneNumber?.phoneNumber || null
+      });
+    });
+
+    client.on('authenticated', () => {
+      logger.info(`${telefone.nome} autenticado com sucesso`);
+      this._clearPendingAuthArtifacts(telefoneId);
     });
 
     client.on('ready', async () => {
@@ -339,8 +378,7 @@ class WhatsAppService extends EventEmitter {
       const meta = this._meta(telefoneId);
       logger.error(`Falha de autenticacao -- ${telefone.nome}: ${msg}`);
 
-      this.qrCodes.delete(telefoneId);
-      RealtimeService.clearTelefoneQRCode(telefoneId);
+      this._clearPendingAuthArtifacts(telefoneId);
       this.clients.delete(telefoneId);
       this._clearReconnectTimer(telefoneId);
 
@@ -366,8 +404,7 @@ class WhatsAppService extends EventEmitter {
 
       logger.warn(`${telefone.nome} desconectado -- motivo: ${reason}`);
 
-      this.qrCodes.delete(telefoneId);
-      RealtimeService.clearTelefoneQRCode(telefoneId);
+      this._clearPendingAuthArtifacts(telefoneId);
       this.clients.delete(telefoneId);
 
       const atingiuLimite = meta.autoReconnectAttempts >= MAX_AUTO_RECONNECT_ATTEMPTS;
@@ -388,7 +425,12 @@ class WhatsAppService extends EventEmitter {
   }
 
   async inicializarCliente(telefoneId, options = {}) {
-    const { allowQr = true, isReconnect = false, autoReconnect = false } = options;
+    const {
+      allowQr = true,
+      isReconnect = false,
+      autoReconnect = false,
+      pairWithPhoneNumber = null
+    } = options;
     const telefone = TelefoneModel.buscarPorId(telefoneId);
     if (!telefone) throw new Error(`Telefone ${telefoneId} nao encontrado`);
 
@@ -414,8 +456,13 @@ class WhatsAppService extends EventEmitter {
     logger.info(`Inicializando cliente para ${telefone.nome} (${telefoneId})...`);
     this._updateStatus(telefoneId, isReconnect ? 'reconnecting' : 'conectando');
 
-    const client = this._createClient(telefoneId);
-    this._bindClientEvents(client, telefoneId, { allowQr, isReconnect, autoReconnect });
+    const client = this._createClient(telefoneId, { pairWithPhoneNumber });
+    this._bindClientEvents(client, telefoneId, {
+      allowQr,
+      isReconnect,
+      autoReconnect,
+      pairWithPhoneNumber
+    });
     this.clients.set(telefoneId, client);
     logger.info(`Chamando initialize() para ${telefone.nome}...`);
 
@@ -521,8 +568,7 @@ class WhatsAppService extends EventEmitter {
     }
 
     this.clients.delete(telefoneId);
-    this.qrCodes.delete(telefoneId);
-    RealtimeService.clearTelefoneQRCode(telefoneId);
+    this._clearPendingAuthArtifacts(telefoneId);
     this._updateStatus(telefoneId, 'offline');
 
     if (removeSession) {
@@ -696,6 +742,10 @@ class WhatsAppService extends EventEmitter {
 
   getQRCode(telefoneId) {
     return this.qrCodes.get(telefoneId);
+  }
+
+  getPairingCode(telefoneId) {
+    return this.pairingCodes.get(telefoneId);
   }
 
   getClientMeta(telefoneId) {
