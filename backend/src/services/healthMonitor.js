@@ -49,11 +49,12 @@ class HealthMonitor {
       }
 
       if (!operacional) {
-        logger.warn(`[HealthMonitor] ${nome} nao esta operacional -- marcando offline e emitindo evento`);
-        TelefoneModel.atualizarStatus(telefoneId, 'offline');
-        ws.clients.delete(telefoneId);
-        ws.qrCodes.delete(telefoneId);
-        ws.emit('telefone:offline', telefoneId, 'health_check_failed');
+        logger.warn(`[HealthMonitor] ${nome} nao esta operacional -- tentando reconectar`);
+        ws.tentarReconectar(telefoneId, { auto: true }).catch((error) => {
+          logger.warn(`[HealthMonitor] Reconexao falhou para ${nome}: ${error.message}`);
+          TelefoneModel.atualizarStatus(telefoneId, 'offline');
+          ws.emit('telefone:offline', telefoneId, 'health_check_failed');
+        });
       } else {
         // Atualiza status para online caso tenha ficado travado em outro estado
         if (telefone && telefone.status !== 'online') {
@@ -73,9 +74,10 @@ class HealthMonitor {
       if (!temCliente || !temInfo) {
         logger.warn(`[HealthMonitor] ${tel.nome} marcado como online mas sem cliente ativo -- corrigindo para offline`);
         TelefoneModel.atualizarStatus(tel.id, 'offline');
-        if (temCliente) {
-          ws.emit('telefone:offline', tel.id, 'ghost_online');
-        }
+        ws.emit('telefone:offline', tel.id, 'ghost_online');
+        ws.tentarReconectar(tel.id, { auto: true }).catch((error) => {
+          logger.warn(`[HealthMonitor] Reconexao apos ghost_online falhou para ${tel.nome}: ${error.message}`);
+        });
       }
     });
   }

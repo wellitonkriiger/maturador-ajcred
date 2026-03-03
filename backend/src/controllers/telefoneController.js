@@ -94,7 +94,7 @@ class TelefoneController {
 
       // Destroi o cliente em qualquer estado (conectando, QR pendente, online)
       // estaConectado() retorna false durante QR — forçamos destroy direto
-      await WhatsAppService.desconectarCliente(id);
+      await WhatsAppService.desconectarCliente(id, { removeSession: true, suppressAutoReconnect: true });
 
       const sucesso = TelefoneModel.deletar(id);
 
@@ -123,7 +123,7 @@ class TelefoneController {
       }
 
       // Inicializar cliente (assíncrono, não bloqueia resposta)
-      WhatsAppService.inicializarCliente(id).catch(error => {
+      WhatsAppService.inicializarCliente(id, { allowQr: true, isReconnect: false }).catch(error => {
         logger.error(`Erro ao conectar ${id}:`, error);
       });
 
@@ -144,7 +144,7 @@ class TelefoneController {
     try {
       const { id } = req.params;
 
-      const sucesso = await WhatsAppService.desconectarCliente(id);
+      const sucesso = await WhatsAppService.desconectarCliente(id, { removeSession: true, suppressAutoReconnect: true });
 
       if (!sucesso) {
         return res.status(404).json({ erro: 'Telefone não está conectado' });
@@ -154,6 +154,26 @@ class TelefoneController {
     } catch (error) {
       logger.error('Erro ao desconectar telefone:', error);
       res.status(500).json({ erro: 'Erro ao desconectar telefone' });
+    }
+  }
+
+  /**
+   * Tenta reconectar sem QR reaproveitando a sessao salva
+   */
+  async reconectar(req, res) {
+    try {
+      const { id } = req.params;
+      const telefone = TelefoneModel.buscarPorId(id);
+
+      if (!telefone) {
+        return res.status(404).json({ erro: 'Telefone nao encontrado' });
+      }
+
+      const resultado = await WhatsAppService.tentarReconectar(id);
+      res.json(resultado);
+    } catch (error) {
+      logger.error('Erro ao reconectar telefone:', error);
+      res.status(500).json({ erro: 'Erro ao reconectar telefone' });
     }
   }
 

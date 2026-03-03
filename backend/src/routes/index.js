@@ -6,6 +6,7 @@ const router = express.Router();
 const TelefoneController = require('../controllers/telefoneController');
 const ConversaController = require('../controllers/conversaController');
 const MaturacaoController = require('../controllers/maturacaoController');
+const LogController = require('../controllers/logController');
 
 // ===== ROTAS DE TELEFONES =====
 router.get('/telefones', TelefoneController.listar);
@@ -17,6 +18,7 @@ router.delete('/telefones/:id', TelefoneController.deletar);
 // Conexão WhatsApp
 router.post('/telefones/:id/conectar', TelefoneController.conectar);
 router.post('/telefones/:id/desconectar', TelefoneController.desconectar);
+router.post('/telefones/:id/reconectar', TelefoneController.reconectar);
 router.get('/telefones/:id/qrcode', TelefoneController.obterQRCode);
 router.get('/telefones/:id/status', TelefoneController.statusConexao);
 
@@ -24,6 +26,8 @@ router.get('/telefones/:id/status', TelefoneController.statusConexao);
 router.get('/conversas', ConversaController.listar);
 router.get('/conversas/:id', ConversaController.buscarPorId);
 router.post('/conversas/importar', ConversaController.importar);
+router.post('/conversas/validar', ConversaController.validar);
+router.put('/conversas/:id', ConversaController.atualizar);
 router.delete('/conversas/:id', ConversaController.deletar);
 router.post('/conversas/recarregar', ConversaController.recarregar);
 
@@ -37,5 +41,9 @@ router.get('/maturacao/conversas-ativas', MaturacaoController.conversasAtivas);
 router.get('/maturacao/plano', MaturacaoController.obterPlano);
 router.put('/maturacao/plano', MaturacaoController.atualizarPlano);
 router.post('/maturacao/plano/toggle', MaturacaoController.togglePlano);
+
+// ===== ROTAS DE LOGS =====
+router.get('/logs/files', LogController.listarArquivos);
+router.get('/logs', LogController.listar);
 
 module.exports = router;

@@ -79,6 +79,65 @@ class ConversaModel {
   listar()        { return this.conversas; }
   buscarPorId(id) { return this.conversas.find(c => c.id === id) ?? null; }
 
+  validar(conversaJSON, { existingId = null } = {}) {
+    const conversa = typeof conversaJSON === 'string' ? JSON.parse(conversaJSON) : conversaJSON;
+    if (!conversa || typeof conversa !== 'object') {
+      throw new Error('Conversa invalida: payload ausente');
+    }
+    if (!conversa.id || typeof conversa.id !== 'string') {
+      throw new Error('Conversa invalida: id obrigatorio');
+    }
+    if (!conversa.nome || typeof conversa.nome !== 'string') {
+      throw new Error('Conversa invalida: nome obrigatorio');
+    }
+    if (!Array.isArray(conversa.mensagens) || conversa.mensagens.length === 0) {
+      throw new Error('Conversa invalida: mensagens obrigatorias');
+    }
+    if (existingId && conversa.id !== existingId) {
+      throw new Error('Nao e permitido alterar o id da conversa');
+    }
+    if (!existingId && this.buscarPorId(conversa.id)) {
+      throw new Error(`Ja existe uma conversa com id "${conversa.id}"`);
+    }
+
+    conversa.mensagens.forEach((mensagem, index) => {
+      if (!mensagem || typeof mensagem !== 'object') {
+        throw new Error(`Mensagem invalida na posicao ${index + 1}`);
+      }
+      if (typeof mensagem.ordem !== 'number') {
+        throw new Error(`Mensagem invalida: ordem obrigatoria na posicao ${index + 1}`);
+      }
+
+      if (mensagem.tipo === 'pausa_longa') {
+        if (!mensagem.duracao || typeof mensagem.duracao.min !== 'number' || typeof mensagem.duracao.max !== 'number') {
+          throw new Error(`Mensagem pausa_longa invalida na ordem ${mensagem.ordem}`);
+        }
+        return;
+      }
+
+      if (typeof mensagem.remetente !== 'number' || mensagem.remetente < 0) {
+        throw new Error(`Mensagem invalida: remetente incorreto na ordem ${mensagem.ordem}`);
+      }
+      if (!mensagem.texto || typeof mensagem.texto !== 'string') {
+        throw new Error(`Mensagem invalida: texto obrigatorio na ordem ${mensagem.ordem}`);
+      }
+      if (!mensagem.delay || typeof mensagem.delay.min !== 'number' || typeof mensagem.delay.max !== 'number') {
+        throw new Error(`Mensagem invalida: delay obrigatorio na ordem ${mensagem.ordem}`);
+      }
+      if (mensagem.comportamento) {
+        const { tempoAntesLeitura, tempoDigitacao } = mensagem.comportamento;
+        if (mensagem.comportamento.marcarComoLida && (!tempoAntesLeitura || typeof tempoAntesLeitura.min !== 'number' || typeof tempoAntesLeitura.max !== 'number')) {
+          throw new Error(`Mensagem invalida: tempoAntesLeitura obrigatorio na ordem ${mensagem.ordem}`);
+        }
+        if (mensagem.comportamento.simularDigitacao && (!tempoDigitacao || typeof tempoDigitacao.min !== 'number' || typeof tempoDigitacao.max !== 'number')) {
+          throw new Error(`Mensagem invalida: tempoDigitacao obrigatorio na ordem ${mensagem.ordem}`);
+        }
+      }
+    });
+
+    return conversa;
+  }
+
   /**
    * Seleciona uma conversa aleatoria compativel com o numero de participantes,
    * excluindo as que estao em uso simultaneo no momento.
@@ -144,15 +203,17 @@ class ConversaModel {
   }
 
   importar(conversaJSON) {
-    const conversa = typeof conversaJSON === 'string' ? JSON.parse(conversaJSON) : conversaJSON;
-    if (!conversa.id || !conversa.nome || !conversa.mensagens) {
-      throw new Error('Conversa invalida: faltam campos obrigatorios (id, nome, mensagens)');
-    }
-    if (this.buscarPorId(conversa.id)) {
-      throw new Error(`Ja existe uma conversa com id "${conversa.id}"`);
-    }
+    const conversa = this.validar(conversaJSON);
     const ok = this.salvar(conversa);
     if (ok) logger.info(`Conversa importada: ${conversa.nome}`);
+    return ok ? conversa : null;
+  }
+
+  atualizar(id, conversaJSON) {
+    if (!this.buscarPorId(id)) return null;
+    const conversa = this.validar(conversaJSON, { existingId: id });
+    const ok = this.salvar(conversa);
+    if (ok) logger.info(`Conversa atualizada: ${conversa.nome}`);
     return ok ? conversa : null;
   }
 }

@@ -52,6 +52,32 @@ class ConversaController {
     }
   }
 
+  async validar(req, res) {
+    try {
+      const conversa = ConversaModel.validar(req.body);
+      res.json({ valido: true, conversa });
+    } catch (error) {
+      logger.error('Erro ao validar conversa:', error);
+      res.status(400).json({ erro: error.message });
+    }
+  }
+
+  async atualizar(req, res) {
+    try {
+      const { id } = req.params;
+      const conversa = ConversaModel.atualizar(id, req.body);
+
+      if (!conversa) {
+        return res.status(404).json({ erro: 'Conversa nao encontrada' });
+      }
+
+      res.json(conversa);
+    } catch (error) {
+      logger.error('Erro ao atualizar conversa:', error);
+      res.status(400).json({ erro: error.message });
+    }
+  }
+
   /**
    * Deleta conversa
    */

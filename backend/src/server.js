@@ -13,6 +13,7 @@ const routes = require('./routes');
 const TelefoneModel = require('./models/Telefone');
 const WhatsAppService = require('./services/whatsappService');
 const HealthMonitor = require('./services/healthMonitor');
+const RealtimeService = require('./services/realtimeService');
 
 // Criar app Express
 const app = express();
@@ -48,15 +49,16 @@ app.get('/health', (req, res) => {
 
 // WebSocket para atualizações em tempo real
 io.on('connection', (socket) => {
-  logger.info(`🔌 Cliente conectado: ${socket.id}`);
+  logger.debug(`[Socket.IO] Painel conectado: ${socket.id}`);
 
-  socket.on('disconnect', () => {
-    logger.info(`🔌 Cliente desconectado: ${socket.id}`);
+  socket.on('disconnect', (reason) => {
+    logger.debug(`[Socket.IO] Painel desconectado: ${socket.id} (${reason})`);
   });
 });
 
 // Exportar io para uso em outros módulos
 app.set('io', io);
+RealtimeService.setIO(io);
 
 // Cron job: Resetar contadores diários à meia-noite
 cron.schedule('0 0 * * *', () => {

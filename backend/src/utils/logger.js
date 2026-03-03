@@ -3,6 +3,7 @@
 const winston = require('winston');
 const path = require('path');
 const fs = require('fs');
+const RealtimeService = require('../services/realtimeService');
 
 // Criar diretório de logs se não existir
 const logsDir = path.join(__dirname, '../../data/logs');
@@ -44,6 +45,23 @@ if (process.env.NODE_ENV !== 'production') {
       })
     )
   }));
+}
+
+const LEVELS_TO_STREAM = new Set(['info', 'warn', 'error', 'debug']);
+
+for (const level of LEVELS_TO_STREAM) {
+  const original = logger[level].bind(logger);
+  logger[level] = (...args) => {
+    const result = original(...args);
+    const [message, meta] = args;
+    RealtimeService.emitLog({
+      timestamp: new Date().toISOString(),
+      level,
+      message: message instanceof Error ? message.message : String(message),
+      meta: meta && typeof meta === 'object' ? meta : null
+    });
+    return result;
+  };
 }
 
 module.exports = logger;

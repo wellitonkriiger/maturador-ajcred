@@ -1,5 +1,100 @@
 {
   "telefones": [
-    
+    {
+      "id": "tel_2b5e2a65",
+      "nome": "ART-014",
+      "numero": "55216787480660@lid",
+      "sessionName": "session-8819706e",
+      "status": "online",
+      "configuracao": {
+        "podeIniciarConversa": true,
+        "podeReceberMensagens": true,
+        "quantidadeConversasDia": 5,
+        "conversasRealizadasHoje": 3,
+        "ultimaConversaEm": "2026-03-02T21:56:33.895Z"
+      },
+      "estatisticas": {
+        "totalConversas": 3,
+        "totalMensagensEnviadas": 14,
+        "totalMensagensRecebidas": 15,
+        "diasAtivo": 0,
+        "ultimoBanimento": null
+      },
+      "sensibilidade": "media",
+      "criadoEm": "2026-03-02T20:51:57.857Z",
+      "atualizadoEm": "2026-03-02T20:52:41.116Z"
+    },
+    {
+      "id": "tel_8e84cb27",
+      "nome": "VNS-021",
+      "numero": "170485170090105@lid",
+      "sessionName": "session-b0042758",
+      "status": "online",
+      "configuracao": {
+        "podeIniciarConversa": true,
+        "podeReceberMensagens": true,
+        "quantidadeConversasDia": 5,
+        "conversasRealizadasHoje": 2,
+        "ultimaConversaEm": "2026-03-02T21:56:33.899Z"
+      },
+      "estatisticas": {
+        "totalConversas": 2,
+        "totalMensagensEnviadas": 8,
+        "totalMensagensRecebidas": 9,
+        "diasAtivo": 0,
+        "ultimoBanimento": null
+      },
+      "sensibilidade": "media",
+      "criadoEm": "2026-03-02T20:52:04.131Z",
+      "atualizadoEm": "2026-03-02T20:53:43.434Z"
+    },
+    {
+      "id": "tel_e5500f8f",
+      "nome": "ART-021",
+      "numero": "125490958479447@lid",
+      "sessionName": "session-f3823ec7",
+      "status": "online",
+      "configuracao": {
+        "podeIniciarConversa": true,
+        "podeReceberMensagens": true,
+        "quantidadeConversasDia": 5,
+        "conversasRealizadasHoje": 3,
+        "ultimaConversaEm": "2026-03-02T21:56:33.318Z"
+      },
+      "estatisticas": {
+        "totalConversas": 3,
+        "totalMensagensEnviadas": 15,
+        "totalMensagensRecebidas": 14,
+        "diasAtivo": 0,
+        "ultimoBanimento": null
+      },
+      "sensibilidade": "media",
+      "criadoEm": "2026-03-02T20:52:11.078Z",
+      "atualizadoEm": "2026-03-02T20:54:19.767Z"
+    },
+    {
+      "id": "tel_578de620",
+      "nome": "KRIIGER",
+      "numero": "556993731026@c.us",
+      "sessionName": "session-cc6e79d8",
+      "status": "online",
+      "configuracao": {
+        "podeIniciarConversa": true,
+        "podeReceberMensagens": true,
+        "quantidadeConversasDia": 5,
+        "conversasRealizadasHoje": 2,
+        "ultimaConversaEm": "2026-03-02T21:56:33.321Z"
+      },
+      "estatisticas": {
+        "totalConversas": 2,
+        "totalMensagensEnviadas": 9,
+        "totalMensagensRecebidas": 8,
+        "diasAtivo": 0,
+        "ultimoBanimento": null
+      },
+      "sensibilidade": "media",
+      "criadoEm": "2026-03-02T21:16:10.308Z",
+      "atualizadoEm": "2026-03-02T21:16:29.007Z"
+    }
   ]
 }

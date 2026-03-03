@@ -1,9 +1,9 @@
-// src/models/Telefone.js
-
 const fs = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
+
 const logger = require('../utils/logger');
+const RealtimeService = require('../services/realtimeService');
 
 class TelefoneModel {
   constructor() {
@@ -12,47 +12,34 @@ class TelefoneModel {
     this.carregar();
   }
 
-  /**
-   * Carrega telefones do arquivo
-   */
   carregar() {
     try {
       if (fs.existsSync(this.configFile)) {
         const data = fs.readFileSync(this.configFile, 'utf8');
         const config = JSON.parse(data);
         this.telefones = config.telefones || [];
-        logger.info(`📱 ${this.telefones.length} telefones carregados`);
+        logger.info(`${this.telefones.length} telefones carregados`);
       } else {
         this.telefones = [];
         this.salvar();
-        logger.info('📱 Arquivo de configuração criado (vazio)');
+        logger.info('Arquivo de configuracao criado (vazio)');
       }
     } catch (error) {
-      logger.error('❌ Erro ao carregar telefones:', error);
+      logger.error('Erro ao carregar telefones:', error);
       this.telefones = [];
     }
   }
 
-  /**
-   * Salva telefones no arquivo
-   */
   salvar() {
     try {
       const config = { telefones: this.telefones };
-      fs.writeFileSync(
-        this.configFile,
-        JSON.stringify(config, null, 2),
-        'utf8'
-      );
-      logger.debug('💾 Configuração de telefones salva');
+      fs.writeFileSync(this.configFile, JSON.stringify(config, null, 2), 'utf8');
+      logger.debug('Configuracao de telefones salva');
     } catch (error) {
-      logger.error('❌ Erro ao salvar telefones:', error);
+      logger.error('Erro ao salvar telefones:', error);
     }
   }
 
-  /**
-   * Cria novo telefone
-   */
   criar(dados) {
     const telefone = {
       id: `tel_${uuidv4().substring(0, 8)}`,
@@ -81,34 +68,22 @@ class TelefoneModel {
 
     this.telefones.push(telefone);
     this.salvar();
-    logger.info(`✅ Telefone criado: ${telefone.nome} (${telefone.id})`);
-    
+    logger.info(`Telefone criado: ${telefone.nome} (${telefone.id})`);
+    RealtimeService.emitTelefoneStatus(telefone);
     return telefone;
   }
 
-  /**
-   * Busca telefone por ID
-   */
   buscarPorId(id) {
-    return this.telefones.find(t => t.id === id);
+    return this.telefones.find(item => item.id === id) ?? null;
   }
 
-  /**
-   * Lista todos os telefones
-   */
   listar() {
     return this.telefones;
   }
 
-  /**
-   * Atualiza telefone
-   */
   atualizar(id, dados) {
-    const index = this.telefones.findIndex(t => t.id === id);
-    
-    if (index === -1) {
-      return null;
-    }
+    const index = this.telefones.findIndex(item => item.id === id);
+    if (index === -1) return null;
 
     this.telefones[index] = {
       ...this.telefones[index],
@@ -117,20 +92,14 @@ class TelefoneModel {
     };
 
     this.salvar();
-    logger.info(`♻️ Telefone atualizado: ${id}`);
-    
+    logger.info(`Telefone atualizado: ${id}`);
+    RealtimeService.emitTelefoneStatus(this.telefones[index]);
     return this.telefones[index];
   }
 
-  /**
-   * Atualiza status do telefone
-   */
   atualizarStatus(id, status, numero = null) {
     const telefone = this.buscarPorId(id);
-    
-    if (!telefone) {
-      return null;
-    }
+    if (!telefone) return null;
 
     telefone.status = status;
     if (numero) {
@@ -139,108 +108,72 @@ class TelefoneModel {
     telefone.atualizadoEm = new Date().toISOString();
 
     this.salvar();
-    logger.info(`📊 Status atualizado: ${id} → ${status}`);
-    
+    logger.info(`Status atualizado: ${id} -> ${status}`);
+    RealtimeService.emitTelefoneStatus(telefone);
     return telefone;
   }
 
-  /**
-   * Incrementa contador de conversas
-   */
   incrementarConversas(id) {
     const telefone = this.buscarPorId(id);
-    
-    if (!telefone) {
-      return null;
-    }
+    if (!telefone) return null;
 
     telefone.configuracao.conversasRealizadasHoje++;
     telefone.configuracao.ultimaConversaEm = new Date().toISOString();
     telefone.estatisticas.totalConversas++;
-
     this.salvar();
-    
+    RealtimeService.emitTelefoneStatus(telefone);
     return telefone;
   }
 
-  /**
-   * Incrementa mensagens enviadas
-   */
   incrementarMensagensEnviadas(id, quantidade = 1) {
     const telefone = this.buscarPorId(id);
-    
-    if (!telefone) {
-      return null;
-    }
+    if (!telefone) return null;
 
     telefone.estatisticas.totalMensagensEnviadas += quantidade;
     this.salvar();
-    
+    RealtimeService.emitTelefoneStatus(telefone);
     return telefone;
   }
 
-  /**
-   * Incrementa mensagens recebidas
-   */
   incrementarMensagensRecebidas(id, quantidade = 1) {
     const telefone = this.buscarPorId(id);
-    
-    if (!telefone) {
-      return null;
-    }
+    if (!telefone) return null;
 
     telefone.estatisticas.totalMensagensRecebidas += quantidade;
     this.salvar();
-    
+    RealtimeService.emitTelefoneStatus(telefone);
     return telefone;
   }
 
-  /**
-   * Reseta contadores diários (executar à meia-noite)
-   */
   resetarContadoresDiarios() {
-    this.telefones.forEach(telefone => {
+    this.telefones.forEach((telefone) => {
       telefone.configuracao.conversasRealizadasHoje = 0;
+      RealtimeService.emitTelefoneStatus(telefone);
     });
-
     this.salvar();
-    logger.info('🔄 Contadores diários resetados');
+    logger.info('Contadores diarios resetados');
   }
 
-  /**
-   * Deleta telefone
-   */
   deletar(id) {
-    const index = this.telefones.findIndex(t => t.id === id);
-    
-    if (index === -1) {
-      return false;
-    }
+    const index = this.telefones.findIndex(item => item.id === id);
+    if (index === -1) return false;
 
     this.telefones.splice(index, 1);
     this.salvar();
-    logger.info(`🗑️ Telefone deletado: ${id}`);
-    
+    logger.info(`Telefone deletado: ${id}`);
+    RealtimeService.emit('telefone:status', { telefoneId: id, deleted: true });
     return true;
   }
 
-  /**
-   * Busca telefones online
-   */
   buscarOnline() {
-    return this.telefones.filter(t => t.status === 'online');
+    return this.telefones.filter(item => item.status === 'online');
   }
 
-  /**
-   * Busca telefones disponíveis para conversa
-   */
   buscarDisponiveis() {
-    return this.telefones.filter(t => {
-      return (
-        t.status === 'online' &&
-        t.configuracao.conversasRealizadasHoje < t.configuracao.quantidadeConversasDia
-      );
-    });
+    return this.telefones.filter(item =>
+      item.status === 'online' &&
+      item.configuracao.conversasRealizadasHoje < item.configuracao.quantidadeConversasDia
+    );
   }
 }
 
