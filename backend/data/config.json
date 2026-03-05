@@ -5,7 +5,7 @@
       "nome": "RESERVA-12",
       "numero": "153730452349116@lid",
       "sessionName": "session-194b73dc",
-      "status": "online",
+      "status": "offline",
       "configuracao": {
         "podeIniciarConversa": true,
         "podeReceberMensagens": true,
@@ -23,14 +23,14 @@
       },
       "sensibilidade": "media",
       "criadoEm": "2026-03-04T14:49:57.087Z",
-      "atualizadoEm": "2026-03-05T18:19:02.489Z"
+      "atualizadoEm": "2026-03-05T21:38:29.655Z"
     },
     {
       "id": "tel_6fad671f",
       "nome": "RESERVA-21",
       "numero": "36851373047844@lid",
       "sessionName": "session-bad110ed",
-      "status": "online",
+      "status": "offline",
       "configuracao": {
         "podeIniciarConversa": true,
         "podeReceberMensagens": true,
@@ -48,14 +48,14 @@
       },
       "sensibilidade": "media",
       "criadoEm": "2026-03-04T18:20:16.756Z",
-      "atualizadoEm": "2026-03-05T18:19:48.525Z"
+      "atualizadoEm": "2026-03-05T21:38:29.660Z"
     },
     {
       "id": "tel_c3819e35",
       "nome": "FNX-018",
       "numero": "55216787480660@lid",
       "sessionName": "session-7abcc98c",
-      "status": "online",
+      "status": "offline",
       "configuracao": {
         "podeIniciarConversa": true,
         "podeReceberMensagens": true,
@@ -73,14 +73,14 @@
       },
       "sensibilidade": "media",
       "criadoEm": "2026-03-04T18:20:25.470Z",
-      "atualizadoEm": "2026-03-05T18:19:59.689Z"
+      "atualizadoEm": "2026-03-05T21:38:29.666Z"
     },
     {
       "id": "tel_3a9d3999",
       "nome": "RESERVA-01",
       "numero": "173282166833238@lid",
       "sessionName": "session-976e95bf",
-      "status": "online",
+      "status": "offline",
       "configuracao": {
         "podeIniciarConversa": true,
         "podeReceberMensagens": true,
@@ -98,14 +98,14 @@
       },
       "sensibilidade": "media",
       "criadoEm": "2026-03-04T18:36:32.322Z",
-      "atualizadoEm": "2026-03-05T18:20:09.098Z"
+      "atualizadoEm": "2026-03-05T21:38:29.669Z"
     },
     {
       "id": "tel_3f4c4bc9",
       "nome": "Pessoal Kriiger",
       "numero": "556993731026@c.us",
       "sessionName": "session-f6ba14f6",
-      "status": "online",
+      "status": "offline",
       "configuracao": {
         "podeIniciarConversa": true,
         "podeReceberMensagens": true,
@@ -123,14 +123,14 @@
       },
       "sensibilidade": "media",
       "criadoEm": "2026-03-04T18:38:53.865Z",
-      "atualizadoEm": "2026-03-05T18:20:18.481Z"
+      "atualizadoEm": "2026-03-05T21:38:29.674Z"
     },
     {
       "id": "tel_729dde2f",
       "nome": "ATN-005",
       "numero": "57622002700356:2@lid",
       "sessionName": "session-5169212c",
-      "status": "online",
+      "status": "offline",
       "configuracao": {
         "podeIniciarConversa": true,
         "podeReceberMensagens": true,
@@ -148,14 +148,14 @@
       },
       "sensibilidade": "media",
       "criadoEm": "2026-03-05T18:38:43.510Z",
-      "atualizadoEm": "2026-03-05T18:40:33.018Z"
+      "atualizadoEm": "2026-03-05T21:38:29.677Z"
     },
     {
       "id": "tel_e0255765",
       "nome": "ATN-006",
       "numero": "44561107808276@lid",
       "sessionName": "session-921e8e92",
-      "status": "online",
+      "status": "offline",
       "configuracao": {
         "podeIniciarConversa": true,
         "podeReceberMensagens": true,
@@ -173,7 +173,7 @@
       },
       "sensibilidade": "media",
       "criadoEm": "2026-03-05T18:38:49.178Z",
-      "atualizadoEm": "2026-03-05T18:41:58.652Z"
+      "atualizadoEm": "2026-03-05T21:38:29.680Z"
     }
   ]
 }

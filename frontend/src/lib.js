@@ -1,15 +1,21 @@
 import { useEffect, useRef, useState } from 'react';
 import { io } from 'socket.io-client';
 
-export const API_ROOT = 'http://localhost:3001/api';
-export const BACKEND_ROOT = 'http://localhost:3001';
+const SOCKET_URL = typeof window !== 'undefined' ? window.location.origin : undefined;
+
+export const BACKEND_ROOT = '';
+export const API_ROOT = '/api';
 export const POLL_INTERVAL = 25000;
 
 let sharedSocket = null;
 
 export function getRealtimeSocket() {
   if (!sharedSocket) {
-    sharedSocket = io(BACKEND_ROOT, { transports: ['websocket'], reconnection: true });
+    sharedSocket = io(SOCKET_URL, {
+      path: '/socket.io',
+      transports: ['websocket'],
+      reconnection: true
+    });
   }
   return sharedSocket;
 }

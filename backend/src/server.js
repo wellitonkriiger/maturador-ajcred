@@ -5,6 +5,8 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const http = require('http');
+const fs = require('fs');
+const path = require('path');
 const { Server } = require('socket.io');
 const cron = require('node-cron');
 
@@ -46,6 +48,37 @@ app.get('/health', (req, res) => {
     timestamp: new Date().toISOString() 
   });
 });
+
+const SERVE_FRONTEND = ['1', 'true', 'yes'].includes(
+  String(process.env.SERVE_FRONTEND || '').toLowerCase()
+);
+
+if (SERVE_FRONTEND) {
+  const frontendDistPath = path.resolve(__dirname, '../../frontend/dist');
+  const indexFilePath = path.join(frontendDistPath, 'index.html');
+
+  if (fs.existsSync(indexFilePath)) {
+    app.use(express.static(frontendDistPath));
+
+    app.get('*', (req, res, next) => {
+      if (
+        req.path === '/health' ||
+        req.path === '/api' ||
+        req.path.startsWith('/api/') ||
+        req.path.startsWith('/socket.io')
+      ) {
+        return next();
+      }
+      return res.sendFile(indexFilePath);
+    });
+
+    logger.info(`[Frontend] Arquivos estaticos servidos de: ${frontendDistPath}`);
+  } else {
+    logger.warn(
+      `[Frontend] SERVE_FRONTEND=true, mas index.html nao encontrado em ${indexFilePath}`
+    );
+  }
+}
 
 // WebSocket para atualizações em tempo real
 io.on('connection', (socket) => {
@@ -133,8 +166,9 @@ process.on('uncaughtException', (err) => {
 
 // Iniciar servidor
 const PORT = process.env.PORT || 3001;
+const HOST = process.env.HOST || '0.0.0.0';
 
-server.listen(PORT, () => {
+server.listen(PORT, HOST, () => {
   HealthMonitor.start(WhatsAppService);
   logger.info(`🚀 Servidor rodando na porta ${PORT}`);
   logger.info(`📊 Ambiente: ${process.env.NODE_ENV || 'development'}`);

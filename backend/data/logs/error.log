@@ -147,3 +147,9 @@
 {"level":"error","message":"[Maturacao] Falha ao enviar [VNS-018 -> ART-021]: Cannot read properties of undefined (reading 'getChat')","service":"maturador-ajcred","timestamp":"2026-03-02 16:12:39"}
 {"level":"error","message":"Erro fatal ao inicializar ATL-005: net::ERR_TIMED_OUT at https://web.whatsapp.com/","service":"maturador-ajcred","timestamp":"2026-03-03 09:42:48"}
 {"level":"error","message":"Erro fatal ao inicializar ATL-005: Runtime.callFunctionOn timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.","service":"maturador-ajcred","timestamp":"2026-03-03 10:06:00"}
+{"level":"error","message":"[Guard] uncaughtException: EPIPE: broken pipe, write","service":"maturador-ajcred","timestamp":"2026-03-05 17:44:57"}
+{"level":"error","message":"[Guard] uncaughtException: EPIPE: broken pipe, write","service":"maturador-ajcred","timestamp":"2026-03-05 17:59:15"}
+{"level":"error","message":"[Guard] uncaughtException: EPIPE: broken pipe, write","service":"maturador-ajcred","timestamp":"2026-03-05 18:13:17"}
+{"level":"error","message":"[Guard] uncaughtException: EPIPE: broken pipe, write","service":"maturador-ajcred","timestamp":"2026-03-05 18:23:02"}
+{"level":"error","message":"[Guard] uncaughtException: EPIPE: broken pipe, write","service":"maturador-ajcred","timestamp":"2026-03-05 18:24:02"}
+{"level":"error","message":"[Guard] uncaughtException: EPIPE: broken pipe, write","service":"maturador-ajcred","timestamp":"2026-03-05 18:24:51"}
