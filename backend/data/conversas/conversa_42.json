@@ -1,0 +1,1012 @@
+{
+  "id": "conv_auto_042",
+  "nome": "Conversa 42",
+  "categoria": "cotidiano",
+  "tags": [
+    "chat",
+    "conversa"
+  ],
+  "participantesMinimos": 2,
+  "participantesMaximos": 2,
+  "duracaoEstimada": "10-60 minutos",
+  "mensagens": [
+    {
+      "ordem": 1,
+      "remetente": 1,
+      "texto": "oi sumida! o que vai fazer sabado?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 2,
+      "remetente": 1,
+      "texto": "oi! pensei em ir na praia, vem?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 3,
+      "remetente": 0,
+      "texto": "adorei! que horas?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 4,
+      "remetente": 1,
+      "texto": "9h antes de lotar",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 5,
+      "remetente": 0,
+      "texto": "perfeito, vai ter mais gente?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 6,
+      "remetente": 0,
+      "texto": "o Renan e a Jess tb vao",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 7,
+      "remetente": 0,
+      "texto": "que bom faz tempo que nao os vejo",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 8,
+      "remetente": 1,
+      "texto": "vai ser otimo mesmo",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 9,
+      "remetente": 0,
+      "texto": "levo o cooler?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 10,
+      "remetente": 1,
+      "texto": "leva sim eu levo as cadeiras",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 11,
+      "remetente": 1,
+      "texto": "combina, precisa levar comida?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 12,
+      "remetente": 0,
+      "texto": "compra la mesmo",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 13,
+      "remetente": 0,
+      "texto": "tem aquele espetinho do cara do chapeu",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 14,
+      "remetente": 0,
+      "texto": "mesmo kkkk ja to com fome",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 15,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 64,
+        "max": 237
+      }
+    },
+    {
+      "ordem": 16,
+      "remetente": 1,
+      "texto": "kkkk ainda ta quinta",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 17,
+      "remetente": 1,
+      "texto": "to ansiosa demais",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 18,
+      "remetente": 0,
+      "texto": "vou dormir cedo sexta",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 19,
+      "remetente": 0,
+      "texto": "boa ideia, vai descansar",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 20,
+      "remetente": 1,
+      "texto": "combinado! qq coisa me avisa",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 21,
+      "remetente": 0,
+      "texto": "aviso sim vai ser otimo",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 22,
+      "remetente": 1,
+      "texto": "oi sumida! o que vai fazer sabado?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 23,
+      "remetente": 0,
+      "texto": "oi! pensei em ir na praia, vem?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 24,
+      "remetente": 1,
+      "texto": "adorei! que horas?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 25,
+      "remetente": 0,
+      "texto": "9h antes de lotar",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 26,
+      "remetente": 1,
+      "texto": "perfeito, vai ter mais gente?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 27,
+      "remetente": 1,
+      "texto": "o Renan e a Jess tb vao",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 28,
+      "remetente": 1,
+      "texto": "que bom faz tempo que nao os vejo",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 29,
+      "remetente": 0,
+      "texto": "vai ser otimo mesmo",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 30,
+      "remetente": 0,
+      "texto": "levo o cooler?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 31,
+      "remetente": 1,
+      "texto": "leva sim eu levo as cadeiras",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 32,
+      "remetente": 0,
+      "texto": "combina, precisa levar comida?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 33,
+      "remetente": 0,
+      "texto": "compra la mesmo",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 34,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 126,
+        "max": 463
+      }
+    },
+    {
+      "ordem": 35,
+      "remetente": 0,
+      "texto": "tem aquele espetinho do cara do chapeu",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 36,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 133,
+        "max": 270
+      }
+    },
+    {
+      "ordem": 37,
+      "remetente": 0,
+      "texto": "mesmo kkkk ja to com fome",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 38,
+      "remetente": 1,
+      "texto": "kkkk ainda ta quinta",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 39,
+      "remetente": 0,
+      "texto": "to ansiosa demais",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 40,
+      "remetente": 0,
+      "texto": "vou dormir cedo sexta",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 41,
+      "remetente": 1,
+      "texto": "boa ideia, vai descansar",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 42,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 171,
+        "max": 453
+      }
+    },
+    {
+      "ordem": 43,
+      "remetente": 1,
+      "texto": "combinado! qq coisa me avisa",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 44,
+      "remetente": 1,
+      "texto": "aviso sim vai ser otimo",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 45,
+      "remetente": 1,
+      "texto": "oi sumida! o que vai fazer sabado?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 46,
+      "remetente": 1,
+      "texto": "oi! pensei em ir na praia, vem?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 47,
+      "remetente": 1,
+      "texto": "adorei! que horas?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 48,
+      "remetente": 0,
+      "texto": "9h antes de lotar",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 49,
+      "remetente": 0,
+      "texto": "perfeito, vai ter mais gente?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 50,
+      "remetente": 1,
+      "texto": "o Renan e a Jess tb vao",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    }
+  ]
+}

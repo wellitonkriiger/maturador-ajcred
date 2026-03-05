@@ -1,0 +1,870 @@
+{
+  "id": "conv_auto_016",
+  "nome": "Conversa 16",
+  "categoria": "trabalho",
+  "tags": [
+    "chat",
+    "conversa"
+  ],
+  "participantesMinimos": 2,
+  "participantesMaximos": 2,
+  "duracaoEstimada": "10-60 minutos",
+  "mensagens": [
+    {
+      "ordem": 1,
+      "remetente": 0,
+      "texto": "oi, vc foi designado pro projeto do banco?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 2,
+      "remetente": 1,
+      "texto": "fui sim, hoje de manha",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 3,
+      "remetente": 0,
+      "texto": "eu tb! vamos trabalhar juntos",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 4,
+      "remetente": 1,
+      "texto": "que otimo, pelo menos e vc",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 5,
+      "remetente": 0,
+      "texto": "kkkk o que vc ta entendendo do escopo",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 6,
+      "remetente": 0,
+      "texto": "to lendo ainda, e grande demais",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 7,
+      "remetente": 1,
+      "texto": "e, tem muita coisa",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 8,
+      "remetente": 0,
+      "texto": "vc tem experiencia com esse tipo de sistema?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 9,
+      "remetente": 1,
+      "texto": "um pouco, fiz algo parecido em 2021",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 10,
+      "remetente": 0,
+      "texto": "melhor que eu que nunca fiz",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 11,
+      "remetente": 0,
+      "texto": "a gente se apoia",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 12,
+      "remetente": 0,
+      "texto": "tem reuniao de kick off quando?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 13,
+      "remetente": 0,
+      "texto": "sexta as 14h",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 14,
+      "remetente": 1,
+      "texto": "bloqueei ja",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 15,
+      "remetente": 1,
+      "texto": "o gerente que coordena e o Andre",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 16,
+      "remetente": 1,
+      "texto": "o Andre e bom de trabalhar",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 17,
+      "remetente": 0,
+      "texto": "otimo, confio mais agora kkkk",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 18,
+      "remetente": 1,
+      "texto": "vai ser corrido mas da certo",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 19,
+      "remetente": 0,
+      "texto": "espero que sim, boa sorte pra nos",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 20,
+      "remetente": 1,
+      "texto": "oi, vc foi designado pro projeto do banco?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 21,
+      "remetente": 0,
+      "texto": "fui sim, hoje de manha",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 22,
+      "remetente": 0,
+      "texto": "eu tb! vamos trabalhar juntos",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 23,
+      "remetente": 0,
+      "texto": "que otimo, pelo menos e vc",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 24,
+      "remetente": 1,
+      "texto": "kkkk o que vc ta entendendo do escopo",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 25,
+      "remetente": 0,
+      "texto": "to lendo ainda, e grande demais",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 26,
+      "remetente": 1,
+      "texto": "e, tem muita coisa",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 27,
+      "remetente": 0,
+      "texto": "vc tem experiencia com esse tipo de sistema?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 28,
+      "remetente": 1,
+      "texto": "um pouco, fiz algo parecido em 2021",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 29,
+      "remetente": 1,
+      "texto": "melhor que eu que nunca fiz",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 30,
+      "remetente": 0,
+      "texto": "a gente se apoia",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 31,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 148,
+        "max": 284
+      }
+    },
+    {
+      "ordem": 32,
+      "remetente": 0,
+      "texto": "tem reuniao de kick off quando?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 33,
+      "remetente": 0,
+      "texto": "sexta as 14h",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 34,
+      "remetente": 1,
+      "texto": "bloqueei ja",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 35,
+      "remetente": 1,
+      "texto": "o gerente que coordena e o Andre",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 36,
+      "remetente": 0,
+      "texto": "o Andre e bom de trabalhar",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 37,
+      "remetente": 1,
+      "texto": "otimo, confio mais agora kkkk",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 38,
+      "remetente": 0,
+      "texto": "vai ser corrido mas da certo",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 39,
+      "remetente": 0,
+      "texto": "espero que sim, boa sorte pra nos",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 40,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 109,
+        "max": 512
+      }
+    },
+    {
+      "ordem": 41,
+      "remetente": 0,
+      "texto": "oi, vc foi designado pro projeto do banco?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 42,
+      "remetente": 1,
+      "texto": "fui sim, hoje de manha",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    }
+  ]
+}

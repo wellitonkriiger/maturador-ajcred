@@ -1,0 +1,978 @@
+{
+  "id": "conv_auto_045",
+  "nome": "Conversa 45",
+  "categoria": "trabalho",
+  "tags": [
+    "chat",
+    "conversa"
+  ],
+  "participantesMinimos": 2,
+  "participantesMaximos": 2,
+  "duracaoEstimada": "10-60 minutos",
+  "mensagens": [
+    {
+      "ordem": 1,
+      "remetente": 0,
+      "texto": "vc fez o treinamento de seguranca obrigatorio?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 2,
+      "remetente": 1,
+      "texto": "ainda nao, prazo e quando?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 3,
+      "remetente": 0,
+      "texto": "sexta feira",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 4,
+      "remetente": 1,
+      "texto": "ah tenho tempo",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 5,
+      "remetente": 0,
+      "texto": "e online, sao 4 horas",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 6,
+      "remetente": 1,
+      "texto": "4 horas meu deus",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 7,
+      "remetente": 0,
+      "texto": "e chato mas e obrigatorio",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 8,
+      "remetente": 1,
+      "texto": "ja fiz um parecido em outra empresa",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 9,
+      "remetente": 0,
+      "texto": "mas esse e novo sistema",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 10,
+      "remetente": 1,
+      "texto": "tudo bem, vou fazer amanha",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 11,
+      "remetente": 0,
+      "texto": "faz antes que deixa acumular",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 12,
+      "remetente": 0,
+      "texto": "verdade, vc ja fez?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 13,
+      "remetente": 1,
+      "texto": "ja fiz hoje de manha",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 14,
+      "remetente": 1,
+      "texto": "foi horrivel?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 15,
+      "remetente": 0,
+      "texto": "honestamente sim, muito texto kkkk",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 16,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 75,
+        "max": 427
+      }
+    },
+    {
+      "ordem": 17,
+      "remetente": 0,
+      "texto": "ai que saco",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 18,
+      "remetente": 1,
+      "texto": "mas tem teste no final, presta atencao",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 19,
+      "remetente": 0,
+      "texto": "obrigado pelo aviso",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 20,
+      "remetente": 1,
+      "texto": "se colar vai reprovar",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 21,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 116,
+        "max": 401
+      }
+    },
+    {
+      "ordem": 22,
+      "remetente": 0,
+      "texto": "entendi kkkk obrigado",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 23,
+      "remetente": 1,
+      "texto": "vc fez o treinamento de seguranca obrigatorio?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 24,
+      "remetente": 1,
+      "texto": "ainda nao, prazo e quando?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 25,
+      "remetente": 0,
+      "texto": "sexta feira",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 26,
+      "remetente": 1,
+      "texto": "ah tenho tempo",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 27,
+      "remetente": 0,
+      "texto": "e online, sao 4 horas",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 28,
+      "remetente": 0,
+      "texto": "4 horas meu deus",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 29,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 144,
+        "max": 201
+      }
+    },
+    {
+      "ordem": 30,
+      "remetente": 1,
+      "texto": "e chato mas e obrigatorio",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 31,
+      "remetente": 0,
+      "texto": "ja fiz um parecido em outra empresa",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 32,
+      "remetente": 0,
+      "texto": "mas esse e novo sistema",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 33,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 135,
+        "max": 411
+      }
+    },
+    {
+      "ordem": 34,
+      "remetente": 0,
+      "texto": "tudo bem, vou fazer amanha",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 35,
+      "remetente": 1,
+      "texto": "faz antes que deixa acumular",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 36,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 137,
+        "max": 273
+      }
+    },
+    {
+      "ordem": 37,
+      "remetente": 1,
+      "texto": "verdade, vc ja fez?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 38,
+      "remetente": 1,
+      "texto": "ja fiz hoje de manha",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 39,
+      "remetente": 0,
+      "texto": "foi horrivel?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 40,
+      "remetente": 1,
+      "texto": "honestamente sim, muito texto kkkk",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 41,
+      "remetente": 1,
+      "texto": "ai que saco",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 42,
+      "remetente": 0,
+      "texto": "mas tem teste no final, presta atencao",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 43,
+      "remetente": 1,
+      "texto": "obrigado pelo aviso",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 44,
+      "remetente": 1,
+      "texto": "se colar vai reprovar",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 45,
+      "remetente": 0,
+      "texto": "entendi kkkk obrigado",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 46,
+      "remetente": 1,
+      "texto": "vc fez o treinamento de seguranca obrigatorio?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 47,
+      "remetente": 1,
+      "texto": "ainda nao, prazo e quando?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 48,
+      "remetente": 0,
+      "texto": "sexta feira",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 49,
+      "remetente": 0,
+      "texto": "ah tenho tempo",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    }
+  ]
+}

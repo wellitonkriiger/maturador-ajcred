@@ -1,0 +1,957 @@
+{
+  "id": "conv_auto_068",
+  "nome": "Conversa 68",
+  "categoria": "entretenimento",
+  "tags": [
+    "chat",
+    "conversa"
+  ],
+  "participantesMinimos": 2,
+  "participantesMaximos": 2,
+  "duracaoEstimada": "10-60 minutos",
+  "mensagens": [
+    {
+      "ordem": 1,
+      "remetente": 0,
+      "texto": "vc viu o video do gato viral?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 2,
+      "remetente": 1,
+      "texto": "qual? tem mil gatos virais kkkk",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 3,
+      "remetente": 0,
+      "texto": "o que faz som de piano",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 4,
+      "remetente": 0,
+      "texto": "vi kkkk que criativo",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 5,
+      "remetente": 0,
+      "texto": "o dono treinou ele?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 6,
+      "remetente": 1,
+      "texto": "dicen que foi natural",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 7,
+      "remetente": 1,
+      "texto": "absurdo isso",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 8,
+      "remetente": 0,
+      "texto": "a internet muda tudo",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 9,
+      "remetente": 0,
+      "texto": "imagina ser aquele gato agora",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 10,
+      "remetente": 1,
+      "texto": "famoso mundial kkkk",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 11,
+      "remetente": 0,
+      "texto": "ja tem 50 milhoes de views",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 12,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 69,
+        "max": 574
+      }
+    },
+    {
+      "ordem": 13,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 80,
+        "max": 307
+      }
+    },
+    {
+      "ordem": 14,
+      "remetente": 1,
+      "texto": "o pior e o dono trabalhando normal",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 15,
+      "remetente": 0,
+      "texto": "enquanto o gato e estrela",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 16,
+      "remetente": 0,
+      "texto": "isso e injustico kkkk",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 17,
+      "remetente": 0,
+      "texto": "voce tem pet?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 18,
+      "remetente": 0,
+      "texto": "tenho um gato tb",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 19,
+      "remetente": 1,
+      "texto": "tenta ensinar piano kkkk",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 20,
+      "remetente": 1,
+      "texto": "ele nao liga pra mim so pra comida",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 21,
+      "remetente": 0,
+      "texto": "todos os gatos kkkk",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 22,
+      "remetente": 1,
+      "texto": "exatamente",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 23,
+      "remetente": 0,
+      "texto": "vc viu o video do gato viral?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 24,
+      "remetente": 1,
+      "texto": "qual? tem mil gatos virais kkkk",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 25,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 116,
+        "max": 218
+      }
+    },
+    {
+      "ordem": 26,
+      "remetente": 1,
+      "texto": "o que faz som de piano",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 27,
+      "remetente": 1,
+      "texto": "vi kkkk que criativo",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 28,
+      "remetente": 1,
+      "texto": "o dono treinou ele?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 29,
+      "remetente": 0,
+      "texto": "dicen que foi natural",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 30,
+      "remetente": 1,
+      "texto": "absurdo isso",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 31,
+      "remetente": 0,
+      "texto": "a internet muda tudo",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 32,
+      "remetente": 1,
+      "texto": "imagina ser aquele gato agora",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 33,
+      "remetente": 0,
+      "texto": "famoso mundial kkkk",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 34,
+      "remetente": 0,
+      "texto": "ja tem 50 milhoes de views",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 35,
+      "remetente": 1,
+      "texto": "o pior e o dono trabalhando normal",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 36,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 159,
+        "max": 315
+      }
+    },
+    {
+      "ordem": 37,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 98,
+        "max": 212
+      }
+    },
+    {
+      "ordem": 38,
+      "remetente": 0,
+      "texto": "enquanto o gato e estrela",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 39,
+      "remetente": 1,
+      "texto": "isso e injustico kkkk",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 40,
+      "remetente": 1,
+      "texto": "voce tem pet?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 41,
+      "remetente": 0,
+      "texto": "tenho um gato tb",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 42,
+      "remetente": 0,
+      "texto": "tenta ensinar piano kkkk",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 43,
+      "remetente": 1,
+      "texto": "ele nao liga pra mim so pra comida",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 44,
+      "remetente": 0,
+      "texto": "todos os gatos kkkk",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 45,
+      "remetente": 0,
+      "texto": "exatamente",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 46,
+      "remetente": 1,
+      "texto": "vc viu o video do gato viral?",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 47,
+      "remetente": 0,
+      "texto": "qual? tem mil gatos virais kkkk",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 48,
+      "remetente": 0,
+      "texto": "o que faz som de piano",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    }
+  ]
+}

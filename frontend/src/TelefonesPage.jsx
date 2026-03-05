@@ -89,13 +89,22 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot }) {
   }, [qrModal, telefones, toast]);
 
   function formatCountdown(item) {
-    const intervaloMinimo = plano?.intervalosGlobais?.entreConversas?.min || 0;
-    const ultima = item.configuracao?.ultimaConversaEm;
-    if (!intervaloMinimo || !ultima) {
+    const proximaDisponibilidade = item.configuracao?.proximaConversaDisponivelEm;
+    const alvo = proximaDisponibilidade
+      ? new Date(proximaDisponibilidade).getTime()
+      : (() => {
+          const intervaloMinimo = plano?.intervalosGlobais?.entreConversas?.min || 0;
+          const ultima = item.configuracao?.ultimaConversaEm;
+          if (!intervaloMinimo || !ultima) {
+            return null;
+          }
+          return new Date(ultima).getTime() + (intervaloMinimo * 1000);
+        })();
+
+    if (!alvo || Number.isNaN(alvo)) {
       return 'disponivel';
     }
 
-    const alvo = new Date(ultima).getTime() + (intervaloMinimo * 1000);
     const restante = Math.max(0, Math.ceil((alvo - agora) / 1000));
     if (restante <= 0) {
       return 'disponivel';

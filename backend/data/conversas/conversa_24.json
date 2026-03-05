@@ -1,0 +1,1004 @@
+{
+  "id": "conv_auto_024",
+  "nome": "Conversa 24",
+  "categoria": "esporte",
+  "tags": [
+    "chat",
+    "conversa"
+  ],
+  "participantesMinimos": 2,
+  "participantesMaximos": 2,
+  "duracaoEstimada": "10-60 minutos",
+  "mensagens": [
+    {
+      "ordem": 1,
+      "remetente": 1,
+      "texto": "ta vendo o jogo da selecao",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 2,
+      "remetente": 0,
+      "texto": "to sim que expectativa",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 3,
+      "remetente": 0,
+      "texto": "Vinicius na ponta esquerda hoje",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 4,
+      "remetente": 0,
+      "texto": "ele vai dar trabalho pra defesa deles",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 5,
+      "remetente": 1,
+      "texto": "primeiro tempo fraco ate agora",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 6,
+      "remetente": 1,
+      "texto": "o Rodrygo sumiu",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 7,
+      "remetente": 0,
+      "texto": "ta bem marcado",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 8,
+      "remetente": 1,
+      "texto": "GOOOOL Endrick",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 9,
+      "remetente": 0,
+      "texto": "QUE GOL MANO COM 17 ANOS",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 10,
+      "remetente": 1,
+      "texto": "futuro do mundo esse menino",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 11,
+      "remetente": 0,
+      "texto": "Tite tinha que ter escalado ele antes",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 12,
+      "remetente": 0,
+      "texto": "esse tecnico novo ta escalando melhor",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 13,
+      "remetente": 1,
+      "texto": "concordo muito mais dinamismo",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 14,
+      "remetente": 1,
+      "texto": "2x0 agora na segunda etapa",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 15,
+      "remetente": 0,
+      "texto": "bora mais um",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 16,
+      "remetente": 1,
+      "texto": "gol anulado cara",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 17,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 170,
+        "max": 202
+      }
+    },
+    {
+      "ordem": 18,
+      "remetente": 0,
+      "texto": "podia ser legal",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 19,
+      "remetente": 1,
+      "texto": "mas 2x0 ta bom",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 20,
+      "remetente": 0,
+      "texto": "classifica com esse resultado",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 21,
+      "remetente": 0,
+      "texto": "mais uma Copa estamos la",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 22,
+      "remetente": 1,
+      "texto": "espero que vai com essa base jovem",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 23,
+      "remetente": 1,
+      "texto": "ta vendo o jogo da selecao",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 24,
+      "remetente": 0,
+      "texto": "to sim que expectativa",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 25,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 129,
+        "max": 398
+      }
+    },
+    {
+      "ordem": 26,
+      "remetente": 1,
+      "texto": "Vinicius na ponta esquerda hoje",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 27,
+      "remetente": 0,
+      "texto": "ele vai dar trabalho pra defesa deles",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 28,
+      "tipo": "pausa_longa",
+      "duracao": {
+        "min": 112,
+        "max": 434
+      }
+    },
+    {
+      "ordem": 29,
+      "remetente": 0,
+      "texto": "primeiro tempo fraco ate agora",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 30,
+      "remetente": 1,
+      "texto": "o Rodrygo sumiu",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 31,
+      "remetente": 1,
+      "texto": "ta bem marcado",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 32,
+      "remetente": 0,
+      "texto": "GOOOOL Endrick",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 33,
+      "remetente": 1,
+      "texto": "QUE GOL MANO COM 17 ANOS",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 34,
+      "remetente": 0,
+      "texto": "futuro do mundo esse menino",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 35,
+      "remetente": 1,
+      "texto": "Tite tinha que ter escalado ele antes",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 36,
+      "remetente": 0,
+      "texto": "esse tecnico novo ta escalando melhor",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 37,
+      "remetente": 1,
+      "texto": "concordo muito mais dinamismo",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 38,
+      "remetente": 0,
+      "texto": "2x0 agora na segunda etapa",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 39,
+      "remetente": 1,
+      "texto": "bora mais um",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 40,
+      "remetente": 1,
+      "texto": "gol anulado cara",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 41,
+      "remetente": 0,
+      "texto": "podia ser legal",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 42,
+      "remetente": 0,
+      "texto": "mas 2x0 ta bom",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 43,
+      "remetente": 1,
+      "texto": "classifica com esse resultado",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 44,
+      "remetente": 0,
+      "texto": "mais uma Copa estamos la",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 45,
+      "remetente": 1,
+      "texto": "espero que vai com essa base jovem",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 46,
+      "remetente": 0,
+      "texto": "ta vendo o jogo da selecao",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 47,
+      "remetente": 1,
+      "texto": "to sim que expectativa",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 48,
+      "remetente": 0,
+      "texto": "Vinicius na ponta esquerda hoje",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    },
+    {
+      "ordem": 49,
+      "remetente": 1,
+      "texto": "ele vai dar trabalho pra defesa deles",
+      "delay": {
+        "min": 20,
+        "max": 30
+      },
+      "comportamento": {
+        "marcarComoLida": true,
+        "tempoAntesLeitura": {
+          "min": 15,
+          "max": 20
+        },
+        "simularDigitacao": true,
+        "tempoDigitacao": {
+          "min": 30,
+          "max": 40
+        }
+      }
+    }
+  ]
+}

@@ -31,7 +31,8 @@ const PLANO_DEFAULT = {
     prioridadeTelefonesAltaSensibilidade: true,
     evitarRepeticaoConversas:             true,
     distribuirUniformemente:              true,
-    randomizarParticipantes:              true
+    randomizarParticipantes:              true,
+    maxConversasMesmoParDia:              3
   }
 };
 

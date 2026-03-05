@@ -9,6 +9,7 @@ const logger = require('../utils/logger');
 const COOLDOWN_MS = 5 * 60 * 1000;
 const REQUEUE_DELAY_MS = 7 * 1000;
 const CICLO_AGENDAMENTO_MS = 60 * 1000;
+const MAX_CONVERSAS_MESMO_PAR_DIA_DEFAULT = 3;
 const ERROS_CONEXAO = [
   'detached Frame',
   'Attempted to use detached Frame',
@@ -30,6 +31,9 @@ class MaturacaoService {
     this.telefoneParaExecucao = new Map();
     this.cooldowns = new Map();
     this.historicoPares = new Map();
+    this.contagemParesDia = new Map();
+    this.paresBloqueadosHoje = new Set();
+    this._diaControlePares = this._diaAtualLocal();
     this._cicloTimer = null;
     this._eventsBound = false;
   }
@@ -135,10 +139,98 @@ class MaturacaoService {
     return true;
   }
 
+  _diaAtualLocal() {
+    const agora = new Date();
+    const ano = agora.getFullYear();
+    const mes = String(agora.getMonth() + 1).padStart(2, '0');
+    const dia = String(agora.getDate()).padStart(2, '0');
+    return `${ano}-${mes}-${dia}`;
+  }
+
+  _rotacionarControleDiarioPares() {
+    const diaAtual = this._diaAtualLocal();
+    if (diaAtual === this._diaControlePares) return;
+
+    this._diaControlePares = diaAtual;
+    this.contagemParesDia.clear();
+    this.paresBloqueadosHoje.clear();
+    logger.info('[Maturacao] Novo dia detectado -- limites de pares reiniciados');
+  }
+
+  _limiteParesPorDia(plano) {
+    const limite = Number(plano?.estrategia?.maxConversasMesmoParDia);
+    if (!Number.isFinite(limite)) return MAX_CONVERSAS_MESMO_PAR_DIA_DEFAULT;
+    if (limite <= 0) return null;
+    return Math.max(1, Math.floor(limite));
+  }
+
+  _normalizarIntervaloEntreConversas(plano) {
+    const minPlano = Number(plano?.intervalosGlobais?.entreConversas?.min);
+    const maxPlano = Number(plano?.intervalosGlobais?.entreConversas?.max);
+
+    const min = Number.isFinite(minPlano) && minPlano > 0 ? minPlano : 0;
+    let max = Number.isFinite(maxPlano) && maxPlano > 0 ? maxPlano : min;
+
+    if (max < min) max = min;
+    return { min, max };
+  }
+
+  _sortearIntervaloEntreConversas(plano) {
+    const { min, max } = this._normalizarIntervaloEntreConversas(plano);
+    return Math.max(0, DelayUtils.getRandomDelay(min, max));
+  }
+
+  _calcularProximaDisponibilidade(plano) {
+    const esperaMs = this._sortearIntervaloEntreConversas(plano);
+    return {
+      esperaMs,
+      proximaConversaDisponivelEm: new Date(Date.now() + esperaMs).toISOString()
+    };
+  }
+
+  _parAtingiuLimiteDiario(a, b, limiteParesPorDia) {
+    if (!limiteParesPorDia) return false;
+    this._rotacionarControleDiarioPares();
+
+    const key = this._parKey(a, b);
+    if (this.paresBloqueadosHoje.has(key)) return true;
+
+    return (this.contagemParesDia.get(key) || 0) >= limiteParesPorDia;
+  }
+
+  _registrarParesConcluidosNoDia(participantes, limiteParesPorDia) {
+    if (!limiteParesPorDia) return;
+    this._rotacionarControleDiarioPares();
+
+    for (let index = 0; index < participantes.length; index++) {
+      for (let other = index + 1; other < participantes.length; other++) {
+        const atual = participantes[index];
+        const parceiro = participantes[other];
+        const key = this._parKey(atual.id, parceiro.id);
+        const total = (this.contagemParesDia.get(key) || 0) + 1;
+        this.contagemParesDia.set(key, total);
+
+        if (total >= limiteParesPorDia && !this.paresBloqueadosHoje.has(key)) {
+          this.paresBloqueadosHoje.add(key);
+          logger.info(`[Maturacao] Par bloqueado ate virar o dia: ${atual.nome} <-> ${parceiro.nome} (${total}/${limiteParesPorDia})`);
+        }
+      }
+    }
+  }
+
   _podeParticipar(tel, plano) {
+    const proximaDisponibilidade = tel.configuracao?.proximaConversaDisponivelEm;
+    if (proximaDisponibilidade) {
+      const alvo = new Date(proximaDisponibilidade).getTime();
+      if (!Number.isNaN(alvo)) {
+        return Date.now() >= alvo;
+      }
+    }
+
     if (!tel.configuracao.ultimaConversaEm) return true;
     const decorrido = (Date.now() - new Date(tel.configuracao.ultimaConversaEm).getTime()) / 1000;
-    return decorrido >= plano.intervalosGlobais.entreConversas.min;
+    const { min } = this._normalizarIntervaloEntreConversas(plano);
+    return decorrido >= min;
   }
 
   _embaralhar(arr) {
@@ -164,10 +256,12 @@ class MaturacaoService {
   }
 
   _selecionarParceiro(base, candidatos, usados, plano) {
+    const limiteParesPorDia = this._limiteParesPorDia(plano);
     const elegiveis = candidatos.filter(candidate =>
       candidate.id !== base.id &&
       !usados.has(candidate.id) &&
       candidate.configuracao?.podeReceberMensagens !== false &&
+      !this._parAtingiuLimiteDiario(base.id, candidate.id, limiteParesPorDia) &&
       this._podeParticipar(candidate, plano)
     );
 
@@ -249,6 +343,8 @@ class MaturacaoService {
     if (tel.configuracao.conversasRealizadasHoje >= tel.configuracao.quantidadeConversasDia) return;
 
     const plano = PlanoMaturacao.obter();
+    if (!this._podeParticipar(tel, plano)) return;
+
     const parceiro = this._selecionarParceiro(
       tel,
       this._embaralhar(this._telefonesDivisiveis()),
@@ -428,15 +524,27 @@ class MaturacaoService {
   _finalizarExecucao(execucaoId, sucesso, motivoFalha = null) {
     const execucao = this.execucoes.get(execucaoId);
     if (!execucao) return;
+    const plano = PlanoMaturacao.obter();
 
     execucao.status = sucesso ? 'finished' : 'aborted';
     execucao.motivoFalha = motivoFalha;
     execucao.ultimoEventoEm = new Date().toISOString();
 
+    if (sucesso) {
+      const limiteParesPorDia = this._limiteParesPorDia(plano);
+      this._registrarParesConcluidosNoDia(execucao.participantes, limiteParesPorDia);
+    }
+
     execucao.participantes.forEach((participante) => {
       this.telefoneParaExecucao.delete(participante.id);
       if (sucesso) {
-        TelefoneModel.incrementarConversas(participante.id);
+        const { esperaMs, proximaConversaDisponivelEm } = this._calcularProximaDisponibilidade(plano);
+        TelefoneModel.incrementarConversas(participante.id, { proximaConversaDisponivelEm });
+
+        logger.info(
+          `[Maturacao] ${participante.nome} aguardara ${DelayUtils.formatDuration(esperaMs)} antes da proxima conversa`
+        );
+
         RealtimeService.emitTelefoneStatus(TelefoneModel.buscarPorId(participante.id));
       }
     });

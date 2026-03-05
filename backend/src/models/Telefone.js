@@ -52,7 +52,8 @@ class TelefoneModel {
         podeReceberMensagens: dados.podeReceberMensagens !== false,
         quantidadeConversasDia: dados.quantidadeConversasDia || 5,
         conversasRealizadasHoje: 0,
-        ultimaConversaEm: null
+        ultimaConversaEm: null,
+        proximaConversaDisponivelEm: null
       },
       estatisticas: {
         totalConversas: 0,
@@ -113,12 +114,17 @@ class TelefoneModel {
     return telefone;
   }
 
-  incrementarConversas(id) {
+  incrementarConversas(id, opcoes = {}) {
     const telefone = this.buscarPorId(id);
     if (!telefone) return null;
 
+    const {
+      proximaConversaDisponivelEm = null
+    } = opcoes;
+
     telefone.configuracao.conversasRealizadasHoje++;
     telefone.configuracao.ultimaConversaEm = new Date().toISOString();
+    telefone.configuracao.proximaConversaDisponivelEm = proximaConversaDisponivelEm;
     telefone.estatisticas.totalConversas++;
     this.salvar();
     RealtimeService.emitTelefoneStatus(telefone);
@@ -148,6 +154,7 @@ class TelefoneModel {
   resetarContadoresDiarios() {
     this.telefones.forEach((telefone) => {
       telefone.configuracao.conversasRealizadasHoje = 0;
+      telefone.configuracao.proximaConversaDisponivelEm = null;
       RealtimeService.emitTelefoneStatus(telefone);
     });
     this.salvar();
