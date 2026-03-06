@@ -57,6 +57,7 @@ class WhatsAppService extends EventEmitter {
     this.qrCodes = new Map();
     this.pairingCodes = new Map();
     this.clientMeta = new Map();
+    this.autoSavedContacts = new Map();
     this._desconectando = new Set();
     this._keepAliveTimer = setInterval(() => this._runKeepAlive(), KEEPALIVE_INTERVAL_MS);
   }
@@ -118,6 +119,84 @@ class WhatsAppService extends EventEmitter {
 
   _touchActivity(telefoneId) {
     this._meta(telefoneId).lastActivityAt = new Date().toISOString();
+  }
+
+  _normalizeContactIdentifier(value) {
+    const raw = String(value || '').trim().toLowerCase();
+    if (!raw) {
+      return { raw: '', user: '', domain: '', digits: '' };
+    }
+
+    const [userRaw = '', domain = ''] = raw.split('@');
+    const user = userRaw.split(':')[0];
+    const digits = user.replace(/\D/g, '');
+
+    return { raw, user, domain, digits };
+  }
+
+  _extractPhoneDigits(value) {
+    const normalized = this._normalizeContactIdentifier(value);
+    if (!normalized.digits) return null;
+    if (normalized.digits.length < 10) return null;
+    return normalized.digits;
+  }
+
+  _findManagedTelefoneByContact(contactId, ignoreTelefoneId = null) {
+    const target = this._normalizeContactIdentifier(contactId);
+    if (!target.raw) return null;
+
+    return TelefoneModel.listar().find((telefone) => {
+      if (!telefone?.numero) return false;
+      if (ignoreTelefoneId && telefone.id === ignoreTelefoneId) return false;
+
+      const candidate = this._normalizeContactIdentifier(telefone.numero);
+      if (!candidate.raw) return false;
+
+      if (candidate.raw === target.raw) return true;
+      if (candidate.user && candidate.user === target.user) return true;
+      if (candidate.digits && target.digits && candidate.digits === target.digits) return true;
+      return false;
+    }) || null;
+  }
+
+  async _resolvePhoneNumberForContactSave(client, senderContactId, senderTelefone) {
+    const normalizedSender = this._normalizeContactIdentifier(senderContactId);
+
+    if (normalizedSender.domain === 'lid' && typeof client.getContactLidAndPhone === 'function') {
+      try {
+        const mapping = await client.getContactLidAndPhone([senderContactId]);
+        const phoneFromMapping = this._extractPhoneDigits(mapping?.[0]?.pn);
+        if (phoneFromMapping) return phoneFromMapping;
+      } catch (error) {
+        logger.debug(`[AutoContato] Falha ao resolver LID para telefone: ${firstErrorLine(error)}`);
+      }
+    }
+
+    return this._extractPhoneDigits(senderTelefone?.numero) || this._extractPhoneDigits(senderContactId);
+  }
+
+  async _autoSaveManagedContactName(receiverTelefoneId, senderContactId) {
+    const receiverClient = this.clients.get(receiverTelefoneId);
+    if (!receiverClient || typeof receiverClient.saveOrEditAddressbookContact !== 'function') return;
+
+    const senderTelefone = this._findManagedTelefoneByContact(senderContactId, receiverTelefoneId);
+    if (!senderTelefone) return;
+
+    const displayName = String(senderTelefone.nome || '').trim();
+    if (!displayName) return;
+
+    const phoneNumber = await this._resolvePhoneNumberForContactSave(receiverClient, senderContactId, senderTelefone);
+    if (!phoneNumber) return;
+
+    const cacheKey = `${receiverTelefoneId}::${senderTelefone.id}`;
+    const cacheValue = `${phoneNumber}|${displayName}`;
+    if (this.autoSavedContacts.get(cacheKey) === cacheValue) return;
+
+    await receiverClient.saveOrEditAddressbookContact(phoneNumber, displayName, '', true);
+    this.autoSavedContacts.set(cacheKey, cacheValue);
+
+    const receiverName = TelefoneModel.buscarPorId(receiverTelefoneId)?.nome || receiverTelefoneId;
+    logger.info(`[AutoContato] ${receiverName} salvou ${displayName} (${phoneNumber})`);
   }
 
   _clearReconnectTimer(telefoneId) {
@@ -248,6 +327,20 @@ class WhatsAppService extends EventEmitter {
     const telefone = TelefoneModel.buscarPorId(telefoneId);
     let lidCapturado = false;
     let qrBloqueado = false;
+
+    client.on('message', (msg) => {
+      if (!msg || msg.fromMe) return;
+
+      const senderContactId = msg.author || msg.from;
+      if (!senderContactId) return;
+      if (senderContactId === 'status@broadcast') return;
+      if (String(senderContactId).includes('@g.us')) return;
+
+      this._touchActivity(telefoneId);
+      this._autoSaveManagedContactName(telefoneId, senderContactId).catch((error) => {
+        logger.debug(`[AutoContato] Falha ao salvar contato automaticamente (${telefoneId}): ${firstErrorLine(error)}`);
+      });
+    });
 
     client.on('qr', async (qr) => {
       if (client.info) return;

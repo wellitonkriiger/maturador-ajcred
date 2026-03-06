@@ -93,10 +93,21 @@ io.on('connection', (socket) => {
 app.set('io', io);
 RealtimeService.setIO(io);
 
+const DAILY_RESET_TIMEZONE = process.env.DAILY_RESET_TIMEZONE || 'America/Manaus';
+
 // Cron job: Resetar contadores diários à meia-noite
 cron.schedule('0 0 * * *', () => {
   logger.info('🔄 Resetando contadores diários...');
-  TelefoneModel.resetarContadoresDiarios();
+  TelefoneModel.resetarContadoresDiarios({ motivo: 'cron_meia_noite' });
+}, {
+  timezone: DAILY_RESET_TIMEZONE
+});
+
+// Fallback: garante reset na virada de dia mesmo que o processo tenha perdido o gatilho.
+cron.schedule('* * * * *', () => {
+  TelefoneModel.garantirResetDiario('cron_check_minuto');
+}, {
+  timezone: DAILY_RESET_TIMEZONE
 });
 
 // Tratamento de erros

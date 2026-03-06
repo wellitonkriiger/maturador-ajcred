@@ -17,7 +17,13 @@ export default function PlanoPage({ toast, status }) {
       const next = structuredClone(current);
       const keys = path.split('.');
       let cursor = next;
-      for (let index = 0; index < keys.length - 1; index++) cursor = cursor[keys[index]];
+      for (let index = 0; index < keys.length - 1; index++) {
+        const key = keys[index];
+        if (!cursor[key] || typeof cursor[key] !== 'object') {
+          cursor[key] = {};
+        }
+        cursor = cursor[key];
+      }
       cursor[keys[keys.length - 1]] = value;
       return next;
     });
@@ -87,12 +93,33 @@ export default function PlanoPage({ toast, status }) {
 
         <div className="panel stack">
           <div className="card-title"><Settings2 size={16} />Metas e intervalos</div>
-          <label className="label">Conversas por telefone<input className="input" type="number" value={plano.metas?.conversasPorTelefoneDia || 5} onChange={(event) => update('metas.conversasPorTelefoneDia', Number(event.target.value))} /></label>
-          <label className="label">Total por dia<input className="input" type="number" value={plano.metas?.totalConversasDia || 25} onChange={(event) => update('metas.totalConversasDia', Number(event.target.value))} /></label>
+          <label className="label">Conversas por telefone<input className="input" type="number" value={plano.metas?.conversasPorTelefoneDia ?? 5} onChange={(event) => update('metas.conversasPorTelefoneDia', Number(event.target.value))} /></label>
+          <label className="label">Total por dia<input className="input" type="number" value={plano.metas?.totalConversasDia ?? 25} onChange={(event) => update('metas.totalConversasDia', Number(event.target.value))} /></label>
           <div className="grid two">
-            <label className="label">Entre conversas min<input className="input" type="number" value={plano.intervalosGlobais?.entreConversas?.min || 1800} onChange={(event) => update('intervalosGlobais.entreConversas.min', Number(event.target.value))} /></label>
-            <label className="label">Entre conversas max<input className="input" type="number" value={plano.intervalosGlobais?.entreConversas?.max || 3600} onChange={(event) => update('intervalosGlobais.entreConversas.max', Number(event.target.value))} /></label>
+            <label className="label">Entre conversas min<input className="input" type="number" value={plano.intervalosGlobais?.entreConversas?.min ?? 1800} onChange={(event) => update('intervalosGlobais.entreConversas.min', Number(event.target.value))} /></label>
+            <label className="label">Entre conversas max<input className="input" type="number" value={plano.intervalosGlobais?.entreConversas?.max ?? 3600} onChange={(event) => update('intervalosGlobais.entreConversas.max', Number(event.target.value))} /></label>
           </div>
+        </div>
+
+        <div className="panel stack">
+          <div className="card-title"><Settings2 size={16} />Estrategia</div>
+          <label className="between">
+            <span>Priorizar alta sensibilidade</span>
+            <input type="checkbox" checked={plano.estrategia?.prioridadeTelefonesAltaSensibilidade ?? true} onChange={(event) => update('estrategia.prioridadeTelefonesAltaSensibilidade', event.target.checked)} />
+          </label>
+          <label className="between">
+            <span>Evitar repeticao de conversas</span>
+            <input type="checkbox" checked={plano.estrategia?.evitarRepeticaoConversas ?? true} onChange={(event) => update('estrategia.evitarRepeticaoConversas', event.target.checked)} />
+          </label>
+          <label className="between">
+            <span>Distribuir conversas uniformemente</span>
+            <input type="checkbox" checked={plano.estrategia?.distribuirUniformemente ?? true} onChange={(event) => update('estrategia.distribuirUniformemente', event.target.checked)} />
+          </label>
+          <label className="between">
+            <span>Randomizar participantes</span>
+            <input type="checkbox" checked={plano.estrategia?.randomizarParticipantes ?? true} onChange={(event) => update('estrategia.randomizarParticipantes', event.target.checked)} />
+          </label>
+          <label className="label">Maximo de conversas por mesmo par/dia<input className="input" type="number" min="1" value={plano.estrategia?.maxConversasMesmoParDia ?? 3} onChange={(event) => update('estrategia.maxConversasMesmoParDia', Number(event.target.value))} /></label>
         </div>
       </div>
     </div>

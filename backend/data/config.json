@@ -1,68 +1,18 @@
 {
   "telefones": [
     {
-      "id": "tel_41c07b19",
-      "nome": "RESERVA-12",
-      "numero": "153730452349116@lid",
-      "sessionName": "session-194b73dc",
-      "status": "offline",
-      "configuracao": {
-        "podeIniciarConversa": true,
-        "podeReceberMensagens": true,
-        "quantidadeConversasDia": 15,
-        "conversasRealizadasHoje": 12,
-        "ultimaConversaEm": "2026-03-05T19:42:14.287Z",
-        "proximaConversaDisponivelEm": "2026-03-05T20:08:42.011Z"
-      },
-      "estatisticas": {
-        "totalConversas": 12,
-        "totalMensagensEnviadas": 174,
-        "totalMensagensRecebidas": 178,
-        "diasAtivo": 0,
-        "ultimoBanimento": null
-      },
-      "sensibilidade": "media",
-      "criadoEm": "2026-03-04T14:49:57.087Z",
-      "atualizadoEm": "2026-03-05T21:38:29.655Z"
-    },
-    {
-      "id": "tel_6fad671f",
-      "nome": "RESERVA-21",
-      "numero": "36851373047844@lid",
-      "sessionName": "session-bad110ed",
-      "status": "offline",
-      "configuracao": {
-        "podeIniciarConversa": true,
-        "podeReceberMensagens": true,
-        "quantidadeConversasDia": 10,
-        "conversasRealizadasHoje": 10,
-        "ultimaConversaEm": "2026-03-05T20:36:54.510Z",
-        "proximaConversaDisponivelEm": "2026-03-05T21:02:37.041Z"
-      },
-      "estatisticas": {
-        "totalConversas": 10,
-        "totalMensagensEnviadas": 138,
-        "totalMensagensRecebidas": 126,
-        "diasAtivo": 0,
-        "ultimoBanimento": null
-      },
-      "sensibilidade": "media",
-      "criadoEm": "2026-03-04T18:20:16.756Z",
-      "atualizadoEm": "2026-03-05T21:38:29.660Z"
-    },
-    {
       "id": "tel_c3819e35",
       "nome": "FNX-018",
       "numero": "55216787480660@lid",
       "sessionName": "session-7abcc98c",
-      "status": "offline",
+      "status": "online",
       "configuracao": {
         "podeIniciarConversa": true,
         "podeReceberMensagens": true,
         "quantidadeConversasDia": 10,
-        "conversasRealizadasHoje": 10,
-        "ultimaConversaEm": "2026-03-05T20:09:53.235Z",
-        "proximaConversaDisponivelEm": "2026-03-05T20:35:06.175Z"
+        "conversasRealizadasHoje": 0,
+        "ultimaConversaEm": null,
+        "proximaConversaDisponivelEm": null
       },
       "estatisticas": {
         "totalConversas": 10,
@@ -73,46 +23,21 @@
       },
       "sensibilidade": "media",
       "criadoEm": "2026-03-04T18:20:25.470Z",
-      "atualizadoEm": "2026-03-05T21:38:29.666Z"
-    },
-    {
-      "id": "tel_3a9d3999",
-      "nome": "RESERVA-01",
-      "numero": "173282166833238@lid",
-      "sessionName": "session-976e95bf",
-      "status": "offline",
-      "configuracao": {
-        "podeIniciarConversa": true,
-        "podeReceberMensagens": true,
-        "quantidadeConversasDia": 10,
-        "conversasRealizadasHoje": 9,
-        "ultimaConversaEm": "2026-03-05T20:36:54.512Z",
-        "proximaConversaDisponivelEm": "2026-03-05T21:05:40.248Z"
-      },
-      "estatisticas": {
-        "totalConversas": 9,
-        "totalMensagensEnviadas": 133,
-        "totalMensagensRecebidas": 132,
-        "diasAtivo": 0,
-        "ultimoBanimento": null
-      },
-      "sensibilidade": "media",
-      "criadoEm": "2026-03-04T18:36:32.322Z",
-      "atualizadoEm": "2026-03-05T21:38:29.669Z"
+      "atualizadoEm": "2026-03-06T13:13:54.243Z"
     },
     {
       "id": "tel_3f4c4bc9",
       "nome": "Pessoal Kriiger",
       "numero": "556993731026@c.us",
       "sessionName": "session-f6ba14f6",
-      "status": "offline",
+      "status": "online",
       "configuracao": {
         "podeIniciarConversa": true,
         "podeReceberMensagens": true,
         "quantidadeConversasDia": 10,
-        "conversasRealizadasHoje": 10,
-        "ultimaConversaEm": "2026-03-05T20:09:53.234Z",
-        "proximaConversaDisponivelEm": "2026-03-05T20:37:23.328Z"
+        "conversasRealizadasHoje": 0,
+        "ultimaConversaEm": null,
+        "proximaConversaDisponivelEm": null
       },
       "estatisticas": {
         "totalConversas": 10,
@@ -123,57 +48,35 @@
       },
       "sensibilidade": "media",
       "criadoEm": "2026-03-04T18:38:53.865Z",
-      "atualizadoEm": "2026-03-05T21:38:29.674Z"
+      "atualizadoEm": "2026-03-06T13:21:59.892Z"
     },
     {
-      "id": "tel_729dde2f",
-      "nome": "ATN-005",
-      "numero": "57622002700356:2@lid",
-      "sessionName": "session-5169212c",
-      "status": "offline",
+      "id": "tel_33ade7ed",
+      "nome": "ATL-013",
+      "numero": "75536160301307@lid",
+      "sessionName": "session-88cd90d3",
+      "status": "online",
       "configuracao": {
-        "podeIniciarConversa": true,
+        "podeIniciarConversa": false,
         "podeReceberMensagens": true,
         "quantidadeConversasDia": 5,
-        "conversasRealizadasHoje": 1,
-        "ultimaConversaEm": "2026-03-05T19:40:43.857Z",
-        "proximaConversaDisponivelEm": "2026-03-05T20:03:47.353Z"
+        "conversasRealizadasHoje": 0,
+        "ultimaConversaEm": null,
+        "proximaConversaDisponivelEm": null
       },
       "estatisticas": {
-        "totalConversas": 1,
-        "totalMensagensEnviadas": 28,
-        "totalMensagensRecebidas": 29,
+        "totalConversas": 0,
+        "totalMensagensEnviadas": 0,
+        "totalMensagensRecebidas": 0,
         "diasAtivo": 0,
         "ultimoBanimento": null
       },
       "sensibilidade": "media",
-      "criadoEm": "2026-03-05T18:38:43.510Z",
-      "atualizadoEm": "2026-03-05T21:38:29.677Z"
-    },
-    {
-      "id": "tel_e0255765",
-      "nome": "ATN-006",
-      "numero": "44561107808276@lid",
-      "sessionName": "session-921e8e92",
-      "status": "offline",
-      "configuracao": {
-        "podeIniciarConversa": true,
-        "podeReceberMensagens": true,
-        "quantidadeConversasDia": 5,
-        "conversasRealizadasHoje": 1,
-        "ultimaConversaEm": "2026-03-05T19:40:43.856Z",
-        "proximaConversaDisponivelEm": "2026-03-05T20:04:19.445Z"
-      },
-      "estatisticas": {
-        "totalConversas": 1,
-        "totalMensagensEnviadas": 29,
-        "totalMensagensRecebidas": 28,
-        "diasAtivo": 0,
-        "ultimoBanimento": null
-      },
-      "sensibilidade": "media",
-      "criadoEm": "2026-03-05T18:38:49.178Z",
-      "atualizadoEm": "2026-03-05T21:38:29.680Z"
+      "criadoEm": "2026-03-06T13:20:33.492Z",
+      "atualizadoEm": "2026-03-06T13:21:53.992Z"
     }
-  ]
+  ],
+  "controleDiario": {
+    "ultimoDiaReset": "2026-03-06"
+  }
 }
