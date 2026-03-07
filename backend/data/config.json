@@ -1,65 +1,15 @@
 {
   "telefones": [
     {
-      "id": "tel_c3819e35",
+      "id": "tel_abe868c2",
       "nome": "FNX-018",
       "numero": "55216787480660@lid",
-      "sessionName": "session-7abcc98c",
+      "sessionName": "session-82945b1d",
       "status": "online",
       "configuracao": {
         "podeIniciarConversa": true,
         "podeReceberMensagens": true,
         "quantidadeConversasDia": 10,
-        "conversasRealizadasHoje": 0,
-        "ultimaConversaEm": null,
-        "proximaConversaDisponivelEm": null
-      },
-      "estatisticas": {
-        "totalConversas": 10,
-        "totalMensagensEnviadas": 121,
-        "totalMensagensRecebidas": 122,
-        "diasAtivo": 0,
-        "ultimoBanimento": null
-      },
-      "sensibilidade": "media",
-      "criadoEm": "2026-03-04T18:20:25.470Z",
-      "atualizadoEm": "2026-03-06T13:13:54.243Z"
-    },
-    {
-      "id": "tel_3f4c4bc9",
-      "nome": "Pessoal Kriiger",
-      "numero": "556993731026@c.us",
-      "sessionName": "session-f6ba14f6",
-      "status": "online",
-      "configuracao": {
-        "podeIniciarConversa": true,
-        "podeReceberMensagens": true,
-        "quantidadeConversasDia": 10,
-        "conversasRealizadasHoje": 0,
-        "ultimaConversaEm": null,
-        "proximaConversaDisponivelEm": null
-      },
-      "estatisticas": {
-        "totalConversas": 10,
-        "totalMensagensEnviadas": 115,
-        "totalMensagensRecebidas": 126,
-        "diasAtivo": 0,
-        "ultimoBanimento": null
-      },
-      "sensibilidade": "media",
-      "criadoEm": "2026-03-04T18:38:53.865Z",
-      "atualizadoEm": "2026-03-06T13:21:59.892Z"
-    },
-    {
-      "id": "tel_33ade7ed",
-      "nome": "ATL-013",
-      "numero": "75536160301307@lid",
-      "sessionName": "session-88cd90d3",
-      "status": "online",
-      "configuracao": {
-        "podeIniciarConversa": false,
-        "podeReceberMensagens": true,
-        "quantidadeConversasDia": 5,
         "conversasRealizadasHoje": 0,
         "ultimaConversaEm": null,
         "proximaConversaDisponivelEm": null
@@ -72,11 +22,11 @@
         "ultimoBanimento": null
       },
       "sensibilidade": "media",
-      "criadoEm": "2026-03-06T13:20:33.492Z",
-      "atualizadoEm": "2026-03-06T13:21:53.992Z"
+      "criadoEm": "2026-03-07T14:16:02.437Z",
+      "atualizadoEm": "2026-03-07T14:16:46.725Z"
     }
   ],
   "controleDiario": {
-    "ultimoDiaReset": "2026-03-06"
+    "ultimoDiaReset": "2026-03-07"
   }
 }

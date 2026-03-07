@@ -18,7 +18,11 @@ class HealthMonitor {
     if (this.timer) return;
     this.whatsappService = whatsappService;
     logger.info(`[HealthMonitor] Iniciado -- verificando clientes a cada ${INTERVALO_VERIFICACAO_MS / 1000}s`);
-    this.timer = setInterval(() => this._verificarTodos(), INTERVALO_VERIFICACAO_MS);
+    this.timer = setInterval(() => {
+      this._verificarTodos().catch((error) => {
+        logger.warn(`[HealthMonitor] Falha na verificacao: ${error.message}`);
+      });
+    }, INTERVALO_VERIFICACAO_MS);
   }
 
   stop() {
@@ -29,40 +33,33 @@ class HealthMonitor {
     }
   }
 
-  _verificarTodos() {
+  async _verificarTodos() {
     const ws = this.whatsappService;
     if (!ws) return;
 
-    ws.clients.forEach((client, telefoneId) => {
+    for (const [telefoneId, client] of ws.clients.entries()) {
       // So verifica clientes que deveriam estar online (tem client.info)
-      if (!client.info) return;
+      if (!client.info) continue;
 
       const telefone = TelefoneModel.buscarPorId(telefoneId);
       const nome = telefone?.nome ?? telefoneId;
 
-      let operacional = false;
-      try {
-        const page = client.pupPage;
-        operacional = !!(page && !page.isClosed());
-      } catch {
-        operacional = false;
+      let operacional = true;
+      if (typeof ws._checkPage === 'function') {
+        operacional = await ws._checkPage(telefoneId, { recover: true });
+      } else {
+        try {
+          const page = client.pupPage;
+          operacional = !!(page && !page.isClosed());
+        } catch {
+          operacional = false;
+        }
       }
 
       if (!operacional) {
-        logger.warn(`[HealthMonitor] ${nome} nao esta operacional -- tentando reconectar`);
-        ws.tentarReconectar(telefoneId, { auto: true }).catch((error) => {
-          logger.warn(`[HealthMonitor] Reconexao falhou para ${nome}: ${error.message}`);
-          TelefoneModel.atualizarStatus(telefoneId, 'offline');
-          ws.emit('telefone:offline', telefoneId, 'health_check_failed');
-        });
-      } else {
-        // Atualiza status para online caso tenha ficado travado em outro estado
-        if (telefone && telefone.status !== 'online') {
-          logger.info(`[HealthMonitor] ${nome} operacional mas status era '${telefone.status}' -- corrigindo para online`);
-          TelefoneModel.atualizarStatus(telefoneId, 'online', telefone.numero);
-        }
+        logger.warn(`[HealthMonitor] ${nome} nao esta operacional -- reconexao automatica em andamento`);
       }
-    });
+    }
 
     // Verifica telefones que o modelo considera online mas nao tem cliente ativo
     const telefonesOnline = TelefoneModel.buscarOnline();
