@@ -1,5 +1,5 @@
 import { Activity, Phone, PhoneCall, Play, StopCircle, Wifi } from 'lucide-react';
-import { api, formatDateTime, formatTimeAgo } from './lib';
+import { api, formatDateTime, formatNumeroBR, formatTimeAgo } from './lib';
 import { StatusBadge } from './components';
 
 export default function DashboardPage({ telefones, status, ativas, toast, refreshSnapshot }) {
@@ -53,7 +53,7 @@ export default function DashboardPage({ telefones, status, ativas, toast, refres
                 </div>
                 <div className="between small-gap">
                   <span className="muted">Numero</span>
-                  <span className="mono">{item.numero || '-'}</span>
+                  <span className="mono">{formatNumeroBR(item.numeroAlt)}</span>
                 </div>
               </div>
             ))}

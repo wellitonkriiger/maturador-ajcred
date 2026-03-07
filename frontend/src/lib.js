@@ -98,6 +98,37 @@ export function formatDateTime(iso) {
   }
 }
 
+export function formatNumeroBR(value) {
+  const digits = String(value ?? '').replace(/\D/g, '');
+  if (!digits) return '-';
+
+  function formatLocal(localDigits) {
+    if (localDigits.length === 9) return `${localDigits.slice(0, 5)}-${localDigits.slice(5)}`;
+    if (localDigits.length === 8) return `${localDigits.slice(0, 4)}-${localDigits.slice(4)}`;
+    return localDigits;
+  }
+
+  if (digits.length === 13 && digits.startsWith('55')) {
+    const ddd = digits.slice(2, 4);
+    const local = digits.slice(4);
+    return `+55 (${ddd}) ${formatLocal(local)}`;
+  }
+
+  if (digits.length === 11) {
+    const ddd = digits.slice(0, 2);
+    const local = digits.slice(2);
+    return `(${ddd}) ${formatLocal(local)}`;
+  }
+
+  if (digits.length === 10) {
+    const ddd = digits.slice(0, 2);
+    const local = digits.slice(2);
+    return `(${ddd}) ${formatLocal(local)}`;
+  }
+
+  return digits;
+}
+
 export function useToasts() {
   const [toasts, setToasts] = useState([]);
 

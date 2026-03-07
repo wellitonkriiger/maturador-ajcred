@@ -142,6 +142,13 @@ class WhatsAppService extends EventEmitter {
     return normalized.digits;
   }
 
+  _resolveNumeroReal(client, fallback = null) {
+    return this._extractPhoneDigits(client?.info?.wid?.user)
+      || this._extractPhoneDigits(client?.info?.wid?._serialized)
+      || this._extractPhoneDigits(fallback)
+      || null;
+  }
+
   _findManagedTelefoneByContact(contactId, ignoreTelefoneId = null) {
     const target = this._normalizeContactIdentifier(contactId);
     if (!target.raw) return null;
@@ -173,7 +180,9 @@ class WhatsAppService extends EventEmitter {
       }
     }
 
-    return this._extractPhoneDigits(senderTelefone?.numero) || this._extractPhoneDigits(senderContactId);
+    return this._extractPhoneDigits(senderTelefone?.numeroAlt)
+      || this._extractPhoneDigits(senderTelefone?.numero)
+      || this._extractPhoneDigits(senderContactId);
   }
 
   async _autoSaveManagedContactName(receiverTelefoneId, senderContactId) {
@@ -265,8 +274,22 @@ class WhatsAppService extends EventEmitter {
     return false;
   }
 
-  _updateStatus(telefoneId, status, numero = null) {
-    const telefone = TelefoneModel.atualizarStatus(telefoneId, status, numero);
+  _updateStatus(telefoneId, status, numeroOrPayload = undefined) {
+    let numero = undefined;
+    let numeroAlt = undefined;
+
+    if (
+      numeroOrPayload &&
+      typeof numeroOrPayload === 'object' &&
+      !Array.isArray(numeroOrPayload)
+    ) {
+      numero = numeroOrPayload.numero;
+      numeroAlt = numeroOrPayload.numeroAlt;
+    } else {
+      numero = numeroOrPayload;
+    }
+
+    const telefone = TelefoneModel.atualizarStatus(telefoneId, status, numero, numeroAlt);
     const meta = this._meta(telefoneId);
     meta.state = status;
     if (telefone) {
@@ -434,7 +457,8 @@ class WhatsAppService extends EventEmitter {
     client.on('ready', async () => {
       if (qrBloqueado) return;
 
-      const numeroCus = client.info?.wid?._serialized;
+      const numeroInterno = client.info?.wid?._serialized || null;
+      const numeroReal = this._resolveNumeroReal(client, numeroInterno);
       const meta = this._meta(telefoneId);
       this._clearReconnectTimer(telefoneId);
       meta.autoReconnectAttempts = 0;
@@ -444,11 +468,15 @@ class WhatsAppService extends EventEmitter {
       meta.lastReadyAt = new Date().toISOString();
       this._touchActivity(telefoneId);
 
-      logger.info(`${telefone.nome} ONLINE | ${numeroCus}`);
+      logger.info(`${telefone.nome} ONLINE | ${numeroInterno}`);
 
       const telAtual = TelefoneModel.buscarPorId(telefoneId);
+      const numeroRealConsolidado = numeroReal || telAtual?.numeroAlt || null;
       if (lidCapturado || (telAtual?.numero && telAtual.numero.includes('@lid'))) {
-        this._updateStatus(telefoneId, 'online', telAtual.numero);
+        this._updateStatus(telefoneId, 'online', {
+          numero: telAtual.numero,
+          numeroAlt: numeroRealConsolidado
+        });
         this.emit('telefone:online', telefoneId);
         if (isReconnect) {
           RealtimeService.emitReconnectAttempt(telefoneId, 'online');
@@ -457,7 +485,10 @@ class WhatsAppService extends EventEmitter {
         return;
       }
 
-      this._updateStatus(telefoneId, 'online', numeroCus);
+      this._updateStatus(telefoneId, 'online', {
+        numero: numeroInterno,
+        numeroAlt: numeroRealConsolidado
+      });
       this._clearConnectionRequester(telefoneId);
 
       const capturarLid = (msg) => {
@@ -467,7 +498,10 @@ class WhatsAppService extends EventEmitter {
         if (lid && lid.includes('@lid')) {
           lidCapturado = true;
           logger.info(`@lid capturado para ${telefone.nome}: ${lid}`);
-          this._updateStatus(telefoneId, 'online', lid);
+          this._updateStatus(telefoneId, 'online', {
+            numero: lid,
+            numeroAlt: numeroRealConsolidado
+          });
         } else {
           logger.warn(`@lid nao encontrado para ${telefone.nome} -- usando @c.us`);
         }
@@ -481,7 +515,7 @@ class WhatsAppService extends EventEmitter {
       await new Promise(resolve => setTimeout(resolve, 2000));
 
       try {
-        await client.sendMessage(numeroCus, '.');
+        await client.sendMessage(numeroInterno, '.');
         logger.info(`Mensagem de descoberta de @lid enviada para ${telefone.nome}`);
       } catch (error) {
         client.removeListener('message_create', capturarLid);

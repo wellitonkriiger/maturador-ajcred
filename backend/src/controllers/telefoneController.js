@@ -229,7 +229,7 @@ class TelefoneController {
       });
 
       // Mantem apenas o cadastro base do telefone para nova conexao limpa.
-      const atualizado = TelefoneModel.atualizar(id, { numero: null, status: 'offline' });
+      const atualizado = TelefoneModel.atualizar(id, { numero: null, numeroAlt: null, status: 'offline' });
 
       res.json({
         mensagem: 'Tentativa de conexao cancelada e sessao limpa',
@@ -287,7 +287,8 @@ class TelefoneController {
         conectado,
         temQRCode: !!qrCode,
         temCodigoPareamento: !!pairingCode,
-        numero: telefone.numero
+        numero: telefone.numero,
+        numeroAlt: telefone.numeroAlt || null
       });
     } catch (error) {
       logger.error('Erro ao verificar status:', error);

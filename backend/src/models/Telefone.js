@@ -59,13 +59,28 @@ class TelefoneModel {
     };
   }
 
+  _normalizarNumeroContato(valor) {
+    const raw = String(valor ?? '').trim();
+    return raw || null;
+  }
+
+  _normalizarNumeroReal(valor) {
+    const digits = String(valor ?? '').replace(/\D/g, '');
+    return digits.length >= 10 ? digits : null;
+  }
+
   _normalizarTelefone(telefone) {
     if (!telefone || typeof telefone !== 'object') {
       return {
+        numero: null,
+        numeroAlt: null,
         configuracao: {},
         estatisticas: this._defaultEstatisticas()
       };
     }
+
+    telefone.numero = this._normalizarNumeroContato(telefone.numero);
+    telefone.numeroAlt = this._normalizarNumeroReal(telefone.numeroAlt) || this._normalizarNumeroReal(telefone.numero);
 
     if (!telefone.configuracao || typeof telefone.configuracao !== 'object') {
       telefone.configuracao = {};
@@ -169,6 +184,7 @@ class TelefoneModel {
       id: `tel_${uuidv4().substring(0, 8)}`,
       nome: dados.nome,
       numero: null,
+      numeroAlt: null,
       sessionName: `session-${uuidv4().substring(0, 8)}`,
       status: 'offline',
       configuracao: {
@@ -223,7 +239,7 @@ class TelefoneModel {
     return this.telefones[index];
   }
 
-  atualizarStatus(id, status, numero = null) {
+  atualizarStatus(id, status, numero = undefined, numeroAlt = undefined) {
     this._garantirResetDiario('atualizarStatus');
 
     const telefone = this.buscarPorId(id);
@@ -231,9 +247,14 @@ class TelefoneModel {
     this._normalizarTelefone(telefone);
 
     telefone.status = status;
-    if (numero) {
+    if (numero !== undefined) {
       telefone.numero = numero;
     }
+    if (numeroAlt !== undefined) {
+      telefone.numeroAlt = numeroAlt;
+    }
+    telefone.numero = this._normalizarNumeroContato(telefone.numero);
+    telefone.numeroAlt = this._normalizarNumeroReal(telefone.numeroAlt) || this._normalizarNumeroReal(telefone.numero);
     telefone.atualizadoEm = new Date().toISOString();
 
     this.salvar();
