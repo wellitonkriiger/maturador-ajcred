@@ -89,16 +89,10 @@ export default function ConversasPage({ toast }) {
 
   return (
     <div className="stack">
-      <div className="section-head">
-        <div>
-          <h3>Gerenciar conversas</h3>
-          <p className="muted">Importe e edite roteiros JSON sem tocar na pasta manualmente.</p>
-        </div>
-        <div className="actions">
-          <input ref={inputRef} type="file" accept=".json,application/json" hidden onChange={importFile} />
-          <button className="btn secondary" onClick={() => inputRef.current?.click()}><Upload size={16} />Importar JSON</button>
-          <button className="btn secondary" onClick={reload}><FolderSync size={16} />Recarregar</button>
-        </div>
+      <div className="actions end">
+        <input ref={inputRef} type="file" accept=".json,application/json" hidden onChange={importFile} />
+        <button className="btn secondary" onClick={() => inputRef.current?.click()}><Upload size={16} />Importar JSON</button>
+        <button className="btn secondary" onClick={reload}><FolderSync size={16} />Recarregar</button>
       </div>
 
       <div className="panel">

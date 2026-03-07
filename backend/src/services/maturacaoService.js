@@ -242,6 +242,53 @@ class MaturacaoService {
     return source;
   }
 
+  _estrategiaAtiva(plano, chave, fallback = true) {
+    const valor = plano?.estrategia?.[chave];
+    return typeof valor === 'boolean' ? valor : fallback;
+  }
+
+  _sensibilidadeScore(sensibilidade) {
+    if (sensibilidade === 'alta') return 2;
+    if (sensibilidade === 'media') return 1;
+    return 0;
+  }
+
+  _ordenarCandidatos(candidatos, plano) {
+    const randomizar = this._estrategiaAtiva(plano, 'randomizarParticipantes', true);
+    const distribuirUniformemente = this._estrategiaAtiva(plano, 'distribuirUniformemente', true);
+    const prioridadeAlta = this._estrategiaAtiva(plano, 'prioridadeTelefonesAltaSensibilidade', true);
+    const ordenados = randomizar ? this._embaralhar(candidatos) : [...candidatos];
+
+    return ordenados.sort((a, b) => {
+      if (distribuirUniformemente) {
+        const conversasA = Number(a.configuracao?.conversasRealizadasHoje || 0);
+        const conversasB = Number(b.configuracao?.conversasRealizadasHoje || 0);
+        if (conversasA !== conversasB) return conversasA - conversasB;
+
+        const ultimaA = a.configuracao?.ultimaConversaEm ? new Date(a.configuracao.ultimaConversaEm).getTime() : 0;
+        const ultimaB = b.configuracao?.ultimaConversaEm ? new Date(b.configuracao.ultimaConversaEm).getTime() : 0;
+        if (ultimaA !== ultimaB) return ultimaA - ultimaB;
+      }
+
+      if (prioridadeAlta) {
+        const sensA = this._sensibilidadeScore(a.sensibilidade);
+        const sensB = this._sensibilidadeScore(b.sensibilidade);
+        if (sensA !== sensB) return sensB - sensA;
+      }
+
+      if (randomizar) return 0;
+      return String(a.nome || a.id).localeCompare(String(b.nome || b.id), 'pt-BR');
+    });
+  }
+
+  _ordenarParticipantesParaConversa(participantes, plano) {
+    if (this._estrategiaAtiva(plano, 'randomizarParticipantes', true)) {
+      return this._embaralhar(participantes);
+    }
+
+    return [...participantes].sort((a, b) => String(a.nome || a.id).localeCompare(String(b.nome || b.id), 'pt-BR'));
+  }
+
   _parKey(a, b) {
     return [a, b].sort().join('::');
   }
@@ -257,6 +304,7 @@ class MaturacaoService {
 
   _selecionarParceiro(base, candidatos, usados, plano) {
     const limiteParesPorDia = this._limiteParesPorDia(plano);
+    const evitarRepeticao = this._estrategiaAtiva(plano, 'evitarRepeticaoConversas', true);
     const elegiveis = candidatos.filter(candidate =>
       candidate.id !== base.id &&
       !usados.has(candidate.id) &&
@@ -266,32 +314,36 @@ class MaturacaoService {
     );
 
     if (elegiveis.length === 0) return null;
-
-    const nuncaUsados = elegiveis.filter(candidate => !this.historicoPares.has(this._parKey(base.id, candidate.id)));
-    if (nuncaUsados.length > 0) {
-      return this._embaralhar(nuncaUsados)[0];
+    const ordenados = this._ordenarCandidatos(elegiveis, plano);
+    if (!evitarRepeticao) {
+      return ordenados[0];
     }
 
-    const menorTimestamp = Math.min(...elegiveis.map(candidate => this.historicoPares.get(this._parKey(base.id, candidate.id)) || 0));
-    const menosRecentes = elegiveis.filter(candidate =>
+    const nuncaUsados = ordenados.filter(candidate => !this.historicoPares.has(this._parKey(base.id, candidate.id)));
+    if (nuncaUsados.length > 0) {
+      return nuncaUsados[0];
+    }
+
+    const menorTimestamp = Math.min(...ordenados.map(candidate => this.historicoPares.get(this._parKey(base.id, candidate.id)) || 0));
+    const menosRecentes = ordenados.filter(candidate =>
       (this.historicoPares.get(this._parKey(base.id, candidate.id)) || 0) === menorTimestamp
     );
 
-    return this._embaralhar(menosRecentes)[0];
+    return menosRecentes[0] || ordenados[0];
   }
 
   _formarPares(candidatos, plano) {
     const aptos = candidatos.filter(t => this._podeParticipar(t, plano));
     if (aptos.length < 2) return [];
 
-    const embaralhados = this._embaralhar(aptos);
+    const ordenados = this._ordenarCandidatos(aptos, plano);
     const usados = new Set();
     const pares = [];
 
-    for (const tel of embaralhados) {
+    for (const tel of ordenados) {
       if (usados.has(tel.id)) continue;
       if (!tel.configuracao.podeIniciarConversa) continue;
-      const parceiro = this._selecionarParceiro(tel, embaralhados, usados, plano);
+      const parceiro = this._selecionarParceiro(tel, ordenados, usados, plano);
       if (!parceiro) continue;
       usados.add(tel.id);
       usados.add(parceiro.id);
@@ -299,8 +351,8 @@ class MaturacaoService {
     }
 
     if (pares.length === 0 && aptos.length >= 2) {
-      const base = this._embaralhar(aptos)[0];
-      const parceiro = this._selecionarParceiro(base, aptos, new Set([base.id]), plano);
+      const base = ordenados.find(item => item.configuracao?.podeIniciarConversa !== false) || ordenados[0];
+      const parceiro = this._selecionarParceiro(base, ordenados, new Set([base.id]), plano);
       if (parceiro) {
         pares.push([base, parceiro]);
       }
@@ -325,7 +377,7 @@ class MaturacaoService {
     const plano = PlanoMaturacao.obter();
     const pares = this._formarPares(livres, plano);
     for (const par of pares) {
-      this._iniciarConversa(par);
+      this._iniciarConversa(par, plano);
     }
 
     this._emitStatus();
@@ -347,7 +399,7 @@ class MaturacaoService {
 
     const parceiro = this._selecionarParceiro(
       tel,
-      this._embaralhar(this._telefonesDivisiveis()),
+      this._ordenarCandidatos(this._telefonesDivisiveis(), plano),
       new Set(),
       plano
     );
@@ -357,7 +409,7 @@ class MaturacaoService {
       return;
     }
 
-    this._iniciarConversa([tel, parceiro]);
+    this._iniciarConversa([tel, parceiro], plano);
     this._emitStatus();
   }
 
@@ -365,11 +417,12 @@ class MaturacaoService {
     return `exec_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
   }
 
-  _iniciarConversa(participantes) {
+  _iniciarConversa(participantes, plano = PlanoMaturacao.obter()) {
+    const participantesOrdenados = this._ordenarParticipantesParaConversa(participantes, plano);
     const idsEmUso = [...new Set([...this.execucoes.values()].map(exec => exec.conversaId))];
-    const conversa = ConversaModel.selecionarAleatoria(participantes.length, idsEmUso);
+    const conversa = ConversaModel.selecionarAleatoria(participantesOrdenados.length, idsEmUso);
     if (!conversa) {
-      logger.warn(`[Maturacao] Nenhuma conversa disponivel para ${participantes.length} participantes`);
+      logger.warn(`[Maturacao] Nenhuma conversa disponivel para ${participantesOrdenados.length} participantes`);
       return;
     }
 
@@ -378,7 +431,7 @@ class MaturacaoService {
       conversaExecucaoId: this._novaExecucaoId(),
       conversaId: conversa.id,
       conversaNome: conversa.nome,
-      participantes: participantes.map(item => ({
+      participantes: participantesOrdenados.map(item => ({
         id: item.id,
         nome: item.nome,
         numero: item.numero
@@ -392,14 +445,14 @@ class MaturacaoService {
       motivoFalha: null
     };
 
-    logger.info(`[Maturacao] Iniciando: "${conversa.nome}" | ${participantes.map(p => p.nome).join(' <-> ')}`);
+    logger.info(`[Maturacao] Iniciando: "${conversa.nome}" | ${participantesOrdenados.map(p => p.nome).join(' <-> ')}`);
 
-    this._registrarPares(participantes);
+    this._registrarPares(participantesOrdenados);
     this.execucoes.set(execucao.conversaExecucaoId, execucao);
-    participantes.forEach(p => this.telefoneParaExecucao.set(p.id, execucao.conversaExecucaoId));
+    participantesOrdenados.forEach(p => this.telefoneParaExecucao.set(p.id, execucao.conversaExecucaoId));
     RealtimeService.emitConversaStarted(execucao);
 
-    this._executarConversa(conversa, participantes, execucao.conversaExecucaoId).catch((error) => {
+    this._executarConversa(conversa, participantesOrdenados, execucao.conversaExecucaoId).catch((error) => {
       logger.error(`[Maturacao] Erro nao tratado na conversa "${conversa.nome}": ${error.message}`);
       this._finalizarExecucao(execucao.conversaExecucaoId, false, error.message);
     });

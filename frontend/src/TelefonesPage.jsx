@@ -36,9 +36,9 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot }) {
       }
       try {
         const result = await api(`/telefones/${telefoneId}/qrcode`);
-        setQrModal({ id: telefoneId, nome, qrCode: result.qrCode, loading: false });
+        setQrModal({ id: telefoneId, nome, mode: 'qr', qrCode: result.qrCode, loading: false });
       } catch {
-        setQrModal({ id: telefoneId, nome, qrCode: null, loading: true });
+        setQrModal({ id: telefoneId, nome, mode: 'qr', qrCode: null, loading: true });
       }
     };
     const onQRCleared = ({ telefoneId }) => {
@@ -136,6 +136,45 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot }) {
     });
   }
 
+  async function getConnectedSocketId() {
+    const socket = getRealtimeSocket();
+    if (socket.connected && socket.id) {
+      return socket.id;
+    }
+
+    socket.connect();
+
+    return new Promise((resolve, reject) => {
+      const timeout = window.setTimeout(() => {
+        cleanup();
+        reject(new Error('Conexao em tempo real indisponivel. Recarregue o painel e tente novamente.'));
+      }, 5000);
+
+      const onConnect = () => {
+        cleanup();
+        if (socket.id) {
+          resolve(socket.id);
+          return;
+        }
+        reject(new Error('Sessao em tempo real nao identificada. Recarregue o painel e tente novamente.'));
+      };
+
+      const onConnectError = () => {
+        cleanup();
+        reject(new Error('Conexao em tempo real indisponivel. Recarregue o painel e tente novamente.'));
+      };
+
+      function cleanup() {
+        window.clearTimeout(timeout);
+        socket.off('connect', onConnect);
+        socket.off('connect_error', onConnectError);
+      }
+
+      socket.on('connect', onConnect);
+      socket.on('connect_error', onConnectError);
+    });
+  }
+
   async function startConnection() {
     if (!connectDialog) return;
 
@@ -144,6 +183,14 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot }) {
 
     if (method === 'phone' && sanitizedPhone.length < 10) {
       toast('Informe um numero valido para gerar o codigo de pareamento', 'error');
+      return;
+    }
+
+    let requesterSocketId = null;
+    try {
+      requesterSocketId = await getConnectedSocketId();
+    } catch (error) {
+      toast(error.message, 'error');
       return;
     }
 
@@ -162,7 +209,8 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot }) {
         method: 'POST',
         body: JSON.stringify({
           method,
-          phoneNumber: method === 'phone' ? sanitizedPhone : undefined
+          phoneNumber: method === 'phone' ? sanitizedPhone : undefined,
+          requesterSocketId
         })
       });
       toast(
@@ -196,6 +244,21 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot }) {
     try {
       await api(`/telefones/${item.id}/desconectar`, { method: 'POST' });
       toast(`${item.nome} desconectado`, 'success');
+      refreshSnapshot();
+    } catch (error) {
+      toast(error.message, 'error');
+    }
+  }
+
+  async function cancelConnectionAttempt(item) {
+    if (!window.confirm(`Cancelar tentativa de conexao de ${item.nome} e limpar toda a sessao salva?`)) return;
+
+    try {
+      await api(`/telefones/${item.id}/cancelar-conexao`, { method: 'POST' });
+      qrDismissedRef.current.delete(item.id);
+      setQrModal((current) => current?.id === item.id ? null : current);
+      setConnectDialog((current) => current?.item?.id === item.id ? null : current);
+      toast(`Sessao de ${item.nome} limpa. Pronto para nova conexao.`, 'success');
       refreshSnapshot();
     } catch (error) {
       toast(error.message, 'error');
@@ -238,11 +301,7 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot }) {
 
   return (
     <div className="stack">
-      <div className="section-head">
-        <div>
-          <h3>Gerenciar telefones</h3>
-          <p className="muted">Conectar, reconectar sem QR e corrigir sessoes que ficaram ociosas.</p>
-        </div>
+      <div className="actions end">
         <button className="btn primary" onClick={() => setShowCreate(true)}><Phone size={16} />Adicionar</button>
       </div>
 
@@ -263,12 +322,15 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot }) {
                 <div className="between small-gap"><span className="muted">Nova conversa em</span><span className="mono">{formatCountdown(item)}</span></div>
                 <div className="progress"><span style={{ width: `${Math.min(100, ((item.configuracao?.conversasRealizadasHoje || 0) / (item.configuracao?.quantidadeConversasDia || 1)) * 100)}%` }} /></div>
               </div>
-              <div className="actions">
+              <div className="actions spaced-from-progress">
                 {(item.status === 'offline' || item.status === 'erro' || item.status === 'requires_qr') && <button className="btn primary sm" onClick={() => openConnectDialog(item)}><QrCode size={14} />Conectar</button>}
                 {item.status === 'online' && <button className="btn danger sm" onClick={() => disconnectPhone(item)}><PhoneOff size={14} />Desconectar</button>}
                 {item.status === 'reconnecting' && <button className="btn secondary sm" disabled><LoaderCircle size={14} />Reconectando</button>}
-                {(item.status === 'offline' || item.status === 'erro' || item.status === 'requires_qr' || item.status === 'online') && (
+                {item.status === 'offline' && (
                   <button className="btn secondary sm" onClick={() => reconnectPhone(item)}><RefreshCcw size={14} />Tentar reconexao</button>
+                )}
+                {(item.status === 'conectando' || item.status === 'reconnecting' || item.status === 'requires_qr' || item.status === 'erro') && (
+                  <button className="btn danger sm" onClick={() => cancelConnectionAttempt(item)}><Trash2 size={14} />Cancelar tentativa</button>
                 )}
                 <button className="btn secondary sm" onClick={() => setEditing({
                   id: item.id,

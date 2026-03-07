@@ -3,6 +3,7 @@
 const QRCode = require('qrcode');
 const TelefoneModel = require('../models/Telefone');
 const WhatsAppService = require('../services/whatsappService');
+const RealtimeService = require('../services/realtimeService');
 const logger = require('../utils/logger');
 
 class TelefoneController {
@@ -119,6 +120,7 @@ class TelefoneController {
       const phoneNumber = String(req.body?.phoneNumber ?? '').replace(/\D/g, '');
       const showNotification = req.body?.showNotification !== false;
       const intervalMs = Number(req.body?.intervalMs) > 0 ? Number(req.body.intervalMs) : 180000;
+      const requesterSocketId = String(req.body?.requesterSocketId || '').trim();
 
       const telefone = TelefoneModel.buscarPorId(id);
 
@@ -129,11 +131,24 @@ class TelefoneController {
       if (method === 'phone' && phoneNumber.length < 10) {
         return res.status(400).json({ erro: 'Informe um número válido para conectar por código' });
       }
+      if (!requesterSocketId) {
+        return res.status(400).json({
+          erro: 'Sessao em tempo real nao identificada. Recarregue o painel e tente novamente.'
+        });
+      }
+
+      if (!RealtimeService.hasSocket(requesterSocketId)) {
+        return res.status(400).json({
+          erro: 'Sessao em tempo real desconectada. Recarregue o painel e tente novamente.'
+        });
+      }
+
 
       // Inicializar cliente (assíncrono, não bloqueia resposta)
       WhatsAppService.inicializarCliente(id, {
         allowQr: true,
         isReconnect: false,
+        requesterSocketId,
         pairWithPhoneNumber: method === 'phone' ? {
           phoneNumber,
           showNotification,
@@ -193,6 +208,36 @@ class TelefoneController {
     } catch (error) {
       logger.error('Erro ao reconectar telefone:', error);
       res.status(500).json({ erro: 'Erro ao reconectar telefone' });
+    }
+  }
+
+  /**
+   * Cancela tentativa de conexao e limpa sessao persistida do telefone
+   */
+  async cancelarTentativaConexao(req, res) {
+    try {
+      const { id } = req.params;
+      const telefone = TelefoneModel.buscarPorId(id);
+
+      if (!telefone) {
+        return res.status(404).json({ erro: 'Telefone nao encontrado' });
+      }
+
+      await WhatsAppService.desconectarCliente(id, {
+        removeSession: true,
+        suppressAutoReconnect: true
+      });
+
+      // Mantem apenas o cadastro base do telefone para nova conexao limpa.
+      const atualizado = TelefoneModel.atualizar(id, { numero: null, status: 'offline' });
+
+      res.json({
+        mensagem: 'Tentativa de conexao cancelada e sessao limpa',
+        telefone: atualizado
+      });
+    } catch (error) {
+      logger.error('Erro ao cancelar tentativa de conexao:', error);
+      res.status(500).json({ erro: 'Erro ao cancelar tentativa de conexao' });
     }
   }
 

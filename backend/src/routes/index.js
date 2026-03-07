@@ -19,6 +19,7 @@ router.delete('/telefones/:id', TelefoneController.deletar);
 router.post('/telefones/:id/conectar', TelefoneController.conectar);
 router.post('/telefones/:id/desconectar', TelefoneController.desconectar);
 router.post('/telefones/:id/reconectar', TelefoneController.reconectar);
+router.post('/telefones/:id/cancelar-conexao', TelefoneController.cancelarTentativaConexao);
 router.get('/telefones/:id/qrcode', TelefoneController.obterQRCode);
 router.get('/telefones/:id/status', TelefoneController.statusConexao);
 

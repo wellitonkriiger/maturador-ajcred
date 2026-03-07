@@ -30,20 +30,10 @@ const CSS = `
     z-index: 5;
   }
   .brand {
-    position: relative;
-    background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
-    border: 1px solid #e2e5e9;
-    border-radius: 20px;
-    padding: 14px;
-    overflow: hidden;
-    box-shadow: 0 18px 38px rgba(20, 20, 20, .08);
-  }
-  .brand::before {
-    content: '';
-    position: absolute;
-    inset: 0 0 auto 0;
-    height: 4px;
-    background: linear-gradient(90deg, #ff6a00, #ff9147, #ff6a00);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 0 8px;
   }
   .brand-logo {
     width: 100%;
@@ -52,7 +42,6 @@ const CSS = `
     display: block;
     object-fit: contain;
   }
-  .brand p { margin: 10px 0 0; font-size: 10px; color: #4f5560; text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
   .nav { display: grid; gap: 7px; }
   .nav button, .btn { display: inline-flex; align-items: center; gap: 7px; border: 1px solid transparent; border-radius: 12px; padding: 8px 11px; cursor: pointer; font: inherit; font-weight: 600; }
   .nav button { background: transparent; color: #5a6068; }
@@ -69,7 +58,7 @@ const CSS = `
   }
   .topbar { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 16px; }
   .topbar h2, .section-head h3, .panel h3 { margin: 0; }
-  .topbar h2 { font-size: clamp(18px, 1.6vw, 25px); }
+  .topbar h2 { font-size: clamp(35px, 1.6vw, 50px); }
   .section-head h3, .panel h3 { font-size: clamp(14px, 1vw, 17px); }
   .muted { color: #5a6068; }
   .chip { display: inline-flex; align-items: center; gap: 8px; padding: 8px 11px; border: 1px solid #d8dde3; border-radius: 999px; background: white; font-size: 11px; color: #5a6068; }
@@ -86,6 +75,7 @@ const CSS = `
   .list-card { border: 1px solid #e4e7eb; border-radius: 14px; padding: 10px; background: white; }
   .actions { display: flex; flex-wrap: wrap; gap: 6px; }
   .actions.end { justify-content: flex-end; }
+  .actions.spaced-from-progress { margin-top: 10px; }
   .btn.primary { background: linear-gradient(135deg, #ff6a00, #ff8a32); color: white; box-shadow: 0 12px 24px rgba(255,106,0,.2); }
   .btn.secondary { background: white; color: #1f2329; border-color: #d8dde3; }
   .btn.danger { background: #fff1f2; color: #b91c1c; border-color: #fecdd3; }
@@ -206,12 +196,13 @@ export default function App() {
   });
 
   const nav = [
-    { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { id: 'telefones', label: 'Telefones', icon: Phone },
-    { id: 'conversas', label: 'Conversas', icon: FileJson },
-    { id: 'plano', label: 'Plano', icon: Settings2 },
-    { id: 'logs', label: 'Logs', icon: Logs }
+    { id: 'dashboard', label: 'Dashboard', description: 'Informações gerais', icon: LayoutDashboard },
+    { id: 'telefones', label: 'Telefones', description: 'Gerenciamento de sessões', icon: Phone },
+    { id: 'conversas', label: 'Conversas', description: 'Manutenção de Conversas', icon: FileJson },
+    { id: 'plano', label: 'Plano de maturação', description: 'Estratégia de maturação', icon: Settings2 },
+    { id: 'logs', label: 'Logs', description: 'registros operacionais', icon: Logs }
   ];
+  const activeNav = nav.find((item) => item.id === page) || nav[0];
 
   return (
     <>
@@ -220,7 +211,6 @@ export default function App() {
         <aside className="sidebar">
           <div className="brand">
             <img className="brand-logo" src="/logo.png" alt="AJCred" />
-            <p>Loja de credito</p>
           </div>
           <nav className="nav">
             {nav.map((item) => {
@@ -237,8 +227,8 @@ export default function App() {
         <main className="main">
           <div className="topbar">
             <div>
-              <h2>{nav.find((item) => item.id === page)?.label}</h2>
-              <div className="muted">Atualizacao principal por Socket.IO com polling de ressincronizacao.</div>
+              <h2>{activeNav.label}</h2>
+              <div className="muted">{activeNav.description}</div>
             </div>
             <div className="chip">{new Date().toLocaleString('pt-BR')}</div>
           </div>

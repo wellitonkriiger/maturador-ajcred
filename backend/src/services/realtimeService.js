@@ -14,6 +14,18 @@ class RealtimeService {
     this.io.emit(event, payload);
   }
 
+  hasSocket(socketId) {
+    if (!this.io || !socketId) return false;
+    return this.io.sockets?.sockets?.has(socketId) === true;
+  }
+
+  emitToSocket(socketId, event, payload) {
+    if (!this.io || !socketId) return false;
+    if (!this.hasSocket(socketId)) return false;
+    this.io.to(socketId).emit(event, payload);
+    return true;
+  }
+
   emitTelefoneStatus(telefone) {
     if (!telefone) return;
     this.emit('telefone:status', {
@@ -22,26 +34,52 @@ class RealtimeService {
     });
   }
 
-  emitTelefoneQRCode(telefoneId, payload) {
-    this.emit('telefone:qrcode', {
+  emitTelefoneQRCode(telefoneId, payload, socketId = null) {
+    const eventPayload = {
       telefoneId,
       ...payload
-    });
+    };
+
+    if (socketId) {
+      return this.emitToSocket(socketId, 'telefone:qrcode', eventPayload);
+    }
+
+    this.emit('telefone:qrcode', eventPayload);
+    return true;
   }
 
-  emitTelefonePairingCode(telefoneId, payload) {
-    this.emit('telefone:pairing_code', {
+  emitTelefonePairingCode(telefoneId, payload, socketId = null) {
+    const eventPayload = {
       telefoneId,
       ...payload
-    });
+    };
+
+    if (socketId) {
+      return this.emitToSocket(socketId, 'telefone:pairing_code', eventPayload);
+    }
+
+    this.emit('telefone:pairing_code', eventPayload);
+    return true;
   }
 
-  clearTelefoneQRCode(telefoneId) {
-    this.emit('telefone:qr_cleared', { telefoneId });
+  clearTelefoneQRCode(telefoneId, socketId = null) {
+    const eventPayload = { telefoneId };
+    if (socketId) {
+      return this.emitToSocket(socketId, 'telefone:qr_cleared', eventPayload);
+    }
+
+    this.emit('telefone:qr_cleared', eventPayload);
+    return true;
   }
 
-  clearTelefonePairingCode(telefoneId) {
-    this.emit('telefone:pairing_code_cleared', { telefoneId });
+  clearTelefonePairingCode(telefoneId, socketId = null) {
+    const eventPayload = { telefoneId };
+    if (socketId) {
+      return this.emitToSocket(socketId, 'telefone:pairing_code_cleared', eventPayload);
+    }
+
+    this.emit('telefone:pairing_code_cleared', eventPayload);
+    return true;
   }
 
   emitReconnectAttempt(telefoneId, status, message = null) {

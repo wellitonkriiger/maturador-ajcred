@@ -1,8 +1,3 @@
-// src/services/healthMonitor.js
-// Responsabilidade unica: verificar a saude de cada cliente WhatsApp ativo.
-// A cada intervalo, testa se o Puppeteer ainda esta vivo. Se nao, emite
-// evento para o whatsappService que por sua vez notifica o maturacaoService.
-
 const logger = require('../utils/logger');
 const TelefoneModel = require('../models/Telefone');
 
@@ -11,7 +6,7 @@ const INTERVALO_VERIFICACAO_MS = 30 * 1000; // 30 segundos
 class HealthMonitor {
   constructor() {
     this.timer = null;
-    this.whatsappService = null; // injetado no start() para evitar circular dependency
+    this.whatsappService = null;
   }
 
   start(whatsappService) {
@@ -38,7 +33,6 @@ class HealthMonitor {
     if (!ws) return;
 
     for (const [telefoneId, client] of ws.clients.entries()) {
-      // So verifica clientes que deveriam estar online (tem client.info)
       if (!client.info) continue;
 
       const telefone = TelefoneModel.buscarPorId(telefoneId);

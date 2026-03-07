@@ -1,31 +1,5 @@
 {
-  "telefones": [
-    {
-      "id": "tel_abe868c2",
-      "nome": "FNX-018",
-      "numero": "55216787480660@lid",
-      "sessionName": "session-82945b1d",
-      "status": "online",
-      "configuracao": {
-        "podeIniciarConversa": true,
-        "podeReceberMensagens": true,
-        "quantidadeConversasDia": 10,
-        "conversasRealizadasHoje": 0,
-        "ultimaConversaEm": null,
-        "proximaConversaDisponivelEm": null
-      },
-      "estatisticas": {
-        "totalConversas": 0,
-        "totalMensagensEnviadas": 0,
-        "totalMensagensRecebidas": 0,
-        "diasAtivo": 0,
-        "ultimoBanimento": null
-      },
-      "sensibilidade": "media",
-      "criadoEm": "2026-03-07T14:16:02.437Z",
-      "atualizadoEm": "2026-03-07T14:16:46.725Z"
-    }
-  ],
+  "telefones": [],
   "controleDiario": {
     "ultimoDiaReset": "2026-03-07"
   }

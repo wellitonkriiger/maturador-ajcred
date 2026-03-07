@@ -42,11 +42,7 @@ export default function LogsPage({ liveLog, toast }) {
 
   return (
     <div className="stack">
-      <div className="section-head">
-        <div>
-          <h3>Logs reais do backend</h3>
-          <p className="muted">Leitura de combined.log e error.log com atualizacao incremental.</p>
-        </div>
+      <div className="actions end">
         <button className="btn secondary" onClick={loadLogs}><RefreshCcw size={16} />Atualizar</button>
       </div>
 

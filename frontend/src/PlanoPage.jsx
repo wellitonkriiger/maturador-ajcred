@@ -50,15 +50,7 @@ export default function PlanoPage({ toast, status }) {
 
   return (
     <div className="stack">
-      <div className="section-head">
-        <div>
-          <h3>Plano de maturacao</h3>
-          <p className="muted">
-            {bloqueado
-              ? 'Maturacao em execucao: o plano esta bloqueado ate a pausa.'
-              : 'Persistido em arquivo local e aplicado em tempo real.'}
-          </p>
-        </div>
+      <div className="actions end">
         <button className="btn primary" onClick={save} disabled={saving || bloqueado}><Save size={16} />{saving ? 'Salvando...' : 'Salvar'}</button>
       </div>
 
@@ -93,8 +85,10 @@ export default function PlanoPage({ toast, status }) {
 
         <div className="panel stack">
           <div className="card-title"><Settings2 size={16} />Metas e intervalos</div>
-          <label className="label">Conversas por telefone<input className="input" type="number" value={plano.metas?.conversasPorTelefoneDia ?? 5} onChange={(event) => update('metas.conversasPorTelefoneDia', Number(event.target.value))} /></label>
-          <label className="label">Total por dia<input className="input" type="number" value={plano.metas?.totalConversasDia ?? 25} onChange={(event) => update('metas.totalConversasDia', Number(event.target.value))} /></label>
+          <div className="list-card stack compact">
+            <div className="between small-gap"><span className="muted">Conversas por telefone</span><span>Definido em cada telefone</span></div>
+            <div className="between small-gap"><span className="muted">Total por dia</span><span>Soma automatica dos telefones</span></div>
+          </div>
           <div className="grid two">
             <label className="label">Entre conversas min<input className="input" type="number" value={plano.intervalosGlobais?.entreConversas?.min ?? 1800} onChange={(event) => update('intervalosGlobais.entreConversas.min', Number(event.target.value))} /></label>
             <label className="label">Entre conversas max<input className="input" type="number" value={plano.intervalosGlobais?.entreConversas?.max ?? 3600} onChange={(event) => update('intervalosGlobais.entreConversas.max', Number(event.target.value))} /></label>
@@ -108,7 +102,7 @@ export default function PlanoPage({ toast, status }) {
             <input type="checkbox" checked={plano.estrategia?.prioridadeTelefonesAltaSensibilidade ?? true} onChange={(event) => update('estrategia.prioridadeTelefonesAltaSensibilidade', event.target.checked)} />
           </label>
           <label className="between">
-            <span>Evitar repeticao de conversas</span>
+            <span>Evitar repetição de conversas</span>
             <input type="checkbox" checked={plano.estrategia?.evitarRepeticaoConversas ?? true} onChange={(event) => update('estrategia.evitarRepeticaoConversas', event.target.checked)} />
           </label>
           <label className="between">
