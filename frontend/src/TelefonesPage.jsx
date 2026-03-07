@@ -319,6 +319,7 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot }) {
               <div className="stack compact">
                 <div className="between small-gap"><span className="muted">Numero</span><span className="mono">{item.numero || '-'}</span></div>
                 <div className="between small-gap"><span className="muted">Conversas hoje</span><span>{item.configuracao?.conversasRealizadasHoje || 0}/{item.configuracao?.quantidadeConversasDia || 0}</span></div>
+                <div className="between small-gap"><span className="muted">Concluidas no total</span><span>{item.estatisticas?.totalConversas ?? 0}</span></div>
                 <div className="between small-gap"><span className="muted">Nova conversa em</span><span className="mono">{formatCountdown(item)}</span></div>
                 <div className="progress"><span style={{ width: `${Math.min(100, ((item.configuracao?.conversasRealizadasHoje || 0) / (item.configuracao?.quantidadeConversasDia || 1)) * 100)}%` }} /></div>
               </div>

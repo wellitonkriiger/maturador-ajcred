@@ -18,7 +18,8 @@ class TelefoneModel {
       if (fs.existsSync(this.configFile)) {
         const data = fs.readFileSync(this.configFile, 'utf8');
         const config = JSON.parse(data);
-        this.telefones = config.telefones || [];
+        const telefonesSalvos = Array.isArray(config.telefones) ? config.telefones : [];
+        this.telefones = telefonesSalvos.map((telefone) => this._normalizarTelefone(telefone));
         this.controleDiario = config.controleDiario || { ultimoDiaReset: null };
         this._normalizarControleDiario();
         this._garantirResetDiario('carregamento');
@@ -46,6 +47,54 @@ class TelefoneModel {
     } catch (error) {
       logger.error('Erro ao salvar telefones:', error);
     }
+  }
+
+  _defaultEstatisticas() {
+    return {
+      totalConversas: 0,
+      totalMensagensEnviadas: 0,
+      totalMensagensRecebidas: 0,
+      diasAtivo: 0,
+      ultimoBanimento: null
+    };
+  }
+
+  _normalizarTelefone(telefone) {
+    if (!telefone || typeof telefone !== 'object') {
+      return {
+        configuracao: {},
+        estatisticas: this._defaultEstatisticas()
+      };
+    }
+
+    if (!telefone.configuracao || typeof telefone.configuracao !== 'object') {
+      telefone.configuracao = {};
+    }
+
+    const estatisticasPadrao = this._defaultEstatisticas();
+    if (!telefone.estatisticas || typeof telefone.estatisticas !== 'object') {
+      telefone.estatisticas = { ...estatisticasPadrao };
+    } else {
+      telefone.estatisticas = { ...estatisticasPadrao, ...telefone.estatisticas };
+    }
+
+    const totalConversas = Number(telefone.estatisticas.totalConversas);
+    telefone.estatisticas.totalConversas = Number.isFinite(totalConversas) && totalConversas >= 0 ? totalConversas : 0;
+
+    const totalMensagensEnviadas = Number(telefone.estatisticas.totalMensagensEnviadas);
+    telefone.estatisticas.totalMensagensEnviadas = Number.isFinite(totalMensagensEnviadas) && totalMensagensEnviadas >= 0
+      ? totalMensagensEnviadas
+      : 0;
+
+    const totalMensagensRecebidas = Number(telefone.estatisticas.totalMensagensRecebidas);
+    telefone.estatisticas.totalMensagensRecebidas = Number.isFinite(totalMensagensRecebidas) && totalMensagensRecebidas >= 0
+      ? totalMensagensRecebidas
+      : 0;
+
+    const diasAtivo = Number(telefone.estatisticas.diasAtivo);
+    telefone.estatisticas.diasAtivo = Number.isFinite(diasAtivo) && diasAtivo >= 0 ? diasAtivo : 0;
+
+    return telefone;
   }
 
   _diaAtualLocal() {
@@ -131,11 +180,7 @@ class TelefoneModel {
         proximaConversaDisponivelEm: null
       },
       estatisticas: {
-        totalConversas: 0,
-        totalMensagensEnviadas: 0,
-        totalMensagensRecebidas: 0,
-        diasAtivo: 0,
-        ultimoBanimento: null
+        ...this._defaultEstatisticas()
       },
       sensibilidade: dados.sensibilidade || 'media',
       criadoEm: new Date().toISOString(),
@@ -170,6 +215,7 @@ class TelefoneModel {
       ...dados,
       atualizadoEm: new Date().toISOString()
     };
+    this._normalizarTelefone(this.telefones[index]);
 
     this.salvar();
     logger.info(`Telefone atualizado: ${id}`);
@@ -182,6 +228,7 @@ class TelefoneModel {
 
     const telefone = this.buscarPorId(id);
     if (!telefone) return null;
+    this._normalizarTelefone(telefone);
 
     telefone.status = status;
     if (numero) {
@@ -200,6 +247,7 @@ class TelefoneModel {
 
     const telefone = this.buscarPorId(id);
     if (!telefone) return null;
+    this._normalizarTelefone(telefone);
 
     const {
       proximaConversaDisponivelEm = null
@@ -208,6 +256,7 @@ class TelefoneModel {
     telefone.configuracao.conversasRealizadasHoje++;
     telefone.configuracao.ultimaConversaEm = new Date().toISOString();
     telefone.configuracao.proximaConversaDisponivelEm = proximaConversaDisponivelEm;
+    telefone.estatisticas.totalConversas = Number(telefone.estatisticas.totalConversas) || 0;
     telefone.estatisticas.totalConversas++;
     this.salvar();
     RealtimeService.emitTelefoneStatus(telefone);
@@ -219,6 +268,7 @@ class TelefoneModel {
 
     const telefone = this.buscarPorId(id);
     if (!telefone) return null;
+    this._normalizarTelefone(telefone);
 
     telefone.estatisticas.totalMensagensEnviadas += quantidade;
     this.salvar();
@@ -231,6 +281,7 @@ class TelefoneModel {
 
     const telefone = this.buscarPorId(id);
     if (!telefone) return null;
+    this._normalizarTelefone(telefone);
 
     telefone.estatisticas.totalMensagensRecebidas += quantidade;
     this.salvar();
@@ -242,6 +293,7 @@ class TelefoneModel {
     const { motivo = 'manual', diaReset = this._diaAtualLocal() } = opcoes;
 
     this.telefones.forEach((telefone) => {
+      this._normalizarTelefone(telefone);
       telefone.configuracao.conversasRealizadasHoje = 0;
       telefone.configuracao.ultimaConversaEm = null;
       telefone.configuracao.proximaConversaDisponivelEm = null;
