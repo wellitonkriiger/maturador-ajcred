@@ -179,6 +179,8 @@ process.on('uncaughtException', (err) => {
 const PORT = process.env.PORT || 3001;
 const HOST = process.env.HOST || '0.0.0.0';
 
+WhatsAppService.reconciliarStatusPersistido();
+
 server.listen(PORT, HOST, () => {
   HealthMonitor.start(WhatsAppService);
   logger.info(`🚀 Servidor rodando na porta ${PORT}`);

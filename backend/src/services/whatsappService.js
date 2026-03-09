@@ -28,7 +28,16 @@ const CONNECTION_ERRORS = [
   'Navigation failed',
   "Cannot read properties of undefined (reading 'getChat')"
 ];
-const OFFLINE_WA_STATES = ['UNPAIRED', 'UNPAIRED_IDLE', 'SMB_TOS_BLOCK', 'PROXYBLOCK'];
+const OPERATIONAL_WA_STATES = new Set(['CONNECTED', 'OPENING', 'PAIRING', 'TIMEOUT']);
+const NON_OPERATIONAL_WA_STATES = new Set([
+  'UNPAIRED',
+  'UNPAIRED_IDLE',
+  'TOS_BLOCK',
+  'SMB_TOS_BLOCK',
+  'PROXYBLOCK',
+  'DEPRECATED_VERSION',
+  'UNLAUNCHED'
+]);
 
 function isConnectionError(message) {
   const text = message?.message ?? String(message ?? '');
@@ -47,6 +56,25 @@ function firstErrorLine(message) {
 
 function sanitizePhoneNumber(phoneNumber) {
   return String(phoneNumber ?? '').replace(/\D/g, '');
+}
+
+function normalizeWaState(state) {
+  const text = String(state ?? '').trim().toUpperCase();
+  return text || null;
+}
+
+function isOperationalWaState(state) {
+  return OPERATIONAL_WA_STATES.has(normalizeWaState(state));
+}
+
+function isNonOperationalWaState(state) {
+  return NON_OPERATIONAL_WA_STATES.has(normalizeWaState(state));
+}
+
+function extractWaStateFromReason(reason) {
+  const text = firstErrorLine(reason);
+  const match = text.match(/WhatsApp state ([A-Z_]+)/);
+  return match ? normalizeWaState(match[1]) : null;
 }
 
 class WhatsAppService extends EventEmitter {
@@ -103,6 +131,8 @@ class WhatsAppService extends EventEmitter {
     const meta = {
       telefoneId,
       state: 'offline',
+      waState: null,
+      waStateUpdatedAt: null,
       lastReadyAt: null,
       lastActivityAt: null,
       lastKeepAliveAt: null,
@@ -111,7 +141,9 @@ class WhatsAppService extends EventEmitter {
       autoReconnectAttempts: 0,
       autoReconnectTimer: null,
       nextAutoReconnectAt: null,
-      manualDisconnect: false
+      manualDisconnect: false,
+      activeClientToken: 0,
+      offlineTransitionInFlight: false
     };
 
     this.clientMeta.set(telefoneId, meta);
@@ -120,6 +152,26 @@ class WhatsAppService extends EventEmitter {
 
   _touchActivity(telefoneId) {
     this._meta(telefoneId).lastActivityAt = new Date().toISOString();
+  }
+
+  _setWaState(telefoneId, waState) {
+    const meta = this._meta(telefoneId);
+    meta.waState = normalizeWaState(waState);
+    meta.waStateUpdatedAt = new Date().toISOString();
+    return meta.waState;
+  }
+
+  _isCurrentClient(telefoneId, client, clientToken = null) {
+    const currentClient = this.clients.get(telefoneId);
+    if (client && currentClient !== client) {
+      return false;
+    }
+
+    if (clientToken !== null && this._meta(telefoneId).activeClientToken !== clientToken) {
+      return false;
+    }
+
+    return true;
   }
 
   _normalizeContactIdentifier(value) {
@@ -154,16 +206,18 @@ class WhatsAppService extends EventEmitter {
     if (!target.raw) return null;
 
     return TelefoneModel.listar().find((telefone) => {
-      if (!telefone?.numero) return false;
       if (ignoreTelefoneId && telefone.id === ignoreTelefoneId) return false;
+      const identifiers = [telefone?.numero, telefone?.numeroAlt];
 
-      const candidate = this._normalizeContactIdentifier(telefone.numero);
-      if (!candidate.raw) return false;
+      return identifiers.some((value) => {
+        const candidate = this._normalizeContactIdentifier(value);
+        if (!candidate.raw) return false;
 
-      if (candidate.raw === target.raw) return true;
-      if (candidate.user && candidate.user === target.user) return true;
-      if (candidate.digits && target.digits && candidate.digits === target.digits) return true;
-      return false;
+        if (candidate.raw === target.raw) return true;
+        if (candidate.user && candidate.user === target.user) return true;
+        if (candidate.digits && target.digits && candidate.digits === target.digits) return true;
+        return false;
+      });
     }) || null;
   }
 
@@ -303,8 +357,20 @@ class WhatsAppService extends EventEmitter {
     const telefone = TelefoneModel.buscarPorId(telefoneId);
 
     if (!telefone || meta.manualDisconnect) return false;
-    if (meta.autoReconnectTimer || meta.reconnectInFlight) return false;
+    if (meta.reconnectInFlight) return false;
     if (!this.temSessaoPersistida(telefoneId)) return false;
+    if (meta.autoReconnectAttempts >= MAX_AUTO_RECONNECT_ATTEMPTS) {
+      meta.nextAutoReconnectAt = null;
+      logger.warn(`[AutoReconnect] ${telefone.nome} atingiu o limite de ${MAX_AUTO_RECONNECT_ATTEMPTS} tentativas automaticas`);
+      RealtimeService.emitReconnectAttempt(
+        telefoneId,
+        'failed',
+        `Limite de ${MAX_AUTO_RECONNECT_ATTEMPTS} tentativas automaticas atingido`
+      );
+      return false;
+    }
+
+    this._clearReconnectTimer(telefoneId);
 
     meta.nextAutoReconnectAt = new Date(Date.now() + delayMs).toISOString();
     meta.autoReconnectTimer = setTimeout(async () => {
@@ -332,22 +398,11 @@ class WhatsAppService extends EventEmitter {
   }
 
   async _markOffline(telefoneId, reason = 'offline', { scheduleReconnect = true, destroyClient = true } = {}) {
-    const meta = this._meta(telefoneId);
-    const client = this.clients.get(telefoneId);
-
-    this._clearPendingAuthArtifacts(telefoneId);
-    this._clearConnectionRequester(telefoneId);
-    this.clients.delete(telefoneId);
-    this._updateStatus(telefoneId, 'offline');
-    this.emit('telefone:offline', telefoneId, reason);
-
-    if (destroyClient && client) {
-      await this._destroyClient(client);
-    }
-
-    if (scheduleReconnect && !meta.manualDisconnect) {
-      this._scheduleReconnect(telefoneId, reason);
-    }
+    return this._transitionToOffline(telefoneId, reason, {
+      scheduleReconnect,
+      destroyClient,
+      waState: extractWaStateFromReason(reason)
+    });
   }
 
   async _recoverFromRuntimeError(telefoneId, error, context = 'runtime_error') {
@@ -367,11 +422,104 @@ class WhatsAppService extends EventEmitter {
     } catch (_) {}
   }
 
+  async _transitionToOffline(telefoneId, reason = 'offline', options = {}) {
+    const {
+      client = null,
+      clientToken = null,
+      scheduleReconnect = true,
+      destroyClient = true,
+      nextStatus = 'offline',
+      waState = undefined,
+      emitOfflineEvent = true
+    } = options;
+
+    const meta = this._meta(telefoneId);
+    if (client && !this._isCurrentClient(telefoneId, client, clientToken)) {
+      return false;
+    }
+    if (meta.offlineTransitionInFlight) {
+      return false;
+    }
+
+    const targetClient = client || this.clients.get(telefoneId) || null;
+    meta.offlineTransitionInFlight = true;
+
+    try {
+      meta.reconnectInFlight = false;
+      meta.lastDisconnectReason = reason;
+      if (waState !== undefined) {
+        this._setWaState(telefoneId, waState);
+      }
+
+      this._clearPendingAuthArtifacts(telefoneId);
+      this._clearConnectionRequester(telefoneId);
+      this.clients.delete(telefoneId);
+      this._updateStatus(telefoneId, nextStatus);
+
+      if (emitOfflineEvent) {
+        this.emit('telefone:offline', telefoneId, reason);
+      }
+
+      if (destroyClient && targetClient) {
+        await this._destroyClient(targetClient);
+      }
+
+      if (scheduleReconnect && nextStatus === 'offline' && !meta.manualDisconnect) {
+        this._clearReconnectTimer(telefoneId);
+        this._scheduleReconnect(telefoneId, reason);
+      }
+
+      return true;
+    } finally {
+      meta.offlineTransitionInFlight = false;
+    }
+  }
+
+  async _handleClientStateChange(telefoneId, waState, options = {}) {
+    const { client = null, clientToken = null } = options;
+
+    if (client && !this._isCurrentClient(telefoneId, client, clientToken)) {
+      return false;
+    }
+
+    const normalizedState = this._setWaState(telefoneId, waState);
+    if (!normalizedState || !isNonOperationalWaState(normalizedState)) {
+      return false;
+    }
+
+    const telefone = TelefoneModel.buscarPorId(telefoneId);
+    logger.warn(`[Reconnect] ${telefone?.nome ?? telefoneId} entrou em estado nao operacional (${normalizedState})`);
+
+    return this._transitionToOffline(telefoneId, `state_changed:${normalizedState}`, {
+      client,
+      clientToken,
+      scheduleReconnect: true,
+      destroyClient: true,
+      nextStatus: 'offline',
+      waState: normalizedState
+    });
+  }
+
   _bindClientEvents(client, telefoneId, options) {
-    const { allowQr, isReconnect, autoReconnect, pairWithPhoneNumber } = options;
+    const { allowQr, isReconnect, autoReconnect, pairWithPhoneNumber, clientToken } = options;
     const telefone = TelefoneModel.buscarPorId(telefoneId);
     let lidCapturado = false;
     let qrBloqueado = false;
+    let readyHandled = false;
+    let onlineEmitted = false;
+
+    const emitOnlineOnce = () => {
+      if (onlineEmitted || !this._isCurrentClient(telefoneId, client, clientToken)) {
+        return false;
+      }
+
+      onlineEmitted = true;
+      this.emit('telefone:online', telefoneId);
+      if (isReconnect) {
+        RealtimeService.emitReconnectAttempt(telefoneId, 'online');
+      }
+      return true;
+    };
 
     client.on('message', (msg) => {
       if (!msg || msg.fromMe) return;
@@ -387,15 +535,20 @@ class WhatsAppService extends EventEmitter {
       });
     });
 
+    client.on('change_state', (waState) => {
+      this._handleClientStateChange(telefoneId, waState, { client, clientToken }).catch((error) => {
+        logger.warn(`[Reconnect] Falha ao processar estado ${waState} para ${telefone?.nome ?? telefoneId}: ${error.message}`);
+      });
+    });
+
     client.on('qr', async (qr) => {
-      if (client.info) return;
+      if (client.info || !this._isCurrentClient(telefoneId, client, clientToken)) return;
 
       const meta = this._meta(telefoneId);
 
       if (!allowQr) {
         qrBloqueado = true;
         meta.reconnectInFlight = false;
-        meta.autoReconnectAttempts += 1;
         this._clearPendingAuthArtifacts(telefoneId);
         this.clients.delete(telefoneId);
 
@@ -432,6 +585,7 @@ class WhatsAppService extends EventEmitter {
     });
 
     client.on('code', (code) => {
+      if (!this._isCurrentClient(telefoneId, client, clientToken)) return;
       const pairingCode = String(code ?? '').trim();
       if (!pairingCode) return;
 
@@ -450,16 +604,21 @@ class WhatsAppService extends EventEmitter {
     });
 
     client.on('authenticated', () => {
+      if (!this._isCurrentClient(telefoneId, client, clientToken)) return;
       logger.info(`${telefone.nome} autenticado com sucesso`);
       this._clearPendingAuthArtifacts(telefoneId);
     });
 
     client.on('ready', async () => {
-      if (qrBloqueado) return;
+      if (qrBloqueado || readyHandled) return;
+      if (!this._isCurrentClient(telefoneId, client, clientToken)) return;
+
+      readyHandled = true;
 
       const numeroInterno = client.info?.wid?._serialized || null;
       const numeroReal = this._resolveNumeroReal(client, numeroInterno);
       const meta = this._meta(telefoneId);
+      this._setWaState(telefoneId, 'CONNECTED');
       this._clearReconnectTimer(telefoneId);
       meta.autoReconnectAttempts = 0;
       meta.reconnectInFlight = false;
@@ -472,16 +631,15 @@ class WhatsAppService extends EventEmitter {
 
       const telAtual = TelefoneModel.buscarPorId(telefoneId);
       const numeroRealConsolidado = numeroReal || telAtual?.numeroAlt || null;
+      if (!this._isCurrentClient(telefoneId, client, clientToken)) return;
+
       if (lidCapturado || (telAtual?.numero && telAtual.numero.includes('@lid'))) {
         this._updateStatus(telefoneId, 'online', {
           numero: telAtual.numero,
           numeroAlt: numeroRealConsolidado
         });
-        this.emit('telefone:online', telefoneId);
-        if (isReconnect) {
-          RealtimeService.emitReconnectAttempt(telefoneId, 'online');
-        }
         this._clearConnectionRequester(telefoneId);
+        emitOnlineOnce();
         return;
       }
 
@@ -490,8 +648,10 @@ class WhatsAppService extends EventEmitter {
         numeroAlt: numeroRealConsolidado
       });
       this._clearConnectionRequester(telefoneId);
+      emitOnlineOnce();
 
       const capturarLid = (msg) => {
+        if (!this._isCurrentClient(telefoneId, client, clientToken)) return;
         if (!msg.fromMe) return;
         client.removeListener('message_create', capturarLid);
         const lid = msg.to;
@@ -505,14 +665,14 @@ class WhatsAppService extends EventEmitter {
         } else {
           logger.warn(`@lid nao encontrado para ${telefone.nome} -- usando @c.us`);
         }
-        this.emit('telefone:online', telefoneId);
-        if (isReconnect) {
-          RealtimeService.emitReconnectAttempt(telefoneId, 'online');
-        }
       };
 
       client.on('message_create', capturarLid);
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await DelayUtils.sleep(2000);
+      if (!this._isCurrentClient(telefoneId, client, clientToken)) {
+        client.removeListener('message_create', capturarLid);
+        return;
+      }
 
       try {
         await client.sendMessage(numeroInterno, '.');
@@ -520,14 +680,11 @@ class WhatsAppService extends EventEmitter {
       } catch (error) {
         client.removeListener('message_create', capturarLid);
         logger.warn(`Nao foi possivel capturar @lid de ${telefone.nome}: ${error.message}`);
-        this.emit('telefone:online', telefoneId);
-        if (isReconnect) {
-          RealtimeService.emitReconnectAttempt(telefoneId, 'online');
-        }
       }
     });
 
     client.on('auth_failure', async (msg) => {
+      if (!this._isCurrentClient(telefoneId, client, clientToken)) return;
       const meta = this._meta(telefoneId);
       logger.error(`Falha de autenticacao -- ${telefone.nome}: ${msg}`);
 
@@ -538,6 +695,8 @@ class WhatsAppService extends EventEmitter {
 
       meta.reconnectInFlight = false;
       meta.autoReconnectAttempts = MAX_AUTO_RECONNECT_ATTEMPTS;
+      meta.lastDisconnectReason = 'auth_failure';
+      this._setWaState(telefoneId, null);
 
       this._updateStatus(telefoneId, 'requires_qr');
       this.emit('telefone:erro', telefoneId, 'auth_failure');
@@ -549,33 +708,31 @@ class WhatsAppService extends EventEmitter {
     });
 
     client.on('disconnected', (reason) => {
+      if (!this._isCurrentClient(telefoneId, client, clientToken)) return;
       if (this._desconectando.has(telefoneId)) return;
       this._desconectando.add(telefoneId);
 
       const meta = this._meta(telefoneId);
-      meta.lastDisconnectReason = reason;
-      meta.reconnectInFlight = false;
-
       logger.warn(`${telefone.nome} desconectado -- motivo: ${reason}`);
-
-      this._clearPendingAuthArtifacts(telefoneId);
-      this._clearConnectionRequester(telefoneId);
-      this.clients.delete(telefoneId);
 
       const atingiuLimite = meta.autoReconnectAttempts >= MAX_AUTO_RECONNECT_ATTEMPTS;
       const nextStatus = qrBloqueado && atingiuLimite ? 'requires_qr' : 'offline';
+      const nextWaState = isNonOperationalWaState(reason) ? reason : null;
 
-      this._updateStatus(telefoneId, nextStatus);
-      this.emit('telefone:offline', telefoneId, reason);
-
-      if (nextStatus === 'offline' && !meta.manualDisconnect) {
-        this._scheduleReconnect(telefoneId, 'disconnect_event');
-      }
-
-      setTimeout(async () => {
-        await this._destroyClient(client);
-        this._desconectando.delete(telefoneId);
-      }, 1500);
+      this._transitionToOffline(telefoneId, reason, {
+        client,
+        clientToken,
+        scheduleReconnect: nextStatus === 'offline',
+        destroyClient: true,
+        nextStatus,
+        waState: nextWaState
+      }).catch((error) => {
+        logger.warn(`[Reconnect] Falha ao tratar desconexao de ${telefone.nome}: ${error.message}`);
+      }).finally(() => {
+        setTimeout(() => {
+          this._desconectando.delete(telefoneId);
+        }, 1500);
+      });
     });
   }
 
@@ -602,8 +759,13 @@ class WhatsAppService extends EventEmitter {
     }
 
     const meta = this._meta(telefoneId);
+    meta.activeClientToken += 1;
+    const clientToken = meta.activeClientToken;
     meta.manualDisconnect = false;
     meta.reconnectInFlight = !!isReconnect;
+    meta.lastDisconnectReason = null;
+    meta.offlineTransitionInFlight = false;
+    this._setWaState(telefoneId, 'OPENING');
     if (!isReconnect) {
       meta.autoReconnectAttempts = 0;
     }
@@ -623,7 +785,8 @@ class WhatsAppService extends EventEmitter {
       allowQr,
       isReconnect,
       autoReconnect,
-      pairWithPhoneNumber
+      pairWithPhoneNumber,
+      clientToken
     });
     this.clients.set(telefoneId, client);
     logger.info(`Chamando initialize() para ${telefone.nome}...`);
@@ -634,6 +797,8 @@ class WhatsAppService extends EventEmitter {
       const linha = firstErrorLine(error);
 
       metaAtual.reconnectInFlight = false;
+      metaAtual.lastDisconnectReason = linha;
+      this._setWaState(telefoneId, extractWaStateFromReason(msgErro));
       this._clearConnectionRequester(telefoneId);
       this.clients.delete(telefoneId);
       await this._destroyClient(client);
@@ -676,6 +841,22 @@ class WhatsAppService extends EventEmitter {
       return { status: 'reconnecting' };
     }
 
+    if (!auto) {
+      meta.autoReconnectAttempts = 0;
+    } else {
+      meta.autoReconnectAttempts += 1;
+      if (meta.autoReconnectAttempts > MAX_AUTO_RECONNECT_ATTEMPTS) {
+        meta.reconnectInFlight = false;
+        this._updateStatus(telefoneId, 'offline');
+        RealtimeService.emitReconnectAttempt(
+          telefoneId,
+          'failed',
+          `Limite de ${MAX_AUTO_RECONNECT_ATTEMPTS} tentativas automaticas atingido`
+        );
+        return { status: 'offline', message: 'Limite de tentativas automaticas atingido' };
+      }
+    }
+
     if (!this.temSessaoPersistida(telefoneId)) {
       meta.reconnectInFlight = false;
       if (auto) {
@@ -716,6 +897,8 @@ class WhatsAppService extends EventEmitter {
     const meta = this._meta(telefoneId);
     meta.manualDisconnect = true;
     meta.reconnectInFlight = false;
+    meta.lastDisconnectReason = 'manual_disconnect';
+    this._setWaState(telefoneId, null);
     this._clearReconnectTimer(telefoneId);
 
     const client = this.clients.get(telefoneId);
@@ -791,9 +974,10 @@ class WhatsAppService extends EventEmitter {
           client.getState(),
           new Promise((_, reject) => setTimeout(() => reject(new Error('State timeout')), KEEPALIVE_STATE_TIMEOUT_MS))
         ]);
+        this._setWaState(telefoneId, waState);
 
-        if (OFFLINE_WA_STATES.includes(waState)) {
-          throw new Error(`WhatsApp state ${waState}`);
+        if (!isOperationalWaState(waState)) {
+          throw new Error(`WhatsApp state ${normalizeWaState(waState)}`);
         }
       }
 
@@ -822,7 +1006,8 @@ class WhatsAppService extends EventEmitter {
 
     try {
       const page = client.pupPage;
-      return !!(page && !page.isClosed());
+      const meta = this._meta(telefoneId);
+      return !!(page && !page.isClosed() && isOperationalWaState(meta.waState));
     } catch {
       return false;
     }
@@ -914,6 +1099,34 @@ class WhatsAppService extends EventEmitter {
 
   getClientMeta(telefoneId) {
     return this.clientMeta.get(telefoneId) ?? null;
+  }
+
+  reconciliarStatusPersistido() {
+    const telefones = TelefoneModel.listar();
+    const corrigidos = [];
+
+    for (const telefone of telefones) {
+      if (!['online', 'conectando', 'reconnecting'].includes(telefone.status)) {
+        continue;
+      }
+
+      if (this.estaOperacional(telefone.id)) {
+        continue;
+      }
+
+      const meta = this._meta(telefone.id);
+      meta.state = 'offline';
+      meta.lastDisconnectReason = 'startup_reconcile';
+      this._setWaState(telefone.id, null);
+      TelefoneModel.atualizarStatus(telefone.id, 'offline');
+      corrigidos.push(telefone.nome);
+    }
+
+    if (corrigidos.length > 0) {
+      logger.warn(`[Startup] ${corrigidos.length} telefone(s) com status transitorio foram reconciliados para offline: ${corrigidos.join(', ')}`);
+    }
+
+    return corrigidos;
   }
 
   listarConectados() {

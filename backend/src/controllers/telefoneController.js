@@ -278,17 +278,26 @@ class TelefoneController {
       }
 
       const conectado = WhatsAppService.estaConectado(id);
+      const operacional = WhatsAppService.estaOperacional(id);
       const qrCode = WhatsAppService.getQRCode(id);
       const pairingCode = WhatsAppService.getPairingCode(id);
+      const meta = WhatsAppService.getClientMeta(id) || {};
 
       res.json({
         telefone: telefone.nome,
         status: telefone.status,
         conectado,
+        operacional,
         temQRCode: !!qrCode,
         temCodigoPareamento: !!pairingCode,
         numero: telefone.numero,
-        numeroAlt: telefone.numeroAlt || null
+        numeroAlt: telefone.numeroAlt || null,
+        waState: meta.waState || null,
+        ultimoReadyEm: meta.lastReadyAt || null,
+        ultimoKeepAliveEm: meta.lastKeepAliveAt || null,
+        ultimoMotivoDesconexao: meta.lastDisconnectReason || null,
+        tentativasAutoReconnect: Number(meta.autoReconnectAttempts || 0),
+        proximaTentativaReconexaoEm: meta.nextAutoReconnectAt || null
       });
     } catch (error) {
       logger.error('Erro ao verificar status:', error);

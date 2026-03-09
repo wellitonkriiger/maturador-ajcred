@@ -57,20 +57,31 @@ class HealthMonitor {
 
     // Verifica telefones que o modelo considera online mas nao tem cliente ativo
     const telefonesOnline = TelefoneModel.buscarOnline();
-    telefonesOnline.forEach(tel => {
-      const temCliente = ws.clients.has(tel.id);
-      const client = ws.clients.get(tel.id);
-      const temInfo = !!(client && client.info);
+    for (const tel of telefonesOnline) {
+      const meta = typeof ws.getClientMeta === 'function' ? ws.getClientMeta(tel.id) : null;
+      const operacional = typeof ws.estaOperacional === 'function' ? ws.estaOperacional(tel.id) : false;
 
-      if (!temCliente || !temInfo) {
-        logger.warn(`[HealthMonitor] ${tel.nome} marcado como online mas sem cliente ativo -- corrigindo para offline`);
+      if (operacional || meta?.reconnectInFlight || meta?.nextAutoReconnectAt) {
+        continue;
+      }
+
+      logger.warn(`[HealthMonitor] ${tel.nome} marcado como online mas sem cliente operacional -- corrigindo para offline`);
+
+      if (typeof ws._transitionToOffline === 'function') {
+        await ws._transitionToOffline(tel.id, 'ghost_online', {
+          scheduleReconnect: false,
+          destroyClient: false,
+          waState: null
+        });
+      } else {
         TelefoneModel.atualizarStatus(tel.id, 'offline');
         ws.emit('telefone:offline', tel.id, 'ghost_online');
-        ws.tentarReconectar(tel.id, { auto: true }).catch((error) => {
-          logger.warn(`[HealthMonitor] Reconexao apos ghost_online falhou para ${tel.nome}: ${error.message}`);
-        });
       }
-    });
+
+      ws.tentarReconectar(tel.id, { auto: true }).catch((error) => {
+        logger.warn(`[HealthMonitor] Reconexao apos ghost_online falhou para ${tel.nome}: ${error.message}`);
+      });
+    }
   }
 }
 
