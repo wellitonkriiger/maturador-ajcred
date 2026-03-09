@@ -1,32 +1,6 @@
 {
   "telefones": [
     {
-      "id": "tel_8ab2b4fb",
-      "nome": "VNS-021",
-      "numero": "170485170090105@lid",
-      "numeroAlt": "556992125572",
-      "sessionName": "session-c0eb442e",
-      "status": "online",
-      "configuracao": {
-        "podeIniciarConversa": true,
-        "podeReceberMensagens": true,
-        "quantidadeConversasDia": 5,
-        "conversasRealizadasHoje": 1,
-        "ultimaConversaEm": "2026-03-09T19:41:21.218Z",
-        "proximaConversaDisponivelEm": "2026-03-09T20:02:34.099Z"
-      },
-      "estatisticas": {
-        "totalConversas": 1,
-        "totalMensagensEnviadas": 4,
-        "totalMensagensRecebidas": 2,
-        "diasAtivo": 0,
-        "ultimoBanimento": null
-      },
-      "sensibilidade": "media",
-      "criadoEm": "2026-03-09T16:05:31.369Z",
-      "atualizadoEm": "2026-03-09T20:31:10.838Z"
-    },
-    {
       "id": "tel_a3592618",
       "nome": "FNX-018",
       "numero": "55216787480660@lid",
@@ -43,14 +17,40 @@
       },
       "estatisticas": {
         "totalConversas": 0,
-        "totalMensagensEnviadas": 0,
-        "totalMensagensRecebidas": 0,
+        "totalMensagensEnviadas": 6,
+        "totalMensagensRecebidas": 4,
         "diasAtivo": 0,
         "ultimoBanimento": null
       },
       "sensibilidade": "media",
       "criadoEm": "2026-03-09T16:05:46.519Z",
-      "atualizadoEm": "2026-03-09T20:31:36.927Z"
+      "atualizadoEm": "2026-03-09T20:42:55.487Z"
+    },
+    {
+      "id": "tel_4d99a18c",
+      "nome": "Kriiger",
+      "numero": "556993731026@c.us",
+      "numeroAlt": "556993731026",
+      "sessionName": "session-55d3f662",
+      "status": "online",
+      "configuracao": {
+        "podeIniciarConversa": true,
+        "podeReceberMensagens": true,
+        "quantidadeConversasDia": 5,
+        "conversasRealizadasHoje": 0,
+        "ultimaConversaEm": null,
+        "proximaConversaDisponivelEm": null
+      },
+      "estatisticas": {
+        "totalConversas": 0,
+        "totalMensagensEnviadas": 3,
+        "totalMensagensRecebidas": 5,
+        "diasAtivo": 0,
+        "ultimoBanimento": null
+      },
+      "sensibilidade": "media",
+      "criadoEm": "2026-03-09T20:43:24.513Z",
+      "atualizadoEm": "2026-03-09T20:44:06.766Z"
     }
   ],
   "controleDiario": {
