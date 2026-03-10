@@ -14,7 +14,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "Voltou a treinar?",
+      "texto": "MATURADOR_APAGAR Voltou a treinar?",
       "delay": {
         "min": 20,
         "max": 30
@@ -35,7 +35,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "Voltei semana passada, tô destruído",
+      "texto": "MATURADOR_APAGAR Voltei semana passada, tô destruído",
       "delay": {
         "min": 20,
         "max": 30
@@ -56,7 +56,7 @@
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "Sempre é assim depois de um tempo parado",
+      "texto": "MATURADOR_APAGAR Sempre é assim depois de um tempo parado",
       "delay": {
         "min": 20,
         "max": 30
@@ -77,7 +77,7 @@
     {
       "ordem": 4,
       "remetente": 1,
-      "texto": "Fiz perna na segunda e até hoje não consigo descer escada direito",
+      "texto": "MATURADOR_APAGAR Fiz perna na segunda e até hoje não consigo descer escada direito",
       "delay": {
         "min": 20,
         "max": 30
@@ -98,7 +98,7 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "Clássico. Mas passa em uns 3 dias",
+      "texto": "MATURADOR_APAGAR Clássico. Mas passa em uns 3 dias",
       "delay": {
         "min": 20,
         "max": 30
@@ -119,7 +119,7 @@
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "Já faz 4 e ainda tá doendo",
+      "texto": "MATURADOR_APAGAR Já faz 4 e ainda tá doendo",
       "delay": {
         "min": 20,
         "max": 30
@@ -140,7 +140,7 @@
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "Então você exagerou mesmo",
+      "texto": "MATURADOR_APAGAR Então você exagerou mesmo",
       "delay": {
         "min": 20,
         "max": 30
@@ -169,7 +169,7 @@
     {
       "ordem": 9,
       "remetente": 1,
-      "texto": "Fui com tudo porque sabia que ia doer de qualquer jeito",
+      "texto": "MATURADOR_APAGAR Fui com tudo porque sabia que ia doer de qualquer jeito",
       "delay": {
         "min": 20,
         "max": 30
@@ -190,7 +190,7 @@
     {
       "ordem": 10,
       "remetente": 0,
-      "texto": "Essa lógica não faz sentido nenhum",
+      "texto": "MATURADOR_APAGAR Essa lógica não faz sentido nenhum",
       "delay": {
         "min": 20,
         "max": 30
@@ -211,7 +211,7 @@
     {
       "ordem": 11,
       "remetente": 1,
-      "texto": "Faz todo sentido na cabeça de quem quer resultado rápido",
+      "texto": "MATURADOR_APAGAR Faz todo sentido na cabeça de quem quer resultado rápido",
       "delay": {
         "min": 20,
         "max": 30
@@ -232,7 +232,7 @@
     {
       "ordem": 12,
       "remetente": 0,
-      "texto": "Resultado rápido é lesão, vai com calma",
+      "texto": "MATURADOR_APAGAR Resultado rápido é lesão, vai com calma",
       "delay": {
         "min": 20,
         "max": 30
@@ -253,7 +253,7 @@
     {
       "ordem": 13,
       "remetente": 1,
-      "texto": "Já sei, já sei. Minha personal falou a mesma coisa",
+      "texto": "MATURADOR_APAGAR Já sei, já sei. Minha personal falou a mesma coisa",
       "delay": {
         "min": 20,
         "max": 30
@@ -274,7 +274,7 @@
     {
       "ordem": 14,
       "remetente": 0,
-      "texto": "Pelo menos você tem uma, eu me mato sozinho aqui",
+      "texto": "MATURADOR_APAGAR Pelo menos você tem uma, eu me mato sozinho aqui",
       "delay": {
         "min": 20,
         "max": 30
@@ -295,7 +295,7 @@
     {
       "ordem": 15,
       "remetente": 1,
-      "texto": "Quer o contato dela? É boa e o preço é razoável",
+      "texto": "MATURADOR_APAGAR Quer o contato dela? É boa e o preço é razoável",
       "delay": {
         "min": 20,
         "max": 30
@@ -316,7 +316,7 @@
     {
       "ordem": 16,
       "remetente": 0,
-      "texto": "Manda sim, to precisando de orientação",
+      "texto": "MATURADOR_APAGAR Manda sim, to precisando de orientação",
       "delay": {
         "min": 20,
         "max": 30
@@ -337,7 +337,7 @@
     {
       "ordem": 17,
       "remetente": 1,
-      "texto": "Te mando o número agora",
+      "texto": "MATURADOR_APAGAR Te mando o número agora",
       "delay": {
         "min": 20,
         "max": 30

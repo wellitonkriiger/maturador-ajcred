@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "vc ta bem? notei algo diferente",
+      "texto": "MATURADOR_APAGAR vc ta bem? notei algo diferente",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "to meio chateada com a Karina",
+      "texto": "MATURADOR_APAGAR to meio chateada com a Karina",
       "delay": {
         "min": 20,
         "max": 30
@@ -63,7 +63,7 @@
     {
       "ordem": 4,
       "remetente": 0,
-      "texto": "o que aconteceu",
+      "texto": "MATURADOR_APAGAR o que aconteceu",
       "delay": {
         "min": 20,
         "max": 30
@@ -84,7 +84,7 @@
     {
       "ordem": 5,
       "remetente": 1,
-      "texto": "ela fez um comentario feio sobre mim",
+      "texto": "MATURADOR_APAGAR ela fez um comentario feio sobre mim",
       "delay": {
         "min": 20,
         "max": 30
@@ -105,7 +105,7 @@
     {
       "ordem": 6,
       "remetente": 0,
-      "texto": "pra vc ou pra outros",
+      "texto": "MATURADOR_APAGAR pra vc ou pra outros",
       "delay": {
         "min": 20,
         "max": 30
@@ -126,7 +126,7 @@
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "pros outros, me contaram depois",
+      "texto": "MATURADOR_APAGAR pros outros, me contaram depois",
       "delay": {
         "min": 20,
         "max": 30
@@ -147,7 +147,7 @@
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "isso dói mais",
+      "texto": "MATURADOR_APAGAR isso dói mais",
       "delay": {
         "min": 20,
         "max": 30
@@ -168,7 +168,7 @@
     {
       "ordem": 9,
       "remetente": 0,
-      "texto": "exatamente",
+      "texto": "MATURADOR_APAGAR exatamente",
       "delay": {
         "min": 20,
         "max": 30
@@ -189,7 +189,7 @@
     {
       "ordem": 10,
       "remetente": 0,
-      "texto": "voce falou com ela?",
+      "texto": "MATURADOR_APAGAR voce falou com ela?",
       "delay": {
         "min": 20,
         "max": 30
@@ -210,7 +210,7 @@
     {
       "ordem": 11,
       "remetente": 1,
-      "texto": "ainda nao, to processando",
+      "texto": "MATURADOR_APAGAR ainda nao, to processando",
       "delay": {
         "min": 20,
         "max": 30
@@ -231,7 +231,7 @@
     {
       "ordem": 12,
       "remetente": 0,
-      "texto": "acho bom falar diretamente",
+      "texto": "MATURADOR_APAGAR acho bom falar diretamente",
       "delay": {
         "min": 20,
         "max": 30
@@ -252,7 +252,7 @@
     {
       "ordem": 13,
       "remetente": 1,
-      "texto": "tenho medo da reacao dela",
+      "texto": "MATURADOR_APAGAR tenho medo da reacao dela",
       "delay": {
         "min": 20,
         "max": 30
@@ -273,7 +273,7 @@
     {
       "ordem": 14,
       "remetente": 1,
-      "texto": "mas guardar isso faz mal",
+      "texto": "MATURADOR_APAGAR mas guardar isso faz mal",
       "delay": {
         "min": 20,
         "max": 30
@@ -294,7 +294,7 @@
     {
       "ordem": 15,
       "remetente": 0,
-      "texto": "verdade, vou pensar como abordar",
+      "texto": "MATURADOR_APAGAR verdade, vou pensar como abordar",
       "delay": {
         "min": 20,
         "max": 30
@@ -315,7 +315,7 @@
     {
       "ordem": 16,
       "remetente": 0,
-      "texto": "quer ensaiar o que vai falar?",
+      "texto": "MATURADOR_APAGAR quer ensaiar o que vai falar?",
       "delay": {
         "min": 20,
         "max": 30
@@ -344,7 +344,7 @@
     {
       "ordem": 18,
       "remetente": 1,
-      "texto": "isso seria util",
+      "texto": "MATURADOR_APAGAR isso seria util",
       "delay": {
         "min": 20,
         "max": 30
@@ -365,7 +365,7 @@
     {
       "ordem": 19,
       "remetente": 0,
-      "texto": "to aqui, manda mensagem quando quiser",
+      "texto": "MATURADOR_APAGAR to aqui, manda mensagem quando quiser",
       "delay": {
         "min": 20,
         "max": 30
@@ -386,7 +386,7 @@
     {
       "ordem": 20,
       "remetente": 0,
-      "texto": "obrigada, voce me ajuda muito",
+      "texto": "MATURADOR_APAGAR obrigada, voce me ajuda muito",
       "delay": {
         "min": 20,
         "max": 30
@@ -407,7 +407,7 @@
     {
       "ordem": 21,
       "remetente": 1,
-      "texto": "e pra isso que estou aqui",
+      "texto": "MATURADOR_APAGAR e pra isso que estou aqui",
       "delay": {
         "min": 20,
         "max": 30
@@ -428,7 +428,7 @@
     {
       "ordem": 22,
       "remetente": 0,
-      "texto": "vc ta bem? notei algo diferente",
+      "texto": "MATURADOR_APAGAR vc ta bem? notei algo diferente",
       "delay": {
         "min": 20,
         "max": 30
@@ -449,7 +449,7 @@
     {
       "ordem": 23,
       "remetente": 0,
-      "texto": "to meio chateada com a Karina",
+      "texto": "MATURADOR_APAGAR to meio chateada com a Karina",
       "delay": {
         "min": 20,
         "max": 30
@@ -478,7 +478,7 @@
     {
       "ordem": 25,
       "remetente": 1,
-      "texto": "o que aconteceu",
+      "texto": "MATURADOR_APAGAR o que aconteceu",
       "delay": {
         "min": 20,
         "max": 30
@@ -499,7 +499,7 @@
     {
       "ordem": 26,
       "remetente": 1,
-      "texto": "ela fez um comentario feio sobre mim",
+      "texto": "MATURADOR_APAGAR ela fez um comentario feio sobre mim",
       "delay": {
         "min": 20,
         "max": 30
@@ -520,7 +520,7 @@
     {
       "ordem": 27,
       "remetente": 1,
-      "texto": "pra vc ou pra outros",
+      "texto": "MATURADOR_APAGAR pra vc ou pra outros",
       "delay": {
         "min": 20,
         "max": 30
@@ -541,7 +541,7 @@
     {
       "ordem": 28,
       "remetente": 1,
-      "texto": "pros outros, me contaram depois",
+      "texto": "MATURADOR_APAGAR pros outros, me contaram depois",
       "delay": {
         "min": 20,
         "max": 30
@@ -562,7 +562,7 @@
     {
       "ordem": 29,
       "remetente": 0,
-      "texto": "isso dói mais",
+      "texto": "MATURADOR_APAGAR isso dói mais",
       "delay": {
         "min": 20,
         "max": 30
@@ -583,7 +583,7 @@
     {
       "ordem": 30,
       "remetente": 0,
-      "texto": "exatamente",
+      "texto": "MATURADOR_APAGAR exatamente",
       "delay": {
         "min": 20,
         "max": 30
@@ -604,7 +604,7 @@
     {
       "ordem": 31,
       "remetente": 1,
-      "texto": "voce falou com ela?",
+      "texto": "MATURADOR_APAGAR voce falou com ela?",
       "delay": {
         "min": 20,
         "max": 30
@@ -625,7 +625,7 @@
     {
       "ordem": 32,
       "remetente": 0,
-      "texto": "ainda nao, to processando",
+      "texto": "MATURADOR_APAGAR ainda nao, to processando",
       "delay": {
         "min": 20,
         "max": 30
@@ -646,7 +646,7 @@
     {
       "ordem": 33,
       "remetente": 1,
-      "texto": "acho bom falar diretamente",
+      "texto": "MATURADOR_APAGAR acho bom falar diretamente",
       "delay": {
         "min": 20,
         "max": 30
@@ -667,7 +667,7 @@
     {
       "ordem": 34,
       "remetente": 0,
-      "texto": "tenho medo da reacao dela",
+      "texto": "MATURADOR_APAGAR tenho medo da reacao dela",
       "delay": {
         "min": 20,
         "max": 30
@@ -688,7 +688,7 @@
     {
       "ordem": 35,
       "remetente": 1,
-      "texto": "mas guardar isso faz mal",
+      "texto": "MATURADOR_APAGAR mas guardar isso faz mal",
       "delay": {
         "min": 20,
         "max": 30
@@ -709,7 +709,7 @@
     {
       "ordem": 36,
       "remetente": 0,
-      "texto": "verdade, vou pensar como abordar",
+      "texto": "MATURADOR_APAGAR verdade, vou pensar como abordar",
       "delay": {
         "min": 20,
         "max": 30
@@ -730,7 +730,7 @@
     {
       "ordem": 37,
       "remetente": 0,
-      "texto": "quer ensaiar o que vai falar?",
+      "texto": "MATURADOR_APAGAR quer ensaiar o que vai falar?",
       "delay": {
         "min": 20,
         "max": 30
@@ -751,7 +751,7 @@
     {
       "ordem": 38,
       "remetente": 0,
-      "texto": "isso seria util",
+      "texto": "MATURADOR_APAGAR isso seria util",
       "delay": {
         "min": 20,
         "max": 30
@@ -772,7 +772,7 @@
     {
       "ordem": 39,
       "remetente": 0,
-      "texto": "to aqui, manda mensagem quando quiser",
+      "texto": "MATURADOR_APAGAR to aqui, manda mensagem quando quiser",
       "delay": {
         "min": 20,
         "max": 30
@@ -793,7 +793,7 @@
     {
       "ordem": 40,
       "remetente": 1,
-      "texto": "obrigada, voce me ajuda muito",
+      "texto": "MATURADOR_APAGAR obrigada, voce me ajuda muito",
       "delay": {
         "min": 20,
         "max": 30
@@ -814,7 +814,7 @@
     {
       "ordem": 41,
       "remetente": 0,
-      "texto": "e pra isso que estou aqui",
+      "texto": "MATURADOR_APAGAR e pra isso que estou aqui",
       "delay": {
         "min": 20,
         "max": 30
@@ -843,7 +843,7 @@
     {
       "ordem": 43,
       "remetente": 1,
-      "texto": "vc ta bem? notei algo diferente",
+      "texto": "MATURADOR_APAGAR vc ta bem? notei algo diferente",
       "delay": {
         "min": 20,
         "max": 30
@@ -864,7 +864,7 @@
     {
       "ordem": 44,
       "remetente": 1,
-      "texto": "to meio chateada com a Karina",
+      "texto": "MATURADOR_APAGAR to meio chateada com a Karina",
       "delay": {
         "min": 20,
         "max": 30

@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 1,
-      "texto": "to assistindo BBB esse ano",
+      "texto": "MATURADOR_APAGAR to assistindo BBB esse ano",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "nunca consigo parar de assistir kkkk",
+      "texto": "MATURADOR_APAGAR nunca consigo parar de assistir kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 1,
-      "texto": "esse elenco ta bom",
+      "texto": "MATURADOR_APAGAR esse elenco ta bom",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 1,
-      "texto": "vi uns clips, a Fernanda e divertida",
+      "texto": "MATURADOR_APAGAR vi uns clips, a Fernanda e divertida",
       "delay": {
         "min": 20,
         "max": 30
@@ -97,7 +97,7 @@
     {
       "ordem": 5,
       "remetente": 1,
-      "texto": "ela domina o jogo",
+      "texto": "MATURADOR_APAGAR ela domina o jogo",
       "delay": {
         "min": 20,
         "max": 30
@@ -118,7 +118,7 @@
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "estrategista ou personalidade",
+      "texto": "MATURADOR_APAGAR estrategista ou personalidade",
       "delay": {
         "min": 20,
         "max": 30
@@ -139,7 +139,7 @@
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "as duas coisas",
+      "texto": "MATURADOR_APAGAR as duas coisas",
       "delay": {
         "min": 20,
         "max": 30
@@ -168,7 +168,7 @@
     {
       "ordem": 9,
       "remetente": 1,
-      "texto": "quem voce acha que vence",
+      "texto": "MATURADOR_APAGAR quem voce acha que vence",
       "delay": {
         "min": 20,
         "max": 30
@@ -189,7 +189,7 @@
     {
       "ordem": 10,
       "remetente": 0,
-      "texto": "acho que ela ainda",
+      "texto": "MATURADOR_APAGAR acho que ela ainda",
       "delay": {
         "min": 20,
         "max": 30
@@ -210,7 +210,7 @@
     {
       "ordem": 11,
       "remetente": 0,
-      "texto": "eu apostaria no Lucas",
+      "texto": "MATURADOR_APAGAR eu apostaria no Lucas",
       "delay": {
         "min": 20,
         "max": 30
@@ -231,7 +231,7 @@
     {
       "ordem": 12,
       "remetente": 0,
-      "texto": "ele ta quieto demais",
+      "texto": "MATURADOR_APAGAR ele ta quieto demais",
       "delay": {
         "min": 20,
         "max": 30
@@ -260,7 +260,7 @@
     {
       "ordem": 14,
       "remetente": 0,
-      "texto": "as vezes quieto vence",
+      "texto": "MATURADOR_APAGAR as vezes quieto vence",
       "delay": {
         "min": 20,
         "max": 30

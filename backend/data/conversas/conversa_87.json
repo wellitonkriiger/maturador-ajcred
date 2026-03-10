@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "vc fez o treinamento de seguranca obrigatorio?",
+      "texto": "MATURADOR_APAGAR vc fez o treinamento de seguranca obrigatorio?",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "ainda nao, prazo e quando?",
+      "texto": "MATURADOR_APAGAR ainda nao, prazo e quando?",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "sexta feira",
+      "texto": "MATURADOR_APAGAR sexta feira",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 1,
-      "texto": "ah tenho tempo",
+      "texto": "MATURADOR_APAGAR ah tenho tempo",
       "delay": {
         "min": 20,
         "max": 30
@@ -97,7 +97,7 @@
     {
       "ordem": 5,
       "remetente": 1,
-      "texto": "e online, sao 4 horas",
+      "texto": "MATURADOR_APAGAR e online, sao 4 horas",
       "delay": {
         "min": 20,
         "max": 30
@@ -118,7 +118,7 @@
     {
       "ordem": 6,
       "remetente": 0,
-      "texto": "4 horas meu deus",
+      "texto": "MATURADOR_APAGAR 4 horas meu deus",
       "delay": {
         "min": 20,
         "max": 30
@@ -147,7 +147,7 @@
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "e chato mas e obrigatorio",
+      "texto": "MATURADOR_APAGAR e chato mas e obrigatorio",
       "delay": {
         "min": 20,
         "max": 30
@@ -168,7 +168,7 @@
     {
       "ordem": 9,
       "remetente": 0,
-      "texto": "ja fiz um parecido em outra empresa",
+      "texto": "MATURADOR_APAGAR ja fiz um parecido em outra empresa",
       "delay": {
         "min": 20,
         "max": 30
@@ -197,7 +197,7 @@
     {
       "ordem": 11,
       "remetente": 1,
-      "texto": "mas esse e novo sistema",
+      "texto": "MATURADOR_APAGAR mas esse e novo sistema",
       "delay": {
         "min": 20,
         "max": 30
@@ -218,7 +218,7 @@
     {
       "ordem": 12,
       "remetente": 1,
-      "texto": "tudo bem, vou fazer amanha",
+      "texto": "MATURADOR_APAGAR tudo bem, vou fazer amanha",
       "delay": {
         "min": 20,
         "max": 30
@@ -239,7 +239,7 @@
     {
       "ordem": 13,
       "remetente": 0,
-      "texto": "faz antes que deixa acumular",
+      "texto": "MATURADOR_APAGAR faz antes que deixa acumular",
       "delay": {
         "min": 20,
         "max": 30

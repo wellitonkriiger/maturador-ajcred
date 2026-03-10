@@ -14,7 +14,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "Passou na entrevista?",
+      "texto": "MATURADOR_APAGAR Passou na entrevista?",
       "delay": {
         "min": 20,
         "max": 30
@@ -35,7 +35,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "Ainda não sei, disseram que avisam até sexta",
+      "texto": "MATURADOR_APAGAR Ainda não sei, disseram que avisam até sexta",
       "delay": {
         "min": 20,
         "max": 30
@@ -56,7 +56,7 @@
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "Como foi? Perguntaram coisa difícil?",
+      "texto": "MATURADOR_APAGAR Como foi? Perguntaram coisa difícil?",
       "delay": {
         "min": 20,
         "max": 30
@@ -77,7 +77,7 @@
     {
       "ordem": 4,
       "remetente": 1,
-      "texto": "Tinha uma questão técnica que eu não esperava, mas acho que me saí bem",
+      "texto": "MATURADOR_APAGAR Tinha uma questão técnica que eu não esperava, mas acho que me saí bem",
       "delay": {
         "min": 20,
         "max": 30
@@ -98,7 +98,7 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "Que área era mesmo?",
+      "texto": "MATURADOR_APAGAR Que área era mesmo?",
       "delay": {
         "min": 20,
         "max": 30
@@ -119,7 +119,7 @@
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "Análise de dados, mas com um pouco de programação também",
+      "texto": "MATURADOR_APAGAR Análise de dados, mas com um pouco de programação também",
       "delay": {
         "min": 20,
         "max": 30
@@ -140,7 +140,7 @@
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "Isso tá em alta demais agora",
+      "texto": "MATURADOR_APAGAR Isso tá em alta demais agora",
       "delay": {
         "min": 20,
         "max": 30
@@ -169,7 +169,7 @@
     {
       "ordem": 9,
       "remetente": 1,
-      "texto": "O RH pareceu receptivo pelo menos",
+      "texto": "MATURADOR_APAGAR O RH pareceu receptivo pelo menos",
       "delay": {
         "min": 20,
         "max": 30
@@ -190,7 +190,7 @@
     {
       "ordem": 10,
       "remetente": 0,
-      "texto": "Bom sinal. Normalmente quando não vai passar eles são mais frios",
+      "texto": "MATURADOR_APAGAR Bom sinal. Normalmente quando não vai passar eles são mais frios",
       "delay": {
         "min": 20,
         "max": 30
@@ -211,7 +211,7 @@
     {
       "ordem": 11,
       "remetente": 1,
-      "texto": "Torça pra mim que eu preciso sair de onde estou",
+      "texto": "MATURADOR_APAGAR Torça pra mim que eu preciso sair de onde estou",
       "delay": {
         "min": 20,
         "max": 30
@@ -232,7 +232,7 @@
     {
       "ordem": 12,
       "remetente": 0,
-      "texto": "Tô na torcida. Manda mensagem assim que souber",
+      "texto": "MATURADOR_APAGAR Tô na torcida. Manda mensagem assim que souber",
       "delay": {
         "min": 20,
         "max": 30
@@ -253,7 +253,7 @@
     {
       "ordem": 13,
       "remetente": 1,
-      "texto": "Pode deixar, você vai ser o primeiro a saber",
+      "texto": "MATURADOR_APAGAR Pode deixar, você vai ser o primeiro a saber",
       "delay": {
         "min": 20,
         "max": 30
@@ -274,7 +274,7 @@
     {
       "ordem": 14,
       "remetente": 0,
-      "texto": "Confiante não, mas esperançoso",
+      "texto": "MATURADOR_APAGAR Confiante não, mas esperançoso",
       "delay": {
         "min": 20,
         "max": 30
@@ -295,7 +295,7 @@
     {
       "ordem": 15,
       "remetente": 1,
-      "texto": "É o suficiente por enquanto",
+      "texto": "MATURADOR_APAGAR É o suficiente por enquanto",
       "delay": {
         "min": 20,
         "max": 30

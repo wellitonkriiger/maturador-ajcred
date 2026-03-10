@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "assistiu o jogo do Lakers ontem?",
+      "texto": "MATURADOR_APAGAR assistiu o jogo do Lakers ontem?",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 0,
-      "texto": "vi sim, que derrota vergonhosa",
+      "texto": "MATURADOR_APAGAR vi sim, que derrota vergonhosa",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 1,
-      "texto": "o LeBron jogou mal",
+      "texto": "MATURADOR_APAGAR o LeBron jogou mal",
       "delay": {
         "min": 20,
         "max": 30
@@ -84,7 +84,7 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "40 anos e ainda ta la",
+      "texto": "MATURADOR_APAGAR 40 anos e ainda ta la",
       "delay": {
         "min": 20,
         "max": 30
@@ -105,7 +105,7 @@
     {
       "ordem": 6,
       "remetente": 0,
-      "texto": "mas ontem mesmo",
+      "texto": "MATURADOR_APAGAR mas ontem mesmo",
       "delay": {
         "min": 20,
         "max": 30
@@ -126,7 +126,7 @@
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "sim ontem foi ruim",
+      "texto": "MATURADOR_APAGAR sim ontem foi ruim",
       "delay": {
         "min": 20,
         "max": 30
@@ -147,7 +147,7 @@
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "o AD tb some nos finais de jogo",
+      "texto": "MATURADOR_APAGAR o AD tb some nos finais de jogo",
       "delay": {
         "min": 20,
         "max": 30
@@ -168,7 +168,7 @@
     {
       "ordem": 9,
       "remetente": 1,
-      "texto": "falta lideranca nesse time",
+      "texto": "MATURADOR_APAGAR falta lideranca nesse time",
       "delay": {
         "min": 20,
         "max": 30
@@ -189,7 +189,7 @@
     {
       "ordem": 10,
       "remetente": 0,
-      "texto": "precisam de um armador decente",
+      "texto": "MATURADOR_APAGAR precisam de um armador decente",
       "delay": {
         "min": 20,
         "max": 30
@@ -210,7 +210,7 @@
     {
       "ordem": 11,
       "remetente": 1,
-      "texto": "o Curry ainda e o melhor",
+      "texto": "MATURADOR_APAGAR o Curry ainda e o melhor",
       "delay": {
         "min": 20,
         "max": 30
@@ -231,7 +231,7 @@
     {
       "ordem": 12,
       "remetente": 0,
-      "texto": "esse ano o Warriors ta fraco",
+      "texto": "MATURADOR_APAGAR esse ano o Warriors ta fraco",
       "delay": {
         "min": 20,
         "max": 30
@@ -252,7 +252,7 @@
     {
       "ordem": 13,
       "remetente": 1,
-      "texto": "mas o Curry carrega sozinho",
+      "texto": "MATURADOR_APAGAR mas o Curry carrega sozinho",
       "delay": {
         "min": 20,
         "max": 30
@@ -281,7 +281,7 @@
     {
       "ordem": 15,
       "remetente": 0,
-      "texto": "o jogo do Thunder ta impressionante",
+      "texto": "MATURADOR_APAGAR o jogo do Thunder ta impressionante",
       "delay": {
         "min": 20,
         "max": 30
@@ -302,7 +302,7 @@
     {
       "ordem": 16,
       "remetente": 1,
-      "texto": "SGA e fenomenal",
+      "texto": "MATURADOR_APAGAR SGA e fenomenal",
       "delay": {
         "min": 20,
         "max": 30
@@ -323,7 +323,7 @@
     {
       "ordem": 17,
       "remetente": 1,
-      "texto": "pode ser MVP esse ano",
+      "texto": "MATURADOR_APAGAR pode ser MVP esse ano",
       "delay": {
         "min": 20,
         "max": 30
@@ -344,7 +344,7 @@
     {
       "ordem": 18,
       "remetente": 0,
-      "texto": "eu apostaria nele sim",
+      "texto": "MATURADOR_APAGAR eu apostaria nele sim",
       "delay": {
         "min": 20,
         "max": 30
@@ -365,7 +365,7 @@
     {
       "ordem": 19,
       "remetente": 0,
-      "texto": "quando joga de novo o Lakers",
+      "texto": "MATURADOR_APAGAR quando joga de novo o Lakers",
       "delay": {
         "min": 20,
         "max": 30
@@ -386,7 +386,7 @@
     {
       "ordem": 20,
       "remetente": 1,
-      "texto": "quinta feira",
+      "texto": "MATURADOR_APAGAR quinta feira",
       "delay": {
         "min": 20,
         "max": 30
@@ -407,7 +407,7 @@
     {
       "ordem": 21,
       "remetente": 1,
-      "texto": "e contra quem",
+      "texto": "MATURADOR_APAGAR e contra quem",
       "delay": {
         "min": 20,
         "max": 30
@@ -428,7 +428,7 @@
     {
       "ordem": 22,
       "remetente": 0,
-      "texto": "Heat, vai ser jogo bom",
+      "texto": "MATURADOR_APAGAR Heat, vai ser jogo bom",
       "delay": {
         "min": 20,
         "max": 30
@@ -449,7 +449,7 @@
     {
       "ordem": 23,
       "remetente": 1,
-      "texto": "assistiu o jogo do Lakers ontem?",
+      "texto": "MATURADOR_APAGAR assistiu o jogo do Lakers ontem?",
       "delay": {
         "min": 20,
         "max": 30
@@ -470,7 +470,7 @@
     {
       "ordem": 24,
       "remetente": 0,
-      "texto": "vi sim, que derrota vergonhosa",
+      "texto": "MATURADOR_APAGAR vi sim, que derrota vergonhosa",
       "delay": {
         "min": 20,
         "max": 30
@@ -491,7 +491,7 @@
     {
       "ordem": 25,
       "remetente": 1,
-      "texto": "o LeBron jogou mal",
+      "texto": "MATURADOR_APAGAR o LeBron jogou mal",
       "delay": {
         "min": 20,
         "max": 30
@@ -512,7 +512,7 @@
     {
       "ordem": 26,
       "remetente": 1,
-      "texto": "40 anos e ainda ta la",
+      "texto": "MATURADOR_APAGAR 40 anos e ainda ta la",
       "delay": {
         "min": 20,
         "max": 30
@@ -533,7 +533,7 @@
     {
       "ordem": 27,
       "remetente": 1,
-      "texto": "mas ontem mesmo",
+      "texto": "MATURADOR_APAGAR mas ontem mesmo",
       "delay": {
         "min": 20,
         "max": 30
@@ -570,7 +570,7 @@
     {
       "ordem": 30,
       "remetente": 0,
-      "texto": "sim ontem foi ruim",
+      "texto": "MATURADOR_APAGAR sim ontem foi ruim",
       "delay": {
         "min": 20,
         "max": 30
@@ -591,7 +591,7 @@
     {
       "ordem": 31,
       "remetente": 0,
-      "texto": "o AD tb some nos finais de jogo",
+      "texto": "MATURADOR_APAGAR o AD tb some nos finais de jogo",
       "delay": {
         "min": 20,
         "max": 30
@@ -612,7 +612,7 @@
     {
       "ordem": 32,
       "remetente": 0,
-      "texto": "falta lideranca nesse time",
+      "texto": "MATURADOR_APAGAR falta lideranca nesse time",
       "delay": {
         "min": 20,
         "max": 30
@@ -641,7 +641,7 @@
     {
       "ordem": 34,
       "remetente": 1,
-      "texto": "precisam de um armador decente",
+      "texto": "MATURADOR_APAGAR precisam de um armador decente",
       "delay": {
         "min": 20,
         "max": 30
@@ -662,7 +662,7 @@
     {
       "ordem": 35,
       "remetente": 0,
-      "texto": "o Curry ainda e o melhor",
+      "texto": "MATURADOR_APAGAR o Curry ainda e o melhor",
       "delay": {
         "min": 20,
         "max": 30
@@ -683,7 +683,7 @@
     {
       "ordem": 36,
       "remetente": 0,
-      "texto": "esse ano o Warriors ta fraco",
+      "texto": "MATURADOR_APAGAR esse ano o Warriors ta fraco",
       "delay": {
         "min": 20,
         "max": 30
@@ -704,7 +704,7 @@
     {
       "ordem": 37,
       "remetente": 1,
-      "texto": "mas o Curry carrega sozinho",
+      "texto": "MATURADOR_APAGAR mas o Curry carrega sozinho",
       "delay": {
         "min": 20,
         "max": 30
@@ -725,7 +725,7 @@
     {
       "ordem": 38,
       "remetente": 1,
-      "texto": "o jogo do Thunder ta impressionante",
+      "texto": "MATURADOR_APAGAR o jogo do Thunder ta impressionante",
       "delay": {
         "min": 20,
         "max": 30

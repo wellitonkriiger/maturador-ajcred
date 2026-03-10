@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 1,
-      "texto": "assistiu Severance ainda",
+      "texto": "MATURADOR_APAGAR assistiu Severance ainda",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 0,
-      "texto": "nao to atrasado kkkk",
+      "texto": "MATURADOR_APAGAR nao to atrasado kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "cara e absurdamente bom",
+      "texto": "MATURADOR_APAGAR cara e absurdamente bom",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 1,
-      "texto": "to ouvindo isso de todo mundo",
+      "texto": "MATURADOR_APAGAR to ouvindo isso de todo mundo",
       "delay": {
         "min": 20,
         "max": 30
@@ -105,7 +105,7 @@
     {
       "ordem": 6,
       "remetente": 0,
-      "texto": "coloca na fila serio",
+      "texto": "MATURADOR_APAGAR coloca na fila serio",
       "delay": {
         "min": 20,
         "max": 30
@@ -126,7 +126,7 @@
     {
       "ordem": 7,
       "remetente": 1,
-      "texto": "ja ta la",
+      "texto": "MATURADOR_APAGAR ja ta la",
       "delay": {
         "min": 20,
         "max": 30
@@ -147,7 +147,7 @@
     {
       "ordem": 8,
       "remetente": 0,
-      "texto": "terminei a 2 temporada ontem",
+      "texto": "MATURADOR_APAGAR terminei a 2 temporada ontem",
       "delay": {
         "min": 20,
         "max": 30
@@ -168,7 +168,7 @@
     {
       "ordem": 9,
       "remetente": 1,
-      "texto": "tem 2 temporadas?",
+      "texto": "MATURADOR_APAGAR tem 2 temporadas?",
       "delay": {
         "min": 20,
         "max": 30
@@ -189,7 +189,7 @@
     {
       "ordem": 10,
       "remetente": 1,
-      "texto": "tem e a 2a e ainda melhor",
+      "texto": "MATURADOR_APAGAR tem e a 2a e ainda melhor",
       "delay": {
         "min": 20,
         "max": 30
@@ -210,7 +210,7 @@
     {
       "ordem": 11,
       "remetente": 0,
-      "texto": "vou comecar esse fds",
+      "texto": "MATURADOR_APAGAR vou comecar esse fds",
       "delay": {
         "min": 20,
         "max": 30
@@ -231,7 +231,7 @@
     {
       "ordem": 12,
       "remetente": 0,
-      "texto": "nao faz spoiler antes de ver",
+      "texto": "MATURADOR_APAGAR nao faz spoiler antes de ver",
       "delay": {
         "min": 20,
         "max": 30
@@ -252,7 +252,7 @@
     {
       "ordem": 13,
       "remetente": 0,
-      "texto": "nao vou nao",
+      "texto": "MATURADOR_APAGAR nao vou nao",
       "delay": {
         "min": 20,
         "max": 30
@@ -273,7 +273,7 @@
     {
       "ordem": 14,
       "remetente": 0,
-      "texto": "o final da 2a temporada...",
+      "texto": "MATURADOR_APAGAR o final da 2a temporada...",
       "delay": {
         "min": 20,
         "max": 30
@@ -294,7 +294,7 @@
     {
       "ordem": 15,
       "remetente": 1,
-      "texto": "nao fala nao nao vi ainda",
+      "texto": "MATURADOR_APAGAR nao fala nao nao vi ainda",
       "delay": {
         "min": 20,
         "max": 30
@@ -315,7 +315,7 @@
     {
       "ordem": 16,
       "remetente": 0,
-      "texto": "nao vou spoilar calma kkkk",
+      "texto": "MATURADOR_APAGAR nao vou spoilar calma kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -336,7 +336,7 @@
     {
       "ordem": 17,
       "remetente": 1,
-      "texto": "sua cara de chocado me mata kkkk",
+      "texto": "MATURADOR_APAGAR sua cara de chocado me mata kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -357,7 +357,7 @@
     {
       "ordem": 18,
       "remetente": 1,
-      "texto": "e serio e muito bom",
+      "texto": "MATURADOR_APAGAR e serio e muito bom",
       "delay": {
         "min": 20,
         "max": 30
@@ -378,7 +378,7 @@
     {
       "ordem": 19,
       "remetente": 1,
-      "texto": "vai esse fds com certeza",
+      "texto": "MATURADOR_APAGAR vai esse fds com certeza",
       "delay": {
         "min": 20,
         "max": 30
@@ -399,7 +399,7 @@
     {
       "ordem": 20,
       "remetente": 0,
-      "texto": "depois me fala a reacao",
+      "texto": "MATURADOR_APAGAR depois me fala a reacao",
       "delay": {
         "min": 20,
         "max": 30
@@ -420,7 +420,7 @@
     {
       "ordem": 21,
       "remetente": 0,
-      "texto": "vou sim",
+      "texto": "MATURADOR_APAGAR vou sim",
       "delay": {
         "min": 20,
         "max": 30
@@ -441,7 +441,7 @@
     {
       "ordem": 22,
       "remetente": 1,
-      "texto": "assistiu Severance ainda",
+      "texto": "MATURADOR_APAGAR assistiu Severance ainda",
       "delay": {
         "min": 20,
         "max": 30
@@ -462,7 +462,7 @@
     {
       "ordem": 23,
       "remetente": 0,
-      "texto": "nao to atrasado kkkk",
+      "texto": "MATURADOR_APAGAR nao to atrasado kkkk",
       "delay": {
         "min": 20,
         "max": 30

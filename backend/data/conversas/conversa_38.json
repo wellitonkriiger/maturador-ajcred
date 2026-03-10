@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "to planejando uma viagem pra novembro",
+      "texto": "MATURADOR_APAGAR to planejando uma viagem pra novembro",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 0,
-      "texto": "que bacana, pra onde?",
+      "texto": "MATURADOR_APAGAR que bacana, pra onde?",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "pensando em Floripa ou Gramado",
+      "texto": "MATURADOR_APAGAR pensando em Floripa ou Gramado",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 0,
-      "texto": "que diferente kkkk Floripa e praia, Gramado e frio",
+      "texto": "MATURADOR_APAGAR que diferente kkkk Floripa e praia, Gramado e frio",
       "delay": {
         "min": 20,
         "max": 30
@@ -97,7 +97,7 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "e ai ta a duvida",
+      "texto": "MATURADOR_APAGAR e ai ta a duvida",
       "delay": {
         "min": 20,
         "max": 30
@@ -118,7 +118,7 @@
     {
       "ordem": 6,
       "remetente": 0,
-      "texto": "qual e a preferencia sua",
+      "texto": "MATURADOR_APAGAR qual e a preferencia sua",
       "delay": {
         "min": 20,
         "max": 30
@@ -139,7 +139,7 @@
     {
       "ordem": 7,
       "remetente": 1,
-      "texto": "honestamente prefiro praia",
+      "texto": "MATURADOR_APAGAR honestamente prefiro praia",
       "delay": {
         "min": 20,
         "max": 30
@@ -160,7 +160,7 @@
     {
       "ordem": 8,
       "remetente": 0,
-      "texto": "entao Floripa resolve",
+      "texto": "MATURADOR_APAGAR entao Floripa resolve",
       "delay": {
         "min": 20,
         "max": 30
@@ -181,7 +181,7 @@
     {
       "ordem": 9,
       "remetente": 0,
-      "texto": "o problema e novembro la pode chover",
+      "texto": "MATURADOR_APAGAR o problema e novembro la pode chover",
       "delay": {
         "min": 20,
         "max": 30
@@ -202,7 +202,7 @@
     {
       "ordem": 10,
       "remetente": 1,
-      "texto": "em Gramado chove o ano todo kkk",
+      "texto": "MATURADOR_APAGAR em Gramado chove o ano todo kkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -223,7 +223,7 @@
     {
       "ordem": 11,
       "remetente": 0,
-      "texto": "bom ponto",
+      "texto": "MATURADOR_APAGAR bom ponto",
       "delay": {
         "min": 20,
         "max": 30
@@ -244,7 +244,7 @@
     {
       "ordem": 12,
       "remetente": 0,
-      "texto": "ve a previsao do tempo pra novembro la",
+      "texto": "MATURADOR_APAGAR ve a previsao do tempo pra novembro la",
       "delay": {
         "min": 20,
         "max": 30
@@ -265,7 +265,7 @@
     {
       "ordem": 13,
       "remetente": 0,
-      "texto": "em media ta bom",
+      "texto": "MATURADOR_APAGAR em media ta bom",
       "delay": {
         "min": 20,
         "max": 30
@@ -286,7 +286,7 @@
     {
       "ordem": 14,
       "remetente": 1,
-      "texto": "vai de Floripa entao",
+      "texto": "MATURADOR_APAGAR vai de Floripa entao",
       "delay": {
         "min": 20,
         "max": 30
@@ -307,7 +307,7 @@
     {
       "ordem": 15,
       "remetente": 1,
-      "texto": "convenceu, vou pesquisar hospedagem",
+      "texto": "MATURADOR_APAGAR convenceu, vou pesquisar hospedagem",
       "delay": {
         "min": 20,
         "max": 30
@@ -328,7 +328,7 @@
     {
       "ordem": 16,
       "remetente": 1,
-      "texto": "booking tem boas opcoes",
+      "texto": "MATURADOR_APAGAR booking tem boas opcoes",
       "delay": {
         "min": 20,
         "max": 30
@@ -349,7 +349,7 @@
     {
       "ordem": 17,
       "remetente": 1,
-      "texto": "vc ja foi?",
+      "texto": "MATURADOR_APAGAR vc ja foi?",
       "delay": {
         "min": 20,
         "max": 30
@@ -370,7 +370,7 @@
     {
       "ordem": 18,
       "remetente": 0,
-      "texto": "fui 2x, cidade linda",
+      "texto": "MATURADOR_APAGAR fui 2x, cidade linda",
       "delay": {
         "min": 20,
         "max": 30
@@ -391,7 +391,7 @@
     {
       "ordem": 19,
       "remetente": 1,
-      "texto": "recomenda onde fica",
+      "texto": "MATURADOR_APAGAR recomenda onde fica",
       "delay": {
         "min": 20,
         "max": 30
@@ -412,7 +412,7 @@
     {
       "ordem": 20,
       "remetente": 0,
-      "texto": "Lagoa da Conceicao e o melhor bairro pra turist",
+      "texto": "MATURADOR_APAGAR Lagoa da Conceicao e o melhor bairro pra turist",
       "delay": {
         "min": 20,
         "max": 30
@@ -433,7 +433,7 @@
     {
       "ordem": 21,
       "remetente": 0,
-      "texto": "to planejando uma viagem pra novembro",
+      "texto": "MATURADOR_APAGAR to planejando uma viagem pra novembro",
       "delay": {
         "min": 20,
         "max": 30
@@ -454,7 +454,7 @@
     {
       "ordem": 22,
       "remetente": 0,
-      "texto": "que bacana, pra onde?",
+      "texto": "MATURADOR_APAGAR que bacana, pra onde?",
       "delay": {
         "min": 20,
         "max": 30
@@ -475,7 +475,7 @@
     {
       "ordem": 23,
       "remetente": 1,
-      "texto": "pensando em Floripa ou Gramado",
+      "texto": "MATURADOR_APAGAR pensando em Floripa ou Gramado",
       "delay": {
         "min": 20,
         "max": 30
@@ -504,7 +504,7 @@
     {
       "ordem": 25,
       "remetente": 0,
-      "texto": "que diferente kkkk Floripa e praia, Gramado e frio",
+      "texto": "MATURADOR_APAGAR que diferente kkkk Floripa e praia, Gramado e frio",
       "delay": {
         "min": 20,
         "max": 30
@@ -525,7 +525,7 @@
     {
       "ordem": 26,
       "remetente": 1,
-      "texto": "e ai ta a duvida",
+      "texto": "MATURADOR_APAGAR e ai ta a duvida",
       "delay": {
         "min": 20,
         "max": 30
@@ -546,7 +546,7 @@
     {
       "ordem": 27,
       "remetente": 0,
-      "texto": "qual e a preferencia sua",
+      "texto": "MATURADOR_APAGAR qual e a preferencia sua",
       "delay": {
         "min": 20,
         "max": 30
@@ -575,7 +575,7 @@
     {
       "ordem": 29,
       "remetente": 1,
-      "texto": "honestamente prefiro praia",
+      "texto": "MATURADOR_APAGAR honestamente prefiro praia",
       "delay": {
         "min": 20,
         "max": 30
@@ -596,7 +596,7 @@
     {
       "ordem": 30,
       "remetente": 1,
-      "texto": "entao Floripa resolve",
+      "texto": "MATURADOR_APAGAR entao Floripa resolve",
       "delay": {
         "min": 20,
         "max": 30
@@ -617,7 +617,7 @@
     {
       "ordem": 31,
       "remetente": 0,
-      "texto": "o problema e novembro la pode chover",
+      "texto": "MATURADOR_APAGAR o problema e novembro la pode chover",
       "delay": {
         "min": 20,
         "max": 30

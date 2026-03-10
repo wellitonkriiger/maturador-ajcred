@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 1,
-      "texto": "viu a tabela do brasileirao hoje?",
+      "texto": "MATURADOR_APAGAR viu a tabela do brasileirao hoje?",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 0,
-      "texto": "vi sim, o Atletico subiu",
+      "texto": "MATURADOR_APAGAR vi sim, o Atletico subiu",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 1,
-      "texto": "3 pontos do lider, pode virar",
+      "texto": "MATURADOR_APAGAR 3 pontos do lider, pode virar",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 0,
-      "texto": "faltam 7 rodadas ainda",
+      "texto": "MATURADOR_APAGAR faltam 7 rodadas ainda",
       "delay": {
         "min": 20,
         "max": 30
@@ -97,7 +97,7 @@
     {
       "ordem": 5,
       "remetente": 1,
-      "texto": "e o confronto direto semana que vem",
+      "texto": "MATURADOR_APAGAR e o confronto direto semana que vem",
       "delay": {
         "min": 20,
         "max": 30
@@ -126,7 +126,7 @@
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "esse vai definir tudo",
+      "texto": "MATURADOR_APAGAR esse vai definir tudo",
       "delay": {
         "min": 20,
         "max": 30
@@ -147,7 +147,7 @@
     {
       "ordem": 8,
       "remetente": 0,
-      "texto": "o Flamengo ta irregular",
+      "texto": "MATURADOR_APAGAR o Flamengo ta irregular",
       "delay": {
         "min": 20,
         "max": 30
@@ -168,7 +168,7 @@
     {
       "ordem": 9,
       "remetente": 1,
-      "texto": "fora de casa perde muito",
+      "texto": "MATURADOR_APAGAR fora de casa perde muito",
       "delay": {
         "min": 20,
         "max": 30
@@ -197,7 +197,7 @@
     {
       "ordem": 11,
       "remetente": 0,
-      "texto": "o Hulk ainda jogando bem",
+      "texto": "MATURADOR_APAGAR o Hulk ainda jogando bem",
       "delay": {
         "min": 20,
         "max": 30
@@ -218,7 +218,7 @@
     {
       "ordem": 12,
       "remetente": 1,
-      "texto": "cara ta absurdo pra idade dele",
+      "texto": "MATURADOR_APAGAR cara ta absurdo pra idade dele",
       "delay": {
         "min": 20,
         "max": 30
@@ -239,7 +239,7 @@
     {
       "ordem": 13,
       "remetente": 0,
-      "texto": "42 anos jogando assim",
+      "texto": "MATURADOR_APAGAR 42 anos jogando assim",
       "delay": {
         "min": 20,
         "max": 30
@@ -260,7 +260,7 @@
     {
       "ordem": 14,
       "remetente": 0,
-      "texto": "e fora de serie mesmo",
+      "texto": "MATURADOR_APAGAR e fora de serie mesmo",
       "delay": {
         "min": 20,
         "max": 30
@@ -281,7 +281,7 @@
     {
       "ordem": 15,
       "remetente": 1,
-      "texto": "semifinal de quem vc acha?",
+      "texto": "MATURADOR_APAGAR semifinal de quem vc acha?",
       "delay": {
         "min": 20,
         "max": 30
@@ -302,7 +302,7 @@
     {
       "ordem": 16,
       "remetente": 0,
-      "texto": "Atletico e Fluminense",
+      "texto": "MATURADOR_APAGAR Atletico e Fluminense",
       "delay": {
         "min": 20,
         "max": 30
@@ -323,7 +323,7 @@
     {
       "ordem": 17,
       "remetente": 1,
-      "texto": "discordo acho que entra o Palmeiras",
+      "texto": "MATURADOR_APAGAR discordo acho que entra o Palmeiras",
       "delay": {
         "min": 20,
         "max": 30
@@ -352,7 +352,7 @@
     {
       "ordem": 19,
       "remetente": 1,
-      "texto": "pode ser tambem eles tem elenco",
+      "texto": "MATURADOR_APAGAR pode ser tambem eles tem elenco",
       "delay": {
         "min": 20,
         "max": 30
@@ -373,7 +373,7 @@
     {
       "ordem": 20,
       "remetente": 0,
-      "texto": "vou apostar no Atletico",
+      "texto": "MATURADOR_APAGAR vou apostar no Atletico",
       "delay": {
         "min": 20,
         "max": 30
@@ -394,7 +394,7 @@
     {
       "ordem": 21,
       "remetente": 1,
-      "texto": "aposta baixa, 10 conto",
+      "texto": "MATURADOR_APAGAR aposta baixa, 10 conto",
       "delay": {
         "min": 20,
         "max": 30
@@ -415,7 +415,7 @@
     {
       "ordem": 22,
       "remetente": 1,
-      "texto": "topei, anota ai",
+      "texto": "MATURADOR_APAGAR topei, anota ai",
       "delay": {
         "min": 20,
         "max": 30
@@ -436,7 +436,7 @@
     {
       "ordem": 23,
       "remetente": 0,
-      "texto": "anotado kkkk",
+      "texto": "MATURADOR_APAGAR anotado kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -457,7 +457,7 @@
     {
       "ordem": 24,
       "remetente": 0,
-      "texto": "viu a tabela do brasileirao hoje?",
+      "texto": "MATURADOR_APAGAR viu a tabela do brasileirao hoje?",
       "delay": {
         "min": 20,
         "max": 30
@@ -478,7 +478,7 @@
     {
       "ordem": 25,
       "remetente": 0,
-      "texto": "vi sim, o Atletico subiu",
+      "texto": "MATURADOR_APAGAR vi sim, o Atletico subiu",
       "delay": {
         "min": 20,
         "max": 30
@@ -499,7 +499,7 @@
     {
       "ordem": 26,
       "remetente": 1,
-      "texto": "3 pontos do lider, pode virar",
+      "texto": "MATURADOR_APAGAR 3 pontos do lider, pode virar",
       "delay": {
         "min": 20,
         "max": 30

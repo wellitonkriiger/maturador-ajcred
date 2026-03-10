@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "vc foi ver Duna 2?",
+      "texto": "MATURADOR_APAGAR vc foi ver Duna 2?",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "fui semana passada, muito bom",
+      "texto": "MATURADOR_APAGAR fui semana passada, muito bom",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "serio? ouvi critica mista",
+      "texto": "MATURADOR_APAGAR serio? ouvi critica mista",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 0,
-      "texto": "ignora, e espetacular",
+      "texto": "MATURADOR_APAGAR ignora, e espetacular",
       "delay": {
         "min": 20,
         "max": 30
@@ -97,7 +97,7 @@
     {
       "ordem": 5,
       "remetente": 1,
-      "texto": "talvez eu va entao",
+      "texto": "MATURADOR_APAGAR talvez eu va entao",
       "delay": {
         "min": 20,
         "max": 30
@@ -118,7 +118,7 @@
     {
       "ordem": 6,
       "remetente": 0,
-      "texto": "vai no IMAX se puder",
+      "texto": "MATURADOR_APAGAR vai no IMAX se puder",
       "delay": {
         "min": 20,
         "max": 30
@@ -147,7 +147,7 @@
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "vale a pena?",
+      "texto": "MATURADOR_APAGAR vale a pena?",
       "delay": {
         "min": 20,
         "max": 30
@@ -168,7 +168,7 @@
     {
       "ordem": 9,
       "remetente": 0,
-      "texto": "cara e outra experiencia",
+      "texto": "MATURADOR_APAGAR cara e outra experiencia",
       "delay": {
         "min": 20,
         "max": 30
@@ -189,7 +189,7 @@
     {
       "ordem": 10,
       "remetente": 1,
-      "texto": "caro ne",
+      "texto": "MATURADOR_APAGAR caro ne",
       "delay": {
         "min": 20,
         "max": 30
@@ -210,7 +210,7 @@
     {
       "ordem": 11,
       "remetente": 1,
-      "texto": "um pouco mas vale muito",
+      "texto": "MATURADOR_APAGAR um pouco mas vale muito",
       "delay": {
         "min": 20,
         "max": 30
@@ -231,7 +231,7 @@
     {
       "ordem": 12,
       "remetente": 0,
-      "texto": "ver se a Nina topa",
+      "texto": "MATURADOR_APAGAR ver se a Nina topa",
       "delay": {
         "min": 20,
         "max": 30
@@ -252,7 +252,7 @@
     {
       "ordem": 13,
       "remetente": 1,
-      "texto": "ela vai, confia",
+      "texto": "MATURADOR_APAGAR ela vai, confia",
       "delay": {
         "min": 20,
         "max": 30

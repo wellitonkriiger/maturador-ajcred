@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 1,
-      "texto": "preciso ir no mercado hoje",
+      "texto": "MATURADOR_APAGAR preciso ir no mercado hoje",
       "delay": {
         "min": 20,
         "max": 30
@@ -42,7 +42,7 @@
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "vc foi semana passada nao foi",
+      "texto": "MATURADOR_APAGAR vc foi semana passada nao foi",
       "delay": {
         "min": 20,
         "max": 30
@@ -71,7 +71,7 @@
     {
       "ordem": 5,
       "remetente": 1,
-      "texto": "fui mas acabou tudo rapido",
+      "texto": "MATURADOR_APAGAR fui mas acabou tudo rapido",
       "delay": {
         "min": 20,
         "max": 30
@@ -92,7 +92,7 @@
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "come demais kkkk",
+      "texto": "MATURADOR_APAGAR come demais kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -113,7 +113,7 @@
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "a casa come tb",
+      "texto": "MATURADOR_APAGAR a casa come tb",
       "delay": {
         "min": 20,
         "max": 30
@@ -134,7 +134,7 @@
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "vai a que horas?",
+      "texto": "MATURADOR_APAGAR vai a que horas?",
       "delay": {
         "min": 20,
         "max": 30
@@ -155,7 +155,7 @@
     {
       "ordem": 9,
       "remetente": 0,
-      "texto": "umas 16h",
+      "texto": "MATURADOR_APAGAR umas 16h",
       "delay": {
         "min": 20,
         "max": 30
@@ -176,7 +176,7 @@
     {
       "ordem": 10,
       "remetente": 1,
-      "texto": "cheio nessa hora",
+      "texto": "MATURADOR_APAGAR cheio nessa hora",
       "delay": {
         "min": 20,
         "max": 30
@@ -197,7 +197,7 @@
     {
       "ordem": 11,
       "remetente": 0,
-      "texto": "de manha nao posso",
+      "texto": "MATURADOR_APAGAR de manha nao posso",
       "delay": {
         "min": 20,
         "max": 30
@@ -218,7 +218,7 @@
     {
       "ordem": 12,
       "remetente": 1,
-      "texto": "vai por mim na lista kkkk",
+      "texto": "MATURADOR_APAGAR vai por mim na lista kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -239,7 +239,7 @@
     {
       "ordem": 13,
       "remetente": 1,
-      "texto": "o que precisa",
+      "texto": "MATURADOR_APAGAR o que precisa",
       "delay": {
         "min": 20,
         "max": 30
@@ -260,7 +260,7 @@
     {
       "ordem": 14,
       "remetente": 1,
-      "texto": "leite, ovos, cafe, fruta e papel higienico",
+      "texto": "MATURADOR_APAGAR leite, ovos, cafe, fruta e papel higienico",
       "delay": {
         "min": 20,
         "max": 30
@@ -281,7 +281,7 @@
     {
       "ordem": 15,
       "remetente": 0,
-      "texto": "anotado, manda pix me avisa o valor",
+      "texto": "MATURADOR_APAGAR anotado, manda pix me avisa o valor",
       "delay": {
         "min": 20,
         "max": 30
@@ -302,7 +302,7 @@
     {
       "ordem": 16,
       "remetente": 1,
-      "texto": "obrigada! quanto ta o leite la",
+      "texto": "MATURADOR_APAGAR obrigada! quanto ta o leite la",
       "delay": {
         "min": 20,
         "max": 30
@@ -323,7 +323,7 @@
     {
       "ordem": 17,
       "remetente": 1,
-      "texto": "5,90 o tetra pak",
+      "texto": "MATURADOR_APAGAR 5,90 o tetra pak",
       "delay": {
         "min": 20,
         "max": 30
@@ -344,7 +344,7 @@
     {
       "ordem": 18,
       "remetente": 0,
-      "texto": "pega 2 entao",
+      "texto": "MATURADOR_APAGAR pega 2 entao",
       "delay": {
         "min": 20,
         "max": 30
@@ -373,7 +373,7 @@
     {
       "ordem": 20,
       "remetente": 1,
-      "texto": "pegado, volto as 18h",
+      "texto": "MATURADOR_APAGAR pegado, volto as 18h",
       "delay": {
         "min": 20,
         "max": 30
@@ -394,7 +394,7 @@
     {
       "ordem": 21,
       "remetente": 0,
-      "texto": "otimo obrigada de verdade",
+      "texto": "MATURADOR_APAGAR otimo obrigada de verdade",
       "delay": {
         "min": 20,
         "max": 30
@@ -415,7 +415,7 @@
     {
       "ordem": 22,
       "remetente": 1,
-      "texto": "preciso ir no mercado hoje",
+      "texto": "MATURADOR_APAGAR preciso ir no mercado hoje",
       "delay": {
         "min": 20,
         "max": 30
@@ -436,7 +436,7 @@
     {
       "ordem": 23,
       "remetente": 1,
-      "texto": "vc foi semana passada nao foi",
+      "texto": "MATURADOR_APAGAR vc foi semana passada nao foi",
       "delay": {
         "min": 20,
         "max": 30
@@ -457,7 +457,7 @@
     {
       "ordem": 24,
       "remetente": 0,
-      "texto": "fui mas acabou tudo rapido",
+      "texto": "MATURADOR_APAGAR fui mas acabou tudo rapido",
       "delay": {
         "min": 20,
         "max": 30
@@ -486,7 +486,7 @@
     {
       "ordem": 26,
       "remetente": 0,
-      "texto": "come demais kkkk",
+      "texto": "MATURADOR_APAGAR come demais kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -507,7 +507,7 @@
     {
       "ordem": 27,
       "remetente": 0,
-      "texto": "a casa come tb",
+      "texto": "MATURADOR_APAGAR a casa come tb",
       "delay": {
         "min": 20,
         "max": 30
@@ -528,7 +528,7 @@
     {
       "ordem": 28,
       "remetente": 0,
-      "texto": "vai a que horas?",
+      "texto": "MATURADOR_APAGAR vai a que horas?",
       "delay": {
         "min": 20,
         "max": 30
@@ -549,7 +549,7 @@
     {
       "ordem": 29,
       "remetente": 1,
-      "texto": "umas 16h",
+      "texto": "MATURADOR_APAGAR umas 16h",
       "delay": {
         "min": 20,
         "max": 30
@@ -570,7 +570,7 @@
     {
       "ordem": 30,
       "remetente": 0,
-      "texto": "cheio nessa hora",
+      "texto": "MATURADOR_APAGAR cheio nessa hora",
       "delay": {
         "min": 20,
         "max": 30
@@ -591,7 +591,7 @@
     {
       "ordem": 31,
       "remetente": 1,
-      "texto": "de manha nao posso",
+      "texto": "MATURADOR_APAGAR de manha nao posso",
       "delay": {
         "min": 20,
         "max": 30
@@ -612,7 +612,7 @@
     {
       "ordem": 32,
       "remetente": 0,
-      "texto": "vai por mim na lista kkkk",
+      "texto": "MATURADOR_APAGAR vai por mim na lista kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -633,7 +633,7 @@
     {
       "ordem": 33,
       "remetente": 1,
-      "texto": "o que precisa",
+      "texto": "MATURADOR_APAGAR o que precisa",
       "delay": {
         "min": 20,
         "max": 30
@@ -654,7 +654,7 @@
     {
       "ordem": 34,
       "remetente": 0,
-      "texto": "leite, ovos, cafe, fruta e papel higienico",
+      "texto": "MATURADOR_APAGAR leite, ovos, cafe, fruta e papel higienico",
       "delay": {
         "min": 20,
         "max": 30
@@ -675,7 +675,7 @@
     {
       "ordem": 35,
       "remetente": 1,
-      "texto": "anotado, manda pix me avisa o valor",
+      "texto": "MATURADOR_APAGAR anotado, manda pix me avisa o valor",
       "delay": {
         "min": 20,
         "max": 30
@@ -704,7 +704,7 @@
     {
       "ordem": 37,
       "remetente": 0,
-      "texto": "obrigada! quanto ta o leite la",
+      "texto": "MATURADOR_APAGAR obrigada! quanto ta o leite la",
       "delay": {
         "min": 20,
         "max": 30
@@ -725,7 +725,7 @@
     {
       "ordem": 38,
       "remetente": 1,
-      "texto": "5,90 o tetra pak",
+      "texto": "MATURADOR_APAGAR 5,90 o tetra pak",
       "delay": {
         "min": 20,
         "max": 30
@@ -746,7 +746,7 @@
     {
       "ordem": 39,
       "remetente": 0,
-      "texto": "pega 2 entao",
+      "texto": "MATURADOR_APAGAR pega 2 entao",
       "delay": {
         "min": 20,
         "max": 30
@@ -767,7 +767,7 @@
     {
       "ordem": 40,
       "remetente": 1,
-      "texto": "pegado, volto as 18h",
+      "texto": "MATURADOR_APAGAR pegado, volto as 18h",
       "delay": {
         "min": 20,
         "max": 30
@@ -788,7 +788,7 @@
     {
       "ordem": 41,
       "remetente": 0,
-      "texto": "otimo obrigada de verdade",
+      "texto": "MATURADOR_APAGAR otimo obrigada de verdade",
       "delay": {
         "min": 20,
         "max": 30
@@ -809,7 +809,7 @@
     {
       "ordem": 42,
       "remetente": 1,
-      "texto": "preciso ir no mercado hoje",
+      "texto": "MATURADOR_APAGAR preciso ir no mercado hoje",
       "delay": {
         "min": 20,
         "max": 30

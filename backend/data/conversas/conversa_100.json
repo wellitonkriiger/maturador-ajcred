@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "vc le bastante ne?",
+      "texto": "MATURADOR_APAGAR vc le bastante ne?",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "leio sim, tem alguma indicacao?",
+      "texto": "MATURADOR_APAGAR leio sim, tem alguma indicacao?",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 1,
-      "texto": "vim te pedir isso kkkk",
+      "texto": "MATURADOR_APAGAR vim te pedir isso kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 0,
-      "texto": "que genero voce prefere",
+      "texto": "MATURADOR_APAGAR que genero voce prefere",
       "delay": {
         "min": 20,
         "max": 30
@@ -97,7 +97,7 @@
     {
       "ordem": 5,
       "remetente": 1,
-      "texto": "algo que prende, ficcao talvez",
+      "texto": "MATURADOR_APAGAR algo que prende, ficcao talvez",
       "delay": {
         "min": 20,
         "max": 30
@@ -118,7 +118,7 @@
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "ja leu O Nome do Vento?",
+      "texto": "MATURADOR_APAGAR ja leu O Nome do Vento?",
       "delay": {
         "min": 20,
         "max": 30
@@ -147,7 +147,7 @@
     {
       "ordem": 8,
       "remetente": 0,
-      "texto": "nao, de quem e",
+      "texto": "MATURADOR_APAGAR nao, de quem e",
       "delay": {
         "min": 20,
         "max": 30
@@ -168,7 +168,7 @@
     {
       "ordem": 9,
       "remetente": 1,
-      "texto": "Patrick Rothfuss, fantasia",
+      "texto": "MATURADOR_APAGAR Patrick Rothfuss, fantasia",
       "delay": {
         "min": 20,
         "max": 30
@@ -189,7 +189,7 @@
     {
       "ordem": 10,
       "remetente": 1,
-      "texto": "tem continuacao?",
+      "texto": "MATURADOR_APAGAR tem continuacao?",
       "delay": {
         "min": 20,
         "max": 30
@@ -210,7 +210,7 @@
     {
       "ordem": 11,
       "remetente": 1,
-      "texto": "tem, 3 livros planejados mas o 3 nunca sai",
+      "texto": "MATURADOR_APAGAR tem, 3 livros planejados mas o 3 nunca sai",
       "delay": {
         "min": 20,
         "max": 30
@@ -239,7 +239,7 @@
     {
       "ordem": 13,
       "remetente": 1,
-      "texto": "agonia isso",
+      "texto": "MATURADOR_APAGAR agonia isso",
       "delay": {
         "min": 20,
         "max": 30
@@ -260,7 +260,7 @@
     {
       "ordem": 14,
       "remetente": 0,
-      "texto": "e, mas os 2 primeiros sao incriveis",
+      "texto": "MATURADOR_APAGAR e, mas os 2 primeiros sao incriveis",
       "delay": {
         "min": 20,
         "max": 30
@@ -281,7 +281,7 @@
     {
       "ordem": 15,
       "remetente": 1,
-      "texto": "onde acha?",
+      "texto": "MATURADOR_APAGAR onde acha?",
       "delay": {
         "min": 20,
         "max": 30
@@ -302,7 +302,7 @@
     {
       "ordem": 16,
       "remetente": 0,
-      "texto": "Amazon tem, ou livraria saraiva",
+      "texto": "MATURADOR_APAGAR Amazon tem, ou livraria saraiva",
       "delay": {
         "min": 20,
         "max": 30
@@ -323,7 +323,7 @@
     {
       "ordem": 17,
       "remetente": 0,
-      "texto": "vou comprar essa semana",
+      "texto": "MATURADOR_APAGAR vou comprar essa semana",
       "delay": {
         "min": 20,
         "max": 30
@@ -344,7 +344,7 @@
     {
       "ordem": 18,
       "remetente": 1,
-      "texto": "me conta depois, quero saber a reacao",
+      "texto": "MATURADOR_APAGAR me conta depois, quero saber a reacao",
       "delay": {
         "min": 20,
         "max": 30
@@ -365,7 +365,7 @@
     {
       "ordem": 19,
       "remetente": 0,
-      "texto": "com certeza, obrigado",
+      "texto": "MATURADOR_APAGAR com certeza, obrigado",
       "delay": {
         "min": 20,
         "max": 30
@@ -386,7 +386,7 @@
     {
       "ordem": 20,
       "remetente": 1,
-      "texto": "qualquer coisa chama",
+      "texto": "MATURADOR_APAGAR qualquer coisa chama",
       "delay": {
         "min": 20,
         "max": 30
@@ -407,7 +407,7 @@
     {
       "ordem": 21,
       "remetente": 0,
-      "texto": "vc le bastante ne?",
+      "texto": "MATURADOR_APAGAR vc le bastante ne?",
       "delay": {
         "min": 20,
         "max": 30
@@ -428,7 +428,7 @@
     {
       "ordem": 22,
       "remetente": 1,
-      "texto": "leio sim, tem alguma indicacao?",
+      "texto": "MATURADOR_APAGAR leio sim, tem alguma indicacao?",
       "delay": {
         "min": 20,
         "max": 30
@@ -449,7 +449,7 @@
     {
       "ordem": 23,
       "remetente": 0,
-      "texto": "vim te pedir isso kkkk",
+      "texto": "MATURADOR_APAGAR vim te pedir isso kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -470,7 +470,7 @@
     {
       "ordem": 24,
       "remetente": 1,
-      "texto": "que genero voce prefere",
+      "texto": "MATURADOR_APAGAR que genero voce prefere",
       "delay": {
         "min": 20,
         "max": 30
@@ -491,7 +491,7 @@
     {
       "ordem": 25,
       "remetente": 1,
-      "texto": "algo que prende, ficcao talvez",
+      "texto": "MATURADOR_APAGAR algo que prende, ficcao talvez",
       "delay": {
         "min": 20,
         "max": 30
@@ -512,7 +512,7 @@
     {
       "ordem": 26,
       "remetente": 1,
-      "texto": "ja leu O Nome do Vento?",
+      "texto": "MATURADOR_APAGAR ja leu O Nome do Vento?",
       "delay": {
         "min": 20,
         "max": 30
@@ -533,7 +533,7 @@
     {
       "ordem": 27,
       "remetente": 0,
-      "texto": "nao, de quem e",
+      "texto": "MATURADOR_APAGAR nao, de quem e",
       "delay": {
         "min": 20,
         "max": 30
@@ -554,7 +554,7 @@
     {
       "ordem": 28,
       "remetente": 1,
-      "texto": "Patrick Rothfuss, fantasia",
+      "texto": "MATURADOR_APAGAR Patrick Rothfuss, fantasia",
       "delay": {
         "min": 20,
         "max": 30

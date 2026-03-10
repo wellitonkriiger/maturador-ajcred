@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 1,
-      "texto": "oi sumida! o que vai fazer sabado?",
+      "texto": "MATURADOR_APAGAR oi sumida! o que vai fazer sabado?",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "oi! pensei em ir na praia, vem?",
+      "texto": "MATURADOR_APAGAR oi! pensei em ir na praia, vem?",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "adorei! que horas?",
+      "texto": "MATURADOR_APAGAR adorei! que horas?",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 1,
-      "texto": "9h antes de lotar",
+      "texto": "MATURADOR_APAGAR 9h antes de lotar",
       "delay": {
         "min": 20,
         "max": 30
@@ -97,7 +97,7 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "perfeito, vai ter mais gente?",
+      "texto": "MATURADOR_APAGAR perfeito, vai ter mais gente?",
       "delay": {
         "min": 20,
         "max": 30
@@ -118,7 +118,7 @@
     {
       "ordem": 6,
       "remetente": 0,
-      "texto": "o Renan e a Jess tb vao",
+      "texto": "MATURADOR_APAGAR o Renan e a Jess tb vao",
       "delay": {
         "min": 20,
         "max": 30
@@ -139,7 +139,7 @@
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "que bom faz tempo que nao os vejo",
+      "texto": "MATURADOR_APAGAR que bom faz tempo que nao os vejo",
       "delay": {
         "min": 20,
         "max": 30
@@ -160,7 +160,7 @@
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "vai ser otimo mesmo",
+      "texto": "MATURADOR_APAGAR vai ser otimo mesmo",
       "delay": {
         "min": 20,
         "max": 30
@@ -181,7 +181,7 @@
     {
       "ordem": 9,
       "remetente": 0,
-      "texto": "levo o cooler?",
+      "texto": "MATURADOR_APAGAR levo o cooler?",
       "delay": {
         "min": 20,
         "max": 30
@@ -202,7 +202,7 @@
     {
       "ordem": 10,
       "remetente": 1,
-      "texto": "leva sim eu levo as cadeiras",
+      "texto": "MATURADOR_APAGAR leva sim eu levo as cadeiras",
       "delay": {
         "min": 20,
         "max": 30
@@ -223,7 +223,7 @@
     {
       "ordem": 11,
       "remetente": 1,
-      "texto": "combina, precisa levar comida?",
+      "texto": "MATURADOR_APAGAR combina, precisa levar comida?",
       "delay": {
         "min": 20,
         "max": 30
@@ -244,7 +244,7 @@
     {
       "ordem": 12,
       "remetente": 0,
-      "texto": "compra la mesmo",
+      "texto": "MATURADOR_APAGAR compra la mesmo",
       "delay": {
         "min": 20,
         "max": 30
@@ -265,7 +265,7 @@
     {
       "ordem": 13,
       "remetente": 0,
-      "texto": "tem aquele espetinho do cara do chapeu",
+      "texto": "MATURADOR_APAGAR tem aquele espetinho do cara do chapeu",
       "delay": {
         "min": 20,
         "max": 30
@@ -286,7 +286,7 @@
     {
       "ordem": 14,
       "remetente": 0,
-      "texto": "mesmo kkkk ja to com fome",
+      "texto": "MATURADOR_APAGAR mesmo kkkk ja to com fome",
       "delay": {
         "min": 20,
         "max": 30
@@ -315,7 +315,7 @@
     {
       "ordem": 16,
       "remetente": 1,
-      "texto": "kkkk ainda ta quinta",
+      "texto": "MATURADOR_APAGAR kkkk ainda ta quinta",
       "delay": {
         "min": 20,
         "max": 30
@@ -336,7 +336,7 @@
     {
       "ordem": 17,
       "remetente": 1,
-      "texto": "to ansiosa demais",
+      "texto": "MATURADOR_APAGAR to ansiosa demais",
       "delay": {
         "min": 20,
         "max": 30
@@ -357,7 +357,7 @@
     {
       "ordem": 18,
       "remetente": 0,
-      "texto": "vou dormir cedo sexta",
+      "texto": "MATURADOR_APAGAR vou dormir cedo sexta",
       "delay": {
         "min": 20,
         "max": 30
@@ -378,7 +378,7 @@
     {
       "ordem": 19,
       "remetente": 0,
-      "texto": "boa ideia, vai descansar",
+      "texto": "MATURADOR_APAGAR boa ideia, vai descansar",
       "delay": {
         "min": 20,
         "max": 30
@@ -399,7 +399,7 @@
     {
       "ordem": 20,
       "remetente": 1,
-      "texto": "combinado! qq coisa me avisa",
+      "texto": "MATURADOR_APAGAR combinado! qq coisa me avisa",
       "delay": {
         "min": 20,
         "max": 30
@@ -420,7 +420,7 @@
     {
       "ordem": 21,
       "remetente": 0,
-      "texto": "aviso sim vai ser otimo",
+      "texto": "MATURADOR_APAGAR aviso sim vai ser otimo",
       "delay": {
         "min": 20,
         "max": 30
@@ -441,7 +441,7 @@
     {
       "ordem": 22,
       "remetente": 1,
-      "texto": "oi sumida! o que vai fazer sabado?",
+      "texto": "MATURADOR_APAGAR oi sumida! o que vai fazer sabado?",
       "delay": {
         "min": 20,
         "max": 30
@@ -462,7 +462,7 @@
     {
       "ordem": 23,
       "remetente": 0,
-      "texto": "oi! pensei em ir na praia, vem?",
+      "texto": "MATURADOR_APAGAR oi! pensei em ir na praia, vem?",
       "delay": {
         "min": 20,
         "max": 30
@@ -483,7 +483,7 @@
     {
       "ordem": 24,
       "remetente": 1,
-      "texto": "adorei! que horas?",
+      "texto": "MATURADOR_APAGAR adorei! que horas?",
       "delay": {
         "min": 20,
         "max": 30
@@ -504,7 +504,7 @@
     {
       "ordem": 25,
       "remetente": 0,
-      "texto": "9h antes de lotar",
+      "texto": "MATURADOR_APAGAR 9h antes de lotar",
       "delay": {
         "min": 20,
         "max": 30
@@ -525,7 +525,7 @@
     {
       "ordem": 26,
       "remetente": 1,
-      "texto": "perfeito, vai ter mais gente?",
+      "texto": "MATURADOR_APAGAR perfeito, vai ter mais gente?",
       "delay": {
         "min": 20,
         "max": 30
@@ -546,7 +546,7 @@
     {
       "ordem": 27,
       "remetente": 1,
-      "texto": "o Renan e a Jess tb vao",
+      "texto": "MATURADOR_APAGAR o Renan e a Jess tb vao",
       "delay": {
         "min": 20,
         "max": 30
@@ -567,7 +567,7 @@
     {
       "ordem": 28,
       "remetente": 1,
-      "texto": "que bom faz tempo que nao os vejo",
+      "texto": "MATURADOR_APAGAR que bom faz tempo que nao os vejo",
       "delay": {
         "min": 20,
         "max": 30
@@ -588,7 +588,7 @@
     {
       "ordem": 29,
       "remetente": 0,
-      "texto": "vai ser otimo mesmo",
+      "texto": "MATURADOR_APAGAR vai ser otimo mesmo",
       "delay": {
         "min": 20,
         "max": 30
@@ -609,7 +609,7 @@
     {
       "ordem": 30,
       "remetente": 0,
-      "texto": "levo o cooler?",
+      "texto": "MATURADOR_APAGAR levo o cooler?",
       "delay": {
         "min": 20,
         "max": 30
@@ -630,7 +630,7 @@
     {
       "ordem": 31,
       "remetente": 1,
-      "texto": "leva sim eu levo as cadeiras",
+      "texto": "MATURADOR_APAGAR leva sim eu levo as cadeiras",
       "delay": {
         "min": 20,
         "max": 30
@@ -651,7 +651,7 @@
     {
       "ordem": 32,
       "remetente": 0,
-      "texto": "combina, precisa levar comida?",
+      "texto": "MATURADOR_APAGAR combina, precisa levar comida?",
       "delay": {
         "min": 20,
         "max": 30
@@ -672,7 +672,7 @@
     {
       "ordem": 33,
       "remetente": 0,
-      "texto": "compra la mesmo",
+      "texto": "MATURADOR_APAGAR compra la mesmo",
       "delay": {
         "min": 20,
         "max": 30
@@ -701,7 +701,7 @@
     {
       "ordem": 35,
       "remetente": 0,
-      "texto": "tem aquele espetinho do cara do chapeu",
+      "texto": "MATURADOR_APAGAR tem aquele espetinho do cara do chapeu",
       "delay": {
         "min": 20,
         "max": 30
@@ -730,7 +730,7 @@
     {
       "ordem": 37,
       "remetente": 0,
-      "texto": "mesmo kkkk ja to com fome",
+      "texto": "MATURADOR_APAGAR mesmo kkkk ja to com fome",
       "delay": {
         "min": 20,
         "max": 30
@@ -751,7 +751,7 @@
     {
       "ordem": 38,
       "remetente": 1,
-      "texto": "kkkk ainda ta quinta",
+      "texto": "MATURADOR_APAGAR kkkk ainda ta quinta",
       "delay": {
         "min": 20,
         "max": 30
@@ -772,7 +772,7 @@
     {
       "ordem": 39,
       "remetente": 0,
-      "texto": "to ansiosa demais",
+      "texto": "MATURADOR_APAGAR to ansiosa demais",
       "delay": {
         "min": 20,
         "max": 30
@@ -793,7 +793,7 @@
     {
       "ordem": 40,
       "remetente": 0,
-      "texto": "vou dormir cedo sexta",
+      "texto": "MATURADOR_APAGAR vou dormir cedo sexta",
       "delay": {
         "min": 20,
         "max": 30
@@ -814,7 +814,7 @@
     {
       "ordem": 41,
       "remetente": 1,
-      "texto": "boa ideia, vai descansar",
+      "texto": "MATURADOR_APAGAR boa ideia, vai descansar",
       "delay": {
         "min": 20,
         "max": 30
@@ -843,7 +843,7 @@
     {
       "ordem": 43,
       "remetente": 1,
-      "texto": "combinado! qq coisa me avisa",
+      "texto": "MATURADOR_APAGAR combinado! qq coisa me avisa",
       "delay": {
         "min": 20,
         "max": 30
@@ -864,7 +864,7 @@
     {
       "ordem": 44,
       "remetente": 1,
-      "texto": "aviso sim vai ser otimo",
+      "texto": "MATURADOR_APAGAR aviso sim vai ser otimo",
       "delay": {
         "min": 20,
         "max": 30
@@ -885,7 +885,7 @@
     {
       "ordem": 45,
       "remetente": 1,
-      "texto": "oi sumida! o que vai fazer sabado?",
+      "texto": "MATURADOR_APAGAR oi sumida! o que vai fazer sabado?",
       "delay": {
         "min": 20,
         "max": 30
@@ -906,7 +906,7 @@
     {
       "ordem": 46,
       "remetente": 1,
-      "texto": "oi! pensei em ir na praia, vem?",
+      "texto": "MATURADOR_APAGAR oi! pensei em ir na praia, vem?",
       "delay": {
         "min": 20,
         "max": 30
@@ -927,7 +927,7 @@
     {
       "ordem": 47,
       "remetente": 1,
-      "texto": "adorei! que horas?",
+      "texto": "MATURADOR_APAGAR adorei! que horas?",
       "delay": {
         "min": 20,
         "max": 30
@@ -948,7 +948,7 @@
     {
       "ordem": 48,
       "remetente": 0,
-      "texto": "9h antes de lotar",
+      "texto": "MATURADOR_APAGAR 9h antes de lotar",
       "delay": {
         "min": 20,
         "max": 30
@@ -969,7 +969,7 @@
     {
       "ordem": 49,
       "remetente": 0,
-      "texto": "perfeito, vai ter mais gente?",
+      "texto": "MATURADOR_APAGAR perfeito, vai ter mais gente?",
       "delay": {
         "min": 20,
         "max": 30
@@ -990,7 +990,7 @@
     {
       "ordem": 50,
       "remetente": 1,
-      "texto": "o Renan e a Jess tb vao",
+      "texto": "MATURADOR_APAGAR o Renan e a Jess tb vao",
       "delay": {
         "min": 20,
         "max": 30

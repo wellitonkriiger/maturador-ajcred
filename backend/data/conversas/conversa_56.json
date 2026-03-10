@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 1,
-      "texto": "cara o tecnico ta doido nessa escalacao",
+      "texto": "MATURADOR_APAGAR cara o tecnico ta doido nessa escalacao",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "vi sim, o Fabrizio no meio nao faz sentido",
+      "texto": "MATURADOR_APAGAR vi sim, o Fabrizio no meio nao faz sentido",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "e o Rodrigao ta fora tb",
+      "texto": "MATURADOR_APAGAR e o Rodrigao ta fora tb",
       "delay": {
         "min": 20,
         "max": 30
@@ -84,7 +84,7 @@
     {
       "ordem": 5,
       "remetente": 1,
-      "texto": "lesionado ne vi na noticia",
+      "texto": "MATURADOR_APAGAR lesionado ne vi na noticia",
       "delay": {
         "min": 20,
         "max": 30
@@ -105,7 +105,7 @@
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "o Marcinho podia jogar no lugar",
+      "texto": "MATURADOR_APAGAR o Marcinho podia jogar no lugar",
       "delay": {
         "min": 20,
         "max": 30
@@ -126,7 +126,7 @@
     {
       "ordem": 7,
       "remetente": 1,
-      "texto": "o tecnico odeia ele",
+      "texto": "MATURADOR_APAGAR o tecnico odeia ele",
       "delay": {
         "min": 20,
         "max": 30
@@ -147,7 +147,7 @@
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "politicagem, o time que paga",
+      "texto": "MATURADOR_APAGAR politicagem, o time que paga",
       "delay": {
         "min": 20,
         "max": 30
@@ -168,7 +168,7 @@
     {
       "ordem": 9,
       "remetente": 1,
-      "texto": "quantos minutos falta pro jogo",
+      "texto": "MATURADOR_APAGAR quantos minutos falta pro jogo",
       "delay": {
         "min": 20,
         "max": 30
@@ -189,7 +189,7 @@
     {
       "ordem": 10,
       "remetente": 0,
-      "texto": "20, vc ta em casa?",
+      "texto": "MATURADOR_APAGAR 20, vc ta em casa?",
       "delay": {
         "min": 20,
         "max": 30
@@ -210,7 +210,7 @@
     {
       "ordem": 11,
       "remetente": 0,
-      "texto": "to chegando do trabalho agora",
+      "texto": "MATURADOR_APAGAR to chegando do trabalho agora",
       "delay": {
         "min": 20,
         "max": 30
@@ -231,7 +231,7 @@
     {
       "ordem": 12,
       "remetente": 1,
-      "texto": "corre que ta quase",
+      "texto": "MATURADOR_APAGAR corre que ta quase",
       "delay": {
         "min": 20,
         "max": 30
@@ -252,7 +252,7 @@
     {
       "ordem": 13,
       "remetente": 0,
-      "texto": "entra ai logo",
+      "texto": "MATURADOR_APAGAR entra ai logo",
       "delay": {
         "min": 20,
         "max": 30
@@ -273,7 +273,7 @@
     {
       "ordem": 14,
       "remetente": 0,
-      "texto": "narracao ta uma merda nesse canal",
+      "texto": "MATURADOR_APAGAR narracao ta uma merda nesse canal",
       "delay": {
         "min": 20,
         "max": 30
@@ -302,7 +302,7 @@
     {
       "ordem": 16,
       "remetente": 0,
-      "texto": "troca pro sportv",
+      "texto": "MATURADOR_APAGAR troca pro sportv",
       "delay": {
         "min": 20,
         "max": 30
@@ -323,7 +323,7 @@
     {
       "ordem": 17,
       "remetente": 0,
-      "texto": "esse nao tenho",
+      "texto": "MATURADOR_APAGAR esse nao tenho",
       "delay": {
         "min": 20,
         "max": 30
@@ -352,7 +352,7 @@
     {
       "ordem": 19,
       "remetente": 1,
-      "texto": "vai no youtube entao",
+      "texto": "MATURADOR_APAGAR vai no youtube entao",
       "delay": {
         "min": 20,
         "max": 30
@@ -373,7 +373,7 @@
     {
       "ordem": 20,
       "remetente": 1,
-      "texto": "boa ideia valeu",
+      "texto": "MATURADOR_APAGAR boa ideia valeu",
       "delay": {
         "min": 20,
         "max": 30
@@ -402,7 +402,7 @@
     {
       "ordem": 22,
       "remetente": 0,
-      "texto": "cara o tecnico ta doido nessa escalacao",
+      "texto": "MATURADOR_APAGAR cara o tecnico ta doido nessa escalacao",
       "delay": {
         "min": 20,
         "max": 30
@@ -423,7 +423,7 @@
     {
       "ordem": 23,
       "remetente": 0,
-      "texto": "vi sim, o Fabrizio no meio nao faz sentido",
+      "texto": "MATURADOR_APAGAR vi sim, o Fabrizio no meio nao faz sentido",
       "delay": {
         "min": 20,
         "max": 30
@@ -444,7 +444,7 @@
     {
       "ordem": 24,
       "remetente": 0,
-      "texto": "e o Rodrigao ta fora tb",
+      "texto": "MATURADOR_APAGAR e o Rodrigao ta fora tb",
       "delay": {
         "min": 20,
         "max": 30
@@ -465,7 +465,7 @@
     {
       "ordem": 25,
       "remetente": 1,
-      "texto": "lesionado ne vi na noticia",
+      "texto": "MATURADOR_APAGAR lesionado ne vi na noticia",
       "delay": {
         "min": 20,
         "max": 30
@@ -494,7 +494,7 @@
     {
       "ordem": 27,
       "remetente": 0,
-      "texto": "o Marcinho podia jogar no lugar",
+      "texto": "MATURADOR_APAGAR o Marcinho podia jogar no lugar",
       "delay": {
         "min": 20,
         "max": 30
@@ -515,7 +515,7 @@
     {
       "ordem": 28,
       "remetente": 0,
-      "texto": "o tecnico odeia ele",
+      "texto": "MATURADOR_APAGAR o tecnico odeia ele",
       "delay": {
         "min": 20,
         "max": 30
@@ -536,7 +536,7 @@
     {
       "ordem": 29,
       "remetente": 1,
-      "texto": "politicagem, o time que paga",
+      "texto": "MATURADOR_APAGAR politicagem, o time que paga",
       "delay": {
         "min": 20,
         "max": 30
@@ -565,7 +565,7 @@
     {
       "ordem": 31,
       "remetente": 0,
-      "texto": "quantos minutos falta pro jogo",
+      "texto": "MATURADOR_APAGAR quantos minutos falta pro jogo",
       "delay": {
         "min": 20,
         "max": 30
@@ -586,7 +586,7 @@
     {
       "ordem": 32,
       "remetente": 1,
-      "texto": "20, vc ta em casa?",
+      "texto": "MATURADOR_APAGAR 20, vc ta em casa?",
       "delay": {
         "min": 20,
         "max": 30
@@ -607,7 +607,7 @@
     {
       "ordem": 33,
       "remetente": 1,
-      "texto": "to chegando do trabalho agora",
+      "texto": "MATURADOR_APAGAR to chegando do trabalho agora",
       "delay": {
         "min": 20,
         "max": 30

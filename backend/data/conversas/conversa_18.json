@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "oi posso te contar uma coisa",
+      "texto": "MATURADOR_APAGAR oi posso te contar uma coisa",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "pode claro, o que foi",
+      "texto": "MATURADOR_APAGAR pode claro, o que foi",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 1,
-      "texto": "to namorando de novo",
+      "texto": "MATURADOR_APAGAR to namorando de novo",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 0,
-      "texto": "serio?? quem e?",
+      "texto": "MATURADOR_APAGAR serio?? quem e?",
       "delay": {
         "min": 20,
         "max": 30
@@ -97,7 +97,7 @@
     {
       "ordem": 5,
       "remetente": 1,
-      "texto": "o Thiago, do trampo",
+      "texto": "MATURADOR_APAGAR o Thiago, do trampo",
       "delay": {
         "min": 20,
         "max": 30
@@ -118,7 +118,7 @@
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "ai nao sabia desse rolê",
+      "texto": "MATURADOR_APAGAR ai nao sabia desse rolê",
       "delay": {
         "min": 20,
         "max": 30
@@ -139,7 +139,7 @@
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "foi surgindo aos poucos",
+      "texto": "MATURADOR_APAGAR foi surgindo aos poucos",
       "delay": {
         "min": 20,
         "max": 30
@@ -160,7 +160,7 @@
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "vc ta feliz?",
+      "texto": "MATURADOR_APAGAR vc ta feliz?",
       "delay": {
         "min": 20,
         "max": 30
@@ -181,7 +181,7 @@
     {
       "ordem": 9,
       "remetente": 0,
-      "texto": "muito, ele e muito atencioso",
+      "texto": "MATURADOR_APAGAR muito, ele e muito atencioso",
       "delay": {
         "min": 20,
         "max": 30
@@ -202,7 +202,7 @@
     {
       "ordem": 10,
       "remetente": 0,
-      "texto": "que otimo, voce merece",
+      "texto": "MATURADOR_APAGAR que otimo, voce merece",
       "delay": {
         "min": 20,
         "max": 30
@@ -223,7 +223,7 @@
     {
       "ordem": 11,
       "remetente": 0,
-      "texto": "obrigada, ainda to me acostumando",
+      "texto": "MATURADOR_APAGAR obrigada, ainda to me acostumando",
       "delay": {
         "min": 20,
         "max": 30
@@ -244,7 +244,7 @@
     {
       "ordem": 12,
       "remetente": 1,
-      "texto": "faz quanto tempo",
+      "texto": "MATURADOR_APAGAR faz quanto tempo",
       "delay": {
         "min": 20,
         "max": 30
@@ -265,7 +265,7 @@
     {
       "ordem": 13,
       "remetente": 0,
-      "texto": "1 mes e meio ja",
+      "texto": "MATURADOR_APAGAR 1 mes e meio ja",
       "delay": {
         "min": 20,
         "max": 30
@@ -286,7 +286,7 @@
     {
       "ordem": 14,
       "remetente": 1,
-      "texto": "ia falar logo kkkk",
+      "texto": "MATURADOR_APAGAR ia falar logo kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -307,7 +307,7 @@
     {
       "ordem": 15,
       "remetente": 1,
-      "texto": "queria ter certeza antes",
+      "texto": "MATURADOR_APAGAR queria ter certeza antes",
       "delay": {
         "min": 20,
         "max": 30
@@ -328,7 +328,7 @@
     {
       "ordem": 16,
       "remetente": 0,
-      "texto": "faz sentido, apresenta a gente logo",
+      "texto": "MATURADOR_APAGAR faz sentido, apresenta a gente logo",
       "delay": {
         "min": 20,
         "max": 30
@@ -349,7 +349,7 @@
     {
       "ordem": 17,
       "remetente": 1,
-      "texto": "quando sentir o momento certo",
+      "texto": "MATURADOR_APAGAR quando sentir o momento certo",
       "delay": {
         "min": 20,
         "max": 30
@@ -378,7 +378,7 @@
     {
       "ordem": 19,
       "remetente": 0,
-      "texto": "combinado, to feliz por vc",
+      "texto": "MATURADOR_APAGAR combinado, to feliz por vc",
       "delay": {
         "min": 20,
         "max": 30
@@ -399,7 +399,7 @@
     {
       "ordem": 20,
       "remetente": 1,
-      "texto": "obrigada, significou muito contar pra vc primeiro",
+      "texto": "MATURADOR_APAGAR obrigada, significou muito contar pra vc primeiro",
       "delay": {
         "min": 20,
         "max": 30
@@ -420,7 +420,7 @@
     {
       "ordem": 21,
       "remetente": 1,
-      "texto": "oi posso te contar uma coisa",
+      "texto": "MATURADOR_APAGAR oi posso te contar uma coisa",
       "delay": {
         "min": 20,
         "max": 30
@@ -441,7 +441,7 @@
     {
       "ordem": 22,
       "remetente": 1,
-      "texto": "pode claro, o que foi",
+      "texto": "MATURADOR_APAGAR pode claro, o que foi",
       "delay": {
         "min": 20,
         "max": 30
@@ -462,7 +462,7 @@
     {
       "ordem": 23,
       "remetente": 0,
-      "texto": "to namorando de novo",
+      "texto": "MATURADOR_APAGAR to namorando de novo",
       "delay": {
         "min": 20,
         "max": 30
@@ -483,7 +483,7 @@
     {
       "ordem": 24,
       "remetente": 1,
-      "texto": "serio?? quem e?",
+      "texto": "MATURADOR_APAGAR serio?? quem e?",
       "delay": {
         "min": 20,
         "max": 30
@@ -504,7 +504,7 @@
     {
       "ordem": 25,
       "remetente": 0,
-      "texto": "o Thiago, do trampo",
+      "texto": "MATURADOR_APAGAR o Thiago, do trampo",
       "delay": {
         "min": 20,
         "max": 30
@@ -525,7 +525,7 @@
     {
       "ordem": 26,
       "remetente": 1,
-      "texto": "ai nao sabia desse rolê",
+      "texto": "MATURADOR_APAGAR ai nao sabia desse rolê",
       "delay": {
         "min": 20,
         "max": 30
@@ -546,7 +546,7 @@
     {
       "ordem": 27,
       "remetente": 1,
-      "texto": "foi surgindo aos poucos",
+      "texto": "MATURADOR_APAGAR foi surgindo aos poucos",
       "delay": {
         "min": 20,
         "max": 30
@@ -567,7 +567,7 @@
     {
       "ordem": 28,
       "remetente": 0,
-      "texto": "vc ta feliz?",
+      "texto": "MATURADOR_APAGAR vc ta feliz?",
       "delay": {
         "min": 20,
         "max": 30
@@ -588,7 +588,7 @@
     {
       "ordem": 29,
       "remetente": 1,
-      "texto": "muito, ele e muito atencioso",
+      "texto": "MATURADOR_APAGAR muito, ele e muito atencioso",
       "delay": {
         "min": 20,
         "max": 30
@@ -609,7 +609,7 @@
     {
       "ordem": 30,
       "remetente": 0,
-      "texto": "que otimo, voce merece",
+      "texto": "MATURADOR_APAGAR que otimo, voce merece",
       "delay": {
         "min": 20,
         "max": 30
@@ -630,7 +630,7 @@
     {
       "ordem": 31,
       "remetente": 1,
-      "texto": "obrigada, ainda to me acostumando",
+      "texto": "MATURADOR_APAGAR obrigada, ainda to me acostumando",
       "delay": {
         "min": 20,
         "max": 30
@@ -651,7 +651,7 @@
     {
       "ordem": 32,
       "remetente": 0,
-      "texto": "faz quanto tempo",
+      "texto": "MATURADOR_APAGAR faz quanto tempo",
       "delay": {
         "min": 20,
         "max": 30
@@ -672,7 +672,7 @@
     {
       "ordem": 33,
       "remetente": 1,
-      "texto": "1 mes e meio ja",
+      "texto": "MATURADOR_APAGAR 1 mes e meio ja",
       "delay": {
         "min": 20,
         "max": 30
@@ -693,7 +693,7 @@
     {
       "ordem": 34,
       "remetente": 1,
-      "texto": "ia falar logo kkkk",
+      "texto": "MATURADOR_APAGAR ia falar logo kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -714,7 +714,7 @@
     {
       "ordem": 35,
       "remetente": 0,
-      "texto": "queria ter certeza antes",
+      "texto": "MATURADOR_APAGAR queria ter certeza antes",
       "delay": {
         "min": 20,
         "max": 30
@@ -735,7 +735,7 @@
     {
       "ordem": 36,
       "remetente": 0,
-      "texto": "faz sentido, apresenta a gente logo",
+      "texto": "MATURADOR_APAGAR faz sentido, apresenta a gente logo",
       "delay": {
         "min": 20,
         "max": 30
@@ -756,7 +756,7 @@
     {
       "ordem": 37,
       "remetente": 1,
-      "texto": "quando sentir o momento certo",
+      "texto": "MATURADOR_APAGAR quando sentir o momento certo",
       "delay": {
         "min": 20,
         "max": 30

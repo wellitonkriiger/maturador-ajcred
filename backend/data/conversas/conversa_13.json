@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 1,
-      "texto": "vc viu o que a Mari postou?",
+      "texto": "MATURADOR_APAGAR vc viu o que a Mari postou?",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 0,
-      "texto": "nao o que foi",
+      "texto": "MATURADOR_APAGAR nao o que foi",
       "delay": {
         "min": 20,
         "max": 30
@@ -63,7 +63,7 @@
     {
       "ordem": 4,
       "remetente": 1,
-      "texto": "foto viajando com o ex dela",
+      "texto": "MATURADOR_APAGAR foto viajando com o ex dela",
       "delay": {
         "min": 20,
         "max": 30
@@ -84,7 +84,7 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "serio? eles reataram?",
+      "texto": "MATURADOR_APAGAR serio? eles reataram?",
       "delay": {
         "min": 20,
         "max": 30
@@ -105,7 +105,7 @@
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "aparentemente sim",
+      "texto": "MATURADOR_APAGAR aparentemente sim",
       "delay": {
         "min": 20,
         "max": 30
@@ -126,7 +126,7 @@
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "ela falou tanto mal dele mds",
+      "texto": "MATURADOR_APAGAR ela falou tanto mal dele mds",
       "delay": {
         "min": 20,
         "max": 30
@@ -147,7 +147,7 @@
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "e eu sei, estranha essa",
+      "texto": "MATURADOR_APAGAR e eu sei, estranha essa",
       "delay": {
         "min": 20,
         "max": 30
@@ -168,7 +168,7 @@
     {
       "ordem": 9,
       "remetente": 0,
-      "texto": "mas deixa ela, vida dela",
+      "texto": "MATURADOR_APAGAR mas deixa ela, vida dela",
       "delay": {
         "min": 20,
         "max": 30
@@ -189,7 +189,7 @@
     {
       "ordem": 10,
       "remetente": 1,
-      "texto": "verdade, mas nao deixa de ser ironia",
+      "texto": "MATURADOR_APAGAR verdade, mas nao deixa de ser ironia",
       "delay": {
         "min": 20,
         "max": 30
@@ -218,7 +218,7 @@
     {
       "ordem": 12,
       "remetente": 1,
-      "texto": "total kkkk",
+      "texto": "MATURADOR_APAGAR total kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -239,7 +239,7 @@
     {
       "ordem": 13,
       "remetente": 0,
-      "texto": "vai ter festa na Carol sabado",
+      "texto": "MATURADOR_APAGAR vai ter festa na Carol sabado",
       "delay": {
         "min": 20,
         "max": 30
@@ -260,7 +260,7 @@
     {
       "ordem": 14,
       "remetente": 0,
-      "texto": "vi o story, vai ter muita gente",
+      "texto": "MATURADOR_APAGAR vi o story, vai ter muita gente",
       "delay": {
         "min": 20,
         "max": 30
@@ -281,7 +281,7 @@
     {
       "ordem": 15,
       "remetente": 1,
-      "texto": "vc vai?",
+      "texto": "MATURADOR_APAGAR vc vai?",
       "delay": {
         "min": 20,
         "max": 30
@@ -310,7 +310,7 @@
     {
       "ordem": 17,
       "remetente": 0,
-      "texto": "to em duvida, trabalho domingo",
+      "texto": "MATURADOR_APAGAR to em duvida, trabalho domingo",
       "delay": {
         "min": 20,
         "max": 30
@@ -331,7 +331,7 @@
     {
       "ordem": 18,
       "remetente": 1,
-      "texto": "vai la so 2 horas",
+      "texto": "MATURADOR_APAGAR vai la so 2 horas",
       "delay": {
         "min": 20,
         "max": 30
@@ -352,7 +352,7 @@
     {
       "ordem": 19,
       "remetente": 1,
-      "texto": "pode ser... vc vai?",
+      "texto": "MATURADOR_APAGAR pode ser... vc vai?",
       "delay": {
         "min": 20,
         "max": 30
@@ -373,7 +373,7 @@
     {
       "ordem": 20,
       "remetente": 0,
-      "texto": "vou sim preciso sair",
+      "texto": "MATURADOR_APAGAR vou sim preciso sair",
       "delay": {
         "min": 20,
         "max": 30
@@ -394,7 +394,7 @@
     {
       "ordem": 21,
       "remetente": 1,
-      "texto": "o Pedro tb vai?",
+      "texto": "MATURADOR_APAGAR o Pedro tb vai?",
       "delay": {
         "min": 20,
         "max": 30
@@ -415,7 +415,7 @@
     {
       "ordem": 22,
       "remetente": 1,
-      "texto": "ele me perguntou kkkk",
+      "texto": "MATURADOR_APAGAR ele me perguntou kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -436,7 +436,7 @@
     {
       "ordem": 23,
       "remetente": 0,
-      "texto": "entao e gente boa, vou sim",
+      "texto": "MATURADOR_APAGAR entao e gente boa, vou sim",
       "delay": {
         "min": 20,
         "max": 30

@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 1,
-      "texto": "preparada pra formatura sabado?",
+      "texto": "MATURADOR_APAGAR preparada pra formatura sabado?",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "to nervosa demais kkkk",
+      "texto": "MATURADOR_APAGAR to nervosa demais kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "vai ser lindo, relaxa",
+      "texto": "MATURADOR_APAGAR vai ser lindo, relaxa",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 0,
-      "texto": "e tantos anos nisso",
+      "texto": "MATURADOR_APAGAR e tantos anos nisso",
       "delay": {
         "min": 20,
         "max": 30
@@ -97,7 +97,7 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "e muito tempo mesmo, merece esse momento",
+      "texto": "MATURADOR_APAGAR e muito tempo mesmo, merece esse momento",
       "delay": {
         "min": 20,
         "max": 30
@@ -118,7 +118,7 @@
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "minha familia toda vai",
+      "texto": "MATURADOR_APAGAR minha familia toda vai",
       "delay": {
         "min": 20,
         "max": 30
@@ -139,7 +139,7 @@
     {
       "ordem": 7,
       "remetente": 1,
-      "texto": "que lindo, o Felipe vai gravar?",
+      "texto": "MATURADOR_APAGAR que lindo, o Felipe vai gravar?",
       "delay": {
         "min": 20,
         "max": 30
@@ -160,7 +160,7 @@
     {
       "ordem": 8,
       "remetente": 0,
-      "texto": "vai sim, com camera boa",
+      "texto": "MATURADOR_APAGAR vai sim, com camera boa",
       "delay": {
         "min": 20,
         "max": 30
@@ -181,7 +181,7 @@
     {
       "ordem": 9,
       "remetente": 1,
-      "texto": "vc tem o discurso?",
+      "texto": "MATURADOR_APAGAR vc tem o discurso?",
       "delay": {
         "min": 20,
         "max": 30
@@ -202,7 +202,7 @@
     {
       "ordem": 10,
       "remetente": 1,
-      "texto": "to terminando hoje",
+      "texto": "MATURADOR_APAGAR to terminando hoje",
       "delay": {
         "min": 20,
         "max": 30
@@ -231,7 +231,7 @@
     {
       "ordem": 12,
       "remetente": 1,
-      "texto": "precisa ser perfeito?",
+      "texto": "MATURADOR_APAGAR precisa ser perfeito?",
       "delay": {
         "min": 20,
         "max": 30
@@ -252,7 +252,7 @@
     {
       "ordem": 13,
       "remetente": 1,
-      "texto": "quero que seja bom pelo menos",
+      "texto": "MATURADOR_APAGAR quero que seja bom pelo menos",
       "delay": {
         "min": 20,
         "max": 30
@@ -273,7 +273,7 @@
     {
       "ordem": 14,
       "remetente": 0,
-      "texto": "vai ser, voce e boa nisso",
+      "texto": "MATURADOR_APAGAR vai ser, voce e boa nisso",
       "delay": {
         "min": 20,
         "max": 30
@@ -294,7 +294,7 @@
     {
       "ordem": 15,
       "remetente": 1,
-      "texto": "obrigada, to ensaiando",
+      "texto": "MATURADOR_APAGAR obrigada, to ensaiando",
       "delay": {
         "min": 20,
         "max": 30
@@ -323,7 +323,7 @@
     {
       "ordem": 17,
       "remetente": 0,
-      "texto": "manda ver, vai arrasar",
+      "texto": "MATURADOR_APAGAR manda ver, vai arrasar",
       "delay": {
         "min": 20,
         "max": 30
@@ -344,7 +344,7 @@
     {
       "ordem": 18,
       "remetente": 1,
-      "texto": "espero kkkk, vc vai estar la?",
+      "texto": "MATURADOR_APAGAR espero kkkk, vc vai estar la?",
       "delay": {
         "min": 20,
         "max": 30
@@ -365,7 +365,7 @@
     {
       "ordem": 19,
       "remetente": 0,
-      "texto": "ta convidada ou nao?",
+      "texto": "MATURADOR_APAGAR ta convidada ou nao?",
       "delay": {
         "min": 20,
         "max": 30
@@ -386,7 +386,7 @@
     {
       "ordem": 20,
       "remetente": 1,
-      "texto": "ta sim kkkk obrigada mesmo",
+      "texto": "MATURADOR_APAGAR ta sim kkkk obrigada mesmo",
       "delay": {
         "min": 20,
         "max": 30
@@ -407,7 +407,7 @@
     {
       "ordem": 21,
       "remetente": 0,
-      "texto": "nao ia perder isso de forma alguma",
+      "texto": "MATURADOR_APAGAR nao ia perder isso de forma alguma",
       "delay": {
         "min": 20,
         "max": 30
@@ -428,7 +428,7 @@
     {
       "ordem": 22,
       "remetente": 1,
-      "texto": "preparada pra formatura sabado?",
+      "texto": "MATURADOR_APAGAR preparada pra formatura sabado?",
       "delay": {
         "min": 20,
         "max": 30
@@ -449,7 +449,7 @@
     {
       "ordem": 23,
       "remetente": 0,
-      "texto": "to nervosa demais kkkk",
+      "texto": "MATURADOR_APAGAR to nervosa demais kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -478,7 +478,7 @@
     {
       "ordem": 25,
       "remetente": 1,
-      "texto": "vai ser lindo, relaxa",
+      "texto": "MATURADOR_APAGAR vai ser lindo, relaxa",
       "delay": {
         "min": 20,
         "max": 30
@@ -507,7 +507,7 @@
     {
       "ordem": 27,
       "remetente": 1,
-      "texto": "e tantos anos nisso",
+      "texto": "MATURADOR_APAGAR e tantos anos nisso",
       "delay": {
         "min": 20,
         "max": 30
@@ -528,7 +528,7 @@
     {
       "ordem": 28,
       "remetente": 0,
-      "texto": "e muito tempo mesmo, merece esse momento",
+      "texto": "MATURADOR_APAGAR e muito tempo mesmo, merece esse momento",
       "delay": {
         "min": 20,
         "max": 30
@@ -549,7 +549,7 @@
     {
       "ordem": 29,
       "remetente": 1,
-      "texto": "minha familia toda vai",
+      "texto": "MATURADOR_APAGAR minha familia toda vai",
       "delay": {
         "min": 20,
         "max": 30
@@ -570,7 +570,7 @@
     {
       "ordem": 30,
       "remetente": 1,
-      "texto": "que lindo, o Felipe vai gravar?",
+      "texto": "MATURADOR_APAGAR que lindo, o Felipe vai gravar?",
       "delay": {
         "min": 20,
         "max": 30
@@ -591,7 +591,7 @@
     {
       "ordem": 31,
       "remetente": 0,
-      "texto": "vai sim, com camera boa",
+      "texto": "MATURADOR_APAGAR vai sim, com camera boa",
       "delay": {
         "min": 20,
         "max": 30
@@ -612,7 +612,7 @@
     {
       "ordem": 32,
       "remetente": 1,
-      "texto": "vc tem o discurso?",
+      "texto": "MATURADOR_APAGAR vc tem o discurso?",
       "delay": {
         "min": 20,
         "max": 30
@@ -633,7 +633,7 @@
     {
       "ordem": 33,
       "remetente": 0,
-      "texto": "to terminando hoje",
+      "texto": "MATURADOR_APAGAR to terminando hoje",
       "delay": {
         "min": 20,
         "max": 30
@@ -654,7 +654,7 @@
     {
       "ordem": 34,
       "remetente": 1,
-      "texto": "precisa ser perfeito?",
+      "texto": "MATURADOR_APAGAR precisa ser perfeito?",
       "delay": {
         "min": 20,
         "max": 30
@@ -675,7 +675,7 @@
     {
       "ordem": 35,
       "remetente": 0,
-      "texto": "quero que seja bom pelo menos",
+      "texto": "MATURADOR_APAGAR quero que seja bom pelo menos",
       "delay": {
         "min": 20,
         "max": 30
@@ -696,7 +696,7 @@
     {
       "ordem": 36,
       "remetente": 1,
-      "texto": "vai ser, voce e boa nisso",
+      "texto": "MATURADOR_APAGAR vai ser, voce e boa nisso",
       "delay": {
         "min": 20,
         "max": 30
@@ -717,7 +717,7 @@
     {
       "ordem": 37,
       "remetente": 1,
-      "texto": "obrigada, to ensaiando",
+      "texto": "MATURADOR_APAGAR obrigada, to ensaiando",
       "delay": {
         "min": 20,
         "max": 30
@@ -738,7 +738,7 @@
     {
       "ordem": 38,
       "remetente": 1,
-      "texto": "manda ver, vai arrasar",
+      "texto": "MATURADOR_APAGAR manda ver, vai arrasar",
       "delay": {
         "min": 20,
         "max": 30

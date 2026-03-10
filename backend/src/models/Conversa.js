@@ -8,11 +8,50 @@ const fs     = require('fs');
 const path   = require('path');
 const logger = require('../utils/logger');
 
+const MESSAGE_PREFIX = 'MATURADOR_APAGAR';
+
 class ConversaModel {
   constructor() {
     this.conversasDir = path.join(__dirname, '../../data/conversas');
     this.conversas    = [];
     this._inicializar();
+  }
+
+  _normalizarTextoMensagem(texto) {
+    if (typeof texto !== 'string') return texto;
+    if (texto === MESSAGE_PREFIX || texto.startsWith(`${MESSAGE_PREFIX} `)) {
+      return texto;
+    }
+    return `${MESSAGE_PREFIX} ${texto}`;
+  }
+
+  _normalizarConversa(conversa) {
+    if (!conversa || typeof conversa !== 'object' || !Array.isArray(conversa.mensagens)) {
+      return { conversa, alterada: false };
+    }
+
+    let alterada = false;
+    const mensagens = conversa.mensagens.map((mensagem) => {
+      if (!mensagem || typeof mensagem !== 'object') return mensagem;
+      if (mensagem.tipo === 'pausa_longa' || typeof mensagem.texto !== 'string') {
+        return mensagem;
+      }
+
+      const texto = this._normalizarTextoMensagem(mensagem.texto);
+      if (texto === mensagem.texto) return mensagem;
+
+      alterada = true;
+      return { ...mensagem, texto };
+    });
+
+    if (!alterada) {
+      return { conversa, alterada: false };
+    }
+
+    return {
+      conversa: { ...conversa, mensagens },
+      alterada: true
+    };
   }
 
   // ─── INICIALIZACAO ────────────────────────────────────────────────────────
@@ -43,9 +82,10 @@ class ConversaModel {
         { ordem: 7, remetente: 1, texto: 'Fechou entao! Ate sabado', delay: { min: 3, max: 6 }, comportamento: { marcarComoLida: true, tempoAntesLeitura: { min: 1, max: 2 }, simularDigitacao: true, tempoDigitacao: { min: 2, max: 3 } } }
       ]
     };
+    const { conversa } = this._normalizarConversa(exemplo);
     fs.writeFileSync(
       path.join(this.conversasDir, 'conv_exemplo_001.json'),
-      JSON.stringify(exemplo, null, 2),
+      JSON.stringify(conversa, null, 2),
       'utf8'
     );
     logger.info('Conversa de exemplo criada');
@@ -60,8 +100,16 @@ class ConversaModel {
 
       for (const arquivo of arquivos) {
         try {
-          const raw = fs.readFileSync(path.join(this.conversasDir, arquivo), 'utf8');
-          this.conversas.push(JSON.parse(raw));
+          const caminhoArquivo = path.join(this.conversasDir, arquivo);
+          const raw = fs.readFileSync(caminhoArquivo, 'utf8');
+          const { conversa, alterada } = this._normalizarConversa(JSON.parse(raw));
+
+          if (alterada) {
+            fs.writeFileSync(caminhoArquivo, JSON.stringify(conversa, null, 2), 'utf8');
+            logger.info(`Conversa normalizada com prefixo: ${arquivo}`);
+          }
+
+          this.conversas.push(conversa);
         } catch (err) {
           logger.error(`Erro ao carregar ${arquivo}: ${err.message}`);
         }
@@ -80,7 +128,7 @@ class ConversaModel {
   buscarPorId(id) { return this.conversas.find(c => c.id === id) ?? null; }
 
   validar(conversaJSON, { existingId = null } = {}) {
-    const conversa = typeof conversaJSON === 'string' ? JSON.parse(conversaJSON) : conversaJSON;
+    let conversa = typeof conversaJSON === 'string' ? JSON.parse(conversaJSON) : conversaJSON;
     if (!conversa || typeof conversa !== 'object') {
       throw new Error('Conversa invalida: payload ausente');
     }
@@ -93,6 +141,7 @@ class ConversaModel {
     if (!Array.isArray(conversa.mensagens) || conversa.mensagens.length === 0) {
       throw new Error('Conversa invalida: mensagens obrigatorias');
     }
+    conversa = this._normalizarConversa(conversa).conversa;
     if (existingId && conversa.id !== existingId) {
       throw new Error('Nao e permitido alterar o id da conversa');
     }
@@ -173,14 +222,15 @@ class ConversaModel {
 
   salvar(conversa) {
     try {
-      const arquivo = path.join(this.conversasDir, `${conversa.id}.json`);
-      fs.writeFileSync(arquivo, JSON.stringify(conversa, null, 2), 'utf8');
+      const normalizada = this._normalizarConversa(conversa).conversa;
+      const arquivo = path.join(this.conversasDir, `${normalizada.id}.json`);
+      fs.writeFileSync(arquivo, JSON.stringify(normalizada, null, 2), 'utf8');
 
-      const idx = this.conversas.findIndex(c => c.id === conversa.id);
-      if (idx !== -1) this.conversas[idx] = conversa;
-      else            this.conversas.push(conversa);
+      const idx = this.conversas.findIndex(c => c.id === normalizada.id);
+      if (idx !== -1) this.conversas[idx] = normalizada;
+      else            this.conversas.push(normalizada);
 
-      logger.debug(`Conversa salva: ${conversa.id}`);
+      logger.debug(`Conversa salva: ${normalizada.id}`);
       return true;
     } catch (err) {
       logger.error(`Erro ao salvar conversa: ${err.message}`);

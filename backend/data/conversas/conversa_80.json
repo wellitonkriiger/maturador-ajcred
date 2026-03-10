@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 1,
-      "texto": "vc falou com a Claudia sobre o relatorio?",
+      "texto": "MATURADOR_APAGAR vc falou com a Claudia sobre o relatorio?",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "falei sim ela nao fez ainda",
+      "texto": "MATURADOR_APAGAR falei sim ela nao fez ainda",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 1,
-      "texto": "prazo era ontem",
+      "texto": "MATURADOR_APAGAR prazo era ontem",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 0,
-      "texto": "sei, ela deu desculpa de doenca",
+      "texto": "MATURADOR_APAGAR sei, ela deu desculpa de doenca",
       "delay": {
         "min": 20,
         "max": 30
@@ -97,7 +97,7 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "no terceiro prazo perdido ja",
+      "texto": "MATURADOR_APAGAR no terceiro prazo perdido ja",
       "delay": {
         "min": 20,
         "max": 30
@@ -118,7 +118,7 @@
     {
       "ordem": 6,
       "remetente": 0,
-      "texto": "e complicado, nao posso falar nada",
+      "texto": "MATURADOR_APAGAR e complicado, nao posso falar nada",
       "delay": {
         "min": 20,
         "max": 30
@@ -147,7 +147,7 @@
     {
       "ordem": 8,
       "remetente": 0,
-      "texto": "alguem precisa falar",
+      "texto": "MATURADOR_APAGAR alguem precisa falar",
       "delay": {
         "min": 20,
         "max": 30
@@ -168,7 +168,7 @@
     {
       "ordem": 9,
       "remetente": 0,
-      "texto": "o gerente ja sabe?",
+      "texto": "MATURADOR_APAGAR o gerente ja sabe?",
       "delay": {
         "min": 20,
         "max": 30
@@ -189,7 +189,7 @@
     {
       "ordem": 10,
       "remetente": 0,
-      "texto": "acho que nao ainda",
+      "texto": "MATURADOR_APAGAR acho que nao ainda",
       "delay": {
         "min": 20,
         "max": 30
@@ -210,7 +210,7 @@
     {
       "ordem": 11,
       "remetente": 0,
-      "texto": "melhor avisar antes de virar problema maior",
+      "texto": "MATURADOR_APAGAR melhor avisar antes de virar problema maior",
       "delay": {
         "min": 20,
         "max": 30
@@ -231,7 +231,7 @@
     {
       "ordem": 12,
       "remetente": 1,
-      "texto": "vc avisa ou eu?",
+      "texto": "MATURADOR_APAGAR vc avisa ou eu?",
       "delay": {
         "min": 20,
         "max": 30
@@ -252,7 +252,7 @@
     {
       "ordem": 13,
       "remetente": 0,
-      "texto": "voce tem mais jogo com ele",
+      "texto": "MATURADOR_APAGAR voce tem mais jogo com ele",
       "delay": {
         "min": 20,
         "max": 30
@@ -273,7 +273,7 @@
     {
       "ordem": 14,
       "remetente": 1,
-      "texto": "tudo bem, vou falar hoje",
+      "texto": "MATURADOR_APAGAR tudo bem, vou falar hoje",
       "delay": {
         "min": 20,
         "max": 30
@@ -294,7 +294,7 @@
     {
       "ordem": 15,
       "remetente": 0,
-      "texto": "fala com cuidado, nao cria inimizade",
+      "texto": "MATURADOR_APAGAR fala com cuidado, nao cria inimizade",
       "delay": {
         "min": 20,
         "max": 30
@@ -315,7 +315,7 @@
     {
       "ordem": 16,
       "remetente": 1,
-      "texto": "claro, so vou informar",
+      "texto": "MATURADOR_APAGAR claro, so vou informar",
       "delay": {
         "min": 20,
         "max": 30
@@ -336,7 +336,7 @@
     {
       "ordem": 17,
       "remetente": 0,
-      "texto": "e a Claudia e gente boa, deve ter algo",
+      "texto": "MATURADOR_APAGAR e a Claudia e gente boa, deve ter algo",
       "delay": {
         "min": 20,
         "max": 30
@@ -357,7 +357,7 @@
     {
       "ordem": 18,
       "remetente": 1,
-      "texto": "pode ser, mas o trabalho tem que sair",
+      "texto": "MATURADOR_APAGAR pode ser, mas o trabalho tem que sair",
       "delay": {
         "min": 20,
         "max": 30
@@ -378,7 +378,7 @@
     {
       "ordem": 19,
       "remetente": 1,
-      "texto": "e verdade, fala bem",
+      "texto": "MATURADOR_APAGAR e verdade, fala bem",
       "delay": {
         "min": 20,
         "max": 30
@@ -399,7 +399,7 @@
     {
       "ordem": 20,
       "remetente": 1,
-      "texto": "ok, depois te conto",
+      "texto": "MATURADOR_APAGAR ok, depois te conto",
       "delay": {
         "min": 20,
         "max": 30
@@ -428,7 +428,7 @@
     {
       "ordem": 22,
       "remetente": 1,
-      "texto": "conto comigo",
+      "texto": "MATURADOR_APAGAR conto comigo",
       "delay": {
         "min": 20,
         "max": 30
@@ -449,7 +449,7 @@
     {
       "ordem": 23,
       "remetente": 1,
-      "texto": "vc falou com a Claudia sobre o relatorio?",
+      "texto": "MATURADOR_APAGAR vc falou com a Claudia sobre o relatorio?",
       "delay": {
         "min": 20,
         "max": 30
@@ -470,7 +470,7 @@
     {
       "ordem": 24,
       "remetente": 0,
-      "texto": "falei sim ela nao fez ainda",
+      "texto": "MATURADOR_APAGAR falei sim ela nao fez ainda",
       "delay": {
         "min": 20,
         "max": 30
@@ -491,7 +491,7 @@
     {
       "ordem": 25,
       "remetente": 1,
-      "texto": "prazo era ontem",
+      "texto": "MATURADOR_APAGAR prazo era ontem",
       "delay": {
         "min": 20,
         "max": 30
@@ -512,7 +512,7 @@
     {
       "ordem": 26,
       "remetente": 1,
-      "texto": "sei, ela deu desculpa de doenca",
+      "texto": "MATURADOR_APAGAR sei, ela deu desculpa de doenca",
       "delay": {
         "min": 20,
         "max": 30
@@ -533,7 +533,7 @@
     {
       "ordem": 27,
       "remetente": 1,
-      "texto": "no terceiro prazo perdido ja",
+      "texto": "MATURADOR_APAGAR no terceiro prazo perdido ja",
       "delay": {
         "min": 20,
         "max": 30
@@ -554,7 +554,7 @@
     {
       "ordem": 28,
       "remetente": 0,
-      "texto": "e complicado, nao posso falar nada",
+      "texto": "MATURADOR_APAGAR e complicado, nao posso falar nada",
       "delay": {
         "min": 20,
         "max": 30
@@ -575,7 +575,7 @@
     {
       "ordem": 29,
       "remetente": 1,
-      "texto": "alguem precisa falar",
+      "texto": "MATURADOR_APAGAR alguem precisa falar",
       "delay": {
         "min": 20,
         "max": 30
@@ -596,7 +596,7 @@
     {
       "ordem": 30,
       "remetente": 1,
-      "texto": "o gerente ja sabe?",
+      "texto": "MATURADOR_APAGAR o gerente ja sabe?",
       "delay": {
         "min": 20,
         "max": 30
@@ -617,7 +617,7 @@
     {
       "ordem": 31,
       "remetente": 1,
-      "texto": "acho que nao ainda",
+      "texto": "MATURADOR_APAGAR acho que nao ainda",
       "delay": {
         "min": 20,
         "max": 30
@@ -638,7 +638,7 @@
     {
       "ordem": 32,
       "remetente": 1,
-      "texto": "melhor avisar antes de virar problema maior",
+      "texto": "MATURADOR_APAGAR melhor avisar antes de virar problema maior",
       "delay": {
         "min": 20,
         "max": 30
@@ -659,7 +659,7 @@
     {
       "ordem": 33,
       "remetente": 0,
-      "texto": "vc avisa ou eu?",
+      "texto": "MATURADOR_APAGAR vc avisa ou eu?",
       "delay": {
         "min": 20,
         "max": 30
@@ -680,7 +680,7 @@
     {
       "ordem": 34,
       "remetente": 0,
-      "texto": "voce tem mais jogo com ele",
+      "texto": "MATURADOR_APAGAR voce tem mais jogo com ele",
       "delay": {
         "min": 20,
         "max": 30
@@ -701,7 +701,7 @@
     {
       "ordem": 35,
       "remetente": 0,
-      "texto": "tudo bem, vou falar hoje",
+      "texto": "MATURADOR_APAGAR tudo bem, vou falar hoje",
       "delay": {
         "min": 20,
         "max": 30
@@ -722,7 +722,7 @@
     {
       "ordem": 36,
       "remetente": 1,
-      "texto": "fala com cuidado, nao cria inimizade",
+      "texto": "MATURADOR_APAGAR fala com cuidado, nao cria inimizade",
       "delay": {
         "min": 20,
         "max": 30
@@ -743,7 +743,7 @@
     {
       "ordem": 37,
       "remetente": 1,
-      "texto": "claro, so vou informar",
+      "texto": "MATURADOR_APAGAR claro, so vou informar",
       "delay": {
         "min": 20,
         "max": 30
@@ -764,7 +764,7 @@
     {
       "ordem": 38,
       "remetente": 0,
-      "texto": "e a Claudia e gente boa, deve ter algo",
+      "texto": "MATURADOR_APAGAR e a Claudia e gente boa, deve ter algo",
       "delay": {
         "min": 20,
         "max": 30
@@ -785,7 +785,7 @@
     {
       "ordem": 39,
       "remetente": 1,
-      "texto": "pode ser, mas o trabalho tem que sair",
+      "texto": "MATURADOR_APAGAR pode ser, mas o trabalho tem que sair",
       "delay": {
         "min": 20,
         "max": 30

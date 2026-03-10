@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "oi, o aniversario da Lara e semana que vem",
+      "texto": "MATURADOR_APAGAR oi, o aniversario da Lara e semana que vem",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "ja sei, vc ta com presente?",
+      "texto": "MATURADOR_APAGAR ja sei, vc ta com presente?",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "nao to, e voce?",
+      "texto": "MATURADOR_APAGAR nao to, e voce?",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 1,
-      "texto": "eu tb nao, bora juntar os dois",
+      "texto": "MATURADOR_APAGAR eu tb nao, bora juntar os dois",
       "delay": {
         "min": 20,
         "max": 30
@@ -97,7 +97,7 @@
     {
       "ordem": 5,
       "remetente": 1,
-      "texto": "otima ideia, o que ela gosta?",
+      "texto": "MATURADOR_APAGAR otima ideia, o que ela gosta?",
       "delay": {
         "min": 20,
         "max": 30
@@ -118,7 +118,7 @@
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "ela falou de uma bolsa",
+      "texto": "MATURADOR_APAGAR ela falou de uma bolsa",
       "delay": {
         "min": 20,
         "max": 30
@@ -139,7 +139,7 @@
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "tenho o link aqui",
+      "texto": "MATURADOR_APAGAR tenho o link aqui",
       "delay": {
         "min": 20,
         "max": 30
@@ -160,7 +160,7 @@
     {
       "ordem": 8,
       "remetente": 0,
-      "texto": "vi ta 280",
+      "texto": "MATURADOR_APAGAR vi ta 280",
       "delay": {
         "min": 20,
         "max": 30
@@ -181,7 +181,7 @@
     {
       "ordem": 9,
       "remetente": 1,
-      "texto": "dividindo da 140 cada",
+      "texto": "MATURADOR_APAGAR dividindo da 140 cada",
       "delay": {
         "min": 20,
         "max": 30
@@ -202,7 +202,7 @@
     {
       "ordem": 10,
       "remetente": 1,
-      "texto": "cabe sim, fechou?",
+      "texto": "MATURADOR_APAGAR cabe sim, fechou?",
       "delay": {
         "min": 20,
         "max": 30
@@ -223,7 +223,7 @@
     {
       "ordem": 11,
       "remetente": 1,
-      "texto": "fechou, quem compra?",
+      "texto": "MATURADOR_APAGAR fechou, quem compra?",
       "delay": {
         "min": 20,
         "max": 30
@@ -244,7 +244,7 @@
     {
       "ordem": 12,
       "remetente": 0,
-      "texto": "vc compra eu mando pix agora",
+      "texto": "MATURADOR_APAGAR vc compra eu mando pix agora",
       "delay": {
         "min": 20,
         "max": 30
@@ -265,7 +265,7 @@
     {
       "ordem": 13,
       "remetente": 0,
-      "texto": "mandou, recebi",
+      "texto": "MATURADOR_APAGAR mandou, recebi",
       "delay": {
         "min": 20,
         "max": 30
@@ -286,7 +286,7 @@
     {
       "ordem": 14,
       "remetente": 0,
-      "texto": "que horario e a festa?",
+      "texto": "MATURADOR_APAGAR que horario e a festa?",
       "delay": {
         "min": 20,
         "max": 30
@@ -307,7 +307,7 @@
     {
       "ordem": 15,
       "remetente": 0,
-      "texto": "19h na casa dela",
+      "texto": "MATURADOR_APAGAR 19h na casa dela",
       "delay": {
         "min": 20,
         "max": 30
@@ -328,7 +328,7 @@
     {
       "ordem": 16,
       "remetente": 1,
-      "texto": "to chegando 20h entao",
+      "texto": "MATURADOR_APAGAR to chegando 20h entao",
       "delay": {
         "min": 20,
         "max": 30
@@ -349,7 +349,7 @@
     {
       "ordem": 17,
       "remetente": 0,
-      "texto": "eu vou na hora tb",
+      "texto": "MATURADOR_APAGAR eu vou na hora tb",
       "delay": {
         "min": 20,
         "max": 30
@@ -370,7 +370,7 @@
     {
       "ordem": 18,
       "remetente": 1,
-      "texto": "ela sabe o que ganha?",
+      "texto": "MATURADOR_APAGAR ela sabe o que ganha?",
       "delay": {
         "min": 20,
         "max": 30

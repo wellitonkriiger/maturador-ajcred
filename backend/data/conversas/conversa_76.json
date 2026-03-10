@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 1,
-      "texto": "uma noticia grande, vou te contar",
+      "texto": "MATURADOR_APAGAR uma noticia grande, vou te contar",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 0,
-      "texto": "o que foi??",
+      "texto": "MATURADOR_APAGAR o que foi??",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "aceite um emprego em SP",
+      "texto": "MATURADOR_APAGAR aceite um emprego em SP",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 1,
-      "texto": "meu deus, de verdade?",
+      "texto": "MATURADOR_APAGAR meu deus, de verdade?",
       "delay": {
         "min": 20,
         "max": 30
@@ -97,7 +97,7 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "de verdade, to me mudando em 60 dias",
+      "texto": "MATURADOR_APAGAR de verdade, to me mudando em 60 dias",
       "delay": {
         "min": 20,
         "max": 30
@@ -118,7 +118,7 @@
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "que mistura de sentimentos",
+      "texto": "MATURADOR_APAGAR que mistura de sentimentos",
       "delay": {
         "min": 20,
         "max": 30
@@ -139,7 +139,7 @@
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "e, to animada e triste ao mesmo tempo",
+      "texto": "MATURADOR_APAGAR e, to animada e triste ao mesmo tempo",
       "delay": {
         "min": 20,
         "max": 30
@@ -160,7 +160,7 @@
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "normal isso, grande passo",
+      "texto": "MATURADOR_APAGAR normal isso, grande passo",
       "delay": {
         "min": 20,
         "max": 30
@@ -181,7 +181,7 @@
     {
       "ordem": 9,
       "remetente": 0,
-      "texto": "vc vai me visitar ne?",
+      "texto": "MATURADOR_APAGAR vc vai me visitar ne?",
       "delay": {
         "min": 20,
         "max": 30
@@ -202,7 +202,7 @@
     {
       "ordem": 10,
       "remetente": 1,
-      "texto": "com certeza, tenho familia la tb",
+      "texto": "MATURADOR_APAGAR com certeza, tenho familia la tb",
       "delay": {
         "min": 20,
         "max": 30
@@ -223,7 +223,7 @@
     {
       "ordem": 11,
       "remetente": 0,
-      "texto": "que bom, vai facilitar",
+      "texto": "MATURADOR_APAGAR que bom, vai facilitar",
       "delay": {
         "min": 20,
         "max": 30
@@ -244,7 +244,7 @@
     {
       "ordem": 12,
       "remetente": 1,
-      "texto": "quando exato vc vai",
+      "texto": "MATURADOR_APAGAR quando exato vc vai",
       "delay": {
         "min": 20,
         "max": 30
@@ -265,7 +265,7 @@
     {
       "ordem": 13,
       "remetente": 0,
-      "texto": "planejando pra marco",
+      "texto": "MATURADOR_APAGAR planejando pra marco",
       "delay": {
         "min": 20,
         "max": 30
@@ -286,7 +286,7 @@
     {
       "ordem": 14,
       "remetente": 1,
-      "texto": "rapido isso",
+      "texto": "MATURADOR_APAGAR rapido isso",
       "delay": {
         "min": 20,
         "max": 30
@@ -307,7 +307,7 @@
     {
       "ordem": 15,
       "remetente": 0,
-      "texto": "e, ta corrido ainda",
+      "texto": "MATURADOR_APAGAR e, ta corrido ainda",
       "delay": {
         "min": 20,
         "max": 30
@@ -328,7 +328,7 @@
     {
       "ordem": 16,
       "remetente": 1,
-      "texto": "precisa de ajuda com algo",
+      "texto": "MATURADOR_APAGAR precisa de ajuda com algo",
       "delay": {
         "min": 20,
         "max": 30
@@ -349,7 +349,7 @@
     {
       "ordem": 17,
       "remetente": 0,
-      "texto": "ajuda moral so por enquanto kkkk",
+      "texto": "MATURADOR_APAGAR ajuda moral so por enquanto kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -370,7 +370,7 @@
     {
       "ordem": 18,
       "remetente": 1,
-      "texto": "to aqui sempre",
+      "texto": "MATURADOR_APAGAR to aqui sempre",
       "delay": {
         "min": 20,
         "max": 30
@@ -399,7 +399,7 @@
     {
       "ordem": 20,
       "remetente": 0,
-      "texto": "obrigada de verdade",
+      "texto": "MATURADOR_APAGAR obrigada de verdade",
       "delay": {
         "min": 20,
         "max": 30

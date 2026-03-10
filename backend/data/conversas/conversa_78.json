@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "oi! acordou bem?",
+      "texto": "MATURADOR_APAGAR oi! acordou bem?",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 0,
-      "texto": "um pouco cansada, dormi tarde",
+      "texto": "MATURADOR_APAGAR um pouco cansada, dormi tarde",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 1,
-      "texto": "serie de novo?",
+      "texto": "MATURADOR_APAGAR serie de novo?",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 0,
-      "texto": "The Bear, to viciada",
+      "texto": "MATURADOR_APAGAR The Bear, to viciada",
       "delay": {
         "min": 20,
         "max": 30
@@ -97,7 +97,7 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "cara e muito bom mesmo",
+      "texto": "MATURADOR_APAGAR cara e muito bom mesmo",
       "delay": {
         "min": 20,
         "max": 30
@@ -118,7 +118,7 @@
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "to no segundo ep ja",
+      "texto": "MATURADOR_APAGAR to no segundo ep ja",
       "delay": {
         "min": 20,
         "max": 30
@@ -139,7 +139,7 @@
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "continua que fica melhor ainda",
+      "texto": "MATURADOR_APAGAR continua que fica melhor ainda",
       "delay": {
         "min": 20,
         "max": 30
@@ -160,7 +160,7 @@
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "vai ter almoco em casa?",
+      "texto": "MATURADOR_APAGAR vai ter almoco em casa?",
       "delay": {
         "min": 20,
         "max": 30
@@ -181,7 +181,7 @@
     {
       "ordem": 9,
       "remetente": 0,
-      "texto": "vou fazer algo simples",
+      "texto": "MATURADOR_APAGAR vou fazer algo simples",
       "delay": {
         "min": 20,
         "max": 30
@@ -202,7 +202,7 @@
     {
       "ordem": 10,
       "remetente": 1,
-      "texto": "que que tem ai?",
+      "texto": "MATURADOR_APAGAR que que tem ai?",
       "delay": {
         "min": 20,
         "max": 30
@@ -223,7 +223,7 @@
     {
       "ordem": 11,
       "remetente": 0,
-      "texto": "arroz feijao e um frango",
+      "texto": "MATURADOR_APAGAR arroz feijao e um frango",
       "delay": {
         "min": 20,
         "max": 30
@@ -244,7 +244,7 @@
     {
       "ordem": 12,
       "remetente": 1,
-      "texto": "classico kkkk o melhor almoco do mundo",
+      "texto": "MATURADOR_APAGAR classico kkkk o melhor almoco do mundo",
       "delay": {
         "min": 20,
         "max": 30
@@ -265,7 +265,7 @@
     {
       "ordem": 13,
       "remetente": 1,
-      "texto": "concordo, aqui vc vai pedir delivery?",
+      "texto": "MATURADOR_APAGAR concordo, aqui vc vai pedir delivery?",
       "delay": {
         "min": 20,
         "max": 30
@@ -286,7 +286,7 @@
     {
       "ordem": 14,
       "remetente": 0,
-      "texto": "sim japones de novo",
+      "texto": "MATURADOR_APAGAR sim japones de novo",
       "delay": {
         "min": 20,
         "max": 30
@@ -307,7 +307,7 @@
     {
       "ordem": 15,
       "remetente": 1,
-      "texto": "todo dia japones kkkk",
+      "texto": "MATURADOR_APAGAR todo dia japones kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -328,7 +328,7 @@
     {
       "ordem": 16,
       "remetente": 1,
-      "texto": "nao vejo problema",
+      "texto": "MATURADOR_APAGAR nao vejo problema",
       "delay": {
         "min": 20,
         "max": 30
@@ -349,7 +349,7 @@
     {
       "ordem": 17,
       "remetente": 0,
-      "texto": "kkkkk ta bom ta",
+      "texto": "MATURADOR_APAGAR kkkkk ta bom ta",
       "delay": {
         "min": 20,
         "max": 30
@@ -378,7 +378,7 @@
     {
       "ordem": 19,
       "remetente": 0,
-      "texto": "oi! acordou bem?",
+      "texto": "MATURADOR_APAGAR oi! acordou bem?",
       "delay": {
         "min": 20,
         "max": 30
@@ -399,7 +399,7 @@
     {
       "ordem": 20,
       "remetente": 0,
-      "texto": "um pouco cansada, dormi tarde",
+      "texto": "MATURADOR_APAGAR um pouco cansada, dormi tarde",
       "delay": {
         "min": 20,
         "max": 30
@@ -420,7 +420,7 @@
     {
       "ordem": 21,
       "remetente": 0,
-      "texto": "serie de novo?",
+      "texto": "MATURADOR_APAGAR serie de novo?",
       "delay": {
         "min": 20,
         "max": 30
@@ -449,7 +449,7 @@
     {
       "ordem": 23,
       "remetente": 1,
-      "texto": "The Bear, to viciada",
+      "texto": "MATURADOR_APAGAR The Bear, to viciada",
       "delay": {
         "min": 20,
         "max": 30
@@ -470,7 +470,7 @@
     {
       "ordem": 24,
       "remetente": 1,
-      "texto": "cara e muito bom mesmo",
+      "texto": "MATURADOR_APAGAR cara e muito bom mesmo",
       "delay": {
         "min": 20,
         "max": 30
@@ -491,7 +491,7 @@
     {
       "ordem": 25,
       "remetente": 1,
-      "texto": "to no segundo ep ja",
+      "texto": "MATURADOR_APAGAR to no segundo ep ja",
       "delay": {
         "min": 20,
         "max": 30
@@ -512,7 +512,7 @@
     {
       "ordem": 26,
       "remetente": 0,
-      "texto": "continua que fica melhor ainda",
+      "texto": "MATURADOR_APAGAR continua que fica melhor ainda",
       "delay": {
         "min": 20,
         "max": 30
@@ -533,7 +533,7 @@
     {
       "ordem": 27,
       "remetente": 0,
-      "texto": "vai ter almoco em casa?",
+      "texto": "MATURADOR_APAGAR vai ter almoco em casa?",
       "delay": {
         "min": 20,
         "max": 30
@@ -554,7 +554,7 @@
     {
       "ordem": 28,
       "remetente": 1,
-      "texto": "vou fazer algo simples",
+      "texto": "MATURADOR_APAGAR vou fazer algo simples",
       "delay": {
         "min": 20,
         "max": 30
@@ -575,7 +575,7 @@
     {
       "ordem": 29,
       "remetente": 0,
-      "texto": "que que tem ai?",
+      "texto": "MATURADOR_APAGAR que que tem ai?",
       "delay": {
         "min": 20,
         "max": 30
@@ -596,7 +596,7 @@
     {
       "ordem": 30,
       "remetente": 1,
-      "texto": "arroz feijao e um frango",
+      "texto": "MATURADOR_APAGAR arroz feijao e um frango",
       "delay": {
         "min": 20,
         "max": 30
@@ -617,7 +617,7 @@
     {
       "ordem": 31,
       "remetente": 0,
-      "texto": "classico kkkk o melhor almoco do mundo",
+      "texto": "MATURADOR_APAGAR classico kkkk o melhor almoco do mundo",
       "delay": {
         "min": 20,
         "max": 30
@@ -638,7 +638,7 @@
     {
       "ordem": 32,
       "remetente": 1,
-      "texto": "concordo, aqui vc vai pedir delivery?",
+      "texto": "MATURADOR_APAGAR concordo, aqui vc vai pedir delivery?",
       "delay": {
         "min": 20,
         "max": 30
@@ -659,7 +659,7 @@
     {
       "ordem": 33,
       "remetente": 0,
-      "texto": "sim japones de novo",
+      "texto": "MATURADOR_APAGAR sim japones de novo",
       "delay": {
         "min": 20,
         "max": 30
@@ -680,7 +680,7 @@
     {
       "ordem": 34,
       "remetente": 1,
-      "texto": "todo dia japones kkkk",
+      "texto": "MATURADOR_APAGAR todo dia japones kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -701,7 +701,7 @@
     {
       "ordem": 35,
       "remetente": 0,
-      "texto": "nao vejo problema",
+      "texto": "MATURADOR_APAGAR nao vejo problema",
       "delay": {
         "min": 20,
         "max": 30
@@ -722,7 +722,7 @@
     {
       "ordem": 36,
       "remetente": 1,
-      "texto": "kkkkk ta bom ta",
+      "texto": "MATURADOR_APAGAR kkkkk ta bom ta",
       "delay": {
         "min": 20,
         "max": 30
@@ -743,7 +743,7 @@
     {
       "ordem": 37,
       "remetente": 0,
-      "texto": "oi! acordou bem?",
+      "texto": "MATURADOR_APAGAR oi! acordou bem?",
       "delay": {
         "min": 20,
         "max": 30
@@ -764,7 +764,7 @@
     {
       "ordem": 38,
       "remetente": 1,
-      "texto": "um pouco cansada, dormi tarde",
+      "texto": "MATURADOR_APAGAR um pouco cansada, dormi tarde",
       "delay": {
         "min": 20,
         "max": 30
@@ -785,7 +785,7 @@
     {
       "ordem": 39,
       "remetente": 0,
-      "texto": "serie de novo?",
+      "texto": "MATURADOR_APAGAR serie de novo?",
       "delay": {
         "min": 20,
         "max": 30
@@ -806,7 +806,7 @@
     {
       "ordem": 40,
       "remetente": 0,
-      "texto": "The Bear, to viciada",
+      "texto": "MATURADOR_APAGAR The Bear, to viciada",
       "delay": {
         "min": 20,
         "max": 30
@@ -827,7 +827,7 @@
     {
       "ordem": 41,
       "remetente": 0,
-      "texto": "cara e muito bom mesmo",
+      "texto": "MATURADOR_APAGAR cara e muito bom mesmo",
       "delay": {
         "min": 20,
         "max": 30
@@ -848,7 +848,7 @@
     {
       "ordem": 42,
       "remetente": 1,
-      "texto": "to no segundo ep ja",
+      "texto": "MATURADOR_APAGAR to no segundo ep ja",
       "delay": {
         "min": 20,
         "max": 30
@@ -869,7 +869,7 @@
     {
       "ordem": 43,
       "remetente": 1,
-      "texto": "continua que fica melhor ainda",
+      "texto": "MATURADOR_APAGAR continua que fica melhor ainda",
       "delay": {
         "min": 20,
         "max": 30
@@ -890,7 +890,7 @@
     {
       "ordem": 44,
       "remetente": 1,
-      "texto": "vai ter almoco em casa?",
+      "texto": "MATURADOR_APAGAR vai ter almoco em casa?",
       "delay": {
         "min": 20,
         "max": 30
@@ -911,7 +911,7 @@
     {
       "ordem": 45,
       "remetente": 0,
-      "texto": "vou fazer algo simples",
+      "texto": "MATURADOR_APAGAR vou fazer algo simples",
       "delay": {
         "min": 20,
         "max": 30
@@ -932,7 +932,7 @@
     {
       "ordem": 46,
       "remetente": 0,
-      "texto": "que que tem ai?",
+      "texto": "MATURADOR_APAGAR que que tem ai?",
       "delay": {
         "min": 20,
         "max": 30
@@ -953,7 +953,7 @@
     {
       "ordem": 47,
       "remetente": 0,
-      "texto": "arroz feijao e um frango",
+      "texto": "MATURADOR_APAGAR arroz feijao e um frango",
       "delay": {
         "min": 20,
         "max": 30

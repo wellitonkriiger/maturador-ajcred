@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "viu o voleio feminino ontem?",
+      "texto": "MATURADOR_APAGAR viu o voleio feminino ontem?",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "vi parte, foi virada incrivel",
+      "texto": "MATURADOR_APAGAR vi parte, foi virada incrivel",
       "delay": {
         "min": 20,
         "max": 30
@@ -63,7 +63,7 @@
     {
       "ordem": 4,
       "remetente": 0,
-      "texto": "3 sets a 2 que emocao",
+      "texto": "MATURADOR_APAGAR 3 sets a 2 que emocao",
       "delay": {
         "min": 20,
         "max": 30
@@ -84,7 +84,7 @@
     {
       "ordem": 5,
       "remetente": 1,
-      "texto": "a Gabi jogou demais",
+      "texto": "MATURADOR_APAGAR a Gabi jogou demais",
       "delay": {
         "min": 20,
         "max": 30
@@ -105,7 +105,7 @@
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "melhor ponteira do mundo na minha opiniao",
+      "texto": "MATURADOR_APAGAR melhor ponteira do mundo na minha opiniao",
       "delay": {
         "min": 20,
         "max": 30
@@ -126,7 +126,7 @@
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "nao discuto isso nao",
+      "texto": "MATURADOR_APAGAR nao discuto isso nao",
       "delay": {
         "min": 20,
         "max": 30
@@ -147,7 +147,7 @@
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "a Tandara tb voltou bem",
+      "texto": "MATURADOR_APAGAR a Tandara tb voltou bem",
       "delay": {
         "min": 20,
         "max": 30
@@ -168,7 +168,7 @@
     {
       "ordem": 9,
       "remetente": 0,
-      "texto": "despois daquele problema de doping",
+      "texto": "MATURADOR_APAGAR despois daquele problema de doping",
       "delay": {
         "min": 20,
         "max": 30
@@ -189,7 +189,7 @@
     {
       "ordem": 10,
       "remetente": 0,
-      "texto": "pois e, mas voltou forte",
+      "texto": "MATURADOR_APAGAR pois e, mas voltou forte",
       "delay": {
         "min": 20,
         "max": 30
@@ -210,7 +210,7 @@
     {
       "ordem": 11,
       "remetente": 1,
-      "texto": "o Brasil continua favorito pra olimpiada",
+      "texto": "MATURADOR_APAGAR o Brasil continua favorito pra olimpiada",
       "delay": {
         "min": 20,
         "max": 30
@@ -231,7 +231,7 @@
     {
       "ordem": 12,
       "remetente": 0,
-      "texto": "acho que sim, o plantel e muito bom",
+      "texto": "MATURADOR_APAGAR acho que sim, o plantel e muito bom",
       "delay": {
         "min": 20,
         "max": 30
@@ -252,7 +252,7 @@
     {
       "ordem": 13,
       "remetente": 1,
-      "texto": "a Italia ta forte tb esse ano",
+      "texto": "MATURADOR_APAGAR a Italia ta forte tb esse ano",
       "delay": {
         "min": 20,
         "max": 30
@@ -273,7 +273,7 @@
     {
       "ordem": 14,
       "remetente": 0,
-      "texto": "Italia e Turquia as principals rivais",
+      "texto": "MATURADOR_APAGAR Italia e Turquia as principals rivais",
       "delay": {
         "min": 20,
         "max": 30
@@ -294,7 +294,7 @@
     {
       "ordem": 15,
       "remetente": 1,
-      "texto": "o Turquia tem a Boskovic",
+      "texto": "MATURADOR_APAGAR o Turquia tem a Boskovic",
       "delay": {
         "min": 20,
         "max": 30
@@ -315,7 +315,7 @@
     {
       "ordem": 16,
       "remetente": 0,
-      "texto": "uma das melhores do mundo sim",
+      "texto": "MATURADOR_APAGAR uma das melhores do mundo sim",
       "delay": {
         "min": 20,
         "max": 30
@@ -336,7 +336,7 @@
     {
       "ordem": 17,
       "remetente": 1,
-      "texto": "vai ser olimpiada de altissimo nivel",
+      "texto": "MATURADOR_APAGAR vai ser olimpiada de altissimo nivel",
       "delay": {
         "min": 20,
         "max": 30
@@ -357,7 +357,7 @@
     {
       "ordem": 18,
       "remetente": 0,
-      "texto": "espero que o brasil chegue na final",
+      "texto": "MATURADOR_APAGAR espero que o brasil chegue na final",
       "delay": {
         "min": 20,
         "max": 30
@@ -378,7 +378,7 @@
     {
       "ordem": 19,
       "remetente": 1,
-      "texto": "com esse time tem condicao",
+      "texto": "MATURADOR_APAGAR com esse time tem condicao",
       "delay": {
         "min": 20,
         "max": 30
@@ -399,7 +399,7 @@
     {
       "ordem": 20,
       "remetente": 1,
-      "texto": "confio no tecnico",
+      "texto": "MATURADOR_APAGAR confio no tecnico",
       "delay": {
         "min": 20,
         "max": 30
@@ -420,7 +420,7 @@
     {
       "ordem": 21,
       "remetente": 0,
-      "texto": "eu tb, vai ser otimo",
+      "texto": "MATURADOR_APAGAR eu tb, vai ser otimo",
       "delay": {
         "min": 20,
         "max": 30
@@ -441,7 +441,7 @@
     {
       "ordem": 22,
       "remetente": 1,
-      "texto": "viu o voleio feminino ontem?",
+      "texto": "MATURADOR_APAGAR viu o voleio feminino ontem?",
       "delay": {
         "min": 20,
         "max": 30
@@ -462,7 +462,7 @@
     {
       "ordem": 23,
       "remetente": 0,
-      "texto": "vi parte, foi virada incrivel",
+      "texto": "MATURADOR_APAGAR vi parte, foi virada incrivel",
       "delay": {
         "min": 20,
         "max": 30
@@ -483,7 +483,7 @@
     {
       "ordem": 24,
       "remetente": 1,
-      "texto": "3 sets a 2 que emocao",
+      "texto": "MATURADOR_APAGAR 3 sets a 2 que emocao",
       "delay": {
         "min": 20,
         "max": 30
@@ -504,7 +504,7 @@
     {
       "ordem": 25,
       "remetente": 1,
-      "texto": "a Gabi jogou demais",
+      "texto": "MATURADOR_APAGAR a Gabi jogou demais",
       "delay": {
         "min": 20,
         "max": 30
@@ -525,7 +525,7 @@
     {
       "ordem": 26,
       "remetente": 0,
-      "texto": "melhor ponteira do mundo na minha opiniao",
+      "texto": "MATURADOR_APAGAR melhor ponteira do mundo na minha opiniao",
       "delay": {
         "min": 20,
         "max": 30
@@ -546,7 +546,7 @@
     {
       "ordem": 27,
       "remetente": 0,
-      "texto": "nao discuto isso nao",
+      "texto": "MATURADOR_APAGAR nao discuto isso nao",
       "delay": {
         "min": 20,
         "max": 30
@@ -567,7 +567,7 @@
     {
       "ordem": 28,
       "remetente": 0,
-      "texto": "a Tandara tb voltou bem",
+      "texto": "MATURADOR_APAGAR a Tandara tb voltou bem",
       "delay": {
         "min": 20,
         "max": 30
@@ -588,7 +588,7 @@
     {
       "ordem": 29,
       "remetente": 0,
-      "texto": "despois daquele problema de doping",
+      "texto": "MATURADOR_APAGAR despois daquele problema de doping",
       "delay": {
         "min": 20,
         "max": 30
@@ -609,7 +609,7 @@
     {
       "ordem": 30,
       "remetente": 0,
-      "texto": "pois e, mas voltou forte",
+      "texto": "MATURADOR_APAGAR pois e, mas voltou forte",
       "delay": {
         "min": 20,
         "max": 30
@@ -630,7 +630,7 @@
     {
       "ordem": 31,
       "remetente": 1,
-      "texto": "o Brasil continua favorito pra olimpiada",
+      "texto": "MATURADOR_APAGAR o Brasil continua favorito pra olimpiada",
       "delay": {
         "min": 20,
         "max": 30
@@ -651,7 +651,7 @@
     {
       "ordem": 32,
       "remetente": 0,
-      "texto": "acho que sim, o plantel e muito bom",
+      "texto": "MATURADOR_APAGAR acho que sim, o plantel e muito bom",
       "delay": {
         "min": 20,
         "max": 30

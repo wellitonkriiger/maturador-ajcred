@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 1,
-      "texto": "to vendo o super bowl aqui",
+      "texto": "MATURADOR_APAGAR to vendo o super bowl aqui",
       "delay": {
         "min": 20,
         "max": 30
@@ -42,7 +42,7 @@
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "que horas comecou",
+      "texto": "MATURADOR_APAGAR que horas comecou",
       "delay": {
         "min": 20,
         "max": 30
@@ -63,7 +63,7 @@
     {
       "ordem": 4,
       "remetente": 0,
-      "texto": "ja ta no segundo quarto",
+      "texto": "MATURADOR_APAGAR ja ta no segundo quarto",
       "delay": {
         "min": 20,
         "max": 30
@@ -84,7 +84,7 @@
     {
       "ordem": 5,
       "remetente": 1,
-      "texto": "ta ganhando quem",
+      "texto": "MATURADOR_APAGAR ta ganhando quem",
       "delay": {
         "min": 20,
         "max": 30
@@ -105,7 +105,7 @@
     {
       "ordem": 6,
       "remetente": 0,
-      "texto": "Chiefs ta na frente 14x10",
+      "texto": "MATURADOR_APAGAR Chiefs ta na frente 14x10",
       "delay": {
         "min": 20,
         "max": 30
@@ -126,7 +126,7 @@
     {
       "ordem": 7,
       "remetente": 1,
-      "texto": "o Mahomes jogando?",
+      "texto": "MATURADOR_APAGAR o Mahomes jogando?",
       "delay": {
         "min": 20,
         "max": 30
@@ -147,7 +147,7 @@
     {
       "ordem": 8,
       "remetente": 0,
-      "texto": "ta sim ele e sempre decisivo",
+      "texto": "MATURADOR_APAGAR ta sim ele e sempre decisivo",
       "delay": {
         "min": 20,
         "max": 30
@@ -168,7 +168,7 @@
     {
       "ordem": 9,
       "remetente": 0,
-      "texto": "o 49ers tem chance ainda",
+      "texto": "MATURADOR_APAGAR o 49ers tem chance ainda",
       "delay": {
         "min": 20,
         "max": 30
@@ -189,7 +189,7 @@
     {
       "ordem": 10,
       "remetente": 0,
-      "texto": "tem sim segundo tempo vai ser outro jogo",
+      "texto": "MATURADOR_APAGAR tem sim segundo tempo vai ser outro jogo",
       "delay": {
         "min": 20,
         "max": 30
@@ -210,7 +210,7 @@
     {
       "ordem": 11,
       "remetente": 0,
-      "texto": "o show do intervalo ja foi?",
+      "texto": "MATURADOR_APAGAR o show do intervalo ja foi?",
       "delay": {
         "min": 20,
         "max": 30
@@ -231,7 +231,7 @@
     {
       "ordem": 12,
       "remetente": 1,
-      "texto": "ainda nao, essa parte eu esperarei kkkk",
+      "texto": "MATURADOR_APAGAR ainda nao, essa parte eu esperarei kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -260,7 +260,7 @@
     {
       "ordem": 14,
       "remetente": 0,
-      "texto": "kkkkk quem vai ser",
+      "texto": "MATURADOR_APAGAR kkkkk quem vai ser",
       "delay": {
         "min": 20,
         "max": 30
@@ -281,7 +281,7 @@
     {
       "ordem": 15,
       "remetente": 0,
-      "texto": "Usher",
+      "texto": "MATURADOR_APAGAR Usher",
       "delay": {
         "min": 20,
         "max": 30
@@ -302,7 +302,7 @@
     {
       "ordem": 16,
       "remetente": 0,
-      "texto": "ah vai ser bom isso",
+      "texto": "MATURADOR_APAGAR ah vai ser bom isso",
       "delay": {
         "min": 20,
         "max": 30
@@ -331,7 +331,7 @@
     {
       "ordem": 18,
       "remetente": 0,
-      "texto": "show parou, vai comecar agora",
+      "texto": "MATURADOR_APAGAR show parou, vai comecar agora",
       "delay": {
         "min": 20,
         "max": 30
@@ -352,7 +352,7 @@
     {
       "ordem": 19,
       "remetente": 1,
-      "texto": "toma foto do palco manda",
+      "texto": "MATURADOR_APAGAR toma foto do palco manda",
       "delay": {
         "min": 20,
         "max": 30
@@ -373,7 +373,7 @@
     {
       "ordem": 20,
       "remetente": 0,
-      "texto": "manda ve vc aqui kkkk)",
+      "texto": "MATURADOR_APAGAR manda ve vc aqui kkkk)",
       "delay": {
         "min": 20,
         "max": 30
@@ -394,7 +394,7 @@
     {
       "ordem": 21,
       "remetente": 1,
-      "texto": "kkkkk to so curiosa",
+      "texto": "MATURADOR_APAGAR kkkkk to so curiosa",
       "delay": {
         "min": 20,
         "max": 30
@@ -415,7 +415,7 @@
     {
       "ordem": 22,
       "remetente": 1,
-      "texto": "ta muito bom mesmo",
+      "texto": "MATURADOR_APAGAR ta muito bom mesmo",
       "delay": {
         "min": 20,
         "max": 30

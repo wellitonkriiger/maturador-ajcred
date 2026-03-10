@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 1,
-      "texto": "viu a tabela do brasileirao hoje?",
+      "texto": "MATURADOR_APAGAR viu a tabela do brasileirao hoje?",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "vi sim, o Atletico subiu",
+      "texto": "MATURADOR_APAGAR vi sim, o Atletico subiu",
       "delay": {
         "min": 20,
         "max": 30
@@ -63,7 +63,7 @@
     {
       "ordem": 4,
       "remetente": 1,
-      "texto": "3 pontos do lider, pode virar",
+      "texto": "MATURADOR_APAGAR 3 pontos do lider, pode virar",
       "delay": {
         "min": 20,
         "max": 30
@@ -84,7 +84,7 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "faltam 7 rodadas ainda",
+      "texto": "MATURADOR_APAGAR faltam 7 rodadas ainda",
       "delay": {
         "min": 20,
         "max": 30
@@ -105,7 +105,7 @@
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "e o confronto direto semana que vem",
+      "texto": "MATURADOR_APAGAR e o confronto direto semana que vem",
       "delay": {
         "min": 20,
         "max": 30
@@ -126,7 +126,7 @@
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "esse vai definir tudo",
+      "texto": "MATURADOR_APAGAR esse vai definir tudo",
       "delay": {
         "min": 20,
         "max": 30
@@ -147,7 +147,7 @@
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "o Flamengo ta irregular",
+      "texto": "MATURADOR_APAGAR o Flamengo ta irregular",
       "delay": {
         "min": 20,
         "max": 30
@@ -168,7 +168,7 @@
     {
       "ordem": 9,
       "remetente": 0,
-      "texto": "fora de casa perde muito",
+      "texto": "MATURADOR_APAGAR fora de casa perde muito",
       "delay": {
         "min": 20,
         "max": 30
@@ -189,7 +189,7 @@
     {
       "ordem": 10,
       "remetente": 0,
-      "texto": "o Hulk ainda jogando bem",
+      "texto": "MATURADOR_APAGAR o Hulk ainda jogando bem",
       "delay": {
         "min": 20,
         "max": 30
@@ -210,7 +210,7 @@
     {
       "ordem": 11,
       "remetente": 0,
-      "texto": "cara ta absurdo pra idade dele",
+      "texto": "MATURADOR_APAGAR cara ta absurdo pra idade dele",
       "delay": {
         "min": 20,
         "max": 30
@@ -231,7 +231,7 @@
     {
       "ordem": 12,
       "remetente": 1,
-      "texto": "42 anos jogando assim",
+      "texto": "MATURADOR_APAGAR 42 anos jogando assim",
       "delay": {
         "min": 20,
         "max": 30
@@ -252,7 +252,7 @@
     {
       "ordem": 13,
       "remetente": 1,
-      "texto": "e fora de serie mesmo",
+      "texto": "MATURADOR_APAGAR e fora de serie mesmo",
       "delay": {
         "min": 20,
         "max": 30

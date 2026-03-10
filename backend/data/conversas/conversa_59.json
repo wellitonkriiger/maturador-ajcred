@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 1,
-      "texto": "ta jogando algo novo?",
+      "texto": "MATURADOR_APAGAR ta jogando algo novo?",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "comecei Elden Ring",
+      "texto": "MATURADOR_APAGAR comecei Elden Ring",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "cara e dificil demais",
+      "texto": "MATURADOR_APAGAR cara e dificil demais",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 0,
-      "texto": "to apanhando muito kkk",
+      "texto": "MATURADOR_APAGAR to apanhando muito kkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -97,7 +97,7 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "qual chefe vc ta?",
+      "texto": "MATURADOR_APAGAR qual chefe vc ta?",
       "delay": {
         "min": 20,
         "max": 30
@@ -118,7 +118,7 @@
     {
       "ordem": 6,
       "remetente": 0,
-      "texto": "Margit, o primeiro",
+      "texto": "MATURADOR_APAGAR Margit, o primeiro",
       "delay": {
         "min": 20,
         "max": 30
@@ -147,7 +147,7 @@
     {
       "ordem": 8,
       "remetente": 0,
-      "texto": "esse e um dos mais dificeis",
+      "texto": "MATURADOR_APAGAR esse e um dos mais dificeis",
       "delay": {
         "min": 20,
         "max": 30
@@ -168,7 +168,7 @@
     {
       "ordem": 9,
       "remetente": 1,
-      "texto": "serio?? vai piorar?",
+      "texto": "MATURADOR_APAGAR serio?? vai piorar?",
       "delay": {
         "min": 20,
         "max": 30
@@ -189,7 +189,7 @@
     {
       "ordem": 10,
       "remetente": 0,
-      "texto": "horrores kkkk",
+      "texto": "MATURADOR_APAGAR horrores kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -210,7 +210,7 @@
     {
       "ordem": 11,
       "remetente": 0,
-      "texto": "isso e crime",
+      "texto": "MATURADOR_APAGAR isso e crime",
       "delay": {
         "min": 20,
         "max": 30
@@ -231,7 +231,7 @@
     {
       "ordem": 12,
       "remetente": 1,
-      "texto": "mas quando vence a sensacao e unica",
+      "texto": "MATURADOR_APAGAR mas quando vence a sensacao e unica",
       "delay": {
         "min": 20,
         "max": 30
@@ -252,7 +252,7 @@
     {
       "ordem": 13,
       "remetente": 1,
-      "texto": "preciso vencer rapido isso",
+      "texto": "MATURADOR_APAGAR preciso vencer rapido isso",
       "delay": {
         "min": 20,
         "max": 30
@@ -273,7 +273,7 @@
     {
       "ordem": 14,
       "remetente": 1,
-      "texto": "usa summon, nao tem vergonha",
+      "texto": "MATURADOR_APAGAR usa summon, nao tem vergonha",
       "delay": {
         "min": 20,
         "max": 30
@@ -294,7 +294,7 @@
     {
       "ordem": 15,
       "remetente": 1,
-      "texto": "que e summon?",
+      "texto": "MATURADOR_APAGAR que e summon?",
       "delay": {
         "min": 20,
         "max": 30
@@ -315,7 +315,7 @@
     {
       "ordem": 16,
       "remetente": 0,
-      "texto": "chamadas de NPCs pra ajudar no boss",
+      "texto": "MATURADOR_APAGAR chamadas de NPCs pra ajudar no boss",
       "delay": {
         "min": 20,
         "max": 30
@@ -336,7 +336,7 @@
     {
       "ordem": 17,
       "remetente": 0,
-      "texto": "isso e valido?",
+      "texto": "MATURADOR_APAGAR isso e valido?",
       "delay": {
         "min": 20,
         "max": 30
@@ -357,7 +357,7 @@
     {
       "ordem": 18,
       "remetente": 1,
-      "texto": "totalmente, o jogo permite",
+      "texto": "MATURADOR_APAGAR totalmente, o jogo permite",
       "delay": {
         "min": 20,
         "max": 30
@@ -378,7 +378,7 @@
     {
       "ordem": 19,
       "remetente": 0,
-      "texto": "to indo usar agora kkkk",
+      "texto": "MATURADOR_APAGAR to indo usar agora kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -399,7 +399,7 @@
     {
       "ordem": 20,
       "remetente": 1,
-      "texto": "boa sorte! conta o resultado",
+      "texto": "MATURADOR_APAGAR boa sorte! conta o resultado",
       "delay": {
         "min": 20,
         "max": 30
@@ -428,7 +428,7 @@
     {
       "ordem": 22,
       "remetente": 0,
-      "texto": "se eu sobreviver kkkk",
+      "texto": "MATURADOR_APAGAR se eu sobreviver kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -449,7 +449,7 @@
     {
       "ordem": 23,
       "remetente": 0,
-      "texto": "ta jogando algo novo?",
+      "texto": "MATURADOR_APAGAR ta jogando algo novo?",
       "delay": {
         "min": 20,
         "max": 30
@@ -470,7 +470,7 @@
     {
       "ordem": 24,
       "remetente": 1,
-      "texto": "comecei Elden Ring",
+      "texto": "MATURADOR_APAGAR comecei Elden Ring",
       "delay": {
         "min": 20,
         "max": 30
@@ -491,7 +491,7 @@
     {
       "ordem": 25,
       "remetente": 0,
-      "texto": "cara e dificil demais",
+      "texto": "MATURADOR_APAGAR cara e dificil demais",
       "delay": {
         "min": 20,
         "max": 30
@@ -512,7 +512,7 @@
     {
       "ordem": 26,
       "remetente": 1,
-      "texto": "to apanhando muito kkk",
+      "texto": "MATURADOR_APAGAR to apanhando muito kkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -533,7 +533,7 @@
     {
       "ordem": 27,
       "remetente": 0,
-      "texto": "qual chefe vc ta?",
+      "texto": "MATURADOR_APAGAR qual chefe vc ta?",
       "delay": {
         "min": 20,
         "max": 30
@@ -562,7 +562,7 @@
     {
       "ordem": 29,
       "remetente": 1,
-      "texto": "Margit, o primeiro",
+      "texto": "MATURADOR_APAGAR Margit, o primeiro",
       "delay": {
         "min": 20,
         "max": 30
@@ -583,7 +583,7 @@
     {
       "ordem": 30,
       "remetente": 1,
-      "texto": "esse e um dos mais dificeis",
+      "texto": "MATURADOR_APAGAR esse e um dos mais dificeis",
       "delay": {
         "min": 20,
         "max": 30
@@ -604,7 +604,7 @@
     {
       "ordem": 31,
       "remetente": 1,
-      "texto": "serio?? vai piorar?",
+      "texto": "MATURADOR_APAGAR serio?? vai piorar?",
       "delay": {
         "min": 20,
         "max": 30
@@ -625,7 +625,7 @@
     {
       "ordem": 32,
       "remetente": 1,
-      "texto": "horrores kkkk",
+      "texto": "MATURADOR_APAGAR horrores kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -646,7 +646,7 @@
     {
       "ordem": 33,
       "remetente": 0,
-      "texto": "isso e crime",
+      "texto": "MATURADOR_APAGAR isso e crime",
       "delay": {
         "min": 20,
         "max": 30
@@ -667,7 +667,7 @@
     {
       "ordem": 34,
       "remetente": 1,
-      "texto": "mas quando vence a sensacao e unica",
+      "texto": "MATURADOR_APAGAR mas quando vence a sensacao e unica",
       "delay": {
         "min": 20,
         "max": 30
@@ -688,7 +688,7 @@
     {
       "ordem": 35,
       "remetente": 0,
-      "texto": "preciso vencer rapido isso",
+      "texto": "MATURADOR_APAGAR preciso vencer rapido isso",
       "delay": {
         "min": 20,
         "max": 30
@@ -709,7 +709,7 @@
     {
       "ordem": 36,
       "remetente": 1,
-      "texto": "usa summon, nao tem vergonha",
+      "texto": "MATURADOR_APAGAR usa summon, nao tem vergonha",
       "delay": {
         "min": 20,
         "max": 30
@@ -730,7 +730,7 @@
     {
       "ordem": 37,
       "remetente": 0,
-      "texto": "que e summon?",
+      "texto": "MATURADOR_APAGAR que e summon?",
       "delay": {
         "min": 20,
         "max": 30
@@ -751,7 +751,7 @@
     {
       "ordem": 38,
       "remetente": 0,
-      "texto": "chamadas de NPCs pra ajudar no boss",
+      "texto": "MATURADOR_APAGAR chamadas de NPCs pra ajudar no boss",
       "delay": {
         "min": 20,
         "max": 30
@@ -772,7 +772,7 @@
     {
       "ordem": 39,
       "remetente": 1,
-      "texto": "isso e valido?",
+      "texto": "MATURADOR_APAGAR isso e valido?",
       "delay": {
         "min": 20,
         "max": 30
@@ -793,7 +793,7 @@
     {
       "ordem": 40,
       "remetente": 0,
-      "texto": "totalmente, o jogo permite",
+      "texto": "MATURADOR_APAGAR totalmente, o jogo permite",
       "delay": {
         "min": 20,
         "max": 30
@@ -814,7 +814,7 @@
     {
       "ordem": 41,
       "remetente": 1,
-      "texto": "to indo usar agora kkkk",
+      "texto": "MATURADOR_APAGAR to indo usar agora kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -835,7 +835,7 @@
     {
       "ordem": 42,
       "remetente": 1,
-      "texto": "boa sorte! conta o resultado",
+      "texto": "MATURADOR_APAGAR boa sorte! conta o resultado",
       "delay": {
         "min": 20,
         "max": 30
@@ -856,7 +856,7 @@
     {
       "ordem": 43,
       "remetente": 0,
-      "texto": "se eu sobreviver kkkk",
+      "texto": "MATURADOR_APAGAR se eu sobreviver kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -885,7 +885,7 @@
     {
       "ordem": 45,
       "remetente": 1,
-      "texto": "ta jogando algo novo?",
+      "texto": "MATURADOR_APAGAR ta jogando algo novo?",
       "delay": {
         "min": 20,
         "max": 30
@@ -906,7 +906,7 @@
     {
       "ordem": 46,
       "remetente": 0,
-      "texto": "comecei Elden Ring",
+      "texto": "MATURADOR_APAGAR comecei Elden Ring",
       "delay": {
         "min": 20,
         "max": 30
@@ -927,7 +927,7 @@
     {
       "ordem": 47,
       "remetente": 1,
-      "texto": "cara e dificil demais",
+      "texto": "MATURADOR_APAGAR cara e dificil demais",
       "delay": {
         "min": 20,
         "max": 30
@@ -948,7 +948,7 @@
     {
       "ordem": 48,
       "remetente": 0,
-      "texto": "to apanhando muito kkk",
+      "texto": "MATURADOR_APAGAR to apanhando muito kkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -969,7 +969,7 @@
     {
       "ordem": 49,
       "remetente": 0,
-      "texto": "qual chefe vc ta?",
+      "texto": "MATURADOR_APAGAR qual chefe vc ta?",
       "delay": {
         "min": 20,
         "max": 30
@@ -990,7 +990,7 @@
     {
       "ordem": 50,
       "remetente": 0,
-      "texto": "Margit, o primeiro",
+      "texto": "MATURADOR_APAGAR Margit, o primeiro",
       "delay": {
         "min": 20,
         "max": 30

@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "o projeto nao vai entregar sexta",
+      "texto": "MATURADOR_APAGAR o projeto nao vai entregar sexta",
       "delay": {
         "min": 20,
         "max": 30
@@ -42,7 +42,7 @@
     {
       "ordem": 3,
       "remetente": 1,
-      "texto": "eu sei, vi o cronograma",
+      "texto": "MATURADOR_APAGAR eu sei, vi o cronograma",
       "delay": {
         "min": 20,
         "max": 30
@@ -63,7 +63,7 @@
     {
       "ordem": 4,
       "remetente": 0,
-      "texto": "falei la atras que o prazo era curto",
+      "texto": "MATURADOR_APAGAR falei la atras que o prazo era curto",
       "delay": {
         "min": 20,
         "max": 30
@@ -84,7 +84,7 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "eu tb, mas ningem ouviu na epoca",
+      "texto": "MATURADOR_APAGAR eu tb, mas ningem ouviu na epoca",
       "delay": {
         "min": 20,
         "max": 30
@@ -105,7 +105,7 @@
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "vou mandar email pro gerente agora",
+      "texto": "MATURADOR_APAGAR vou mandar email pro gerente agora",
       "delay": {
         "min": 20,
         "max": 30
@@ -126,7 +126,7 @@
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "manda copia pra mim",
+      "texto": "MATURADOR_APAGAR manda copia pra mim",
       "delay": {
         "min": 20,
         "max": 30
@@ -147,7 +147,7 @@
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "mandei, viu?",
+      "texto": "MATURADOR_APAGAR mandei, viu?",
       "delay": {
         "min": 20,
         "max": 30
@@ -168,7 +168,7 @@
     {
       "ordem": 9,
       "remetente": 1,
-      "texto": "vi, bem escrito e diplomatico",
+      "texto": "MATURADOR_APAGAR vi, bem escrito e diplomatico",
       "delay": {
         "min": 20,
         "max": 30
@@ -189,7 +189,7 @@
     {
       "ordem": 10,
       "remetente": 0,
-      "texto": "tentei kkkk",
+      "texto": "MATURADOR_APAGAR tentei kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -210,7 +210,7 @@
     {
       "ordem": 11,
       "remetente": 0,
-      "texto": "respondeu?",
+      "texto": "MATURADOR_APAGAR respondeu?",
       "delay": {
         "min": 20,
         "max": 30
@@ -231,7 +231,7 @@
     {
       "ordem": 12,
       "remetente": 1,
-      "texto": "respondeu, quer reuniao agora",
+      "texto": "MATURADOR_APAGAR respondeu, quer reuniao agora",
       "delay": {
         "min": 20,
         "max": 30
@@ -252,7 +252,7 @@
     {
       "ordem": 13,
       "remetente": 0,
-      "texto": "agora?",
+      "texto": "MATURADOR_APAGAR agora?",
       "delay": {
         "min": 20,
         "max": 30
@@ -273,7 +273,7 @@
     {
       "ordem": 14,
       "remetente": 0,
-      "texto": "agora",
+      "texto": "MATURADOR_APAGAR agora",
       "delay": {
         "min": 20,
         "max": 30
@@ -294,7 +294,7 @@
     {
       "ordem": 15,
       "remetente": 1,
-      "texto": "boa sorte ai mano",
+      "texto": "MATURADOR_APAGAR boa sorte ai mano",
       "delay": {
         "min": 20,
         "max": 30
@@ -315,7 +315,7 @@
     {
       "ordem": 16,
       "remetente": 0,
-      "texto": "precisaria kkkk entrei na call",
+      "texto": "MATURADOR_APAGAR precisaria kkkk entrei na call",
       "delay": {
         "min": 20,
         "max": 30
@@ -344,7 +344,7 @@
     {
       "ordem": 18,
       "remetente": 1,
-      "texto": "como foi?",
+      "texto": "MATURADOR_APAGAR como foi?",
       "delay": {
         "min": 20,
         "max": 30

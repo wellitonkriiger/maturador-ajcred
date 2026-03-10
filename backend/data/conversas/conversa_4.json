@@ -14,7 +14,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "O que você vai fazer no fim de semana?",
+      "texto": "MATURADOR_APAGAR O que você vai fazer no fim de semana?",
       "delay": {
         "min": 20,
         "max": 30
@@ -35,7 +35,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "Ainda sem plano definido. Talvez ficar em casa mesmo",
+      "texto": "MATURADOR_APAGAR Ainda sem plano definido. Talvez ficar em casa mesmo",
       "delay": {
         "min": 20,
         "max": 30
@@ -56,7 +56,7 @@
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "Tem uma feira de artesanato aqui perto, pode ser legal",
+      "texto": "MATURADOR_APAGAR Tem uma feira de artesanato aqui perto, pode ser legal",
       "delay": {
         "min": 20,
         "max": 30
@@ -77,7 +77,7 @@
     {
       "ordem": 4,
       "remetente": 1,
-      "texto": "Que horas começa?",
+      "texto": "MATURADOR_APAGAR Que horas começa?",
       "delay": {
         "min": 20,
         "max": 30
@@ -98,7 +98,7 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "Sábado a partir das 9, vai até às 18",
+      "texto": "MATURADOR_APAGAR Sábado a partir das 9, vai até às 18",
       "delay": {
         "min": 20,
         "max": 30
@@ -119,7 +119,7 @@
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "Pode ser, depende do tempo. Como tá a previsão?",
+      "texto": "MATURADOR_APAGAR Pode ser, depende do tempo. Como tá a previsão?",
       "delay": {
         "min": 20,
         "max": 30
@@ -140,7 +140,7 @@
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "Deve ficar nublado mas sem chuva",
+      "texto": "MATURADOR_APAGAR Deve ficar nublado mas sem chuva",
       "delay": {
         "min": 20,
         "max": 30
@@ -169,7 +169,7 @@
     {
       "ordem": 9,
       "remetente": 1,
-      "texto": "Então pode ser uma boa. Vai ter comida lá?",
+      "texto": "MATURADOR_APAGAR Então pode ser uma boa. Vai ter comida lá?",
       "delay": {
         "min": 20,
         "max": 30
@@ -190,7 +190,7 @@
     {
       "ordem": 10,
       "remetente": 0,
-      "texto": "Sempre tem, é o melhor da feira",
+      "texto": "MATURADOR_APAGAR Sempre tem, é o melhor da feira",
       "delay": {
         "min": 20,
         "max": 30
@@ -211,7 +211,7 @@
     {
       "ordem": 11,
       "remetente": 1,
-      "texto": "Aí convenceu. Que horas você quer ir?",
+      "texto": "MATURADOR_APAGAR Aí convenceu. Que horas você quer ir?",
       "delay": {
         "min": 20,
         "max": 30
@@ -232,7 +232,7 @@
     {
       "ordem": 12,
       "remetente": 0,
-      "texto": "Umas 10h tá bom? Evita o pior do sol",
+      "texto": "MATURADOR_APAGAR Umas 10h tá bom? Evita o pior do sol",
       "delay": {
         "min": 20,
         "max": 30
@@ -253,7 +253,7 @@
     {
       "ordem": 13,
       "remetente": 1,
-      "texto": "Fechado. Passa aqui em casa ou a gente se encontra lá?",
+      "texto": "MATURADOR_APAGAR Fechado. Passa aqui em casa ou a gente se encontra lá?",
       "delay": {
         "min": 20,
         "max": 30
@@ -274,7 +274,7 @@
     {
       "ordem": 14,
       "remetente": 0,
-      "texto": "Melhor se encontrar lá na entrada, mais fácil",
+      "texto": "MATURADOR_APAGAR Melhor se encontrar lá na entrada, mais fácil",
       "delay": {
         "min": 20,
         "max": 30
@@ -295,7 +295,7 @@
     {
       "ordem": 15,
       "remetente": 1,
-      "texto": "Combinado então. Até sábado",
+      "texto": "MATURADOR_APAGAR Combinado então. Até sábado",
       "delay": {
         "min": 20,
         "max": 30

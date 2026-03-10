@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 1,
-      "texto": "viu o mundial de atletismo ontem",
+      "texto": "MATURADOR_APAGAR viu o mundial de atletismo ontem",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 0,
-      "texto": "vi sim, o brasileiro foi bem",
+      "texto": "MATURADOR_APAGAR vi sim, o brasileiro foi bem",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 1,
-      "texto": "na prova dos 100m",
+      "texto": "MATURADOR_APAGAR na prova dos 100m",
       "delay": {
         "min": 20,
         "max": 30
@@ -84,7 +84,7 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "tempo insano ele bateu o record nacional",
+      "texto": "MATURADOR_APAGAR tempo insano ele bateu o record nacional",
       "delay": {
         "min": 20,
         "max": 30
@@ -105,7 +105,7 @@
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "tava la no estadio",
+      "texto": "MATURADOR_APAGAR tava la no estadio",
       "delay": {
         "min": 20,
         "max": 30
@@ -126,7 +126,7 @@
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "serio cara que sorte",
+      "texto": "MATURADOR_APAGAR serio cara que sorte",
       "delay": {
         "min": 20,
         "max": 30
@@ -155,7 +155,7 @@
     {
       "ordem": 9,
       "remetente": 1,
-      "texto": "foi um presente do meu trabalho",
+      "texto": "MATURADOR_APAGAR foi um presente do meu trabalho",
       "delay": {
         "min": 20,
         "max": 30
@@ -176,7 +176,7 @@
     {
       "ordem": 10,
       "remetente": 0,
-      "texto": "que trabalho legal esse",
+      "texto": "MATURADOR_APAGAR que trabalho legal esse",
       "delay": {
         "min": 20,
         "max": 30
@@ -197,7 +197,7 @@
     {
       "ordem": 11,
       "remetente": 0,
-      "texto": "o ambiente la e incrivel",
+      "texto": "MATURADOR_APAGAR o ambiente la e incrivel",
       "delay": {
         "min": 20,
         "max": 30
@@ -218,7 +218,7 @@
     {
       "ordem": 12,
       "remetente": 1,
-      "texto": "da pra ver bem sentado",
+      "texto": "MATURADOR_APAGAR da pra ver bem sentado",
       "delay": {
         "min": 20,
         "max": 30
@@ -239,7 +239,7 @@
     {
       "ordem": 13,
       "remetente": 0,
-      "texto": "sim vista otima, valeu muito",
+      "texto": "MATURADOR_APAGAR sim vista otima, valeu muito",
       "delay": {
         "min": 20,
         "max": 30
@@ -260,7 +260,7 @@
     {
       "ordem": 14,
       "remetente": 0,
-      "texto": "o Marcell Jacobs correu tb",
+      "texto": "MATURADOR_APAGAR o Marcell Jacobs correu tb",
       "delay": {
         "min": 20,
         "max": 30
@@ -281,7 +281,7 @@
     {
       "ordem": 15,
       "remetente": 1,
-      "texto": "o italiano, vi sim",
+      "texto": "MATURADOR_APAGAR o italiano, vi sim",
       "delay": {
         "min": 20,
         "max": 30
@@ -302,7 +302,7 @@
     {
       "ordem": 16,
       "remetente": 0,
-      "texto": "ainda e o mais rapido da europa",
+      "texto": "MATURADOR_APAGAR ainda e o mais rapido da europa",
       "delay": {
         "min": 20,
         "max": 30
@@ -323,7 +323,7 @@
     {
       "ordem": 17,
       "remetente": 1,
-      "texto": "os africanos dominam mesmo",
+      "texto": "MATURADOR_APAGAR os africanos dominam mesmo",
       "delay": {
         "min": 20,
         "max": 30
@@ -344,7 +344,7 @@
     {
       "ordem": 18,
       "remetente": 1,
-      "texto": "atletismo e fascinante quando da pra ver ao vivo",
+      "texto": "MATURADOR_APAGAR atletismo e fascinante quando da pra ver ao vivo",
       "delay": {
         "min": 20,
         "max": 30
@@ -365,7 +365,7 @@
     {
       "ordem": 19,
       "remetente": 1,
-      "texto": "demais, quero ir num evento assim de novo",
+      "texto": "MATURADOR_APAGAR demais, quero ir num evento assim de novo",
       "delay": {
         "min": 20,
         "max": 30
@@ -386,7 +386,7 @@
     {
       "ordem": 20,
       "remetente": 0,
-      "texto": "organiza isso",
+      "texto": "MATURADOR_APAGAR organiza isso",
       "delay": {
         "min": 20,
         "max": 30
@@ -407,7 +407,7 @@
     {
       "ordem": 21,
       "remetente": 0,
-      "texto": "vou pesquisar quando vem algo aqui",
+      "texto": "MATURADOR_APAGAR vou pesquisar quando vem algo aqui",
       "delay": {
         "min": 20,
         "max": 30

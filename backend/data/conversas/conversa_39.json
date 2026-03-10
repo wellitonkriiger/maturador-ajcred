@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "passando aqui pra dizer que fiz a entrevista",
+      "texto": "MATURADOR_APAGAR passando aqui pra dizer que fiz a entrevista",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "como foi??",
+      "texto": "MATURADOR_APAGAR como foi??",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 1,
-      "texto": "acho que foi bem",
+      "texto": "MATURADOR_APAGAR acho que foi bem",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 0,
-      "texto": "que perguntaram",
+      "texto": "MATURADOR_APAGAR que perguntaram",
       "delay": {
         "min": 20,
         "max": 30
@@ -97,7 +97,7 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "habilidades tecnicas, experiencia, cultura",
+      "texto": "MATURADOR_APAGAR habilidades tecnicas, experiencia, cultura",
       "delay": {
         "min": 20,
         "max": 30
@@ -118,7 +118,7 @@
     {
       "ordem": 6,
       "remetente": 0,
-      "texto": "perguntaram de salario?",
+      "texto": "MATURADOR_APAGAR perguntaram de salario?",
       "delay": {
         "min": 20,
         "max": 30
@@ -139,7 +139,7 @@
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "sim pedi o que a gente tinha falado",
+      "texto": "MATURADOR_APAGAR sim pedi o que a gente tinha falado",
       "delay": {
         "min": 20,
         "max": 30
@@ -160,7 +160,7 @@
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "e como foi a reacao",
+      "texto": "MATURADOR_APAGAR e como foi a reacao",
       "delay": {
         "min": 20,
         "max": 30
@@ -181,7 +181,7 @@
     {
       "ordem": 9,
       "remetente": 1,
-      "texto": "pareceu ok",
+      "texto": "MATURADOR_APAGAR pareceu ok",
       "delay": {
         "min": 20,
         "max": 30
@@ -202,7 +202,7 @@
     {
       "ordem": 10,
       "remetente": 0,
-      "texto": "o quanto demora o retorno deles",
+      "texto": "MATURADOR_APAGAR o quanto demora o retorno deles",
       "delay": {
         "min": 20,
         "max": 30
@@ -223,7 +223,7 @@
     {
       "ordem": 11,
       "remetente": 1,
-      "texto": "falaram que ate sexta",
+      "texto": "MATURADOR_APAGAR falaram que ate sexta",
       "delay": {
         "min": 20,
         "max": 30
@@ -244,7 +244,7 @@
     {
       "ordem": 12,
       "remetente": 1,
-      "texto": "nao e muito tempo",
+      "texto": "MATURADOR_APAGAR nao e muito tempo",
       "delay": {
         "min": 20,
         "max": 30
@@ -265,7 +265,7 @@
     {
       "ordem": 13,
       "remetente": 0,
-      "texto": "e, ansioso demais",
+      "texto": "MATURADOR_APAGAR e, ansioso demais",
       "delay": {
         "min": 20,
         "max": 30
@@ -286,7 +286,7 @@
     {
       "ordem": 14,
       "remetente": 0,
-      "texto": "vai la e nao fica pensando",
+      "texto": "MATURADOR_APAGAR vai la e nao fica pensando",
       "delay": {
         "min": 20,
         "max": 30
@@ -307,7 +307,7 @@
     {
       "ordem": 15,
       "remetente": 0,
-      "texto": "dificil kkkk",
+      "texto": "MATURADOR_APAGAR dificil kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -328,7 +328,7 @@
     {
       "ordem": 16,
       "remetente": 1,
-      "texto": "mantém ocupado trabalha em algo",
+      "texto": "MATURADOR_APAGAR mantém ocupado trabalha em algo",
       "delay": {
         "min": 20,
         "max": 30
@@ -349,7 +349,7 @@
     {
       "ordem": 17,
       "remetente": 1,
-      "texto": "verdade, boa dica",
+      "texto": "MATURADOR_APAGAR verdade, boa dica",
       "delay": {
         "min": 20,
         "max": 30
@@ -370,7 +370,7 @@
     {
       "ordem": 18,
       "remetente": 0,
-      "texto": "qualquer coisa to aqui",
+      "texto": "MATURADOR_APAGAR qualquer coisa to aqui",
       "delay": {
         "min": 20,
         "max": 30
@@ -391,7 +391,7 @@
     {
       "ordem": 19,
       "remetente": 0,
-      "texto": "obrigado cara, significou muito o apoio",
+      "texto": "MATURADOR_APAGAR obrigado cara, significou muito o apoio",
       "delay": {
         "min": 20,
         "max": 30
@@ -412,7 +412,7 @@
     {
       "ordem": 20,
       "remetente": 0,
-      "texto": "torco muito por vc",
+      "texto": "MATURADOR_APAGAR torco muito por vc",
       "delay": {
         "min": 20,
         "max": 30
@@ -433,7 +433,7 @@
     {
       "ordem": 21,
       "remetente": 0,
-      "texto": "passando aqui pra dizer que fiz a entrevista",
+      "texto": "MATURADOR_APAGAR passando aqui pra dizer que fiz a entrevista",
       "delay": {
         "min": 20,
         "max": 30
@@ -454,7 +454,7 @@
     {
       "ordem": 22,
       "remetente": 1,
-      "texto": "como foi??",
+      "texto": "MATURADOR_APAGAR como foi??",
       "delay": {
         "min": 20,
         "max": 30
@@ -475,7 +475,7 @@
     {
       "ordem": 23,
       "remetente": 0,
-      "texto": "acho que foi bem",
+      "texto": "MATURADOR_APAGAR acho que foi bem",
       "delay": {
         "min": 20,
         "max": 30
@@ -496,7 +496,7 @@
     {
       "ordem": 24,
       "remetente": 0,
-      "texto": "que perguntaram",
+      "texto": "MATURADOR_APAGAR que perguntaram",
       "delay": {
         "min": 20,
         "max": 30
@@ -517,7 +517,7 @@
     {
       "ordem": 25,
       "remetente": 1,
-      "texto": "habilidades tecnicas, experiencia, cultura",
+      "texto": "MATURADOR_APAGAR habilidades tecnicas, experiencia, cultura",
       "delay": {
         "min": 20,
         "max": 30
@@ -538,7 +538,7 @@
     {
       "ordem": 26,
       "remetente": 0,
-      "texto": "perguntaram de salario?",
+      "texto": "MATURADOR_APAGAR perguntaram de salario?",
       "delay": {
         "min": 20,
         "max": 30
@@ -559,7 +559,7 @@
     {
       "ordem": 27,
       "remetente": 1,
-      "texto": "sim pedi o que a gente tinha falado",
+      "texto": "MATURADOR_APAGAR sim pedi o que a gente tinha falado",
       "delay": {
         "min": 20,
         "max": 30
@@ -580,7 +580,7 @@
     {
       "ordem": 28,
       "remetente": 0,
-      "texto": "e como foi a reacao",
+      "texto": "MATURADOR_APAGAR e como foi a reacao",
       "delay": {
         "min": 20,
         "max": 30
@@ -601,7 +601,7 @@
     {
       "ordem": 29,
       "remetente": 1,
-      "texto": "pareceu ok",
+      "texto": "MATURADOR_APAGAR pareceu ok",
       "delay": {
         "min": 20,
         "max": 30
@@ -622,7 +622,7 @@
     {
       "ordem": 30,
       "remetente": 1,
-      "texto": "o quanto demora o retorno deles",
+      "texto": "MATURADOR_APAGAR o quanto demora o retorno deles",
       "delay": {
         "min": 20,
         "max": 30
@@ -643,7 +643,7 @@
     {
       "ordem": 31,
       "remetente": 0,
-      "texto": "falaram que ate sexta",
+      "texto": "MATURADOR_APAGAR falaram que ate sexta",
       "delay": {
         "min": 20,
         "max": 30
@@ -664,7 +664,7 @@
     {
       "ordem": 32,
       "remetente": 1,
-      "texto": "nao e muito tempo",
+      "texto": "MATURADOR_APAGAR nao e muito tempo",
       "delay": {
         "min": 20,
         "max": 30
@@ -685,7 +685,7 @@
     {
       "ordem": 33,
       "remetente": 1,
-      "texto": "e, ansioso demais",
+      "texto": "MATURADOR_APAGAR e, ansioso demais",
       "delay": {
         "min": 20,
         "max": 30

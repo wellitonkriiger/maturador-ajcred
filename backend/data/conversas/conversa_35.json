@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "cara me chama na sala agora",
+      "texto": "MATURADOR_APAGAR cara me chama na sala agora",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "o que foi??",
+      "texto": "MATURADOR_APAGAR o que foi??",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 1,
-      "texto": "vem aqui primeiro",
+      "texto": "MATURADOR_APAGAR vem aqui primeiro",
       "delay": {
         "min": 20,
         "max": 30
@@ -84,7 +84,7 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "fui la... cara que noticia",
+      "texto": "MATURADOR_APAGAR fui la... cara que noticia",
       "delay": {
         "min": 20,
         "max": 30
@@ -105,7 +105,7 @@
     {
       "ordem": 6,
       "remetente": 0,
-      "texto": "e na melhor hora",
+      "texto": "MATURADOR_APAGAR e na melhor hora",
       "delay": {
         "min": 20,
         "max": 30
@@ -134,7 +134,7 @@
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "minha mulher vai ficar louca de felicidade",
+      "texto": "MATURADOR_APAGAR minha mulher vai ficar louca de felicidade",
       "delay": {
         "min": 20,
         "max": 30
@@ -155,7 +155,7 @@
     {
       "ordem": 9,
       "remetente": 1,
-      "texto": "voce merece mano, trabalhou demais",
+      "texto": "MATURADOR_APAGAR voce merece mano, trabalhou demais",
       "delay": {
         "min": 20,
         "max": 30
@@ -176,7 +176,7 @@
     {
       "ordem": 10,
       "remetente": 1,
-      "texto": "obrigado de verdade",
+      "texto": "MATURADOR_APAGAR obrigado de verdade",
       "delay": {
         "min": 20,
         "max": 30
@@ -205,7 +205,7 @@
     {
       "ordem": 12,
       "remetente": 0,
-      "texto": "aumento bom?",
+      "texto": "MATURADOR_APAGAR aumento bom?",
       "delay": {
         "min": 20,
         "max": 30
@@ -226,7 +226,7 @@
     {
       "ordem": 13,
       "remetente": 1,
-      "texto": "20%",
+      "texto": "MATURADOR_APAGAR 20%",
       "delay": {
         "min": 20,
         "max": 30
@@ -247,7 +247,7 @@
     {
       "ordem": 14,
       "remetente": 1,
-      "texto": "otimo! comemora essa noite",
+      "texto": "MATURADOR_APAGAR otimo! comemora essa noite",
       "delay": {
         "min": 20,
         "max": 30
@@ -268,7 +268,7 @@
     {
       "ordem": 15,
       "remetente": 1,
-      "texto": "vou levar ela num jantar",
+      "texto": "MATURADOR_APAGAR vou levar ela num jantar",
       "delay": {
         "min": 20,
         "max": 30
@@ -289,7 +289,7 @@
     {
       "ordem": 16,
       "remetente": 0,
-      "texto": "restaurante bom, voce merece",
+      "texto": "MATURADOR_APAGAR restaurante bom, voce merece",
       "delay": {
         "min": 20,
         "max": 30
@@ -310,7 +310,7 @@
     {
       "ordem": 17,
       "remetente": 1,
-      "texto": "qual vc indica?",
+      "texto": "MATURADOR_APAGAR qual vc indica?",
       "delay": {
         "min": 20,
         "max": 30
@@ -331,7 +331,7 @@
     {
       "ordem": 18,
       "remetente": 0,
-      "texto": "tem um italiano novo na vila que e muito bom",
+      "texto": "MATURADOR_APAGAR tem um italiano novo na vila que e muito bom",
       "delay": {
         "min": 20,
         "max": 30
@@ -352,7 +352,7 @@
     {
       "ordem": 19,
       "remetente": 1,
-      "texto": "manda o nome",
+      "texto": "MATURADOR_APAGAR manda o nome",
       "delay": {
         "min": 20,
         "max": 30

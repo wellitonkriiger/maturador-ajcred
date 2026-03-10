@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "meu cachorro foi no vet hoje",
+      "texto": "MATURADOR_APAGAR meu cachorro foi no vet hoje",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "e ai ta tudo bem?",
+      "texto": "MATURADOR_APAGAR e ai ta tudo bem?",
       "delay": {
         "min": 20,
         "max": 30
@@ -63,7 +63,7 @@
     {
       "ordem": 4,
       "remetente": 0,
-      "texto": "ta sim, check up anual",
+      "texto": "MATURADOR_APAGAR ta sim, check up anual",
       "delay": {
         "min": 20,
         "max": 30
@@ -84,7 +84,7 @@
     {
       "ordem": 5,
       "remetente": 1,
-      "texto": "que alivio, qual e a raca dele mesmo",
+      "texto": "MATURADOR_APAGAR que alivio, qual e a raca dele mesmo",
       "delay": {
         "min": 20,
         "max": 30
@@ -105,7 +105,7 @@
     {
       "ordem": 6,
       "remetente": 0,
-      "texto": "labrador, chama Thor",
+      "texto": "MATURADOR_APAGAR labrador, chama Thor",
       "delay": {
         "min": 20,
         "max": 30
@@ -126,7 +126,7 @@
     {
       "ordem": 7,
       "remetente": 1,
-      "texto": "que nome kkkk",
+      "texto": "MATURADOR_APAGAR que nome kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -147,7 +147,7 @@
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "meu filho queria esse nome",
+      "texto": "MATURADOR_APAGAR meu filho queria esse nome",
       "delay": {
         "min": 20,
         "max": 30
@@ -168,7 +168,7 @@
     {
       "ordem": 9,
       "remetente": 0,
-      "texto": "ta bem pesado esse labrador",
+      "texto": "MATURADOR_APAGAR ta bem pesado esse labrador",
       "delay": {
         "min": 20,
         "max": 30
@@ -197,7 +197,7 @@
     {
       "ordem": 11,
       "remetente": 1,
-      "texto": "36 kilos kkkk come demais",
+      "texto": "MATURADOR_APAGAR 36 kilos kkkk come demais",
       "delay": {
         "min": 20,
         "max": 30
@@ -218,7 +218,7 @@
     {
       "ordem": 12,
       "remetente": 1,
-      "texto": "igual ao dono?",
+      "texto": "MATURADOR_APAGAR igual ao dono?",
       "delay": {
         "min": 20,
         "max": 30
@@ -239,7 +239,7 @@
     {
       "ordem": 13,
       "remetente": 1,
-      "texto": "falei nada kkkk",
+      "texto": "MATURADOR_APAGAR falei nada kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -260,7 +260,7 @@
     {
       "ordem": 14,
       "remetente": 1,
-      "texto": "quanto custou o vet",
+      "texto": "MATURADOR_APAGAR quanto custou o vet",
       "delay": {
         "min": 20,
         "max": 30
@@ -281,7 +281,7 @@
     {
       "ordem": 15,
       "remetente": 1,
-      "texto": "280 so a consulta",
+      "texto": "MATURADOR_APAGAR 280 so a consulta",
       "delay": {
         "min": 20,
         "max": 30
@@ -302,7 +302,7 @@
     {
       "ordem": 16,
       "remetente": 1,
-      "texto": "caro, tem plano pra pet",
+      "texto": "MATURADOR_APAGAR caro, tem plano pra pet",
       "delay": {
         "min": 20,
         "max": 30
@@ -323,7 +323,7 @@
     {
       "ordem": 17,
       "remetente": 1,
-      "texto": "ainda nao, to pesquisando",
+      "texto": "MATURADOR_APAGAR ainda nao, to pesquisando",
       "delay": {
         "min": 20,
         "max": 30
@@ -344,7 +344,7 @@
     {
       "ordem": 18,
       "remetente": 0,
-      "texto": "tem uns planos bons por uns 80 reais",
+      "texto": "MATURADOR_APAGAR tem uns planos bons por uns 80 reais",
       "delay": {
         "min": 20,
         "max": 30
@@ -365,7 +365,7 @@
     {
       "ordem": 19,
       "remetente": 1,
-      "texto": "vou olhar isso",
+      "texto": "MATURADOR_APAGAR vou olhar isso",
       "delay": {
         "min": 20,
         "max": 30
@@ -386,7 +386,7 @@
     {
       "ordem": 20,
       "remetente": 0,
-      "texto": "vale muito pra evitar susto no bolso",
+      "texto": "MATURADOR_APAGAR vale muito pra evitar susto no bolso",
       "delay": {
         "min": 20,
         "max": 30
@@ -415,7 +415,7 @@
     {
       "ordem": 22,
       "remetente": 0,
-      "texto": "verdade, obrigado pela dica",
+      "texto": "MATURADOR_APAGAR verdade, obrigado pela dica",
       "delay": {
         "min": 20,
         "max": 30
@@ -436,7 +436,7 @@
     {
       "ordem": 23,
       "remetente": 0,
-      "texto": "meu cachorro foi no vet hoje",
+      "texto": "MATURADOR_APAGAR meu cachorro foi no vet hoje",
       "delay": {
         "min": 20,
         "max": 30
@@ -457,7 +457,7 @@
     {
       "ordem": 24,
       "remetente": 0,
-      "texto": "e ai ta tudo bem?",
+      "texto": "MATURADOR_APAGAR e ai ta tudo bem?",
       "delay": {
         "min": 20,
         "max": 30
@@ -478,7 +478,7 @@
     {
       "ordem": 25,
       "remetente": 0,
-      "texto": "ta sim, check up anual",
+      "texto": "MATURADOR_APAGAR ta sim, check up anual",
       "delay": {
         "min": 20,
         "max": 30
@@ -499,7 +499,7 @@
     {
       "ordem": 26,
       "remetente": 1,
-      "texto": "que alivio, qual e a raca dele mesmo",
+      "texto": "MATURADOR_APAGAR que alivio, qual e a raca dele mesmo",
       "delay": {
         "min": 20,
         "max": 30
@@ -520,7 +520,7 @@
     {
       "ordem": 27,
       "remetente": 1,
-      "texto": "labrador, chama Thor",
+      "texto": "MATURADOR_APAGAR labrador, chama Thor",
       "delay": {
         "min": 20,
         "max": 30
@@ -541,7 +541,7 @@
     {
       "ordem": 28,
       "remetente": 1,
-      "texto": "que nome kkkk",
+      "texto": "MATURADOR_APAGAR que nome kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -562,7 +562,7 @@
     {
       "ordem": 29,
       "remetente": 0,
-      "texto": "meu filho queria esse nome",
+      "texto": "MATURADOR_APAGAR meu filho queria esse nome",
       "delay": {
         "min": 20,
         "max": 30
@@ -583,7 +583,7 @@
     {
       "ordem": 30,
       "remetente": 1,
-      "texto": "ta bem pesado esse labrador",
+      "texto": "MATURADOR_APAGAR ta bem pesado esse labrador",
       "delay": {
         "min": 20,
         "max": 30
@@ -612,7 +612,7 @@
     {
       "ordem": 32,
       "remetente": 1,
-      "texto": "36 kilos kkkk come demais",
+      "texto": "MATURADOR_APAGAR 36 kilos kkkk come demais",
       "delay": {
         "min": 20,
         "max": 30

@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "vc viu que o Kendrick vem ao brasil?",
+      "texto": "MATURADOR_APAGAR vc viu que o Kendrick vem ao brasil?",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "vi fui louco no site",
+      "texto": "MATURADOR_APAGAR vi fui louco no site",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 1,
-      "texto": "conseguiu ingresso?",
+      "texto": "MATURADOR_APAGAR conseguiu ingresso?",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 1,
-      "texto": "sim meia entrada",
+      "texto": "MATURADOR_APAGAR sim meia entrada",
       "delay": {
         "min": 20,
         "max": 30
@@ -97,7 +97,7 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "que sorte eu tentei e lotou",
+      "texto": "MATURADOR_APAGAR que sorte eu tentei e lotou",
       "delay": {
         "min": 20,
         "max": 30
@@ -118,7 +118,7 @@
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "tentei 10h em ponto, servidor caiu",
+      "texto": "MATURADOR_APAGAR tentei 10h em ponto, servidor caiu",
       "delay": {
         "min": 20,
         "max": 30
@@ -147,7 +147,7 @@
     {
       "ordem": 8,
       "remetente": 0,
-      "texto": "absurdo esses sistemas aqui",
+      "texto": "MATURADOR_APAGAR absurdo esses sistemas aqui",
       "delay": {
         "min": 20,
         "max": 30
@@ -176,7 +176,7 @@
     {
       "ordem": 10,
       "remetente": 1,
-      "texto": "sempre a mesma historia",
+      "texto": "MATURADOR_APAGAR sempre a mesma historia",
       "delay": {
         "min": 20,
         "max": 30
@@ -197,7 +197,7 @@
     {
       "ordem": 11,
       "remetente": 1,
-      "texto": "alguem ta vendendo na mao",
+      "texto": "MATURADOR_APAGAR alguem ta vendendo na mao",
       "delay": {
         "min": 20,
         "max": 30
@@ -218,7 +218,7 @@
     {
       "ordem": 12,
       "remetente": 0,
-      "texto": "cobra fortuna, vi a 600 no ML",
+      "texto": "MATURADOR_APAGAR cobra fortuna, vi a 600 no ML",
       "delay": {
         "min": 20,
         "max": 30
@@ -239,7 +239,7 @@
     {
       "ordem": 13,
       "remetente": 0,
-      "texto": "original era 280 cara",
+      "texto": "MATURADOR_APAGAR original era 280 cara",
       "delay": {
         "min": 20,
         "max": 30
@@ -268,7 +268,7 @@
     {
       "ordem": 15,
       "remetente": 1,
-      "texto": "e a realidade dos shows aqui",
+      "texto": "MATURADOR_APAGAR e a realidade dos shows aqui",
       "delay": {
         "min": 20,
         "max": 30
@@ -297,7 +297,7 @@
     {
       "ordem": 17,
       "remetente": 0,
-      "texto": "to chateado demais",
+      "texto": "MATURADOR_APAGAR to chateado demais",
       "delay": {
         "min": 20,
         "max": 30
@@ -318,7 +318,7 @@
     {
       "ordem": 18,
       "remetente": 0,
-      "texto": "vai mesmo assim, o show vale",
+      "texto": "MATURADOR_APAGAR vai mesmo assim, o show vale",
       "delay": {
         "min": 20,
         "max": 30
@@ -339,7 +339,7 @@
     {
       "ordem": 19,
       "remetente": 1,
-      "texto": "to pensando nisso",
+      "texto": "MATURADOR_APAGAR to pensando nisso",
       "delay": {
         "min": 20,
         "max": 30
@@ -384,7 +384,7 @@
     {
       "ordem": 23,
       "remetente": 0,
-      "texto": "o set list dele e insano ao vivo",
+      "texto": "MATURADOR_APAGAR o set list dele e insano ao vivo",
       "delay": {
         "min": 20,
         "max": 30
@@ -413,7 +413,7 @@
     {
       "ordem": 25,
       "remetente": 0,
-      "texto": "nunca vi ele presencial",
+      "texto": "MATURADOR_APAGAR nunca vi ele presencial",
       "delay": {
         "min": 20,
         "max": 30
@@ -434,7 +434,7 @@
     {
       "ordem": 26,
       "remetente": 1,
-      "texto": "e melhor ainda",
+      "texto": "MATURADOR_APAGAR e melhor ainda",
       "delay": {
         "min": 20,
         "max": 30
@@ -455,7 +455,7 @@
     {
       "ordem": 27,
       "remetente": 0,
-      "texto": "talvez eu compre na mao",
+      "texto": "MATURADOR_APAGAR talvez eu compre na mao",
       "delay": {
         "min": 20,
         "max": 30
@@ -476,7 +476,7 @@
     {
       "ordem": 28,
       "remetente": 1,
-      "texto": "vai valer",
+      "texto": "MATURADOR_APAGAR vai valer",
       "delay": {
         "min": 20,
         "max": 30
@@ -497,7 +497,7 @@
     {
       "ordem": 29,
       "remetente": 0,
-      "texto": "vc viu que o Kendrick vem ao brasil?",
+      "texto": "MATURADOR_APAGAR vc viu que o Kendrick vem ao brasil?",
       "delay": {
         "min": 20,
         "max": 30
@@ -518,7 +518,7 @@
     {
       "ordem": 30,
       "remetente": 0,
-      "texto": "vi fui louco no site",
+      "texto": "MATURADOR_APAGAR vi fui louco no site",
       "delay": {
         "min": 20,
         "max": 30
@@ -539,7 +539,7 @@
     {
       "ordem": 31,
       "remetente": 1,
-      "texto": "conseguiu ingresso?",
+      "texto": "MATURADOR_APAGAR conseguiu ingresso?",
       "delay": {
         "min": 20,
         "max": 30
@@ -560,7 +560,7 @@
     {
       "ordem": 32,
       "remetente": 1,
-      "texto": "sim meia entrada",
+      "texto": "MATURADOR_APAGAR sim meia entrada",
       "delay": {
         "min": 20,
         "max": 30
@@ -581,7 +581,7 @@
     {
       "ordem": 33,
       "remetente": 1,
-      "texto": "que sorte eu tentei e lotou",
+      "texto": "MATURADOR_APAGAR que sorte eu tentei e lotou",
       "delay": {
         "min": 20,
         "max": 30
@@ -602,7 +602,7 @@
     {
       "ordem": 34,
       "remetente": 0,
-      "texto": "tentei 10h em ponto, servidor caiu",
+      "texto": "MATURADOR_APAGAR tentei 10h em ponto, servidor caiu",
       "delay": {
         "min": 20,
         "max": 30
@@ -623,7 +623,7 @@
     {
       "ordem": 35,
       "remetente": 1,
-      "texto": "absurdo esses sistemas aqui",
+      "texto": "MATURADOR_APAGAR absurdo esses sistemas aqui",
       "delay": {
         "min": 20,
         "max": 30
@@ -644,7 +644,7 @@
     {
       "ordem": 36,
       "remetente": 0,
-      "texto": "sempre a mesma historia",
+      "texto": "MATURADOR_APAGAR sempre a mesma historia",
       "delay": {
         "min": 20,
         "max": 30
@@ -665,7 +665,7 @@
     {
       "ordem": 37,
       "remetente": 1,
-      "texto": "alguem ta vendendo na mao",
+      "texto": "MATURADOR_APAGAR alguem ta vendendo na mao",
       "delay": {
         "min": 20,
         "max": 30
@@ -686,7 +686,7 @@
     {
       "ordem": 38,
       "remetente": 0,
-      "texto": "cobra fortuna, vi a 600 no ML",
+      "texto": "MATURADOR_APAGAR cobra fortuna, vi a 600 no ML",
       "delay": {
         "min": 20,
         "max": 30
@@ -707,7 +707,7 @@
     {
       "ordem": 39,
       "remetente": 1,
-      "texto": "original era 280 cara",
+      "texto": "MATURADOR_APAGAR original era 280 cara",
       "delay": {
         "min": 20,
         "max": 30
@@ -728,7 +728,7 @@
     {
       "ordem": 40,
       "remetente": 0,
-      "texto": "e a realidade dos shows aqui",
+      "texto": "MATURADOR_APAGAR e a realidade dos shows aqui",
       "delay": {
         "min": 20,
         "max": 30
@@ -749,7 +749,7 @@
     {
       "ordem": 41,
       "remetente": 1,
-      "texto": "to chateado demais",
+      "texto": "MATURADOR_APAGAR to chateado demais",
       "delay": {
         "min": 20,
         "max": 30
@@ -770,7 +770,7 @@
     {
       "ordem": 42,
       "remetente": 0,
-      "texto": "vai mesmo assim, o show vale",
+      "texto": "MATURADOR_APAGAR vai mesmo assim, o show vale",
       "delay": {
         "min": 20,
         "max": 30

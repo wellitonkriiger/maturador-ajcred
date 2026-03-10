@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "oi, vc foi designado pro projeto do banco?",
+      "texto": "MATURADOR_APAGAR oi, vc foi designado pro projeto do banco?",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 0,
-      "texto": "fui sim, hoje de manha",
+      "texto": "MATURADOR_APAGAR fui sim, hoje de manha",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 1,
-      "texto": "eu tb! vamos trabalhar juntos",
+      "texto": "MATURADOR_APAGAR eu tb! vamos trabalhar juntos",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 0,
-      "texto": "que otimo, pelo menos e vc",
+      "texto": "MATURADOR_APAGAR que otimo, pelo menos e vc",
       "delay": {
         "min": 20,
         "max": 30
@@ -97,7 +97,7 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "kkkk o que vc ta entendendo do escopo",
+      "texto": "MATURADOR_APAGAR kkkk o que vc ta entendendo do escopo",
       "delay": {
         "min": 20,
         "max": 30
@@ -118,7 +118,7 @@
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "to lendo ainda, e grande demais",
+      "texto": "MATURADOR_APAGAR to lendo ainda, e grande demais",
       "delay": {
         "min": 20,
         "max": 30
@@ -147,7 +147,7 @@
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "e, tem muita coisa",
+      "texto": "MATURADOR_APAGAR e, tem muita coisa",
       "delay": {
         "min": 20,
         "max": 30
@@ -168,7 +168,7 @@
     {
       "ordem": 9,
       "remetente": 0,
-      "texto": "vc tem experiencia com esse tipo de sistema?",
+      "texto": "MATURADOR_APAGAR vc tem experiencia com esse tipo de sistema?",
       "delay": {
         "min": 20,
         "max": 30
@@ -189,7 +189,7 @@
     {
       "ordem": 10,
       "remetente": 1,
-      "texto": "um pouco, fiz algo parecido em 2021",
+      "texto": "MATURADOR_APAGAR um pouco, fiz algo parecido em 2021",
       "delay": {
         "min": 20,
         "max": 30
@@ -210,7 +210,7 @@
     {
       "ordem": 11,
       "remetente": 0,
-      "texto": "melhor que eu que nunca fiz",
+      "texto": "MATURADOR_APAGAR melhor que eu que nunca fiz",
       "delay": {
         "min": 20,
         "max": 30
@@ -231,7 +231,7 @@
     {
       "ordem": 12,
       "remetente": 1,
-      "texto": "a gente se apoia",
+      "texto": "MATURADOR_APAGAR a gente se apoia",
       "delay": {
         "min": 20,
         "max": 30
@@ -252,7 +252,7 @@
     {
       "ordem": 13,
       "remetente": 0,
-      "texto": "tem reuniao de kick off quando?",
+      "texto": "MATURADOR_APAGAR tem reuniao de kick off quando?",
       "delay": {
         "min": 20,
         "max": 30
@@ -273,7 +273,7 @@
     {
       "ordem": 14,
       "remetente": 0,
-      "texto": "sexta as 14h",
+      "texto": "MATURADOR_APAGAR sexta as 14h",
       "delay": {
         "min": 20,
         "max": 30
@@ -294,7 +294,7 @@
     {
       "ordem": 15,
       "remetente": 0,
-      "texto": "bloqueei ja",
+      "texto": "MATURADOR_APAGAR bloqueei ja",
       "delay": {
         "min": 20,
         "max": 30
@@ -315,7 +315,7 @@
     {
       "ordem": 16,
       "remetente": 1,
-      "texto": "o gerente que coordena e o Andre",
+      "texto": "MATURADOR_APAGAR o gerente que coordena e o Andre",
       "delay": {
         "min": 20,
         "max": 30
@@ -336,7 +336,7 @@
     {
       "ordem": 17,
       "remetente": 1,
-      "texto": "o Andre e bom de trabalhar",
+      "texto": "MATURADOR_APAGAR o Andre e bom de trabalhar",
       "delay": {
         "min": 20,
         "max": 30
@@ -357,7 +357,7 @@
     {
       "ordem": 18,
       "remetente": 0,
-      "texto": "otimo, confio mais agora kkkk",
+      "texto": "MATURADOR_APAGAR otimo, confio mais agora kkkk",
       "delay": {
         "min": 20,
         "max": 30

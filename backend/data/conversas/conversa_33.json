@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "mana, fechei o apartamento",
+      "texto": "MATURADOR_APAGAR mana, fechei o apartamento",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "seerio?? que otimo!",
+      "texto": "MATURADOR_APAGAR seerio?? que otimo!",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 1,
-      "texto": "assinei contrato ontem",
+      "texto": "MATURADOR_APAGAR assinei contrato ontem",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 1,
-      "texto": "que alegria, quando muda?",
+      "texto": "MATURADOR_APAGAR que alegria, quando muda?",
       "delay": {
         "min": 20,
         "max": 30
@@ -97,7 +97,7 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "proximo mes",
+      "texto": "MATURADOR_APAGAR proximo mes",
       "delay": {
         "min": 20,
         "max": 30
@@ -126,7 +126,7 @@
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "ja tem moveis?",
+      "texto": "MATURADOR_APAGAR ja tem moveis?",
       "delay": {
         "min": 20,
         "max": 30
@@ -147,7 +147,7 @@
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "alguns, preciso comprar cama e sofa",
+      "texto": "MATURADOR_APAGAR alguns, preciso comprar cama e sofa",
       "delay": {
         "min": 20,
         "max": 30
@@ -176,7 +176,7 @@
     {
       "ordem": 10,
       "remetente": 0,
-      "texto": "tem que ver na Black Friday",
+      "texto": "MATURADOR_APAGAR tem que ver na Black Friday",
       "delay": {
         "min": 20,
         "max": 30
@@ -197,7 +197,7 @@
     {
       "ordem": 11,
       "remetente": 0,
-      "texto": "e em outubro ainda kkkk",
+      "texto": "MATURADOR_APAGAR e em outubro ainda kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -218,7 +218,7 @@
     {
       "ordem": 12,
       "remetente": 1,
-      "texto": "passa rapido",
+      "texto": "MATURADOR_APAGAR passa rapido",
       "delay": {
         "min": 20,
         "max": 30
@@ -239,7 +239,7 @@
     {
       "ordem": 13,
       "remetente": 0,
-      "texto": "verdade, vou ver se acho usado bom",
+      "texto": "MATURADOR_APAGAR verdade, vou ver se acho usado bom",
       "delay": {
         "min": 20,
         "max": 30
@@ -260,7 +260,7 @@
     {
       "ordem": 14,
       "remetente": 1,
-      "texto": "olha no OLX, tem coisa boa",
+      "texto": "MATURADOR_APAGAR olha no OLX, tem coisa boa",
       "delay": {
         "min": 20,
         "max": 30

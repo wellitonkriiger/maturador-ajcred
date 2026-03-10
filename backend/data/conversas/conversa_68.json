@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "vc viu o video do gato viral?",
+      "texto": "MATURADOR_APAGAR vc viu o video do gato viral?",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "qual? tem mil gatos virais kkkk",
+      "texto": "MATURADOR_APAGAR qual? tem mil gatos virais kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "o que faz som de piano",
+      "texto": "MATURADOR_APAGAR o que faz som de piano",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 0,
-      "texto": "vi kkkk que criativo",
+      "texto": "MATURADOR_APAGAR vi kkkk que criativo",
       "delay": {
         "min": 20,
         "max": 30
@@ -97,7 +97,7 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "o dono treinou ele?",
+      "texto": "MATURADOR_APAGAR o dono treinou ele?",
       "delay": {
         "min": 20,
         "max": 30
@@ -118,7 +118,7 @@
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "dicen que foi natural",
+      "texto": "MATURADOR_APAGAR dicen que foi natural",
       "delay": {
         "min": 20,
         "max": 30
@@ -139,7 +139,7 @@
     {
       "ordem": 7,
       "remetente": 1,
-      "texto": "absurdo isso",
+      "texto": "MATURADOR_APAGAR absurdo isso",
       "delay": {
         "min": 20,
         "max": 30
@@ -160,7 +160,7 @@
     {
       "ordem": 8,
       "remetente": 0,
-      "texto": "a internet muda tudo",
+      "texto": "MATURADOR_APAGAR a internet muda tudo",
       "delay": {
         "min": 20,
         "max": 30
@@ -181,7 +181,7 @@
     {
       "ordem": 9,
       "remetente": 0,
-      "texto": "imagina ser aquele gato agora",
+      "texto": "MATURADOR_APAGAR imagina ser aquele gato agora",
       "delay": {
         "min": 20,
         "max": 30
@@ -202,7 +202,7 @@
     {
       "ordem": 10,
       "remetente": 1,
-      "texto": "famoso mundial kkkk",
+      "texto": "MATURADOR_APAGAR famoso mundial kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -223,7 +223,7 @@
     {
       "ordem": 11,
       "remetente": 0,
-      "texto": "ja tem 50 milhoes de views",
+      "texto": "MATURADOR_APAGAR ja tem 50 milhoes de views",
       "delay": {
         "min": 20,
         "max": 30
@@ -260,7 +260,7 @@
     {
       "ordem": 14,
       "remetente": 1,
-      "texto": "o pior e o dono trabalhando normal",
+      "texto": "MATURADOR_APAGAR o pior e o dono trabalhando normal",
       "delay": {
         "min": 20,
         "max": 30
@@ -281,7 +281,7 @@
     {
       "ordem": 15,
       "remetente": 0,
-      "texto": "enquanto o gato e estrela",
+      "texto": "MATURADOR_APAGAR enquanto o gato e estrela",
       "delay": {
         "min": 20,
         "max": 30
@@ -302,7 +302,7 @@
     {
       "ordem": 16,
       "remetente": 0,
-      "texto": "isso e injustico kkkk",
+      "texto": "MATURADOR_APAGAR isso e injustico kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -323,7 +323,7 @@
     {
       "ordem": 17,
       "remetente": 0,
-      "texto": "voce tem pet?",
+      "texto": "MATURADOR_APAGAR voce tem pet?",
       "delay": {
         "min": 20,
         "max": 30
@@ -344,7 +344,7 @@
     {
       "ordem": 18,
       "remetente": 0,
-      "texto": "tenho um gato tb",
+      "texto": "MATURADOR_APAGAR tenho um gato tb",
       "delay": {
         "min": 20,
         "max": 30
@@ -365,7 +365,7 @@
     {
       "ordem": 19,
       "remetente": 1,
-      "texto": "tenta ensinar piano kkkk",
+      "texto": "MATURADOR_APAGAR tenta ensinar piano kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -386,7 +386,7 @@
     {
       "ordem": 20,
       "remetente": 1,
-      "texto": "ele nao liga pra mim so pra comida",
+      "texto": "MATURADOR_APAGAR ele nao liga pra mim so pra comida",
       "delay": {
         "min": 20,
         "max": 30
@@ -407,7 +407,7 @@
     {
       "ordem": 21,
       "remetente": 0,
-      "texto": "todos os gatos kkkk",
+      "texto": "MATURADOR_APAGAR todos os gatos kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -428,7 +428,7 @@
     {
       "ordem": 22,
       "remetente": 1,
-      "texto": "exatamente",
+      "texto": "MATURADOR_APAGAR exatamente",
       "delay": {
         "min": 20,
         "max": 30
@@ -449,7 +449,7 @@
     {
       "ordem": 23,
       "remetente": 0,
-      "texto": "vc viu o video do gato viral?",
+      "texto": "MATURADOR_APAGAR vc viu o video do gato viral?",
       "delay": {
         "min": 20,
         "max": 30
@@ -470,7 +470,7 @@
     {
       "ordem": 24,
       "remetente": 1,
-      "texto": "qual? tem mil gatos virais kkkk",
+      "texto": "MATURADOR_APAGAR qual? tem mil gatos virais kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -499,7 +499,7 @@
     {
       "ordem": 26,
       "remetente": 1,
-      "texto": "o que faz som de piano",
+      "texto": "MATURADOR_APAGAR o que faz som de piano",
       "delay": {
         "min": 20,
         "max": 30
@@ -520,7 +520,7 @@
     {
       "ordem": 27,
       "remetente": 1,
-      "texto": "vi kkkk que criativo",
+      "texto": "MATURADOR_APAGAR vi kkkk que criativo",
       "delay": {
         "min": 20,
         "max": 30
@@ -541,7 +541,7 @@
     {
       "ordem": 28,
       "remetente": 1,
-      "texto": "o dono treinou ele?",
+      "texto": "MATURADOR_APAGAR o dono treinou ele?",
       "delay": {
         "min": 20,
         "max": 30
@@ -562,7 +562,7 @@
     {
       "ordem": 29,
       "remetente": 0,
-      "texto": "dicen que foi natural",
+      "texto": "MATURADOR_APAGAR dicen que foi natural",
       "delay": {
         "min": 20,
         "max": 30
@@ -583,7 +583,7 @@
     {
       "ordem": 30,
       "remetente": 1,
-      "texto": "absurdo isso",
+      "texto": "MATURADOR_APAGAR absurdo isso",
       "delay": {
         "min": 20,
         "max": 30
@@ -604,7 +604,7 @@
     {
       "ordem": 31,
       "remetente": 0,
-      "texto": "a internet muda tudo",
+      "texto": "MATURADOR_APAGAR a internet muda tudo",
       "delay": {
         "min": 20,
         "max": 30
@@ -625,7 +625,7 @@
     {
       "ordem": 32,
       "remetente": 1,
-      "texto": "imagina ser aquele gato agora",
+      "texto": "MATURADOR_APAGAR imagina ser aquele gato agora",
       "delay": {
         "min": 20,
         "max": 30
@@ -646,7 +646,7 @@
     {
       "ordem": 33,
       "remetente": 0,
-      "texto": "famoso mundial kkkk",
+      "texto": "MATURADOR_APAGAR famoso mundial kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -667,7 +667,7 @@
     {
       "ordem": 34,
       "remetente": 0,
-      "texto": "ja tem 50 milhoes de views",
+      "texto": "MATURADOR_APAGAR ja tem 50 milhoes de views",
       "delay": {
         "min": 20,
         "max": 30
@@ -688,7 +688,7 @@
     {
       "ordem": 35,
       "remetente": 1,
-      "texto": "o pior e o dono trabalhando normal",
+      "texto": "MATURADOR_APAGAR o pior e o dono trabalhando normal",
       "delay": {
         "min": 20,
         "max": 30
@@ -725,7 +725,7 @@
     {
       "ordem": 38,
       "remetente": 0,
-      "texto": "enquanto o gato e estrela",
+      "texto": "MATURADOR_APAGAR enquanto o gato e estrela",
       "delay": {
         "min": 20,
         "max": 30
@@ -746,7 +746,7 @@
     {
       "ordem": 39,
       "remetente": 1,
-      "texto": "isso e injustico kkkk",
+      "texto": "MATURADOR_APAGAR isso e injustico kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -767,7 +767,7 @@
     {
       "ordem": 40,
       "remetente": 1,
-      "texto": "voce tem pet?",
+      "texto": "MATURADOR_APAGAR voce tem pet?",
       "delay": {
         "min": 20,
         "max": 30
@@ -788,7 +788,7 @@
     {
       "ordem": 41,
       "remetente": 0,
-      "texto": "tenho um gato tb",
+      "texto": "MATURADOR_APAGAR tenho um gato tb",
       "delay": {
         "min": 20,
         "max": 30
@@ -809,7 +809,7 @@
     {
       "ordem": 42,
       "remetente": 0,
-      "texto": "tenta ensinar piano kkkk",
+      "texto": "MATURADOR_APAGAR tenta ensinar piano kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -830,7 +830,7 @@
     {
       "ordem": 43,
       "remetente": 1,
-      "texto": "ele nao liga pra mim so pra comida",
+      "texto": "MATURADOR_APAGAR ele nao liga pra mim so pra comida",
       "delay": {
         "min": 20,
         "max": 30
@@ -851,7 +851,7 @@
     {
       "ordem": 44,
       "remetente": 0,
-      "texto": "todos os gatos kkkk",
+      "texto": "MATURADOR_APAGAR todos os gatos kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -872,7 +872,7 @@
     {
       "ordem": 45,
       "remetente": 0,
-      "texto": "exatamente",
+      "texto": "MATURADOR_APAGAR exatamente",
       "delay": {
         "min": 20,
         "max": 30
@@ -893,7 +893,7 @@
     {
       "ordem": 46,
       "remetente": 1,
-      "texto": "vc viu o video do gato viral?",
+      "texto": "MATURADOR_APAGAR vc viu o video do gato viral?",
       "delay": {
         "min": 20,
         "max": 30
@@ -914,7 +914,7 @@
     {
       "ordem": 47,
       "remetente": 0,
-      "texto": "qual? tem mil gatos virais kkkk",
+      "texto": "MATURADOR_APAGAR qual? tem mil gatos virais kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -935,7 +935,7 @@
     {
       "ordem": 48,
       "remetente": 0,
-      "texto": "o que faz som de piano",
+      "texto": "MATURADOR_APAGAR o que faz som de piano",
       "delay": {
         "min": 20,
         "max": 30

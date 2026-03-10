@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "oi, fui no medico hoje",
+      "texto": "MATURADOR_APAGAR oi, fui no medico hoje",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "e ai como foi",
+      "texto": "MATURADOR_APAGAR e ai como foi",
       "delay": {
         "min": 20,
         "max": 30
@@ -63,7 +63,7 @@
     {
       "ordem": 4,
       "remetente": 0,
-      "texto": "nao e nada grave, graças a deus",
+      "texto": "MATURADOR_APAGAR nao e nada grave, graças a deus",
       "delay": {
         "min": 20,
         "max": 30
@@ -84,7 +84,7 @@
     {
       "ordem": 5,
       "remetente": 1,
-      "texto": "que alivio, o que tinha",
+      "texto": "MATURADOR_APAGAR que alivio, o que tinha",
       "delay": {
         "min": 20,
         "max": 30
@@ -105,7 +105,7 @@
     {
       "ordem": 6,
       "remetente": 0,
-      "texto": "pressao um pouco alta",
+      "texto": "MATURADOR_APAGAR pressao um pouco alta",
       "delay": {
         "min": 20,
         "max": 30
@@ -126,7 +126,7 @@
     {
       "ordem": 7,
       "remetente": 1,
-      "texto": "precisou medicar?",
+      "texto": "MATURADOR_APAGAR precisou medicar?",
       "delay": {
         "min": 20,
         "max": 30
@@ -147,7 +147,7 @@
     {
       "ordem": 8,
       "remetente": 0,
-      "texto": "receitou um remedio leve",
+      "texto": "MATURADOR_APAGAR receitou um remedio leve",
       "delay": {
         "min": 20,
         "max": 30
@@ -168,7 +168,7 @@
     {
       "ordem": 9,
       "remetente": 1,
-      "texto": "ta tomando?",
+      "texto": "MATURADOR_APAGAR ta tomando?",
       "delay": {
         "min": 20,
         "max": 30
@@ -189,7 +189,7 @@
     {
       "ordem": 10,
       "remetente": 0,
-      "texto": "to sim, começa hoje",
+      "texto": "MATURADOR_APAGAR to sim, começa hoje",
       "delay": {
         "min": 20,
         "max": 30
@@ -210,7 +210,7 @@
     {
       "ordem": 11,
       "remetente": 1,
-      "texto": "cuida bem disso viu",
+      "texto": "MATURADOR_APAGAR cuida bem disso viu",
       "delay": {
         "min": 20,
         "max": 30
@@ -231,7 +231,7 @@
     {
       "ordem": 12,
       "remetente": 1,
-      "texto": "vou sim, ele falou pra reduzir o sal",
+      "texto": "MATURADOR_APAGAR vou sim, ele falou pra reduzir o sal",
       "delay": {
         "min": 20,
         "max": 30
@@ -252,7 +252,7 @@
     {
       "ordem": 13,
       "remetente": 0,
-      "texto": "dificil esse haha",
+      "texto": "MATURADOR_APAGAR dificil esse haha",
       "delay": {
         "min": 20,
         "max": 30
@@ -273,7 +273,7 @@
     {
       "ordem": 14,
       "remetente": 1,
-      "texto": "e eu sei, mas vamos tentar",
+      "texto": "MATURADOR_APAGAR e eu sei, mas vamos tentar",
       "delay": {
         "min": 20,
         "max": 30
@@ -294,7 +294,7 @@
     {
       "ordem": 15,
       "remetente": 1,
-      "texto": "precisa de alguma coisa?",
+      "texto": "MATURADOR_APAGAR precisa de alguma coisa?",
       "delay": {
         "min": 20,
         "max": 30
@@ -315,7 +315,7 @@
     {
       "ordem": 16,
       "remetente": 0,
-      "texto": "nao obrigada, ta tudo certo",
+      "texto": "MATURADOR_APAGAR nao obrigada, ta tudo certo",
       "delay": {
         "min": 20,
         "max": 30
@@ -336,7 +336,7 @@
     {
       "ordem": 17,
       "remetente": 1,
-      "texto": "qualquer coisa fala",
+      "texto": "MATURADOR_APAGAR qualquer coisa fala",
       "delay": {
         "min": 20,
         "max": 30
@@ -357,7 +357,7 @@
     {
       "ordem": 18,
       "remetente": 1,
-      "texto": "obrigada mesmo",
+      "texto": "MATURADOR_APAGAR obrigada mesmo",
       "delay": {
         "min": 20,
         "max": 30
@@ -386,7 +386,7 @@
     {
       "ordem": 20,
       "remetente": 0,
-      "texto": "oi, fui no medico hoje",
+      "texto": "MATURADOR_APAGAR oi, fui no medico hoje",
       "delay": {
         "min": 20,
         "max": 30
@@ -423,7 +423,7 @@
     {
       "ordem": 23,
       "remetente": 1,
-      "texto": "e ai como foi",
+      "texto": "MATURADOR_APAGAR e ai como foi",
       "delay": {
         "min": 20,
         "max": 30

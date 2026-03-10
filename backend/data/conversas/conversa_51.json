@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "vc viu o email do Marcos?",
+      "texto": "MATURADOR_APAGAR vc viu o email do Marcos?",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "vi sim, reuniao amanha 8h da manha",
+      "texto": "MATURADOR_APAGAR vi sim, reuniao amanha 8h da manha",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "que hora do inferno",
+      "texto": "MATURADOR_APAGAR que hora do inferno",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 1,
-      "texto": "e o cliente reclamou de novo",
+      "texto": "MATURADOR_APAGAR e o cliente reclamou de novo",
       "delay": {
         "min": 20,
         "max": 30
@@ -97,7 +97,7 @@
     {
       "ordem": 5,
       "remetente": 0,
-      "texto": "aquele cliente impossivel",
+      "texto": "MATURADOR_APAGAR aquele cliente impossivel",
       "delay": {
         "min": 20,
         "max": 30
@@ -118,7 +118,7 @@
     {
       "ordem": 6,
       "remetente": 1,
-      "texto": "refizemos o layout 3 vezes ja",
+      "texto": "MATURADOR_APAGAR refizemos o layout 3 vezes ja",
       "delay": {
         "min": 20,
         "max": 30
@@ -139,7 +139,7 @@
     {
       "ordem": 7,
       "remetente": 0,
-      "texto": "e agora quer mais uma versao",
+      "texto": "MATURADOR_APAGAR e agora quer mais uma versao",
       "delay": {
         "min": 20,
         "max": 30
@@ -160,7 +160,7 @@
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "to preparando uns prints das versoes anteriores",
+      "texto": "MATURADOR_APAGAR to preparando uns prints das versoes anteriores",
       "delay": {
         "min": 20,
         "max": 30
@@ -181,7 +181,7 @@
     {
       "ordem": 9,
       "remetente": 0,
-      "texto": "boa ideia, mostra o historico",
+      "texto": "MATURADOR_APAGAR boa ideia, mostra o historico",
       "delay": {
         "min": 20,
         "max": 30
@@ -210,7 +210,7 @@
     {
       "ordem": 11,
       "remetente": 1,
-      "texto": "exato, fica registrado tb",
+      "texto": "MATURADOR_APAGAR exato, fica registrado tb",
       "delay": {
         "min": 20,
         "max": 30
@@ -231,7 +231,7 @@
     {
       "ordem": 12,
       "remetente": 0,
-      "texto": "vc consegue me mandar essa noite?",
+      "texto": "MATURADOR_APAGAR vc consegue me mandar essa noite?",
       "delay": {
         "min": 20,
         "max": 30
@@ -252,7 +252,7 @@
     {
       "ordem": 13,
       "remetente": 0,
-      "texto": "consigo sim, mando ate 22h",
+      "texto": "MATURADOR_APAGAR consigo sim, mando ate 22h",
       "delay": {
         "min": 20,
         "max": 30
@@ -273,7 +273,7 @@
     {
       "ordem": 14,
       "remetente": 1,
-      "texto": "otimo, vou incluir na apresentacao",
+      "texto": "MATURADOR_APAGAR otimo, vou incluir na apresentacao",
       "delay": {
         "min": 20,
         "max": 30
@@ -302,7 +302,7 @@
     {
       "ordem": 16,
       "remetente": 0,
-      "texto": "que reuniao ruim vai ser",
+      "texto": "MATURADOR_APAGAR que reuniao ruim vai ser",
       "delay": {
         "min": 20,
         "max": 30
@@ -323,7 +323,7 @@
     {
       "ordem": 17,
       "remetente": 1,
-      "texto": "a pior kkkk mas vamos la",
+      "texto": "MATURADOR_APAGAR a pior kkkk mas vamos la",
       "delay": {
         "min": 20,
         "max": 30
@@ -344,7 +344,7 @@
     {
       "ordem": 18,
       "remetente": 0,
-      "texto": "depois me conta como foi",
+      "texto": "MATURADOR_APAGAR depois me conta como foi",
       "delay": {
         "min": 20,
         "max": 30
@@ -365,7 +365,7 @@
     {
       "ordem": 19,
       "remetente": 1,
-      "texto": "conto sim, torce pra acabar bem",
+      "texto": "MATURADOR_APAGAR conto sim, torce pra acabar bem",
       "delay": {
         "min": 20,
         "max": 30
@@ -386,7 +386,7 @@
     {
       "ordem": 20,
       "remetente": 0,
-      "texto": "torcendo muito kkkk",
+      "texto": "MATURADOR_APAGAR torcendo muito kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -407,7 +407,7 @@
     {
       "ordem": 21,
       "remetente": 1,
-      "texto": "vc viu o email do Marcos?",
+      "texto": "MATURADOR_APAGAR vc viu o email do Marcos?",
       "delay": {
         "min": 20,
         "max": 30

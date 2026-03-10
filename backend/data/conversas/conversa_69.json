@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 0,
-      "texto": "faz tempo que a gente nao sai",
+      "texto": "MATURADOR_APAGAR faz tempo que a gente nao sai",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "demais, ultima foi no carnaval",
+      "texto": "MATURADOR_APAGAR demais, ultima foi no carnaval",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 0,
-      "texto": "que saudade daquela noite",
+      "texto": "MATURADOR_APAGAR que saudade daquela noite",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 1,
-      "texto": "foi demais kkkk",
+      "texto": "MATURADOR_APAGAR foi demais kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -97,7 +97,7 @@
     {
       "ordem": 5,
       "remetente": 1,
-      "texto": "vamos marcar esse mes",
+      "texto": "MATURADOR_APAGAR vamos marcar esse mes",
       "delay": {
         "min": 20,
         "max": 30
@@ -118,7 +118,7 @@
     {
       "ordem": 6,
       "remetente": 0,
-      "texto": "jantar? tem um italiano novo aqui",
+      "texto": "MATURADOR_APAGAR jantar? tem um italiano novo aqui",
       "delay": {
         "min": 20,
         "max": 30
@@ -139,7 +139,7 @@
     {
       "ordem": 7,
       "remetente": 1,
-      "texto": "gostei muito, onde e?",
+      "texto": "MATURADOR_APAGAR gostei muito, onde e?",
       "delay": {
         "min": 20,
         "max": 30
@@ -160,7 +160,7 @@
     {
       "ordem": 8,
       "remetente": 1,
-      "texto": "na Vila Madalena perto do metro",
+      "texto": "MATURADOR_APAGAR na Vila Madalena perto do metro",
       "delay": {
         "min": 20,
         "max": 30
@@ -181,7 +181,7 @@
     {
       "ordem": 9,
       "remetente": 1,
-      "texto": "boa localizacao, tem que reservar?",
+      "texto": "MATURADOR_APAGAR boa localizacao, tem que reservar?",
       "delay": {
         "min": 20,
         "max": 30
@@ -202,7 +202,7 @@
     {
       "ordem": 10,
       "remetente": 1,
-      "texto": "sim, faz na quinta ou sexta?",
+      "texto": "MATURADOR_APAGAR sim, faz na quinta ou sexta?",
       "delay": {
         "min": 20,
         "max": 30
@@ -223,7 +223,7 @@
     {
       "ordem": 11,
       "remetente": 0,
-      "texto": "sexta melhor pra mim",
+      "texto": "MATURADOR_APAGAR sexta melhor pra mim",
       "delay": {
         "min": 20,
         "max": 30
@@ -244,7 +244,7 @@
     {
       "ordem": 12,
       "remetente": 1,
-      "texto": "pra mim tb, chamo a Bea tb?",
+      "texto": "MATURADOR_APAGAR pra mim tb, chamo a Bea tb?",
       "delay": {
         "min": 20,
         "max": 30
@@ -265,7 +265,7 @@
     {
       "ordem": 13,
       "remetente": 0,
-      "texto": "claro, quanto mais melhor",
+      "texto": "MATURADOR_APAGAR claro, quanto mais melhor",
       "delay": {
         "min": 20,
         "max": 30
@@ -286,7 +286,7 @@
     {
       "ordem": 14,
       "remetente": 1,
-      "texto": "que horario, 20h?",
+      "texto": "MATURADOR_APAGAR que horario, 20h?",
       "delay": {
         "min": 20,
         "max": 30
@@ -307,7 +307,7 @@
     {
       "ordem": 15,
       "remetente": 0,
-      "texto": "perfeito",
+      "texto": "MATURADOR_APAGAR perfeito",
       "delay": {
         "min": 20,
         "max": 30
@@ -328,7 +328,7 @@
     {
       "ordem": 16,
       "remetente": 0,
-      "texto": "combinado, eu reservo",
+      "texto": "MATURADOR_APAGAR combinado, eu reservo",
       "delay": {
         "min": 20,
         "max": 30
@@ -349,7 +349,7 @@
     {
       "ordem": 17,
       "remetente": 1,
-      "texto": "eu cuido da entrada e sobremesa",
+      "texto": "MATURADOR_APAGAR eu cuido da entrada e sobremesa",
       "delay": {
         "min": 20,
         "max": 30
@@ -370,7 +370,7 @@
     {
       "ordem": 18,
       "remetente": 0,
-      "texto": "boa ideia, cada um divide a conta?",
+      "texto": "MATURADOR_APAGAR boa ideia, cada um divide a conta?",
       "delay": {
         "min": 20,
         "max": 30
@@ -391,7 +391,7 @@
     {
       "ordem": 19,
       "remetente": 1,
-      "texto": "ou junta tudo e divide igual",
+      "texto": "MATURADOR_APAGAR ou junta tudo e divide igual",
       "delay": {
         "min": 20,
         "max": 30
@@ -412,7 +412,7 @@
     {
       "ordem": 20,
       "remetente": 1,
-      "texto": "igual e mais facil, combinado",
+      "texto": "MATURADOR_APAGAR igual e mais facil, combinado",
       "delay": {
         "min": 20,
         "max": 30
@@ -441,7 +441,7 @@
     {
       "ordem": 22,
       "remetente": 0,
-      "texto": "faz tempo que a gente nao sai",
+      "texto": "MATURADOR_APAGAR faz tempo que a gente nao sai",
       "delay": {
         "min": 20,
         "max": 30
@@ -462,7 +462,7 @@
     {
       "ordem": 23,
       "remetente": 1,
-      "texto": "demais, ultima foi no carnaval",
+      "texto": "MATURADOR_APAGAR demais, ultima foi no carnaval",
       "delay": {
         "min": 20,
         "max": 30
@@ -483,7 +483,7 @@
     {
       "ordem": 24,
       "remetente": 1,
-      "texto": "que saudade daquela noite",
+      "texto": "MATURADOR_APAGAR que saudade daquela noite",
       "delay": {
         "min": 20,
         "max": 30
@@ -504,7 +504,7 @@
     {
       "ordem": 25,
       "remetente": 1,
-      "texto": "foi demais kkkk",
+      "texto": "MATURADOR_APAGAR foi demais kkkk",
       "delay": {
         "min": 20,
         "max": 30
@@ -525,7 +525,7 @@
     {
       "ordem": 26,
       "remetente": 1,
-      "texto": "vamos marcar esse mes",
+      "texto": "MATURADOR_APAGAR vamos marcar esse mes",
       "delay": {
         "min": 20,
         "max": 30
@@ -546,7 +546,7 @@
     {
       "ordem": 27,
       "remetente": 1,
-      "texto": "jantar? tem um italiano novo aqui",
+      "texto": "MATURADOR_APAGAR jantar? tem um italiano novo aqui",
       "delay": {
         "min": 20,
         "max": 30
@@ -567,7 +567,7 @@
     {
       "ordem": 28,
       "remetente": 0,
-      "texto": "gostei muito, onde e?",
+      "texto": "MATURADOR_APAGAR gostei muito, onde e?",
       "delay": {
         "min": 20,
         "max": 30
@@ -588,7 +588,7 @@
     {
       "ordem": 29,
       "remetente": 1,
-      "texto": "na Vila Madalena perto do metro",
+      "texto": "MATURADOR_APAGAR na Vila Madalena perto do metro",
       "delay": {
         "min": 20,
         "max": 30
@@ -609,7 +609,7 @@
     {
       "ordem": 30,
       "remetente": 0,
-      "texto": "boa localizacao, tem que reservar?",
+      "texto": "MATURADOR_APAGAR boa localizacao, tem que reservar?",
       "delay": {
         "min": 20,
         "max": 30
@@ -630,7 +630,7 @@
     {
       "ordem": 31,
       "remetente": 1,
-      "texto": "sim, faz na quinta ou sexta?",
+      "texto": "MATURADOR_APAGAR sim, faz na quinta ou sexta?",
       "delay": {
         "min": 20,
         "max": 30
@@ -651,7 +651,7 @@
     {
       "ordem": 32,
       "remetente": 0,
-      "texto": "sexta melhor pra mim",
+      "texto": "MATURADOR_APAGAR sexta melhor pra mim",
       "delay": {
         "min": 20,
         "max": 30

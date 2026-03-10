@@ -13,7 +13,7 @@
     {
       "ordem": 1,
       "remetente": 1,
-      "texto": "to vendo o Roland Garros aqui",
+      "texto": "MATURADOR_APAGAR to vendo o Roland Garros aqui",
       "delay": {
         "min": 20,
         "max": 30
@@ -34,7 +34,7 @@
     {
       "ordem": 2,
       "remetente": 1,
-      "texto": "quem ta jogando agora",
+      "texto": "MATURADOR_APAGAR quem ta jogando agora",
       "delay": {
         "min": 20,
         "max": 30
@@ -55,7 +55,7 @@
     {
       "ordem": 3,
       "remetente": 1,
-      "texto": "Alcaraz na semifinal",
+      "texto": "MATURADOR_APAGAR Alcaraz na semifinal",
       "delay": {
         "min": 20,
         "max": 30
@@ -76,7 +76,7 @@
     {
       "ordem": 4,
       "remetente": 1,
-      "texto": "contra quem",
+      "texto": "MATURADOR_APAGAR contra quem",
       "delay": {
         "min": 20,
         "max": 30
@@ -97,7 +97,7 @@
     {
       "ordem": 5,
       "remetente": 1,
-      "texto": "Djokovic",
+      "texto": "MATURADOR_APAGAR Djokovic",
       "delay": {
         "min": 20,
         "max": 30
@@ -118,7 +118,7 @@
     {
       "ordem": 6,
       "remetente": 0,
-      "texto": "classico moderno esse",
+      "texto": "MATURADOR_APAGAR classico moderno esse",
       "delay": {
         "min": 20,
         "max": 30
@@ -139,7 +139,7 @@
     {
       "ordem": 7,
       "remetente": 1,
-      "texto": "o Alcaraz ta dominando",
+      "texto": "MATURADOR_APAGAR o Alcaraz ta dominando",
       "delay": {
         "min": 20,
         "max": 30
@@ -168,7 +168,7 @@
     {
       "ordem": 9,
       "remetente": 0,
-      "texto": "quando o Djokovic entra no terceiro set muda tudo",
+      "texto": "MATURADOR_APAGAR quando o Djokovic entra no terceiro set muda tudo",
       "delay": {
         "min": 20,
         "max": 30
@@ -197,7 +197,7 @@
     {
       "ordem": 11,
       "remetente": 1,
-      "texto": "verdade ele e mental",
+      "texto": "MATURADOR_APAGAR verdade ele e mental",
       "delay": {
         "min": 20,
         "max": 30
@@ -218,7 +218,7 @@
     {
       "ordem": 12,
       "remetente": 0,
-      "texto": "mas o Alcaraz ta mais fisico",
+      "texto": "MATURADOR_APAGAR mas o Alcaraz ta mais fisico",
       "delay": {
         "min": 20,
         "max": 30
@@ -239,7 +239,7 @@
     {
       "ordem": 13,
       "remetente": 0,
-      "texto": "5 sets esse jogo sem duvida",
+      "texto": "MATURADOR_APAGAR 5 sets esse jogo sem duvida",
       "delay": {
         "min": 20,
         "max": 30
@@ -260,7 +260,7 @@
     {
       "ordem": 14,
       "remetente": 1,
-      "texto": "to torcendo pro Alcaraz",
+      "texto": "MATURADOR_APAGAR to torcendo pro Alcaraz",
       "delay": {
         "min": 20,
         "max": 30
@@ -281,7 +281,7 @@
     {
       "ordem": 15,
       "remetente": 1,
-      "texto": "eu tb sinceramente",
+      "texto": "MATURADOR_APAGAR eu tb sinceramente",
       "delay": {
         "min": 20,
         "max": 30
@@ -302,7 +302,7 @@
     {
       "ordem": 16,
       "remetente": 0,
-      "texto": "hora de renovar o tenis",
+      "texto": "MATURADOR_APAGAR hora de renovar o tenis",
       "delay": {
         "min": 20,
         "max": 30
@@ -323,7 +323,7 @@
     {
       "ordem": 17,
       "remetente": 0,
-      "texto": "o Nadal ja ta aposentado quase",
+      "texto": "MATURADOR_APAGAR o Nadal ja ta aposentado quase",
       "delay": {
         "min": 20,
         "max": 30
