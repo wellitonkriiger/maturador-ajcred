@@ -5,7 +5,8 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "doctor:browser": "node src/scripts/doctor-browser.js"
   },
   "keywords": [
     "whatsapp",
@@ -20,6 +21,7 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "node-cron": "^3.0.3",
+    "puppeteer": "^24.37.3",
     "qrcode": "^1.5.4",
     "qrcode-terminal": "^0.12.0",
     "socket.io": "^4.6.1",

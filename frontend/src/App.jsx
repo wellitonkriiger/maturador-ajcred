@@ -228,40 +228,58 @@ export default function App() {
     return window.localStorage.getItem(THEME_STORAGE_KEY) === 'dark' ? 'dark' : 'light';
   });
   const [page, setPage] = useState('dashboard');
-  const [backendOk, setBackendOk] = useState(null);
+  const [backendState, setBackendState] = useState('checking');
+  const [browserRuntime, setBrowserRuntime] = useState(null);
   const [telefones, setTelefones] = useState([]);
   const [status, setStatus] = useState(null);
   const [ativas, setAtivas] = useState([]);
   const [liveLog, setLiveLog] = useState(null);
   const { toasts, push } = useToasts();
 
+  function applyHealthPayload(payload) {
+    setBrowserRuntime(payload?.services?.whatsappBrowser || null);
+    setBackendState(payload?.status === 'degraded' ? 'degraded' : 'online');
+  }
+
+  async function refreshHealth() {
+    try {
+      const response = await fetch(`${BACKEND_ROOT}/health`);
+      if (!response.ok) {
+        throw new Error(`health_http_${response.status}`);
+      }
+      const payload = await response.json();
+      applyHealthPayload(payload);
+      return payload;
+    } catch {
+      setBackendState('offline');
+      setBrowserRuntime(null);
+      return null;
+    }
+  }
+
   async function refreshSnapshot() {
     try {
-      const [phoneList, maturacaoStatus, activeList] = await Promise.all([
+      const [phoneList, maturacaoStatus, activeList, healthPayload] = await Promise.all([
         api('/telefones'),
         api('/maturacao/status'),
-        api('/maturacao/conversas-ativas')
+        api('/maturacao/conversas-ativas'),
+        refreshHealth()
       ]);
       setTelefones(Array.isArray(phoneList) ? phoneList : []);
       setStatus(maturacaoStatus);
       setAtivas(Array.isArray(activeList) ? activeList : []);
-      setBackendOk(true);
+      if (healthPayload) {
+        applyHealthPayload(healthPayload);
+      }
     } catch {
-      setBackendOk(false);
+      await refreshHealth();
     }
   }
 
   useEffect(() => {
     refreshSnapshot();
     const poll = window.setInterval(refreshSnapshot, POLL_INTERVAL);
-    const health = window.setInterval(async () => {
-      try {
-        await fetch(`${BACKEND_ROOT}/health`);
-        setBackendOk(true);
-      } catch {
-        setBackendOk(false);
-      }
-    }, 8000);
+    const health = window.setInterval(refreshHealth, 8000);
     return () => {
       window.clearInterval(poll);
       window.clearInterval(health);
@@ -319,8 +337,14 @@ export default function App() {
             })}
           </nav>
           <div className="status">
-            {backendOk ? <CheckCircle2 size={16} /> : <TriangleAlert size={16} />}
-            {backendOk === null ? 'verificando backend' : backendOk ? 'backend online' : 'backend offline'}
+            {backendState === 'online' ? <CheckCircle2 size={16} /> : <TriangleAlert size={16} />}
+            {backendState === 'checking'
+              ? 'verificando backend'
+              : backendState === 'degraded'
+                ? 'backend degradado'
+                : backendState === 'online'
+                  ? 'backend online'
+                  : 'backend offline'}
           </div>
         </aside>
 
@@ -343,7 +367,7 @@ export default function App() {
           </div>
 
           {page === 'dashboard' && <DashboardPage telefones={telefones} status={status} ativas={ativas} toast={push} refreshSnapshot={refreshSnapshot} />}
-          {page === 'telefones' && <TelefonesPage telefones={telefones} toast={push} refreshSnapshot={refreshSnapshot} />}
+          {page === 'telefones' && <TelefonesPage telefones={telefones} toast={push} refreshSnapshot={refreshSnapshot} browserRuntime={browserRuntime} />}
           {page === 'conversas' && <ConversasPage toast={push} />}
           {page === 'plano' && <PlanoPage toast={push} status={status} />}
           {page === 'logs' && <LogsPage liveLog={liveLog} toast={push} />}

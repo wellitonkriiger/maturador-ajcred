@@ -4,6 +4,7 @@ const { EventEmitter } = require('events');
 const TelefoneModel = require('../models/Telefone');
 const WhatsAppService = require('../services/whatsappService');
 const HealthMonitor = require('../services/healthMonitor');
+const BrowserRuntimeService = require('../services/browserRuntimeService');
 const DelayUtils = require('../utils/delay');
 
 function flush() {
@@ -96,7 +97,8 @@ function snapshotState() {
     tentarReconectar: WhatsAppService.tentarReconectar,
     keepAliveTimer: WhatsAppService._keepAliveTimer,
     healthWhatsappService: HealthMonitor.whatsappService,
-    delaySleep: DelayUtils.sleep
+    delaySleep: DelayUtils.sleep,
+    ensureOperationalRuntime: BrowserRuntimeService.ensureOperationalRuntime
   };
 }
 
@@ -116,6 +118,7 @@ function restoreState(snapshot) {
   WhatsAppService.tentarReconectar = snapshot.tentarReconectar;
   DelayUtils.sleep = snapshot.delaySleep;
   HealthMonitor.whatsappService = snapshot.healthWhatsappService;
+  BrowserRuntimeService.ensureOperationalRuntime = snapshot.ensureOperationalRuntime;
   WhatsAppService.removeAllListeners();
 
   if (WhatsAppService._keepAliveTimer) {
@@ -143,6 +146,14 @@ function prepareState(telefones) {
   }
 
   HealthMonitor.whatsappService = null;
+  BrowserRuntimeService.ensureOperationalRuntime = async () => ({
+    available: true,
+    source: 'test:fake-browser',
+    executablePath: '/test/chrome',
+    platform: process.platform,
+    message: 'Browser pronto (test)',
+    checkedAt: new Date().toISOString()
+  });
 }
 
 async function testChangeStateTriggersOffline(state) {

@@ -16,6 +16,7 @@ const TelefoneModel = require('./models/Telefone');
 const WhatsAppService = require('./services/whatsappService');
 const HealthMonitor = require('./services/healthMonitor');
 const RealtimeService = require('./services/realtimeService');
+const BrowserRuntimeService = require('./services/browserRuntimeService');
 
 // Criar app Express
 const app = express();
@@ -43,9 +44,11 @@ app.use('/api', routes);
 
 // Rota de health check
 app.get('/health', (req, res) => {
-  res.json({ 
-    status: 'ok', 
-    timestamp: new Date().toISOString() 
+  const health = BrowserRuntimeService.getServiceHealth();
+  res.json({
+    status: health.status,
+    timestamp: new Date().toISOString(),
+    services: health.services
   });
 });
 
@@ -181,12 +184,29 @@ const HOST = process.env.HOST || '0.0.0.0';
 
 WhatsAppService.reconciliarStatusPersistido();
 
-server.listen(PORT, HOST, () => {
-  HealthMonitor.start(WhatsAppService);
-  logger.info(`🚀 Servidor rodando na porta ${PORT}`);
-  logger.info(`📊 Ambiente: ${process.env.NODE_ENV || 'development'}`);
-  logger.info(`🌐 Health check: http://localhost:${PORT}/health`);
-  logger.info(`📡 API: http://localhost:${PORT}/api`);
-});
+function startHttpServer() {
+  server.listen(PORT, HOST, () => {
+    HealthMonitor.start(WhatsAppService);
+    logger.info(`🚀 Servidor rodando na porta ${PORT}`);
+    logger.info(`📊 Ambiente: ${process.env.NODE_ENV || 'development'}`);
+    logger.info(`🌐 Health check: http://localhost:${PORT}/health`);
+    logger.info(`📡 API: http://localhost:${PORT}/api`);
+  });
+}
+
+BrowserRuntimeService.validateBrowserRuntime({ force: true })
+  .then((diagnosis) => {
+    if (diagnosis.available) {
+      logger.info(`[BrowserRuntime] ${diagnosis.message} -> ${diagnosis.executablePath}`);
+    } else {
+      logger.warn(`[BrowserRuntime] ${diagnosis.message}`);
+    }
+
+    startHttpServer();
+  })
+  .catch((error) => {
+    logger.error(`[Startup] Falha ao validar runtime do navegador: ${error.message}`);
+    startHttpServer();
+  });
 
 module.exports = { app, server, io };

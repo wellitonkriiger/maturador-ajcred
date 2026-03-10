@@ -17,6 +17,11 @@ async function testarHealthCheck() {
     console.log(`   status    : ${response.data.status}`);
     console.log(`   timestamp : ${response.data.timestamp}`);
     console.log(`   HTTP      : ${response.status}`);
+    if (response.data?.services?.whatsappBrowser) {
+      const browser = response.data.services.whatsappBrowser;
+      console.log(`   browser   : ${browser.available ? 'ok' : 'degraded'} (${browser.source ?? 'sem source'})`);
+      console.log(`   detalhe   : ${browser.message}`);
+    }
 
     console.log('\n🌐 Testando /api/telefones...');
     try {

@@ -28,7 +28,11 @@ export async function api(path, options = {}) {
   const contentType = response.headers.get('content-type') || '';
   const body = contentType.includes('application/json') ? await response.json() : await response.text();
   if (!response.ok) {
-    throw new Error(typeof body === 'string' ? body : body?.erro || 'Falha na requisicao');
+    const error = new Error(typeof body === 'string' ? body : body?.erro || 'Falha na requisicao');
+    error.status = response.status;
+    error.code = body?.codigo || null;
+    error.data = body;
+    throw error;
   }
   return body;
 }

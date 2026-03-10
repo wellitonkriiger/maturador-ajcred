@@ -4,7 +4,23 @@ const QRCode = require('qrcode');
 const TelefoneModel = require('../models/Telefone');
 const WhatsAppService = require('../services/whatsappService');
 const RealtimeService = require('../services/realtimeService');
+const BrowserRuntimeService = require('../services/browserRuntimeService');
 const logger = require('../utils/logger');
+
+async function ensureBrowserRuntime(res) {
+  const diagnostico = await BrowserRuntimeService.ensureOperationalRuntime();
+  if (diagnostico.available) {
+    return diagnostico;
+  }
+
+  res.status(503).json({
+    erro: 'Runtime do navegador indisponivel para WhatsApp',
+    codigo: 'browser_runtime_unavailable',
+    diagnostico
+  });
+
+  return null;
+}
 
 class TelefoneController {
   /**
@@ -143,6 +159,11 @@ class TelefoneController {
         });
       }
 
+      const diagnostico = await ensureBrowserRuntime(res);
+      if (!diagnostico) {
+        logger.warn(`[BrowserRuntime] Conexao bloqueada para ${id}: ${BrowserRuntimeService.getDiagnosis().message}`);
+        return;
+      }
 
       // Inicializar cliente (assíncrono, não bloqueia resposta)
       WhatsAppService.inicializarCliente(id, {
@@ -203,6 +224,12 @@ class TelefoneController {
         return res.status(404).json({ erro: 'Telefone nao encontrado' });
       }
 
+      const diagnostico = await ensureBrowserRuntime(res);
+      if (!diagnostico) {
+        logger.warn(`[BrowserRuntime] Reconexao bloqueada para ${id}: ${BrowserRuntimeService.getDiagnosis().message}`);
+        return;
+      }
+
       const resultado = await WhatsAppService.tentarReconectar(id);
       res.json(resultado);
     } catch (error) {
@@ -247,6 +274,17 @@ class TelefoneController {
   async obterQRCode(req, res) {
     try {
       const { id } = req.params;
+      const telefone = TelefoneModel.buscarPorId(id);
+
+      if (!telefone) {
+        return res.status(404).json({ erro: 'Telefone não encontrado' });
+      }
+
+      const diagnostico = await ensureBrowserRuntime(res);
+      if (!diagnostico) {
+        logger.warn(`[BrowserRuntime] QR bloqueado para ${id}: ${BrowserRuntimeService.getDiagnosis().message}`);
+        return;
+      }
 
       const qrRaw = WhatsAppService.getQRCode(id);
 

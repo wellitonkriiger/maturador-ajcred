@@ -3,7 +3,7 @@ import { LoaderCircle, Pencil, Phone, PhoneOff, QrCode, RefreshCcw, Save, Trash2
 import { api, formatNumeroBR, getRealtimeSocket } from './lib';
 import { Modal, StatusBadge } from './components';
 
-export default function TelefonesPage({ telefones, toast, refreshSnapshot }) {
+export default function TelefonesPage({ telefones, toast, refreshSnapshot, browserRuntime }) {
   const [showCreate, setShowCreate] = useState(false);
   const [editing, setEditing] = useState(null);
   const [qrModal, setQrModal] = useState(null);
@@ -18,6 +18,8 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot }) {
     podeIniciarConversa: true,
     podeReceberMensagens: true
   });
+  const browserAvailable = browserRuntime?.available !== false;
+  const browserMessage = browserRuntime?.message || 'Runtime do navegador indisponivel para WhatsApp.';
 
   useEffect(() => {
     api('/maturacao/plano').then(setPlano).catch(() => {});
@@ -177,6 +179,10 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot }) {
 
   async function startConnection() {
     if (!connectDialog) return;
+    if (!browserAvailable) {
+      toast(browserMessage, 'error');
+      return;
+    }
 
     const { item, method, phoneNumber } = connectDialog;
     const sanitizedPhone = String(phoneNumber ?? '').replace(/\D/g, '');
@@ -227,6 +233,11 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot }) {
   }
 
   async function reconnectPhone(item) {
+    if (!browserAvailable) {
+      toast(browserMessage, 'error');
+      return;
+    }
+
     try {
       const result = await api(`/telefones/${item.id}/reconectar`, { method: 'POST' });
       if (result?.status === 'requires_qr') {
@@ -305,6 +316,13 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot }) {
         <button className="btn primary" onClick={() => setShowCreate(true)}><Phone size={16} />Adicionar</button>
       </div>
 
+      {!browserAvailable && (
+        <div className="panel">
+          <strong>WhatsApp indisponivel neste ambiente</strong>
+          <div className="muted" style={{ marginTop: 6 }}>{browserMessage}</div>
+        </div>
+      )}
+
       {telefones.length === 0 ? <div className="panel empty">Nenhum telefone cadastrado.</div> : (
         <div className="grid two">
           {telefones.map((item) => (
@@ -323,12 +341,17 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot }) {
                 <div className="between small-gap"><span className="muted">Nova conversa em</span><span className="mono">{formatCountdown(item)}</span></div>
                 <div className="progress"><span style={{ width: `${Math.min(100, ((item.configuracao?.conversasRealizadasHoje || 0) / (item.configuracao?.quantidadeConversasDia || 1)) * 100)}%` }} /></div>
               </div>
+              {!browserAvailable && (item.status === 'offline' || item.status === 'erro' || item.status === 'requires_qr') && (
+                <div className="muted" style={{ marginTop: 10 }}>
+                  Conexao bloqueada: {browserMessage}
+                </div>
+              )}
               <div className="actions spaced-from-progress">
-                {(item.status === 'offline' || item.status === 'erro' || item.status === 'requires_qr') && <button className="btn primary sm" onClick={() => openConnectDialog(item)}><QrCode size={14} />Conectar</button>}
+                {(item.status === 'offline' || item.status === 'erro' || item.status === 'requires_qr') && <button className="btn primary sm" disabled={!browserAvailable} onClick={() => openConnectDialog(item)}><QrCode size={14} />Conectar</button>}
                 {item.status === 'online' && <button className="btn danger sm" onClick={() => disconnectPhone(item)}><PhoneOff size={14} />Desconectar</button>}
                 {item.status === 'reconnecting' && <button className="btn secondary sm" disabled><LoaderCircle size={14} />Reconectando</button>}
                 {item.status === 'offline' && (
-                  <button className="btn secondary sm" onClick={() => reconnectPhone(item)}><RefreshCcw size={14} />Tentar reconexao</button>
+                  <button className="btn secondary sm" disabled={!browserAvailable} onClick={() => reconnectPhone(item)}><RefreshCcw size={14} />Tentar reconexao</button>
                 )}
                 {(item.status === 'conectando' || item.status === 'reconnecting' || item.status === 'requires_qr' || item.status === 'erro') && (
                   <button className="btn danger sm" onClick={() => cancelConnectionAttempt(item)}><Trash2 size={14} />Cancelar tentativa</button>

@@ -5,9 +5,11 @@ const { Client, LocalAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 
 const logger = require('../utils/logger');
+const { buildBrowserLaunchOptions } = require('../utils/browserLaunch');
 const TelefoneModel = require('../models/Telefone');
 const DelayUtils = require('../utils/delay');
 const RealtimeService = require('./realtimeService');
+const BrowserRuntimeService = require('./browserRuntimeService');
 
 const KEEPALIVE_INTERVAL_MS = 25 * 1000;
 const KEEPALIVE_EVAL_TIMEOUT_MS = 4 * 1000;
@@ -93,24 +95,15 @@ class WhatsAppService extends EventEmitter {
 
   _createClient(telefoneId, options = {}) {
     const { pairWithPhoneNumber = null } = options;
+    const launchOptions = BrowserRuntimeService.getLaunchOptions();
     const clientOptions = {
       authStrategy: new LocalAuth({
         clientId: telefoneId,
         dataPath: this.authPath
       }),
-      puppeteer: {
-        headless: true,
-        args: [
-          '--no-sandbox',
-          '--disable-setuid-sandbox',
-          '--disable-dev-shm-usage',
-          '--disable-accelerated-2d-canvas',
-          '--no-first-run',
-          '--no-zygote',
-          '--disable-gpu',
-          '--headless=new'
-        ]
-      }
+      puppeteer: buildBrowserLaunchOptions({
+        executablePath: launchOptions.executablePath || null
+      })
     };
 
     if (pairWithPhoneNumber?.phoneNumber) {
@@ -758,6 +751,19 @@ class WhatsAppService extends EventEmitter {
       this.clients.delete(telefoneId);
     }
 
+    const runtimeDiagnosis = await BrowserRuntimeService.ensureOperationalRuntime();
+    if (!runtimeDiagnosis.available) {
+      const message = `Runtime do navegador indisponivel: ${runtimeDiagnosis.message}`;
+      const meta = this._meta(telefoneId);
+      meta.reconnectInFlight = false;
+      meta.lastDisconnectReason = 'browser_runtime_unavailable';
+      this._setWaState(telefoneId, null);
+      this._updateStatus(telefoneId, 'offline');
+      this.emit('telefone:erro', telefoneId, message);
+      logger.warn(`[BrowserRuntime] Inicializacao bloqueada para ${telefone.nome}: ${runtimeDiagnosis.message}`);
+      throw new Error(message);
+    }
+
     const meta = this._meta(telefoneId);
     meta.activeClientToken += 1;
     const clientToken = meta.activeClientToken;
@@ -837,6 +843,21 @@ class WhatsAppService extends EventEmitter {
     if (!telefone) throw new Error(`Telefone ${telefoneId} nao encontrado`);
 
     const meta = this._meta(telefoneId);
+    const runtimeDiagnosis = await BrowserRuntimeService.ensureOperationalRuntime();
+    if (!runtimeDiagnosis.available) {
+      meta.reconnectInFlight = false;
+      meta.lastDisconnectReason = 'browser_runtime_unavailable';
+      this._setWaState(telefoneId, null);
+      this._updateStatus(telefoneId, 'offline');
+      RealtimeService.emitReconnectAttempt(telefoneId, 'failed', runtimeDiagnosis.message);
+      logger.warn(`[BrowserRuntime] Reconexao bloqueada para ${telefone.nome}: ${runtimeDiagnosis.message}`);
+      return {
+        status: 'offline',
+        message: runtimeDiagnosis.message,
+        code: 'browser_runtime_unavailable'
+      };
+    }
+
     if (meta.reconnectInFlight) {
       return { status: 'reconnecting' };
     }
