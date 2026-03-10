@@ -27,7 +27,7 @@ Quando o browser nao esta utilizavel, o backend sobe em modo degradado:
 
 ## Variaveis de ambiente
 
-Use [backend/.env.example](/c:/Users/03081055245/Documents/maturador-ajcred/backend/.env.example) como base.
+Use [backend/.env](/c:/Users/03081055245/Documents/maturador-ajcred/backend/.env) como base.
 
 Principais variaveis:
 
@@ -39,6 +39,13 @@ Principais variaveis:
 - `WHATSAPP_BROWSER_EXECUTABLE_PATH`
 - `PUPPETEER_EXECUTABLE_PATH`
 - `CHROME_PATH`
+
+Portas oficiais do projeto:
+
+- desenvolvimento: frontend Vite em `500`, backend em `3001`
+- producao integrada: uma unica porta definida pelo comando/env de deploy
+- o script `npm run lan` usa `PORT=500` por padrao; se a plataforma mostrar `3001`, ela esta subindo o backend por outro caminho
+- para VM/producao, o comando recomendado agora e `npm run vm:prod`
 
 ## Inicializacao no ambiente de desenvolvimento
 
@@ -53,7 +60,7 @@ npm install --prefix backend
 npm install --prefix frontend
 ```
 
-3. Se o Chrome nao for detectado automaticamente, copie `backend/.env.example` para `backend/.env` e preencha `WHATSAPP_BROWSER_EXECUTABLE_PATH`.
+3. Se o Chrome nao for detectado automaticamente, edite `backend/.env` e preencha `WHATSAPP_BROWSER_EXECUTABLE_PATH`.
 4. Valide o runtime do navegador:
 
 ```bash
@@ -106,7 +113,7 @@ npm install --prefix backend
 npm install --prefix frontend
 ```
 
-6. Copie `backend/.env.example` para `backend/.env` se ainda nao existir e configure:
+6. Ajuste `backend/.env` com:
 
 ```env
 WHATSAPP_BROWSER_EXECUTABLE_PATH=/usr/bin/chromium
@@ -121,14 +128,55 @@ npm run doctor:browser --prefix backend
 8. Inicie o sistema:
 
 ```bash
-npm run lan
+npm run vm:prod
 ```
 
-Nesse fluxo, `npm run lan`:
+Nesse fluxo, `npm run vm:prod`:
 
+- garante `backend/.env` se ele nao existir
+- instala dependencias faltantes da raiz, backend e frontend
+- valida browser e runtime
 - builda o frontend
-- ativa `SERVE_FRONTEND=true`
-- sobe o backend servindo os arquivos estaticos
+- verifica se a porta configurada esta livre
+- sobe o backend servindo os arquivos estaticos com `HOST=0.0.0.0`, `SERVE_FRONTEND=true` e `NODE_ENV=production`
+
+Porta usada na VM:
+
+- `PORT` do `backend/.env`, se existir
+- `PORT` passada no ambiente ou em `--port=<porta>`, se voce quiser sobrescrever
+- fallback padrao: `3001`
+
+Se o servidor Nobre estiver mostrando `3001`, confirme antes de tudo:
+
+- qual comando real de start esta configurado na plataforma
+- qual porta interna a plataforma espera
+- qual healthcheck, timeout e politica de restart foram configurados
+- quais limites de memoria e CPU o container/processo recebeu
+
+Para coletar isso do lado da aplicacao, rode:
+
+```bash
+npm run doctor:runtime
+```
+
+ou:
+
+```bash
+npm run doctor:runtime --prefix backend
+```
+
+O comando imprime:
+
+- `process.argv`, `pid`, `ppid`, `cwd` e uptime
+- `PORT`, `HOST`, `SERVE_FRONTEND`, `NODE_ENV` e variaveis de health/restart expostas no ambiente
+- limites de memoria/CPU detectados via cgroup quando disponiveis
+- diagnostico atual do browser e eventos recentes do processo
+
+Para validar a VM sem iniciar o processo final:
+
+```bash
+npm run vm:prod:check
+```
 
 ## Health e diagnostico
 
@@ -157,9 +205,13 @@ Exemplo de `/health`:
 npm run dev
 npm run build:frontend
 npm run lan
+npm run vm:prod
+npm run vm:prod:check
+npm run doctor:runtime
 npm run doctor:browser --prefix backend
 node backend/src/tests/12-whatsapp-status-guard.js
 node backend/src/tests/13-auto-salvar-contato.js
 node backend/src/tests/14-browser-runtime.js
 node backend/src/tests/15-browser-runtime-guard.js
+node backend/src/tests/16-runtime-diagnostics.js
 ```

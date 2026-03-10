@@ -2,12 +2,10 @@
 
 const MaturacaoService = require('../services/maturacaoService');
 const PlanoMaturacaoModel = require('../models/PlanoMaturacao');
+const RuntimeDiagnosticsService = require('../services/runtimeDiagnosticsService');
 const logger = require('../utils/logger');
 
 class MaturacaoController {
-  /**
-   * Obtém status da maturação
-   */
   async status(req, res) {
     try {
       const status = MaturacaoService.getStatus();
@@ -18,45 +16,55 @@ class MaturacaoController {
     }
   }
 
-  /**
-   * Inicia maturação
-   */
   async iniciar(req, res) {
     try {
+      RuntimeDiagnosticsService.record('http', 'maturacao_start_request', {
+        ip: req.ip,
+        userAgent: req.get('user-agent') || null
+      });
+
       const sucesso = await MaturacaoService.iniciar();
-      
       if (!sucesso) {
-        return res.status(400).json({ erro: 'Não foi possível iniciar maturação' });
+        RuntimeDiagnosticsService.record('http', 'maturacao_start_rejected', {
+          motivo: 'iniciar_retornou_false'
+        });
+        return res.status(400).json({ erro: 'Nao foi possivel iniciar maturacao' });
       }
 
-      res.json({ mensagem: 'Maturação iniciada com sucesso' });
+      RuntimeDiagnosticsService.record('http', 'maturacao_start_accepted');
+      res.json({ mensagem: 'Maturacao iniciada com sucesso' });
     } catch (error) {
-      logger.error('Erro ao iniciar maturação:', error);
-      res.status(500).json({ erro: 'Erro ao iniciar maturação' });
+      RuntimeDiagnosticsService.record('http', 'maturacao_start_failed', {
+        error: error.message
+      });
+      logger.error('Erro ao iniciar maturacao:', error);
+      res.status(500).json({ erro: 'Erro ao iniciar maturacao' });
     }
   }
 
-  /**
-   * Para maturação
-   */
   async parar(req, res) {
     try {
+      RuntimeDiagnosticsService.record('http', 'maturacao_stop_request', {
+        ip: req.ip,
+        userAgent: req.get('user-agent') || null
+      });
+
       const sucesso = MaturacaoService.parar();
-      
       if (!sucesso) {
-        return res.status(400).json({ erro: 'Maturação não está em execução' });
+        return res.status(400).json({ erro: 'Maturacao nao esta em execucao' });
       }
 
-      res.json({ mensagem: 'Maturação pausada com sucesso' });
+      RuntimeDiagnosticsService.record('http', 'maturacao_stop_accepted');
+      res.json({ mensagem: 'Maturacao pausada com sucesso' });
     } catch (error) {
-      logger.error('Erro ao parar maturação:', error);
-      res.status(500).json({ erro: 'Erro ao parar maturação' });
+      RuntimeDiagnosticsService.record('http', 'maturacao_stop_failed', {
+        error: error.message
+      });
+      logger.error('Erro ao parar maturacao:', error);
+      res.status(500).json({ erro: 'Erro ao parar maturacao' });
     }
   }
 
-  /**
-   * Obtém plano de maturação
-   */
   async obterPlano(req, res) {
     try {
       const plano = PlanoMaturacaoModel.obter();
@@ -67,18 +75,13 @@ class MaturacaoController {
     }
   }
 
-  /**
-   * Atualiza plano de maturação
-   */
   async atualizarPlano(req, res) {
     try {
       if (MaturacaoService.emExecucao) {
         return res.status(409).json({ erro: 'Pause a maturacao antes de alterar o plano' });
       }
 
-      const dados = req.body;
-      const plano = PlanoMaturacaoModel.atualizar(dados);
-      
+      const plano = PlanoMaturacaoModel.atualizar(req.body);
       res.json(plano);
     } catch (error) {
       logger.error('Erro ao atualizar plano:', error);
@@ -86,9 +89,6 @@ class MaturacaoController {
     }
   }
 
-  /**
-   * Ativa/desativa plano
-   */
   async togglePlano(req, res) {
     try {
       if (MaturacaoService.emExecucao) {
@@ -97,7 +97,6 @@ class MaturacaoController {
 
       const { ativo } = req.body;
       const plano = PlanoMaturacaoModel.setAtivo(ativo);
-      
       res.json(plano);
     } catch (error) {
       logger.error('Erro ao ativar/desativar plano:', error);
@@ -105,9 +104,6 @@ class MaturacaoController {
     }
   }
 
-  /**
-   * Obtém conversas ativas
-   */
   async conversasAtivas(req, res) {
     try {
       const ativas = MaturacaoService.getConversasAtivas();

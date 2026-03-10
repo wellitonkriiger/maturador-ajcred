@@ -1,5 +1,6 @@
 const logger = require('../utils/logger');
 const TelefoneModel = require('../models/Telefone');
+const RuntimeDiagnosticsService = require('./runtimeDiagnosticsService');
 
 const INTERVALO_VERIFICACAO_MS = 30 * 1000; // 30 segundos
 
@@ -51,6 +52,10 @@ class HealthMonitor {
       }
 
       if (!operacional) {
+        RuntimeDiagnosticsService.record('health_monitor', 'client_not_operational', {
+          telefoneId,
+          telefone: nome
+        });
         logger.warn(`[HealthMonitor] ${nome} nao esta operacional -- reconexao automatica em andamento`);
       }
     }
@@ -66,6 +71,10 @@ class HealthMonitor {
       }
 
       logger.warn(`[HealthMonitor] ${tel.nome} marcado como online mas sem cliente operacional -- corrigindo para offline`);
+      RuntimeDiagnosticsService.record('health_monitor', 'ghost_online_detected', {
+        telefoneId: tel.id,
+        telefone: tel.nome
+      });
 
       if (typeof ws._transitionToOffline === 'function') {
         await ws._transitionToOffline(tel.id, 'ghost_online', {

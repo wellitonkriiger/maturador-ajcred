@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { FileCode2, FileJson, FolderSync, Pencil, Save, Trash2, Upload } from 'lucide-react';
 import { api } from './lib';
-import { Modal } from './components';
+import { ConfirmModal, Modal } from './components';
 
 export default function ConversasPage({ toast }) {
   const [lista, setLista] = useState([]);
@@ -10,6 +10,7 @@ export default function ConversasPage({ toast }) {
   const [detail, setDetail] = useState(null);
   const [editing, setEditing] = useState(null);
   const [jsonDraft, setJsonDraft] = useState('');
+  const [confirmDialog, setConfirmDialog] = useState(null);
   const inputRef = useRef(null);
 
   async function load() {
@@ -28,7 +29,6 @@ export default function ConversasPage({ toast }) {
   }, []);
 
   async function remove(item) {
-    if (!window.confirm(`Deletar ${item.nome}?`)) return;
     try {
       await api(`/conversas/${item.id}`, { method: 'DELETE' });
       toast('Conversa removida', 'success');
@@ -36,6 +36,19 @@ export default function ConversasPage({ toast }) {
     } catch (error) {
       toast(error.message, 'error');
     }
+  }
+
+  function openRemoveConfirm(item) {
+    setConfirmDialog({
+      title: 'Excluir conversa',
+      message: `Excluir ${item.nome}?`,
+      details: 'O arquivo será removido do catálogo carregado pelo backend.',
+      confirmLabel: 'Excluir',
+      onConfirm: async () => {
+        setConfirmDialog(null);
+        await remove(item);
+      }
+    });
   }
 
   async function reload() {
@@ -89,10 +102,19 @@ export default function ConversasPage({ toast }) {
 
   return (
     <div className="stack">
-      <div className="actions end">
-        <input ref={inputRef} type="file" accept=".json,application/json" hidden onChange={importFile} />
-        <button className="btn secondary" onClick={() => inputRef.current?.click()}><Upload size={16} />Importar JSON</button>
-        <button className="btn secondary" onClick={reload}><FolderSync size={16} />Recarregar</button>
+      <div className="panel toolbar-panel">
+        <div className="section-head">
+          <div className="section-copy">
+            <span className="section-kicker">Catálogo</span>
+            <h3>Conversas cadastradas</h3>
+            <p className="muted">Importe, recarregue e revise o JSON validado pelo backend.</p>
+          </div>
+          <div className="actions end">
+            <input ref={inputRef} type="file" accept=".json,application/json" hidden onChange={importFile} />
+            <button className="btn secondary" onClick={() => inputRef.current?.click()}><Upload size={16} />Importar JSON</button>
+            <button className="btn secondary" onClick={reload}><FolderSync size={16} />Recarregar</button>
+          </div>
+        </div>
       </div>
 
       <div className="panel">
@@ -104,7 +126,7 @@ export default function ConversasPage({ toast }) {
           <div className="table-wrap">
             <table>
               <thead>
-                <tr><th>Nome</th><th>Categoria</th><th>Participantes</th><th>Mensagens</th><th>Acoes</th></tr>
+                <tr><th>Nome</th><th>Categoria</th><th>Participantes</th><th>Mensagens</th><th>Ações</th></tr>
               </thead>
               <tbody>
                 {filtradas.map((item) => (
@@ -117,7 +139,7 @@ export default function ConversasPage({ toast }) {
                       <div className="actions">
                         <button className="btn secondary sm" onClick={() => setDetail(item)}><FileCode2 size={14} />Ver</button>
                         <button className="btn secondary sm" onClick={() => { setEditing(item); setJsonDraft(JSON.stringify(item, null, 2)); }}><Pencil size={14} />Editar</button>
-                        <button className="btn danger sm" onClick={() => remove(item)}><Trash2 size={14} />Excluir</button>
+                        <button className="btn danger sm" onClick={() => openRemoveConfirm(item)}><Trash2 size={14} />Excluir</button>
                       </div>
                     </td>
                   </tr>
@@ -161,6 +183,17 @@ export default function ConversasPage({ toast }) {
             <div className="actions end"><button className="btn secondary" onClick={() => { setEditing(null); setJsonDraft(''); }}>Cancelar</button><button className="btn primary" onClick={saveEdit}><Save size={16} />Salvar JSON</button></div>
           </div>
         </Modal>
+      )}
+
+      {confirmDialog && (
+        <ConfirmModal
+          title={confirmDialog.title}
+          message={confirmDialog.message}
+          details={confirmDialog.details}
+          confirmLabel={confirmDialog.confirmLabel}
+          onConfirm={confirmDialog.onConfirm}
+          onClose={() => setConfirmDialog(null)}
+        />
       )}
     </div>
   );

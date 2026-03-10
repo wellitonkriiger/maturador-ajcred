@@ -10,6 +10,7 @@ const TelefoneModel = require('../models/Telefone');
 const DelayUtils = require('../utils/delay');
 const RealtimeService = require('./realtimeService');
 const BrowserRuntimeService = require('./browserRuntimeService');
+const RuntimeDiagnosticsService = require('./runtimeDiagnosticsService');
 
 const KEEPALIVE_INTERVAL_MS = 25 * 1000;
 const KEEPALIVE_EVAL_TIMEOUT_MS = 4 * 1000;
@@ -385,6 +386,13 @@ class WhatsAppService extends EventEmitter {
       }
     }, delayMs);
 
+    RuntimeDiagnosticsService.record('whatsapp', 'reconnect_scheduled', {
+      telefoneId,
+      telefone: telefone?.nome ?? telefoneId,
+      reason,
+      delayMs,
+      autoReconnectAttempts: meta.autoReconnectAttempts
+    });
     logger.info(`[AutoReconnect] ${telefone.nome} tera nova tentativa em ${Math.round(delayMs / 1000)}s (${reason})`);
     RealtimeService.emitReconnectAttempt(telefoneId, 'scheduled', `Nova tentativa em ${Math.round(delayMs / 1000)}s`);
     return true;
@@ -400,6 +408,11 @@ class WhatsAppService extends EventEmitter {
 
   async _recoverFromRuntimeError(telefoneId, error, context = 'runtime_error') {
     const linha = firstErrorLine(error);
+    RuntimeDiagnosticsService.record('whatsapp', 'runtime_error', {
+      telefoneId,
+      context,
+      error: linha
+    });
     logger.warn(`[Reconnect] ${telefoneId} saiu de operacao (${context}: ${linha})`);
     await this._markOffline(telefoneId, `${context}:${linha}`, {
       scheduleReconnect: true,
@@ -448,6 +461,14 @@ class WhatsAppService extends EventEmitter {
       this._clearConnectionRequester(telefoneId);
       this.clients.delete(telefoneId);
       this._updateStatus(telefoneId, nextStatus);
+      RuntimeDiagnosticsService.record('whatsapp', 'offline_transition', {
+        telefoneId,
+        reason,
+        nextStatus,
+        scheduleReconnect,
+        destroyClient,
+        waState: waState ?? meta.waState
+      });
 
       if (emitOfflineEvent) {
         this.emit('telefone:offline', telefoneId, reason);
@@ -785,6 +806,13 @@ class WhatsAppService extends EventEmitter {
 
     logger.info(`Inicializando cliente para ${telefone.nome} (${telefoneId})...`);
     this._updateStatus(telefoneId, isReconnect ? 'reconnecting' : 'conectando');
+    RuntimeDiagnosticsService.record('whatsapp', 'client_initializing', {
+      telefoneId,
+      telefone: telefone.nome,
+      isReconnect,
+      autoReconnect,
+      allowQr
+    });
 
     const client = this._createClient(telefoneId, { pairWithPhoneNumber });
     this._bindClientEvents(client, telefoneId, {
@@ -810,6 +838,12 @@ class WhatsAppService extends EventEmitter {
       await this._destroyClient(client);
 
       if (isConnectionError(msgErro) || isTransientInitError(msgErro)) {
+        RuntimeDiagnosticsService.record('whatsapp', 'client_init_transient_failure', {
+          telefoneId,
+          telefone: telefone.nome,
+          error: linha,
+          autoReconnect
+        });
         logger.warn(`${telefone.nome} falhou durante inicializacao (${linha})`);
         const erroTransitorio = isTransientInitError(msgErro);
         const atingiuLimite = autoReconnect && metaAtual.autoReconnectAttempts >= MAX_AUTO_RECONNECT_ATTEMPTS && !erroTransitorio;
@@ -830,6 +864,11 @@ class WhatsAppService extends EventEmitter {
       }
 
       logger.error(`Erro fatal ao inicializar ${telefone.nome}: ${msgErro}`);
+      RuntimeDiagnosticsService.record('whatsapp', 'client_init_fatal_failure', {
+        telefoneId,
+        telefone: telefone.nome,
+        error: linha
+      });
       this._updateStatus(telefoneId, allowQr ? 'offline' : 'requires_qr');
       this.emit('telefone:erro', telefoneId, msgErro);
     });
@@ -1004,6 +1043,11 @@ class WhatsAppService extends EventEmitter {
 
       return result === 'visible' || result === 'hidden' || typeof result === 'string';
     } catch (error) {
+      RuntimeDiagnosticsService.record('whatsapp', 'keepalive_failed', {
+        telefoneId,
+        error: firstErrorLine(error),
+        recover
+      });
       logger.warn(`[KeepAlive] ${telefoneId} perdeu a pagina (${error.message})`);
       if (recover) {
         try {

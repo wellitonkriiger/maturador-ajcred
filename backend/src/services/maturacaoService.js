@@ -4,6 +4,7 @@ const PlanoMaturacao = require('../models/PlanoMaturacao');
 const WhatsAppService = require('./whatsappService');
 const DelayUtils = require('../utils/delay');
 const RealtimeService = require('./realtimeService');
+const RuntimeDiagnosticsService = require('./runtimeDiagnosticsService');
 const logger = require('../utils/logger');
 
 const COOLDOWN_MS = 5 * 60 * 1000;
@@ -48,6 +49,9 @@ class MaturacaoService {
   async iniciar() {
     if (this.emExecucao) {
       logger.warn('Maturacao ja esta em execucao');
+      RuntimeDiagnosticsService.record('maturacao', 'start_ignored', {
+        motivo: 'ja_em_execucao'
+      });
       return false;
     }
 
@@ -58,6 +62,21 @@ class MaturacaoService {
     }
 
     this.emExecucao = true;
+    const status = this.getStatus();
+    RuntimeDiagnosticsService.record('maturacao', 'started', {
+      planoAtivo: plano.ativo,
+      dentroHorario: status.dentroHorario,
+      telefones: status.telefones,
+      conversas: status.conversas
+    });
+    logger.info(
+      `[RuntimeDoctor] Maturacao start context ${RuntimeDiagnosticsService.toLogString({
+        planoAtivo: plano.ativo,
+        dentroHorario: status.dentroHorario,
+        telefones: status.telefones,
+        conversas: status.conversas
+      })}`
+    );
     logger.info('Processo de maturacao iniciado');
     this._bindEventos();
     this._cicloTimer = setInterval(() => this._tentarEmparelharTodos(), CICLO_AGENDAMENTO_MS);
@@ -69,6 +88,9 @@ class MaturacaoService {
   parar() {
     if (!this.emExecucao) {
       logger.warn('Maturacao nao esta em execucao');
+      RuntimeDiagnosticsService.record('maturacao', 'stop_ignored', {
+        motivo: 'nao_estava_em_execucao'
+      });
       return false;
     }
 
@@ -78,6 +100,7 @@ class MaturacaoService {
       this._cicloTimer = null;
     }
     this._unbindEventos();
+    RuntimeDiagnosticsService.record('maturacao', 'stopped', this.getStatus());
     logger.info('Processo de maturacao pausado');
     this._emitStatus();
     return true;
@@ -445,6 +468,12 @@ class MaturacaoService {
       motivoFalha: null
     };
 
+    RuntimeDiagnosticsService.record('maturacao', 'conversation_started', {
+      execucaoId: execucao.conversaExecucaoId,
+      conversaId: execucao.conversaId,
+      conversaNome: execucao.conversaNome,
+      participantes: execucao.participantes.map((item) => item.nome)
+    });
     logger.info(`[Maturacao] Iniciando: "${conversa.nome}" | ${participantesOrdenados.map(p => p.nome).join(' <-> ')}`);
 
     this._registrarPares(participantesOrdenados);
@@ -582,6 +611,13 @@ class MaturacaoService {
     execucao.status = sucesso ? 'finished' : 'aborted';
     execucao.motivoFalha = motivoFalha;
     execucao.ultimoEventoEm = new Date().toISOString();
+    RuntimeDiagnosticsService.record('maturacao', sucesso ? 'conversation_finished' : 'conversation_aborted', {
+      execucaoId,
+      conversaId: execucao.conversaId,
+      conversaNome: execucao.conversaNome,
+      participantes: execucao.participantes.map((item) => item.nome),
+      motivoFalha
+    });
 
     if (sucesso) {
       const limiteParesPorDia = this._limiteParesPorDia(plano);
@@ -622,11 +658,21 @@ class MaturacaoService {
     const fim = Date.now() + COOLDOWN_MS;
     this.cooldowns.set(telefoneId, fim);
     const tel = TelefoneModel.buscarPorId(telefoneId);
+    RuntimeDiagnosticsService.record('maturacao', 'cooldown_started', {
+      telefoneId,
+      telefone: tel?.nome ?? telefoneId,
+      motivo,
+      cooldownMs: COOLDOWN_MS
+    });
     logger.info(`[Maturacao] ${tel?.nome ?? telefoneId} em cooldown por ${COOLDOWN_MS / 60000} min (${motivo})`);
 
     setTimeout(() => {
       if (!this.emExecucao) return;
       this.cooldowns.delete(telefoneId);
+      RuntimeDiagnosticsService.record('maturacao', 'cooldown_finished', {
+        telefoneId,
+        telefone: tel?.nome ?? telefoneId
+      });
       logger.info(`[Maturacao] Cooldown encerrado para ${tel?.nome ?? telefoneId} -- tentando emparelhar`);
       this._tentarEmparelharTelefone(telefoneId);
       this._emitStatus();

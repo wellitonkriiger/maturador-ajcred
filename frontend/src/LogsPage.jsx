@@ -42,8 +42,17 @@ export default function LogsPage({ liveLog, toast }) {
 
   return (
     <div className="stack">
-      <div className="actions end">
-        <button className="btn secondary" onClick={loadLogs}><RefreshCcw size={16} />Atualizar</button>
+      <div className="panel toolbar-panel">
+        <div className="section-head">
+          <div className="section-copy">
+            <span className="section-kicker">Monitoramento</span>
+            <h3>Consulta de logs</h3>
+            <p className="muted">Filtre arquivos, níveis e texto livre sem sair do painel.</p>
+          </div>
+          <div className="actions end">
+            <button className="btn secondary" onClick={loadLogs}><RefreshCcw size={16} />Atualizar</button>
+          </div>
+        </div>
       </div>
 
       <div className="panel stack">
@@ -55,7 +64,7 @@ export default function LogsPage({ liveLog, toast }) {
               ))}
             </select>
           </label>
-          <label className="label">Nivel
+          <label className="label">Nível
             <select className="input" value={level} onChange={(event) => setLevel(event.target.value)}>
               <option value="">Todos</option>
               <option value="info">info</option>

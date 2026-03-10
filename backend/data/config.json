@@ -1,5 +1,58 @@
 {
-  "telefones": [],
+  "telefones": [
+    {
+      "id": "tel_d68a09b3",
+      "nome": "Kriiger",
+      "numero": null,
+      "numeroAlt": null,
+      "sessionName": "session-f2ebb2a4",
+      "status": "offline",
+      "configuracao": {
+        "podeIniciarConversa": true,
+        "podeReceberMensagens": true,
+        "quantidadeConversasDia": 5,
+        "conversasRealizadasHoje": 0,
+        "ultimaConversaEm": null,
+        "proximaConversaDisponivelEm": null
+      },
+      "estatisticas": {
+        "totalConversas": 0,
+        "totalMensagensEnviadas": 0,
+        "totalMensagensRecebidas": 0,
+        "diasAtivo": 0,
+        "ultimoBanimento": null
+      },
+      "sensibilidade": "media",
+      "criadoEm": "2026-03-10T19:02:21.898Z",
+      "atualizadoEm": "2026-03-10T19:10:51.541Z"
+    },
+    {
+      "id": "tel_c462212e",
+      "nome": "FNX-018",
+      "numero": null,
+      "numeroAlt": null,
+      "sessionName": "session-b2da1014",
+      "status": "offline",
+      "configuracao": {
+        "podeIniciarConversa": true,
+        "podeReceberMensagens": true,
+        "quantidadeConversasDia": 5,
+        "conversasRealizadasHoje": 0,
+        "ultimaConversaEm": null,
+        "proximaConversaDisponivelEm": null
+      },
+      "estatisticas": {
+        "totalConversas": 0,
+        "totalMensagensEnviadas": 0,
+        "totalMensagensRecebidas": 0,
+        "diasAtivo": 0,
+        "ultimoBanimento": null
+      },
+      "sensibilidade": "media",
+      "criadoEm": "2026-03-10T19:02:29.690Z",
+      "atualizadoEm": "2026-03-10T19:02:29.690Z"
+    }
+  ],
   "controleDiario": {
     "ultimoDiaReset": "2026-03-10"
   }

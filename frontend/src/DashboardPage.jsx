@@ -10,7 +10,7 @@ export default function DashboardPage({ telefones, status, ativas, toast, refres
   async function toggle() {
     try {
       await api(status?.emExecucao ? '/maturacao/parar' : '/maturacao/iniciar', { method: 'POST' });
-      toast(status?.emExecucao ? 'Maturacao pausada' : 'Maturacao iniciada', 'success');
+      toast(status?.emExecucao ? 'Maturação pausada' : 'Maturação iniciada', 'success');
       refreshSnapshot();
     } catch (error) {
       toast(error.message, 'error');
@@ -19,11 +19,12 @@ export default function DashboardPage({ telefones, status, ativas, toast, refres
 
   return (
     <div className="stack">
-      <div className="panel">
+      <div className="panel hero-panel">
         <div className="section-head">
-          <div>
-            <h3>Controle da maturacao</h3>
-            <p className="muted">Status do plano, telefones e conversas em execucao.</p>
+          <div className="section-copy">
+            <span className="section-kicker">Operação</span>
+            <h3>Controle da maturação</h3>
+            <p className="muted">Status do plano, telefones e conversas em execução.</p>
           </div>
           <button className={`btn ${status?.emExecucao ? 'danger' : 'primary'}`} onClick={toggle}>
             {status?.emExecucao ? <StopCircle size={16} /> : <Play size={16} />}
@@ -31,16 +32,37 @@ export default function DashboardPage({ telefones, status, ativas, toast, refres
           </button>
         </div>
         <div className="stats">
-          <div className="card stat"><Phone size={18} /><strong>{online}</strong><span>online / {telefones.length}</span></div>
-          <div className="card stat"><Activity size={18} /><strong>{totalHoje}</strong><span>conversas hoje / meta {metaHoje}</span></div>
-          <div className="card stat"><PhoneCall size={18} /><strong>{ativas.length}</strong><span>conversas ativas</span></div>
-          <div className="card stat"><Wifi size={18} /><strong>{status?.emExecucao ? 'ativo' : 'pausado'}</strong><span>{status?.dentroHorario ? 'janela ativa' : formatDateTime(status?.proximoHorario)}</span></div>
+          <div className="card stat tone-neutral">
+            <span className="stat-icon"><Phone size={16} /></span>
+            <strong className="stat-value">{online}</strong>
+            <span className="stat-label">online / {telefones.length}</span>
+          </div>
+          <div className="card stat tone-neutral">
+            <span className="stat-icon"><Activity size={16} /></span>
+            <strong className="stat-value">{totalHoje}</strong>
+            <span className="stat-label">conversas hoje / meta {metaHoje}</span>
+          </div>
+          <div className="card stat tone-neutral">
+            <span className="stat-icon"><PhoneCall size={16} /></span>
+            <strong className="stat-value">{ativas.length}</strong>
+            <span className="stat-label">conversas ativas</span>
+          </div>
+          <div className={`card stat ${status?.emExecucao ? 'tone-green' : 'tone-red'}`}>
+            <span className="stat-icon"><Wifi size={16} /></span>
+            <strong className="stat-value">{status?.emExecucao ? 'ativo' : 'pausado'}</strong>
+            <span className="stat-label">{status?.dentroHorario ? 'janela ativa' : formatDateTime(status?.proximoHorario)}</span>
+          </div>
         </div>
       </div>
 
       <div className="grid two">
         <div className="panel">
-          <div className="section-head"><h3>Telefones</h3></div>
+          <div className="section-head">
+            <div className="section-copy">
+              <span className="section-kicker">Dispositivos</span>
+              <h3>Telefones</h3>
+            </div>
+          </div>
           <div className="stack">
             {telefones.length === 0 ? <div className="empty">Nenhum telefone cadastrado.</div> : telefones.map((item) => (
               <div key={item.id} className="list-card">
@@ -52,7 +74,7 @@ export default function DashboardPage({ telefones, status, ativas, toast, refres
                   <StatusBadge status={item.status} />
                 </div>
                 <div className="between small-gap">
-                  <span className="muted">Numero</span>
+                  <span className="muted">Número</span>
                   <span className="mono">{formatNumeroBR(item.numeroAlt)}</span>
                 </div>
               </div>
@@ -61,7 +83,12 @@ export default function DashboardPage({ telefones, status, ativas, toast, refres
         </div>
 
         <div className="panel">
-          <div className="section-head"><h3>Conversas ativas</h3></div>
+          <div className="section-head">
+            <div className="section-copy">
+              <span className="section-kicker">Fila ativa</span>
+              <h3>Conversas ativas</h3>
+            </div>
+          </div>
           <div className="stack">
             {ativas.length === 0 ? <div className="empty">Nenhuma conversa ativa.</div> : ativas.map((item) => (
               <div key={item.conversaExecucaoId} className="list-card">
@@ -75,7 +102,7 @@ export default function DashboardPage({ telefones, status, ativas, toast, refres
                   <span>{item.mensagemAtual}/{item.totalMensagens}</span>
                 </div>
                 <div className="progress"><span style={{ width: `${item.progresso || 0}%` }} /></div>
-                <div className="muted">Iniciou ha {formatTimeAgo(item.iniciouEm)}</div>
+                <div className="muted">Iniciou há {formatTimeAgo(item.iniciouEm)}</div>
               </div>
             ))}
           </div>

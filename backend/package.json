@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "doctor:browser": "node src/scripts/doctor-browser.js"
+    "doctor:browser": "node src/scripts/doctor-browser.js",
+    "doctor:runtime": "node src/scripts/doctor-runtime.js"
   },
   "keywords": [
     "whatsapp",

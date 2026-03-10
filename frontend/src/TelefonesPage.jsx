@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import { LoaderCircle, Pencil, Phone, PhoneOff, QrCode, RefreshCcw, Save, Trash2 } from 'lucide-react';
 import { api, formatNumeroBR, getRealtimeSocket } from './lib';
-import { Modal, StatusBadge } from './components';
+import { ConfirmModal, Modal, StatusBadge } from './components';
 
 export default function TelefonesPage({ telefones, toast, refreshSnapshot, browserRuntime }) {
   const [showCreate, setShowCreate] = useState(false);
   const [editing, setEditing] = useState(null);
   const [qrModal, setQrModal] = useState(null);
   const [connectDialog, setConnectDialog] = useState(null);
+  const [confirmDialog, setConfirmDialog] = useState(null);
   const [plano, setPlano] = useState(null);
   const [agora, setAgora] = useState(Date.now());
   const qrDismissedRef = useRef(new Set());
@@ -19,7 +20,7 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot, brows
     podeReceberMensagens: true
   });
   const browserAvailable = browserRuntime?.available !== false;
-  const browserMessage = browserRuntime?.message || 'Runtime do navegador indisponivel para WhatsApp.';
+  const browserMessage = browserRuntime?.message || 'Runtime do navegador indisponível para WhatsApp.';
 
   useEffect(() => {
     api('/maturacao/plano').then(setPlano).catch(() => {});
@@ -104,12 +105,12 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot, brows
         })();
 
     if (!alvo || Number.isNaN(alvo)) {
-      return 'disponivel';
+      return 'disponível';
     }
 
     const restante = Math.max(0, Math.ceil((alvo - agora) / 1000));
     if (restante <= 0) {
-      return 'disponivel';
+      return 'disponível';
     }
 
     const minutos = Math.floor(restante / 60);
@@ -149,7 +150,7 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot, brows
     return new Promise((resolve, reject) => {
       const timeout = window.setTimeout(() => {
         cleanup();
-        reject(new Error('Conexao em tempo real indisponivel. Recarregue o painel e tente novamente.'));
+        reject(new Error('Conexão em tempo real indisponível. Recarregue o painel e tente novamente.'));
       }, 5000);
 
       const onConnect = () => {
@@ -158,12 +159,12 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot, brows
           resolve(socket.id);
           return;
         }
-        reject(new Error('Sessao em tempo real nao identificada. Recarregue o painel e tente novamente.'));
+        reject(new Error('Sessão em tempo real não identificada. Recarregue o painel e tente novamente.'));
       };
 
       const onConnectError = () => {
         cleanup();
-        reject(new Error('Conexao em tempo real indisponivel. Recarregue o painel e tente novamente.'));
+        reject(new Error('Conexão em tempo real indisponível. Recarregue o painel e tente novamente.'));
       };
 
       function cleanup() {
@@ -188,7 +189,7 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot, brows
     const sanitizedPhone = String(phoneNumber ?? '').replace(/\D/g, '');
 
     if (method === 'phone' && sanitizedPhone.length < 10) {
-      toast('Informe um numero valido para gerar o codigo de pareamento', 'error');
+      toast('Informe um número válido para gerar o código de pareamento', 'error');
       return;
     }
 
@@ -221,7 +222,7 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot, brows
       });
       toast(
         method === 'phone'
-          ? `Gerando codigo de pareamento para ${item.nome}`
+          ? `Gerando código de pareamento para ${item.nome}`
           : `Inicializando ${item.nome}`,
         'info'
       );
@@ -241,9 +242,9 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot, brows
     try {
       const result = await api(`/telefones/${item.id}/reconectar`, { method: 'POST' });
       if (result?.status === 'requires_qr') {
-        toast(`Sessao de ${item.nome} expirou. Gere um novo QR.`, 'info');
+        toast(`Sessão de ${item.nome} expirou. Gere um novo QR.`, 'info');
       } else {
-        toast(`Reconexao iniciada para ${item.nome}`, 'info');
+        toast(`Reconexão iniciada para ${item.nome}`, 'info');
       }
       refreshSnapshot();
     } catch (error) {
@@ -262,22 +263,32 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot, brows
   }
 
   async function cancelConnectionAttempt(item) {
-    if (!window.confirm(`Cancelar tentativa de conexao de ${item.nome} e limpar toda a sessao salva?`)) return;
-
     try {
       await api(`/telefones/${item.id}/cancelar-conexao`, { method: 'POST' });
       qrDismissedRef.current.delete(item.id);
       setQrModal((current) => current?.id === item.id ? null : current);
       setConnectDialog((current) => current?.item?.id === item.id ? null : current);
-      toast(`Sessao de ${item.nome} limpa. Pronto para nova conexao.`, 'success');
+      toast(`Sessão de ${item.nome} limpa. Pronto para nova conexão.`, 'success');
       refreshSnapshot();
     } catch (error) {
       toast(error.message, 'error');
     }
   }
 
+  function openCancelConnectionConfirm(item) {
+    setConfirmDialog({
+      title: 'Cancelar tentativa',
+      message: `Cancelar a tentativa de conexão de ${item.nome}?`,
+      details: 'A sessão salva será limpa para permitir uma nova conexão do zero.',
+      confirmLabel: 'Cancelar tentativa',
+      onConfirm: async () => {
+        setConfirmDialog(null);
+        await cancelConnectionAttempt(item);
+      }
+    });
+  }
+
   async function deletePhone(item) {
-    if (!window.confirm(`Deletar ${item.nome}?`)) return;
     try {
       await api(`/telefones/${item.id}`, { method: 'DELETE' });
       toast('Telefone removido', 'success');
@@ -285,6 +296,19 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot, brows
     } catch (error) {
       toast(error.message, 'error');
     }
+  }
+
+  function openDeletePhoneConfirm(item) {
+    setConfirmDialog({
+      title: 'Excluir telefone',
+      message: `Excluir ${item.nome}?`,
+      details: 'Essa ação remove o telefone cadastrado e a sessão vinculada.',
+      confirmLabel: 'Excluir',
+      onConfirm: async () => {
+        setConfirmDialog(null);
+        await deletePhone(item);
+      }
+    });
   }
 
   async function saveEdit() {
@@ -312,13 +336,22 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot, brows
 
   return (
     <div className="stack">
-      <div className="actions end">
-        <button className="btn primary" onClick={() => setShowCreate(true)}><Phone size={16} />Adicionar</button>
+      <div className="panel toolbar-panel">
+        <div className="section-head">
+          <div className="section-copy">
+            <span className="section-kicker">Sessões</span>
+            <h3>Dispositivos cadastrados</h3>
+            <p className="muted">Conexão, reconexão e limite diário por telefone.</p>
+          </div>
+          <div className="actions end">
+            <button className="btn primary" onClick={() => setShowCreate(true)}><Phone size={16} />Adicionar</button>
+          </div>
+        </div>
       </div>
 
       {!browserAvailable && (
-        <div className="panel">
-          <strong>WhatsApp indisponivel neste ambiente</strong>
+        <div className="panel inline-note">
+          <strong>WhatsApp indisponível neste ambiente</strong>
           <div className="muted" style={{ marginTop: 6 }}>{browserMessage}</div>
         </div>
       )}
@@ -335,15 +368,15 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot, brows
                 <StatusBadge status={item.status} />
               </div>
               <div className="stack compact">
-                <div className="between small-gap"><span className="muted">Numero</span><span className="mono">{formatNumeroBR(item.numeroAlt)}</span></div>
+                <div className="between small-gap"><span className="muted">Número</span><span className="mono">{formatNumeroBR(item.numeroAlt)}</span></div>
                 <div className="between small-gap"><span className="muted">Conversas hoje</span><span>{item.configuracao?.conversasRealizadasHoje || 0}/{item.configuracao?.quantidadeConversasDia || 0}</span></div>
-                <div className="between small-gap"><span className="muted">Concluidas no total</span><span>{item.estatisticas?.totalConversas ?? 0}</span></div>
+                <div className="between small-gap"><span className="muted">Concluídas no total</span><span>{item.estatisticas?.totalConversas ?? 0}</span></div>
                 <div className="between small-gap"><span className="muted">Nova conversa em</span><span className="mono">{formatCountdown(item)}</span></div>
                 <div className="progress"><span style={{ width: `${Math.min(100, ((item.configuracao?.conversasRealizadasHoje || 0) / (item.configuracao?.quantidadeConversasDia || 1)) * 100)}%` }} /></div>
               </div>
               {!browserAvailable && (item.status === 'offline' || item.status === 'erro' || item.status === 'requires_qr') && (
                 <div className="muted" style={{ marginTop: 10 }}>
-                  Conexao bloqueada: {browserMessage}
+                  Conexão bloqueada: {browserMessage}
                 </div>
               )}
               <div className="actions spaced-from-progress">
@@ -351,10 +384,10 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot, brows
                 {item.status === 'online' && <button className="btn danger sm" onClick={() => disconnectPhone(item)}><PhoneOff size={14} />Desconectar</button>}
                 {item.status === 'reconnecting' && <button className="btn secondary sm" disabled><LoaderCircle size={14} />Reconectando</button>}
                 {item.status === 'offline' && (
-                  <button className="btn secondary sm" disabled={!browserAvailable} onClick={() => reconnectPhone(item)}><RefreshCcw size={14} />Tentar reconexao</button>
+                  <button className="btn secondary sm" disabled={!browserAvailable} onClick={() => reconnectPhone(item)}><RefreshCcw size={14} />Tentar reconexão</button>
                 )}
                 {(item.status === 'conectando' || item.status === 'reconnecting' || item.status === 'requires_qr' || item.status === 'erro') && (
-                  <button className="btn danger sm" onClick={() => cancelConnectionAttempt(item)}><Trash2 size={14} />Cancelar tentativa</button>
+                  <button className="btn danger sm" onClick={() => openCancelConnectionConfirm(item)}><Trash2 size={14} />Cancelar tentativa</button>
                 )}
                 <button className="btn secondary sm" onClick={() => setEditing({
                   id: item.id,
@@ -365,7 +398,7 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot, brows
                   podeIniciarConversa: item.configuracao?.podeIniciarConversa ?? true,
                   podeReceberMensagens: item.configuracao?.podeReceberMensagens ?? true
                 })}><Pencil size={14} />Editar</button>
-                <button className="btn danger sm" onClick={() => deletePhone(item)}><Trash2 size={14} />Excluir</button>
+                <button className="btn danger sm" onClick={() => openDeletePhoneConfirm(item)}><Trash2 size={14} />Excluir</button>
               </div>
             </div>
           ))}
@@ -380,7 +413,7 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot, brows
               <label className="label">Sensibilidade
                 <select className="input" value={form.sensibilidade} onChange={(event) => setForm((current) => ({ ...current, sensibilidade: event.target.value }))}>
                   <option value="baixa">Baixa</option>
-                  <option value="media">Media</option>
+                  <option value="media">Média</option>
                   <option value="alta">Alta</option>
                 </select>
               </label>
@@ -409,14 +442,14 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot, brows
                 onClick={() => setConnectDialog((current) => ({ ...current, method: 'phone' }))}
               >
                 <Phone size={16} />
-                Numero
+                Número
               </button>
             </div>
 
             {connectDialog.method === 'phone' ? (
               <>
                 <label className="label">
-                  Numero para vincular
+                  Número para vincular
                   <input
                     className="input"
                     value={connectDialog.phoneNumber}
@@ -425,7 +458,7 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot, brows
                   />
                 </label>
                 <p className="muted">
-                  O WhatsApp gera um codigo de 8 letras para digitar em Dispositivos conectados no celular.
+                  O WhatsApp gera um código de 8 letras para digitar em Dispositivos conectados no celular.
                 </p>
               </>
             ) : (
@@ -438,7 +471,7 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot, brows
               <button className="btn secondary" onClick={() => setConnectDialog(null)}>Cancelar</button>
               <button className="btn primary" onClick={startConnection}>
                 {connectDialog.method === 'phone' ? <Phone size={16} /> : <QrCode size={16} />}
-                {connectDialog.method === 'phone' ? 'Gerar codigo' : 'Gerar QR'}
+                {connectDialog.method === 'phone' ? 'Gerar código' : 'Gerar QR'}
               </button>
             </div>
           </div>
@@ -453,7 +486,7 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot, brows
               <label className="label">Sensibilidade
                 <select className="input" value={editing.sensibilidade} onChange={(event) => setEditing((current) => ({ ...current, sensibilidade: event.target.value }))}>
                   <option value="baixa">Baixa</option>
-                  <option value="media">Media</option>
+                  <option value="media">Média</option>
                   <option value="alta">Alta</option>
                 </select>
               </label>
@@ -468,7 +501,7 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot, brows
 
       {qrModal && (
         <Modal
-          title={`Conexao: ${qrModal.nome}`}
+          title={`Conexão: ${qrModal.nome}`}
           onClose={() => {
             qrDismissedRef.current.add(qrModal.id);
             setQrModal(null);
@@ -478,7 +511,7 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot, brows
           {qrModal.loading ? (
             <div className="empty">
               <LoaderCircle size={18} />
-              {qrModal.mode === 'phone' ? 'Gerando codigo...' : 'Aguardando QR...'}
+              {qrModal.mode === 'phone' ? 'Gerando código...' : 'Aguardando QR...'}
             </div>
           ) : (
             <div className="stack center">
@@ -488,7 +521,7 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot, brows
                     {qrModal.code}
                   </div>
                   <p className="muted center-text">
-                    Digite esse codigo em Dispositivos conectados no celular.
+                    Digite esse código em Dispositivos conectados no celular.
                   </p>
                 </>
               ) : (
@@ -500,6 +533,17 @@ export default function TelefonesPage({ telefones, toast, refreshSnapshot, brows
             </div>
           )}
         </Modal>
+      )}
+
+      {confirmDialog && (
+        <ConfirmModal
+          title={confirmDialog.title}
+          message={confirmDialog.message}
+          details={confirmDialog.details}
+          confirmLabel={confirmDialog.confirmLabel}
+          onConfirm={confirmDialog.onConfirm}
+          onClose={() => setConfirmDialog(null)}
+        />
       )}
     </div>
   );

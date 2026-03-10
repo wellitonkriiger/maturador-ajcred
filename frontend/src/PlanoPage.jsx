@@ -31,7 +31,7 @@ export default function PlanoPage({ toast, status }) {
 
   async function save() {
     if (bloqueado) {
-      toast('Pause a maturacao antes de alterar o plano', 'info');
+      toast('Pause a maturação antes de alterar o plano', 'info');
       return;
     }
 
@@ -50,15 +50,33 @@ export default function PlanoPage({ toast, status }) {
 
   return (
     <div className="stack">
-      <div className="actions end">
-        <button className="btn primary" onClick={save} disabled={saving || bloqueado}><Save size={16} />{saving ? 'Salvando...' : 'Salvar'}</button>
+      <div className="panel toolbar-panel">
+        <div className="section-head">
+          <div className="section-copy">
+            <span className="section-kicker">Configuração</span>
+            <h3>Plano de maturação</h3>
+            <p className="muted">Horários, intervalos e regras que controlam a automação.</p>
+          </div>
+          <div className="actions end">
+            <button className="btn primary" onClick={save} disabled={saving || bloqueado}>
+              <Save size={16} />
+              {saving ? 'Salvando...' : 'Salvar'}
+            </button>
+          </div>
+        </div>
       </div>
+
+      {bloqueado && (
+        <div className="inline-note">
+          Pause a maturação para liberar a edição do plano.
+        </div>
+      )}
 
       <div className="grid two" style={bloqueado ? { opacity: 0.72, pointerEvents: 'none' } : undefined}>
         <div className="panel stack">
-          <div className="card-title"><Settings2 size={16} />Horario</div>
+          <div className="card-title"><Settings2 size={16} />Horário</div>
           <div className="grid two">
-            <label className="label">Inicio<input className="input" type="time" value={plano.horarioFuncionamento?.inicio || '08:00'} onChange={(event) => update('horarioFuncionamento.inicio', event.target.value)} /></label>
+            <label className="label">Início<input className="input" type="time" value={plano.horarioFuncionamento?.inicio || '08:00'} onChange={(event) => update('horarioFuncionamento.inicio', event.target.value)} /></label>
             <label className="label">Fim<input className="input" type="time" value={plano.horarioFuncionamento?.fim || '22:00'} onChange={(event) => update('horarioFuncionamento.fim', event.target.value)} /></label>
           </div>
           <div className="actions">
@@ -87,7 +105,7 @@ export default function PlanoPage({ toast, status }) {
           <div className="card-title"><Settings2 size={16} />Metas e intervalos</div>
           <div className="list-card stack compact">
             <div className="between small-gap"><span className="muted">Conversas por telefone</span><span>Definido em cada telefone</span></div>
-            <div className="between small-gap"><span className="muted">Total por dia</span><span>Soma automatica dos telefones</span></div>
+            <div className="between small-gap"><span className="muted">Total por dia</span><span>Soma automática dos telefones</span></div>
           </div>
           <div className="grid two">
             <label className="label">Entre conversas min<input className="input" type="number" value={plano.intervalosGlobais?.entreConversas?.min ?? 1800} onChange={(event) => update('intervalosGlobais.entreConversas.min', Number(event.target.value))} /></label>
@@ -96,7 +114,7 @@ export default function PlanoPage({ toast, status }) {
         </div>
 
         <div className="panel stack">
-          <div className="card-title"><Settings2 size={16} />Estrategia</div>
+          <div className="card-title"><Settings2 size={16} />Estratégia</div>
           <label className="between">
             <span>Priorizar alta sensibilidade</span>
             <input type="checkbox" checked={plano.estrategia?.prioridadeTelefonesAltaSensibilidade ?? true} onChange={(event) => update('estrategia.prioridadeTelefonesAltaSensibilidade', event.target.checked)} />
@@ -113,7 +131,7 @@ export default function PlanoPage({ toast, status }) {
             <span>Randomizar participantes</span>
             <input type="checkbox" checked={plano.estrategia?.randomizarParticipantes ?? true} onChange={(event) => update('estrategia.randomizarParticipantes', event.target.checked)} />
           </label>
-          <label className="label">Maximo de conversas por mesmo par/dia<input className="input" type="number" min="1" value={plano.estrategia?.maxConversasMesmoParDia ?? 3} onChange={(event) => update('estrategia.maxConversasMesmoParDia', Number(event.target.value))} /></label>
+          <label className="label">Máximo de conversas por mesmo par/dia<input className="input" type="number" min="1" value={plano.estrategia?.maxConversasMesmoParDia ?? 3} onChange={(event) => update('estrategia.maxConversasMesmoParDia', Number(event.target.value))} /></label>
         </div>
       </div>
     </div>
