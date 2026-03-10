@@ -2,7 +2,6 @@
 
 const MaturacaoService = require('../services/maturacaoService');
 const PlanoMaturacaoModel = require('../models/PlanoMaturacao');
-const RuntimeDiagnosticsService = require('../services/runtimeDiagnosticsService');
 const logger = require('../utils/logger');
 
 class MaturacaoController {
@@ -18,25 +17,13 @@ class MaturacaoController {
 
   async iniciar(req, res) {
     try {
-      RuntimeDiagnosticsService.record('http', 'maturacao_start_request', {
-        ip: req.ip,
-        userAgent: req.get('user-agent') || null
-      });
-
       const sucesso = await MaturacaoService.iniciar();
       if (!sucesso) {
-        RuntimeDiagnosticsService.record('http', 'maturacao_start_rejected', {
-          motivo: 'iniciar_retornou_false'
-        });
         return res.status(400).json({ erro: 'Nao foi possivel iniciar maturacao' });
       }
 
-      RuntimeDiagnosticsService.record('http', 'maturacao_start_accepted');
       res.json({ mensagem: 'Maturacao iniciada com sucesso' });
     } catch (error) {
-      RuntimeDiagnosticsService.record('http', 'maturacao_start_failed', {
-        error: error.message
-      });
       logger.error('Erro ao iniciar maturacao:', error);
       res.status(500).json({ erro: 'Erro ao iniciar maturacao' });
     }
@@ -44,22 +31,13 @@ class MaturacaoController {
 
   async parar(req, res) {
     try {
-      RuntimeDiagnosticsService.record('http', 'maturacao_stop_request', {
-        ip: req.ip,
-        userAgent: req.get('user-agent') || null
-      });
-
       const sucesso = MaturacaoService.parar();
       if (!sucesso) {
         return res.status(400).json({ erro: 'Maturacao nao esta em execucao' });
       }
 
-      RuntimeDiagnosticsService.record('http', 'maturacao_stop_accepted');
       res.json({ mensagem: 'Maturacao pausada com sucesso' });
     } catch (error) {
-      RuntimeDiagnosticsService.record('http', 'maturacao_stop_failed', {
-        error: error.message
-      });
       logger.error('Erro ao parar maturacao:', error);
       res.status(500).json({ erro: 'Erro ao parar maturacao' });
     }

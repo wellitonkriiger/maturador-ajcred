@@ -2,19 +2,15 @@
   "name": "maturador-ajcred",
   "private": true,
   "version": "1.0.0",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
   "scripts": {
-    "deps:ensure": "node scripts/ensure-deps.js",
-    "vm:prod": "node scripts/start-production-vm.js",
-    "vm:prod:check": "node scripts/start-production-vm.js --check-only",
-    "dev:backend": "npm run dev --prefix backend",
-    "dev:frontend": "npm run dev --prefix frontend",
-    "dev:frontend:wait": "wait-on http-get://127.0.0.1:3001/health && npm run dev:frontend",
-    "dev": "concurrently -n backend,frontend -c yellow,cyan \"npm run dev:backend\" \"npm run dev:frontend:wait\"",
-    "build:frontend": "npm run build --prefix frontend",
-    "doctor:runtime": "npm run doctor:runtime --prefix backend",
-    "predev": "npm run deps:ensure",
-    "prelan": "npm run deps:ensure",
-    "lan": "npm run build:frontend && cross-env SERVE_FRONTEND=true HOST=0.0.0.0 PORT=500 npm run start --prefix backend"
+    "dev": "concurrently -n backend,frontend -c yellow,cyan \"cross-env NODE_ENV=development HOST=0.0.0.0 PORT=3001 SERVE_FRONTEND=false npm run dev --workspace backend\" \"wait-on http-get://127.0.0.1:3001/health && npm run dev --workspace frontend\"",
+    "build": "npm run build --workspace backend && npm run build --workspace frontend",
+    "start": "cross-env NODE_ENV=production HOST=0.0.0.0 PORT=3001 SERVE_FRONTEND=true npm run start --workspace backend",
+    "test:guards": "node backend/src/tests/12-whatsapp-status-guard.js && node backend/src/tests/14-browser-runtime.js && node backend/src/tests/15-browser-runtime-guard.js && node backend/src/tests/17-keepalive-stability.js"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",

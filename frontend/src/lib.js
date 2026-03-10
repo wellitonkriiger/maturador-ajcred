@@ -2,10 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { io } from 'socket.io-client';
 
 const SOCKET_URL = typeof window !== 'undefined' ? window.location.origin : undefined;
-
-export const BACKEND_ROOT = '';
 export const API_ROOT = '/api';
-export const POLL_INTERVAL = 25000;
+export const POLL_INTERVAL = 30000;
 
 let sharedSocket = null;
 

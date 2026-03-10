@@ -6,7 +6,7 @@ import TelefonesPage from './TelefonesPage';
 import ConversasPage from './ConversasPage';
 import PlanoPage from './PlanoPage';
 import LogsPage from './LogsPage';
-import { api, BACKEND_ROOT, POLL_INTERVAL, removeExecucao, upsertById, upsertExecucao, useSocketEvents, useToasts } from './lib';
+import { api, POLL_INTERVAL, removeExecucao, upsertById, upsertExecucao, useSocketEvents, useToasts } from './lib';
 
 const THEME_STORAGE_KEY = 'ajcred-theme';
 
@@ -63,7 +63,7 @@ export default function App() {
 
   async function refreshHealth() {
     try {
-      const response = await fetch(`${BACKEND_ROOT}/health`);
+      const response = await fetch('/health');
       if (!response.ok) {
         throw new Error(`health_http_${response.status}`);
       }
@@ -99,10 +99,8 @@ export default function App() {
   useEffect(() => {
     refreshSnapshot();
     const poll = window.setInterval(refreshSnapshot, POLL_INTERVAL);
-    const health = window.setInterval(refreshHealth, 8000);
     return () => {
       window.clearInterval(poll);
-      window.clearInterval(health);
     };
   }, []);
 

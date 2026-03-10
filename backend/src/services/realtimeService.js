@@ -1,5 +1,3 @@
-const noop = () => {};
-
 class RealtimeService {
   constructor() {
     this.io = null;

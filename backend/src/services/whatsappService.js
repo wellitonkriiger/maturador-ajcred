@@ -10,11 +10,11 @@ const TelefoneModel = require('../models/Telefone');
 const DelayUtils = require('../utils/delay');
 const RealtimeService = require('./realtimeService');
 const BrowserRuntimeService = require('./browserRuntimeService');
-const RuntimeDiagnosticsService = require('./runtimeDiagnosticsService');
 
 const KEEPALIVE_INTERVAL_MS = 25 * 1000;
-const KEEPALIVE_EVAL_TIMEOUT_MS = 4 * 1000;
-const KEEPALIVE_STATE_TIMEOUT_MS = 4 * 1000;
+const KEEPALIVE_EVAL_TIMEOUT_MS = 10 * 1000;
+const KEEPALIVE_STATE_TIMEOUT_MS = 10 * 1000;
+const MAX_TRANSIENT_KEEPALIVE_FAILURES = 2;
 const AUTO_RECONNECT_DELAY_MS = 30 * 1000;
 const MAX_AUTO_RECONNECT_ATTEMPTS = 6;
 const TRANSIENT_INIT_ERRORS = [
@@ -80,6 +80,23 @@ function extractWaStateFromReason(reason) {
   return match ? normalizeWaState(match[1]) : null;
 }
 
+function isTransientKeepAliveError(message) {
+  const text = firstErrorLine(message);
+  return text.includes('Keepalive timeout') || text.includes('State timeout');
+}
+
+function isHardKeepAliveError(message) {
+  const text = firstErrorLine(message);
+  if (isTransientKeepAliveError(text)) return false;
+
+  const waState = extractWaStateFromReason(text);
+  if (waState && isNonOperationalWaState(waState)) {
+    return true;
+  }
+
+  return true;
+}
+
 class WhatsAppService extends EventEmitter {
   constructor() {
     super();
@@ -91,7 +108,7 @@ class WhatsAppService extends EventEmitter {
     this.clientMeta = new Map();
     this.autoSavedContacts = new Map();
     this._desconectando = new Set();
-    this._keepAliveTimer = setInterval(() => this._runKeepAlive(), KEEPALIVE_INTERVAL_MS);
+    this._keepAliveTimer = null;
   }
 
   _createClient(telefoneId, options = {}) {
@@ -130,6 +147,7 @@ class WhatsAppService extends EventEmitter {
       lastReadyAt: null,
       lastActivityAt: null,
       lastKeepAliveAt: null,
+      lastKeepAliveError: null,
       reconnectInFlight: false,
       lastDisconnectReason: null,
       autoReconnectAttempts: 0,
@@ -137,7 +155,12 @@ class WhatsAppService extends EventEmitter {
       nextAutoReconnectAt: null,
       manualDisconnect: false,
       activeClientToken: 0,
-      offlineTransitionInFlight: false
+      offlineTransitionInFlight: false,
+      transientKeepAliveFailures: 0,
+      busyOperations: 0,
+      busySince: null,
+      lastBusyOperation: null,
+      lastProbeDeferredAt: null
     };
 
     this.clientMeta.set(telefoneId, meta);
@@ -146,6 +169,55 @@ class WhatsAppService extends EventEmitter {
 
   _touchActivity(telefoneId) {
     this._meta(telefoneId).lastActivityAt = new Date().toISOString();
+  }
+
+  startKeepAlive() {
+    if (this._keepAliveTimer) return;
+
+    this._keepAliveTimer = setInterval(() => {
+      this._runKeepAlive().catch((error) => {
+        logger.warn(`[KeepAlive] Falha no ciclo global: ${error.message}`);
+      });
+    }, KEEPALIVE_INTERVAL_MS);
+  }
+
+  stopKeepAlive() {
+    if (!this._keepAliveTimer) return;
+    clearInterval(this._keepAliveTimer);
+    this._keepAliveTimer = null;
+  }
+
+  _resetKeepAliveState(telefoneId) {
+    const meta = this._meta(telefoneId);
+    meta.transientKeepAliveFailures = 0;
+    meta.lastKeepAliveError = null;
+  }
+
+  _beginBusyOperation(telefoneId, operation) {
+    const meta = this._meta(telefoneId);
+    meta.busyOperations += 1;
+    meta.lastBusyOperation = operation;
+    if (!meta.busySince) {
+      meta.busySince = new Date().toISOString();
+    }
+
+    return () => {
+      const currentMeta = this._meta(telefoneId);
+      currentMeta.busyOperations = Math.max(0, currentMeta.busyOperations - 1);
+      if (currentMeta.busyOperations === 0) {
+        currentMeta.busySince = null;
+        currentMeta.lastBusyOperation = null;
+      }
+    };
+  }
+
+  async _withBusyOperation(telefoneId, operation, handler) {
+    const release = this._beginBusyOperation(telefoneId, operation);
+    try {
+      return await handler();
+    } finally {
+      release();
+    }
   }
 
   _setWaState(telefoneId, waState) {
@@ -340,9 +412,6 @@ class WhatsAppService extends EventEmitter {
     const telefone = TelefoneModel.atualizarStatus(telefoneId, status, numero, numeroAlt);
     const meta = this._meta(telefoneId);
     meta.state = status;
-    if (telefone) {
-      RealtimeService.emitTelefoneStatus(telefone);
-    }
     return telefone;
   }
 
@@ -353,6 +422,9 @@ class WhatsAppService extends EventEmitter {
     if (!telefone || meta.manualDisconnect) return false;
     if (meta.reconnectInFlight) return false;
     if (!this.temSessaoPersistida(telefoneId)) return false;
+    if (meta.autoReconnectTimer || meta.nextAutoReconnectAt) {
+      return false;
+    }
     if (meta.autoReconnectAttempts >= MAX_AUTO_RECONNECT_ATTEMPTS) {
       meta.nextAutoReconnectAt = null;
       logger.warn(`[AutoReconnect] ${telefone.nome} atingiu o limite de ${MAX_AUTO_RECONNECT_ATTEMPTS} tentativas automaticas`);
@@ -363,8 +435,6 @@ class WhatsAppService extends EventEmitter {
       );
       return false;
     }
-
-    this._clearReconnectTimer(telefoneId);
 
     meta.nextAutoReconnectAt = new Date(Date.now() + delayMs).toISOString();
     meta.autoReconnectTimer = setTimeout(async () => {
@@ -386,13 +456,6 @@ class WhatsAppService extends EventEmitter {
       }
     }, delayMs);
 
-    RuntimeDiagnosticsService.record('whatsapp', 'reconnect_scheduled', {
-      telefoneId,
-      telefone: telefone?.nome ?? telefoneId,
-      reason,
-      delayMs,
-      autoReconnectAttempts: meta.autoReconnectAttempts
-    });
     logger.info(`[AutoReconnect] ${telefone.nome} tera nova tentativa em ${Math.round(delayMs / 1000)}s (${reason})`);
     RealtimeService.emitReconnectAttempt(telefoneId, 'scheduled', `Nova tentativa em ${Math.round(delayMs / 1000)}s`);
     return true;
@@ -408,11 +471,6 @@ class WhatsAppService extends EventEmitter {
 
   async _recoverFromRuntimeError(telefoneId, error, context = 'runtime_error') {
     const linha = firstErrorLine(error);
-    RuntimeDiagnosticsService.record('whatsapp', 'runtime_error', {
-      telefoneId,
-      context,
-      error: linha
-    });
     logger.warn(`[Reconnect] ${telefoneId} saiu de operacao (${context}: ${linha})`);
     await this._markOffline(telefoneId, `${context}:${linha}`, {
       scheduleReconnect: true,
@@ -453,6 +511,10 @@ class WhatsAppService extends EventEmitter {
     try {
       meta.reconnectInFlight = false;
       meta.lastDisconnectReason = reason;
+      meta.busyOperations = 0;
+      meta.busySince = null;
+      meta.lastBusyOperation = null;
+      this._resetKeepAliveState(telefoneId);
       if (waState !== undefined) {
         this._setWaState(telefoneId, waState);
       }
@@ -461,14 +523,6 @@ class WhatsAppService extends EventEmitter {
       this._clearConnectionRequester(telefoneId);
       this.clients.delete(telefoneId);
       this._updateStatus(telefoneId, nextStatus);
-      RuntimeDiagnosticsService.record('whatsapp', 'offline_transition', {
-        telefoneId,
-        reason,
-        nextStatus,
-        scheduleReconnect,
-        destroyClient,
-        waState: waState ?? meta.waState
-      });
 
       if (emitOfflineEvent) {
         this.emit('telefone:offline', telefoneId, reason);
@@ -639,6 +693,7 @@ class WhatsAppService extends EventEmitter {
       meta.manualDisconnect = false;
       meta.lastDisconnectReason = null;
       meta.lastReadyAt = new Date().toISOString();
+      this._resetKeepAliveState(telefoneId);
       this._touchActivity(telefoneId);
 
       logger.info(`${telefone.nome} ONLINE | ${numeroInterno}`);
@@ -689,7 +744,7 @@ class WhatsAppService extends EventEmitter {
       }
 
       try {
-        await client.sendMessage(numeroInterno, '.');
+        await this._withBusyOperation(telefoneId, 'discover_lid', () => client.sendMessage(numeroInterno, '.'));
         logger.info(`Mensagem de descoberta de @lid enviada para ${telefone.nome}`);
       } catch (error) {
         client.removeListener('message_create', capturarLid);
@@ -792,6 +847,10 @@ class WhatsAppService extends EventEmitter {
     meta.reconnectInFlight = !!isReconnect;
     meta.lastDisconnectReason = null;
     meta.offlineTransitionInFlight = false;
+    meta.busyOperations = 0;
+    meta.busySince = null;
+    meta.lastBusyOperation = null;
+    this._resetKeepAliveState(telefoneId);
     this._setWaState(telefoneId, 'OPENING');
     if (!isReconnect) {
       meta.autoReconnectAttempts = 0;
@@ -806,13 +865,6 @@ class WhatsAppService extends EventEmitter {
 
     logger.info(`Inicializando cliente para ${telefone.nome} (${telefoneId})...`);
     this._updateStatus(telefoneId, isReconnect ? 'reconnecting' : 'conectando');
-    RuntimeDiagnosticsService.record('whatsapp', 'client_initializing', {
-      telefoneId,
-      telefone: telefone.nome,
-      isReconnect,
-      autoReconnect,
-      allowQr
-    });
 
     const client = this._createClient(telefoneId, { pairWithPhoneNumber });
     this._bindClientEvents(client, telefoneId, {
@@ -838,12 +890,6 @@ class WhatsAppService extends EventEmitter {
       await this._destroyClient(client);
 
       if (isConnectionError(msgErro) || isTransientInitError(msgErro)) {
-        RuntimeDiagnosticsService.record('whatsapp', 'client_init_transient_failure', {
-          telefoneId,
-          telefone: telefone.nome,
-          error: linha,
-          autoReconnect
-        });
         logger.warn(`${telefone.nome} falhou durante inicializacao (${linha})`);
         const erroTransitorio = isTransientInitError(msgErro);
         const atingiuLimite = autoReconnect && metaAtual.autoReconnectAttempts >= MAX_AUTO_RECONNECT_ATTEMPTS && !erroTransitorio;
@@ -864,11 +910,6 @@ class WhatsAppService extends EventEmitter {
       }
 
       logger.error(`Erro fatal ao inicializar ${telefone.nome}: ${msgErro}`);
-      RuntimeDiagnosticsService.record('whatsapp', 'client_init_fatal_failure', {
-        telefoneId,
-        telefone: telefone.nome,
-        error: linha
-      });
       this._updateStatus(telefoneId, allowQr ? 'offline' : 'requires_qr');
       this.emit('telefone:erro', telefoneId, msgErro);
     });
@@ -958,6 +999,10 @@ class WhatsAppService extends EventEmitter {
     meta.manualDisconnect = true;
     meta.reconnectInFlight = false;
     meta.lastDisconnectReason = 'manual_disconnect';
+    meta.busyOperations = 0;
+    meta.busySince = null;
+    meta.lastBusyOperation = null;
+    this._resetKeepAliveState(telefoneId);
     this._setWaState(telefoneId, null);
     this._clearReconnectTimer(telefoneId);
 
@@ -1018,6 +1063,12 @@ class WhatsAppService extends EventEmitter {
     const client = this.clients.get(telefoneId);
     if (!client || !client.info) return false;
 
+    const meta = this._meta(telefoneId);
+    if (meta.busyOperations > 0) {
+      meta.lastProbeDeferredAt = new Date().toISOString();
+      return true;
+    }
+
     try {
       const page = client.pupPage;
       if (!page || page.isClosed()) {
@@ -1041,17 +1092,27 @@ class WhatsAppService extends EventEmitter {
         }
       }
 
+      this._resetKeepAliveState(telefoneId);
       return result === 'visible' || result === 'hidden' || typeof result === 'string';
     } catch (error) {
-      RuntimeDiagnosticsService.record('whatsapp', 'keepalive_failed', {
-        telefoneId,
-        error: firstErrorLine(error),
-        recover
-      });
-      logger.warn(`[KeepAlive] ${telefoneId} perdeu a pagina (${error.message})`);
+      const linha = firstErrorLine(error);
+      meta.lastKeepAliveError = linha;
+
+      if (!isHardKeepAliveError(linha)) {
+        meta.transientKeepAliveFailures += 1;
+        logger.warn(
+          `[KeepAlive] ${telefoneId} instavel (${linha}) [${meta.transientKeepAliveFailures}/${MAX_TRANSIENT_KEEPALIVE_FAILURES}]`
+        );
+
+        if (meta.transientKeepAliveFailures < MAX_TRANSIENT_KEEPALIVE_FAILURES || !recover) {
+          return false;
+        }
+      }
+
+      logger.warn(`[KeepAlive] ${telefoneId} perdeu a pagina (${linha})`);
       if (recover) {
         try {
-          await this._markOffline(telefoneId, `keepalive_failed:${error.message}`, {
+          await this._markOffline(telefoneId, `keepalive_failed:${linha}`, {
             scheduleReconnect: true,
             destroyClient: true
           });
@@ -1092,62 +1153,67 @@ class WhatsAppService extends EventEmitter {
     logger.info(`   Para: ${numeroDestinatario}`);
     logger.info(`   Msg : "${texto}"`);
 
-    try {
-      const result = await client.sendMessage(numeroDestinatario, texto);
-      this._touchActivity(telefoneIdRemetente);
-      logger.info(`Mensagem enviada! ID: ${result?.id?._serialized ?? 'N/A'}`);
-      TelefoneModel.incrementarMensagensEnviadas(telefoneIdRemetente);
-      RealtimeService.emitTelefoneStatus(TelefoneModel.buscarPorId(telefoneIdRemetente));
-      return true;
-    } catch (error) {
-      if (isConnectionError(error)) {
-        await this._recoverFromRuntimeError(telefoneIdRemetente, error, 'send_message_failed').catch(() => {});
+    return this._withBusyOperation(telefoneIdRemetente, 'send_message', async () => {
+      try {
+        const result = await client.sendMessage(numeroDestinatario, texto);
+        this._touchActivity(telefoneIdRemetente);
+        logger.info(`Mensagem enviada! ID: ${result?.id?._serialized ?? 'N/A'}`);
+        TelefoneModel.incrementarMensagensEnviadas(telefoneIdRemetente);
+        return true;
+      } catch (error) {
+        if (isConnectionError(error)) {
+          await this._recoverFromRuntimeError(telefoneIdRemetente, error, 'send_message_failed').catch(() => {});
+        }
+        throw error;
       }
-      throw error;
-    }
+    });
   }
 
   async marcarComoLida(telefoneId, numeroRemetente) {
-    try {
-      const client = this.clients.get(telefoneId);
-      if (!client) return false;
-      const chat = await client.getChatById(numeroRemetente);
-      await chat.sendSeen();
-      this._touchActivity(telefoneId);
-      logger.debug(`[${telefoneId}] Marcou como lida: ${numeroRemetente}`);
-      return true;
-    } catch (error) {
-      if (isConnectionError(error)) {
-        await this._recoverFromRuntimeError(telefoneId, error, 'mark_seen_failed').catch(() => {});
+    return this._withBusyOperation(telefoneId, 'mark_seen', async () => {
+      try {
+        const client = this.clients.get(telefoneId);
+        if (!client) return false;
+        const chat = await client.getChatById(numeroRemetente);
+        await chat.sendSeen();
+        this._touchActivity(telefoneId);
+        logger.debug(`[${telefoneId}] Marcou como lida: ${numeroRemetente}`);
+        return true;
+      } catch (error) {
+        if (isConnectionError(error)) {
+          await this._recoverFromRuntimeError(telefoneId, error, 'mark_seen_failed').catch(() => {});
+          return false;
+        }
+        logger.debug(`marcarComoLida falhou (ignorado): ${error.message}`);
         return false;
       }
-      logger.debug(`marcarComoLida falhou (ignorado): ${error.message}`);
-      return false;
-    }
+    });
   }
 
   async simularDigitacao(telefoneId, numeroDestinatario, duracao) {
-    try {
-      const client = this.clients.get(telefoneId);
-      if (!client) return false;
-      const chat = await client.getChatById(numeroDestinatario);
-      await chat.sendStateTyping();
-      await DelayUtils.sleep(duracao);
-      await chat.clearState();
-      this._touchActivity(telefoneId);
-      logger.debug(`[${telefoneId}] Simulou digitacao por ${duracao}ms`);
-      return true;
-    } catch (error) {
-      if (isConnectionError(error)) {
-        logger.warn(`[${telefoneId}] simularDigitacao: cliente indisponivel -- ${firstErrorLine(error)}`);
-        await this._recoverFromRuntimeError(telefoneId, error, 'typing_failed').catch(() => {});
-        return false;
-      }
+    return this._withBusyOperation(telefoneId, 'typing', async () => {
+      try {
+        const client = this.clients.get(telefoneId);
+        if (!client) return false;
+        const chat = await client.getChatById(numeroDestinatario);
+        await chat.sendStateTyping();
+        await DelayUtils.sleep(duracao);
+        await chat.clearState();
+        this._touchActivity(telefoneId);
+        logger.debug(`[${telefoneId}] Simulou digitacao por ${duracao}ms`);
+        return true;
+      } catch (error) {
+        if (isConnectionError(error)) {
+          logger.warn(`[${telefoneId}] simularDigitacao: cliente indisponivel -- ${firstErrorLine(error)}`);
+          await this._recoverFromRuntimeError(telefoneId, error, 'typing_failed').catch(() => {});
+          return false;
+        }
 
-      logger.debug(`simularDigitacao falhou (ignorado): ${error.message}`);
-      await DelayUtils.sleep(duracao);
-      return true;
-    }
+        logger.debug(`simularDigitacao falhou (ignorado): ${error.message}`);
+        await DelayUtils.sleep(duracao);
+        return true;
+      }
+    });
   }
 
   getCliente(telefoneId) {

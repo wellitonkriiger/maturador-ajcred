@@ -4,10 +4,9 @@
   "description": "Sistema de maturação de números WhatsApp",
   "main": "src/server.js",
   "scripts": {
+    "build": "node src/scripts/build-backend.js",
     "start": "node src/server.js",
-    "dev": "nodemon src/server.js",
-    "doctor:browser": "node src/scripts/doctor-browser.js",
-    "doctor:runtime": "node src/scripts/doctor-runtime.js"
+    "dev": "nodemon src/server.js"
   },
   "keywords": [
     "whatsapp",
