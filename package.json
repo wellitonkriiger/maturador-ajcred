@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "concurrently -n backend,frontend -c yellow,cyan \"cross-env NODE_ENV=development HOST=0.0.0.0 PORT=3001 SERVE_FRONTEND=false npm run dev --workspace backend\" \"wait-on http-get://127.0.0.1:3001/health && npm run dev --workspace frontend\"",
     "build": "npm run build --workspace backend && npm run build --workspace frontend",
-    "start": "cross-env NODE_ENV=production HOST=0.0.0.0 PORT=3001 SERVE_FRONTEND=true npm run start --workspace backend",
+    "start": "npm run start --workspace backend",
     "test:guards": "node backend/src/tests/12-whatsapp-status-guard.js && node backend/src/tests/14-browser-runtime.js && node backend/src/tests/15-browser-runtime-guard.js && node backend/src/tests/17-keepalive-stability.js"
   },
   "devDependencies": {
