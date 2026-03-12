@@ -3,6 +3,7 @@ backend/node_modules/
 frontend/node_modules/
 backend/.wwebjs_auth/
 backend/.wwebjs_cache/
+backend/data/config.json
 backend/data/logs/
 frontend/dist/
 frontend/dist-ssr/

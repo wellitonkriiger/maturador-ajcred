@@ -38,6 +38,11 @@ class TelefoneModel {
 
   salvar() {
     try {
+      const configDir = path.dirname(this.configFile);
+      if (!fs.existsSync(configDir)) {
+        fs.mkdirSync(configDir, { recursive: true });
+      }
+
       const config = {
         telefones: this.telefones,
         controleDiario: this.controleDiario
