@@ -17,6 +17,7 @@ const WhatsAppService = require('./services/whatsappService');
 const HealthMonitor = require('./services/healthMonitor');
 const RealtimeService = require('./services/realtimeService');
 const BrowserRuntimeService = require('./services/browserRuntimeService');
+const { buildHealthPayload } = require('./utils/healthPayload');
 
 const app = express();
 const server = http.createServer(app);
@@ -27,24 +28,39 @@ const io = new Server(server, {
   }
 });
 
+function shouldLogHttpRequest(req) {
+  if (req.method !== 'GET') return true;
+
+  if (
+    req.path === '/health' ||
+    req.path === '/api/painel/snapshot' ||
+    req.path.startsWith('/socket.io')
+  ) {
+    return false;
+  }
+
+  if (!req.path.startsWith('/api') && path.extname(req.path)) {
+    return false;
+  }
+
+  return true;
+}
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
-  logger.debug(`${req.method} ${req.path}`);
+  if (shouldLogHttpRequest(req)) {
+    logger.debug(`${req.method} ${req.path}`);
+  }
   next();
 });
 
 app.use('/api', routes);
 
 app.get('/health', (req, res) => {
-  const health = BrowserRuntimeService.getServiceHealth();
-  res.json({
-    status: health.status,
-    timestamp: new Date().toISOString(),
-    services: health.services
-  });
+  res.json(buildHealthPayload());
 });
 
 const SERVE_FRONTEND = ['1', 'true', 'yes'].includes(

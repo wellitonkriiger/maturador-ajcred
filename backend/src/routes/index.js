@@ -7,6 +7,10 @@ const TelefoneController = require('../controllers/telefoneController');
 const ConversaController = require('../controllers/conversaController');
 const MaturacaoController = require('../controllers/maturacaoController');
 const LogController = require('../controllers/logController');
+const PainelController = require('../controllers/painelController');
+
+// ===== ROTAS DE PAINEL =====
+router.get('/painel/snapshot', PainelController.snapshot);
 
 // ===== ROTAS DE TELEFONES =====
 router.get('/telefones', TelefoneController.listar);

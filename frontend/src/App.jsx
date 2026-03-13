@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { CheckCircle2, FileJson, LayoutDashboard, Logs, Moon, Phone, Settings2, Sun, TriangleAlert } from 'lucide-react';
 import './App.css';
 import DashboardPage from './DashboardPage';
@@ -43,6 +43,7 @@ function backendStatusLabel(state) {
 }
 
 export default function App() {
+  const shouldRefreshOnReconnectRef = useRef(false);
   const [theme, setTheme] = useState(() => {
     if (typeof window === 'undefined') return 'light';
     return window.localStorage.getItem(THEME_STORAGE_KEY) === 'dark' ? 'dark' : 'light';
@@ -57,42 +58,35 @@ export default function App() {
   const { toasts, push } = useToasts();
 
   function applyHealthPayload(payload) {
+    if (!payload) {
+      markBackendOffline();
+      return;
+    }
+
     setBrowserRuntime(payload?.services?.whatsappBrowser || null);
     setBackendState(payload?.status === 'degraded' ? 'degraded' : 'online');
   }
 
-  async function refreshHealth() {
-    try {
-      const response = await fetch('/health');
-      if (!response.ok) {
-        throw new Error(`health_http_${response.status}`);
-      }
-      const payload = await response.json();
-      applyHealthPayload(payload);
-      return payload;
-    } catch {
-      setBackendState('offline');
-      setBrowserRuntime(null);
-      return null;
-    }
+  function markBackendOffline() {
+    setBackendState('offline');
+    setBrowserRuntime(null);
+  }
+
+  function applySnapshotPayload(payload) {
+    setTelefones(Array.isArray(payload?.telefones) ? payload.telefones : []);
+    setStatus(payload?.maturacaoStatus || null);
+    setAtivas(Array.isArray(payload?.conversasAtivas) ? payload.conversasAtivas : []);
+    applyHealthPayload(payload?.health || null);
   }
 
   async function refreshSnapshot() {
     try {
-      const [phoneList, maturacaoStatus, activeList, healthPayload] = await Promise.all([
-        api('/telefones'),
-        api('/maturacao/status'),
-        api('/maturacao/conversas-ativas'),
-        refreshHealth()
-      ]);
-      setTelefones(Array.isArray(phoneList) ? phoneList : []);
-      setStatus(maturacaoStatus);
-      setAtivas(Array.isArray(activeList) ? activeList : []);
-      if (healthPayload) {
-        applyHealthPayload(healthPayload);
-      }
+      const payload = await api('/painel/snapshot');
+      applySnapshotPayload(payload);
+      return payload;
     } catch {
-      await refreshHealth();
+      markBackendOffline();
+      return null;
     }
   }
 
@@ -114,6 +108,14 @@ export default function App() {
   }, [theme]);
 
   useSocketEvents({
+    onConnect: () => {
+      if (!shouldRefreshOnReconnectRef.current) return;
+      shouldRefreshOnReconnectRef.current = false;
+      refreshSnapshot();
+    },
+    onDisconnect: () => {
+      shouldRefreshOnReconnectRef.current = true;
+    },
     onTelefoneStatus: (payload) => {
       if (payload?.deleted) {
         setTelefones((current) => current.filter((item) => item.id !== payload.telefoneId));

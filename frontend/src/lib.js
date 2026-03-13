@@ -3,7 +3,7 @@ import { io } from 'socket.io-client';
 
 const SOCKET_URL = typeof window !== 'undefined' ? window.location.origin : undefined;
 export const API_ROOT = '/api';
-export const POLL_INTERVAL = 30000;
+export const POLL_INTERVAL = 60000;
 
 let sharedSocket = null;
 
@@ -151,6 +151,8 @@ export function useSocketEvents(handlers) {
 
   useEffect(() => {
     const socket = getRealtimeSocket();
+    const onConnect = () => handlersRef.current.onConnect?.();
+    const onDisconnect = (reason) => handlersRef.current.onDisconnect?.(reason);
     const onTelefoneStatus = (payload) => handlersRef.current.onTelefoneStatus?.(payload);
     const onQRCode = (payload) => handlersRef.current.onQRCode?.(payload);
     const onQRCleared = (payload) => handlersRef.current.onQRCleared?.(payload);
@@ -163,6 +165,8 @@ export function useSocketEvents(handlers) {
     const onConversaFinished = (payload) => handlersRef.current.onConversaFinished?.(payload);
     const onLog = (payload) => handlersRef.current.onLog?.(payload);
 
+    socket.on('connect', onConnect);
+    socket.on('disconnect', onDisconnect);
     socket.on('telefone:status', onTelefoneStatus);
     socket.on('telefone:qrcode', onQRCode);
     socket.on('telefone:qr_cleared', onQRCleared);
@@ -176,6 +180,8 @@ export function useSocketEvents(handlers) {
     socket.on('logs:tail', onLog);
 
     return () => {
+      socket.off('connect', onConnect);
+      socket.off('disconnect', onDisconnect);
       socket.off('telefone:status', onTelefoneStatus);
       socket.off('telefone:qrcode', onQRCode);
       socket.off('telefone:qr_cleared', onQRCleared);
