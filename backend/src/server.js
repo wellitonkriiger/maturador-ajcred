@@ -18,6 +18,7 @@ const HealthMonitor = require('./services/healthMonitor');
 const RealtimeService = require('./services/realtimeService');
 const BrowserRuntimeService = require('./services/browserRuntimeService');
 const { buildHealthPayload } = require('./utils/healthPayload');
+const { buildSignalDiagnostics, buildStartupDiagnostics } = require('./utils/supervisionDiagnostics');
 
 const app = express();
 const server = http.createServer(app);
@@ -132,13 +133,19 @@ async function handleShutdownSignal(signal) {
   }
 
   shutdownInFlight = true;
+  logger.warn(`[Supervisor] ${signal} recebido`, buildSignalDiagnostics(signal));
   logger.info(`${signal} recebido. Encerrando gracefully...`);
   HealthMonitor.stop();
   WhatsAppService.stopKeepAlive();
   await WhatsAppService.desconectarTodos();
 
   server.close(() => {
-    logger.info('Servidor encerrado');
+    logger.info('Servidor encerrado', {
+      event: 'shutdown_complete',
+      signal,
+      pid: process.pid,
+      uptimeSec: Math.round(process.uptime())
+    });
     process.exit(0);
   });
 }
@@ -197,6 +204,7 @@ function startHttpServer() {
   server.listen(PORT, HOST, () => {
     WhatsAppService.startKeepAlive();
     HealthMonitor.start(WhatsAppService);
+    logger.info('[Supervisor] Contexto de execucao detectado', buildStartupDiagnostics());
     logger.info(`Servidor rodando na porta ${PORT}`);
     logger.info(`Ambiente: ${process.env.NODE_ENV || 'development'}`);
     logger.info(`Health check: http://localhost:${PORT}/health`);
