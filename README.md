@@ -97,7 +97,7 @@ After=network.target
 [Service]
 Type=simple
 WorkingDirectory=/opt/maturador-ajcred
-ExecStart=/usr/bin/npm start
+ExecStart=/usr/bin/node /opt/maturador-ajcred/backend/src/server.js
 Restart=always
 RestartSec=5
 StandardOutput=journal
@@ -129,7 +129,7 @@ sudo systemctl enable --now maturador.service
 O servico roda pela raiz do projeto:
 
 - `WorkingDirectory=/opt/maturador-ajcred`
-- `ExecStart=/usr/bin/npm start`
+- `ExecStart=/usr/bin/node /opt/maturador-ajcred/backend/src/server.js`
 
 ## Validacao na VM
 
@@ -170,5 +170,6 @@ O backend faz tres papeis distintos:
 
 - o frontend deve refletir o backend; o canal principal e Socket.IO, com polling periodico apenas para resincronizar
 - logs continuam disponiveis pela API
+- para investigar quedas do processo, filtre na tela de logs por `"[Diag][PhoneInit]"` e `"[Diag][Supervisor]"`
 - em producao, nao use `FRONTEND_URL`; o frontend integrado usa mesma origem
 - se `backend/.env` mudar, depois do `git pull` rode `sudo systemctl restart maturador.service`

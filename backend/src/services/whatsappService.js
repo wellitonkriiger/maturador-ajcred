@@ -10,6 +10,7 @@ const TelefoneModel = require('../models/Telefone');
 const DelayUtils = require('../utils/delay');
 const RealtimeService = require('./realtimeService');
 const BrowserRuntimeService = require('./browserRuntimeService');
+const { collectProcessDiagnostics } = require('../utils/processDiagnostics');
 
 const KEEPALIVE_INTERVAL_MS = 25 * 1000;
 const KEEPALIVE_EVAL_TIMEOUT_MS = 10 * 1000;
@@ -169,6 +170,92 @@ class WhatsAppService extends EventEmitter {
 
   _touchActivity(telefoneId) {
     this._meta(telefoneId).lastActivityAt = new Date().toISOString();
+  }
+
+  _telefoneRecordsSnapshot() {
+    return Array.isArray(TelefoneModel.telefones) ? TelefoneModel.telefones : [];
+  }
+
+  _buildStatusSummary(records) {
+    return records.reduce((summary, telefone) => {
+      const key = telefone?.status || 'unknown';
+      summary[key] = (summary[key] || 0) + 1;
+      return summary;
+    }, {});
+  }
+
+  _buildWaStateSummary(records) {
+    return records.reduce((summary, telefone) => {
+      const waState = this._meta(telefone.id)?.waState;
+      const key = waState || 'null';
+      summary[key] = (summary[key] || 0) + 1;
+      return summary;
+    }, {});
+  }
+
+  getDiagnosticStateSnapshot({ includePhones = false } = {}) {
+    const records = this._telefoneRecordsSnapshot();
+    const phones = records.map((telefone) => {
+      const meta = this._meta(telefone.id);
+      const client = this.clients.get(telefone.id);
+
+      return {
+        telefoneId: telefone.id,
+        nome: telefone.nome,
+        status: telefone.status,
+        waState: meta.waState || null,
+        reconnectInFlight: Boolean(meta.reconnectInFlight),
+        busyOperations: Number(meta.busyOperations || 0),
+        lastDisconnectReason: meta.lastDisconnectReason || null,
+        hasClient: Boolean(client),
+        hasInfo: Boolean(client?.info)
+      };
+    });
+
+    return {
+      totalTelefones: phones.length,
+      totalClients: this.clients.size,
+      openingClients: phones.filter((entry) => entry.waState === 'OPENING').length,
+      onlineTelefones: phones.filter((entry) => entry.status === 'online').length,
+      readyClients: phones.filter((entry) => entry.hasInfo).length,
+      statusSummary: this._buildStatusSummary(records),
+      waStateSummary: this._buildWaStateSummary(records),
+      phones: includePhones ? phones : undefined
+    };
+  }
+
+  _buildConnectionDiagnostics(telefoneId, extra = {}) {
+    const telefone = this._telefoneRecordsSnapshot().find((entry) => entry.id === telefoneId)
+      || TelefoneModel.buscarPorId(telefoneId)
+      || null;
+    const runtimeDiagnosis = BrowserRuntimeService.getDiagnosis();
+    const stateSnapshot = this.getDiagnosticStateSnapshot({ includePhones: false });
+
+    return {
+      telefoneId,
+      nome: telefone?.nome || null,
+      runtime: runtimeDiagnosis ? {
+        available: runtimeDiagnosis.available,
+        source: runtimeDiagnosis.source,
+        executablePath: runtimeDiagnosis.executablePath,
+        checkedAt: runtimeDiagnosis.checkedAt
+      } : null,
+      stateSnapshot,
+      processDiagnostics: collectProcessDiagnostics(),
+      ...extra
+    };
+  }
+
+  _logConnectionDiagnostics(level, stage, telefoneId, extra = {}) {
+    const safeLevel = typeof logger[level] === 'function' ? level : 'info';
+    const telefone = this._telefoneRecordsSnapshot().find((entry) => entry.id === telefoneId) || null;
+    logger[safeLevel](
+      `[Diag][PhoneInit] ${stage} ${telefone?.nome || telefoneId}`,
+      this._buildConnectionDiagnostics(telefoneId, {
+        stage,
+        ...extra
+      })
+    );
   }
 
   startKeepAlive() {
@@ -645,6 +732,12 @@ class WhatsAppService extends EventEmitter {
       RealtimeService.clearTelefonePairingCode(telefoneId, requesterSocketId);
       this.qrCodes.set(telefoneId, qr);
       this._updateStatus(telefoneId, 'conectando');
+      this._logConnectionDiagnostics('info', 'qr', telefoneId, {
+        clientToken,
+        allowQr,
+        isReconnect,
+        autoReconnect
+      });
       logger.info(`QR Code gerado para ${telefone.nome} -- escaneie pelo WhatsApp`);
       console.log(`\nQR CODE para ${telefone.nome}:\n`);
       qrcode.generate(qr, { small: true });
@@ -673,6 +766,11 @@ class WhatsAppService extends EventEmitter {
 
     client.on('authenticated', () => {
       if (!this._isCurrentClient(telefoneId, client, clientToken)) return;
+      this._logConnectionDiagnostics('info', 'authenticated', telefoneId, {
+        clientToken,
+        isReconnect,
+        autoReconnect
+      });
       logger.info(`${telefone.nome} autenticado com sucesso`);
       this._clearPendingAuthArtifacts(telefoneId);
     });
@@ -718,6 +816,13 @@ class WhatsAppService extends EventEmitter {
       });
       this._clearConnectionRequester(telefoneId);
       emitOnlineOnce();
+      this._logConnectionDiagnostics('info', 'ready', telefoneId, {
+        clientToken,
+        isReconnect,
+        autoReconnect,
+        numeroInterno,
+        numeroReal: numeroRealConsolidado
+      });
 
       const capturarLid = (msg) => {
         if (!this._isCurrentClient(telefoneId, client, clientToken)) return;
@@ -755,6 +860,12 @@ class WhatsAppService extends EventEmitter {
     client.on('auth_failure', async (msg) => {
       if (!this._isCurrentClient(telefoneId, client, clientToken)) return;
       const meta = this._meta(telefoneId);
+      this._logConnectionDiagnostics('warn', 'auth_failure', telefoneId, {
+        clientToken,
+        isReconnect,
+        autoReconnect,
+        motivo: firstErrorLine(msg)
+      });
       logger.error(`Falha de autenticacao -- ${telefone.nome}: ${msg}`);
 
       this._clearPendingAuthArtifacts(telefoneId);
@@ -782,6 +893,12 @@ class WhatsAppService extends EventEmitter {
       this._desconectando.add(telefoneId);
 
       const meta = this._meta(telefoneId);
+      this._logConnectionDiagnostics('warn', 'disconnected', telefoneId, {
+        clientToken,
+        isReconnect,
+        autoReconnect,
+        motivo: firstErrorLine(reason)
+      });
       logger.warn(`${telefone.nome} desconectado -- motivo: ${reason}`);
 
       const atingiuLimite = meta.autoReconnectAttempts >= MAX_AUTO_RECONNECT_ATTEMPTS;
@@ -875,6 +992,17 @@ class WhatsAppService extends EventEmitter {
       clientToken
     });
     this.clients.set(telefoneId, client);
+    this._logConnectionDiagnostics('info', 'before_initialize', telefoneId, {
+      clientToken,
+      isReconnect,
+      autoReconnect,
+      runtime: {
+        available: runtimeDiagnosis.available,
+        source: runtimeDiagnosis.source,
+        executablePath: runtimeDiagnosis.executablePath,
+        checkedAt: runtimeDiagnosis.checkedAt
+      }
+    });
     logger.info(`Chamando initialize() para ${telefone.nome}...`);
 
     client.initialize().catch(async (error) => {
@@ -890,6 +1018,13 @@ class WhatsAppService extends EventEmitter {
       await this._destroyClient(client);
 
       if (isConnectionError(msgErro) || isTransientInitError(msgErro)) {
+        this._logConnectionDiagnostics('warn', 'initialize_failed', telefoneId, {
+          clientToken,
+          isReconnect,
+          autoReconnect,
+          motivo: linha,
+          fatal: false
+        });
         logger.warn(`${telefone.nome} falhou durante inicializacao (${linha})`);
         const erroTransitorio = isTransientInitError(msgErro);
         const atingiuLimite = autoReconnect && metaAtual.autoReconnectAttempts >= MAX_AUTO_RECONNECT_ATTEMPTS && !erroTransitorio;
@@ -909,6 +1044,13 @@ class WhatsAppService extends EventEmitter {
         return;
       }
 
+      this._logConnectionDiagnostics('error', 'initialize_failed', telefoneId, {
+        clientToken,
+        isReconnect,
+        autoReconnect,
+        motivo: linha,
+        fatal: true
+      });
       logger.error(`Erro fatal ao inicializar ${telefone.nome}: ${msgErro}`);
       this._updateStatus(telefoneId, allowQr ? 'offline' : 'requires_qr');
       this.emit('telefone:erro', telefoneId, msgErro);

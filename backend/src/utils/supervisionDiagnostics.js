@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { collectProcessDiagnostics } = require('./processDiagnostics');
 
 function safeReadFile(filePath) {
   try {
@@ -167,7 +168,7 @@ function readGitRevision() {
   }
 }
 
-function buildCommonRuntimeMeta() {
+function buildCommonRuntimeMeta(extra = {}) {
   const chain = readProcessChain();
   const cgroup = readProcCgroup();
   const supervisor = inferSupervisor(chain, cgroup);
@@ -182,30 +183,32 @@ function buildCommonRuntimeMeta() {
     revision: readGitRevision(),
     supervisor,
     ancestry: chain,
+    processDiagnostics: collectProcessDiagnostics(),
     systemdEnv: {
       invocationId: process.env.INVOCATION_ID || null,
       hasJournalStream: Boolean(process.env.JOURNAL_STREAM),
       hasNotifySocket: Boolean(process.env.NOTIFY_SOCKET)
     },
-    cgroup: cgroup ? cgroup.trim().split(/\r?\n/).slice(0, 6) : null
+    cgroup: cgroup ? cgroup.trim().split(/\r?\n/).slice(0, 6) : null,
+    ...extra
   };
 }
 
-function buildStartupDiagnostics() {
+function buildStartupDiagnostics(extra = {}) {
   return {
     event: 'startup',
-    ...buildCommonRuntimeMeta()
+    ...buildCommonRuntimeMeta(extra)
   };
 }
 
-function buildSignalDiagnostics(signal) {
+function buildSignalDiagnostics(signal, extra = {}) {
   return {
     event: 'signal',
     signal,
     sender: 'unknown_from_node_runtime',
     senderConfidence: 'unknown',
     note: 'O Node.js nao expoe o PID de quem enviou o SIGTERM/SIGINT. Os dados abaixo mostram o contexto de supervisao do processo.',
-    ...buildCommonRuntimeMeta()
+    ...buildCommonRuntimeMeta(extra)
   };
 }
 

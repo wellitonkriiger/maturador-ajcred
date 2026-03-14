@@ -1,3 +1,5 @@
+const { getBrowserProcessEnv } = require('./runtimePaths');
+
 const BASE_BROWSER_ARGS = [
   '--disable-dev-shm-usage',
   '--disable-accelerated-2d-canvas',
@@ -21,7 +23,8 @@ function getBrowserLaunchArgs(platform = process.platform) {
 function buildBrowserLaunchOptions({ executablePath = null, platform = process.platform } = {}) {
   const options = {
     headless: true,
-    args: getBrowserLaunchArgs(platform)
+    args: getBrowserLaunchArgs(platform),
+    env: getBrowserProcessEnv()
   };
 
   if (executablePath) {

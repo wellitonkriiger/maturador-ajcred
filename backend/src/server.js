@@ -2,6 +2,9 @@ require('dotenv').config({
   path: require('path').resolve(__dirname, '../.env')
 });
 
+const { getRuntimePaths, prepareRuntimeEnvironment } = require('./utils/runtimePaths');
+const runtimePaths = prepareRuntimeEnvironment();
+
 const express = require('express');
 const cors = require('cors');
 const http = require('http');
@@ -133,7 +136,13 @@ async function handleShutdownSignal(signal) {
   }
 
   shutdownInFlight = true;
-  logger.warn(`[Supervisor] ${signal} recebido`, buildSignalDiagnostics(signal));
+  logger.warn('[Diag][Supervisor] Snapshot de telefones antes do shutdown', {
+    signal,
+    phoneStates: WhatsAppService.getDiagnosticStateSnapshot({ includePhones: true })
+  });
+  logger.warn(`[Diag][Supervisor] ${signal} recebido`, buildSignalDiagnostics(signal, {
+    phoneStates: WhatsAppService.getDiagnosticStateSnapshot({ includePhones: true })
+  }));
   logger.info(`${signal} recebido. Encerrando gracefully...`);
   HealthMonitor.stop();
   WhatsAppService.stopKeepAlive();
@@ -204,7 +213,8 @@ function startHttpServer() {
   server.listen(PORT, HOST, () => {
     WhatsAppService.startKeepAlive();
     HealthMonitor.start(WhatsAppService);
-    logger.info('[Supervisor] Contexto de execucao detectado', buildStartupDiagnostics());
+    logger.info('[Runtime] Diretorios de runtime fixados no projeto', runtimePaths);
+    logger.info('[Diag][Supervisor] Contexto de execucao detectado', buildStartupDiagnostics());
     logger.info(`Servidor rodando na porta ${PORT}`);
     logger.info(`Ambiente: ${process.env.NODE_ENV || 'development'}`);
     logger.info(`Health check: http://localhost:${PORT}/health`);
